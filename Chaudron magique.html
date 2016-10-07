@@ -98,9 +98,18 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<p id="init-lacking">Apologies! You are using an <strong>outdated</strong> browser which lacks required capabilities. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<p id="init-loading">Initializing. Please wait&hellip;<br /><progress></progress></p>
 	</div>
-	<div id="store-area" hidden><tw-storydata name="Chaudron magique" startnode="1" creator="Twine" creator-version="2.0.11" ifid="B438D342-7306-4755-86C5-7C1B58F19F36" format="SugarCube 2 (local/offline)" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+	<div id="store-area" hidden><tw-storydata name="Chaudron magique" startnode="1" creator="Twine" creator-version="2.0.11" ifid="B438D342-7306-4755-86C5-7C1B58F19F36" format="SugarCube 2 (local/offline)" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
+ 
+body, tw-story {
+  font-family: Lora, serif;
+  font-size: 18px;
+}
 
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
+body
+{
+  background-color: #4c4c4c;
+  color: #f2f2f2;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 /**
 * macro that displays a Passage automatically after another
@@ -172,15 +181,23 @@ macros["goto"]=macros["timedgoto"]={
 		}
 	}
 };
-</script><tw-passagedata pid="1" name="Le chaudron bout" tags="" position="300,134">Le chaudron bout... bout beaucoup trop vite, trop fort, trop... &lt;b&gt;Trop&lt;/b&gt; !!
+</script><tw-passagedata pid="1" name="Le chaudron bout" tags="" position="300,133">&lt;&lt;cacheaudio &quot;bird&quot; &quot;media/sound/Sunny Day-SoundBible.com-2064222612.mp3&quot;&gt;&gt;
+
+Le chaudron bout... bout beaucoup trop vite, trop fort, trop... &lt;b&gt;Trop&lt;/b&gt; !! Il est &lt;&lt;print $heure&gt;&gt; heures.
 
 Custom macro: &lt;&lt;macrodemo&gt;&gt;
 
-&lt;&lt;wait 2000 &quot;Dodo&quot;&gt;&gt;</tw-passagedata>
+&lt;&lt;wait 3500 &quot;Dodo&quot;&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="2" name="Dodo" tags="" position="324,273">Oups, vous vous endormez dans un profond sommeil... :(
 
-&lt;&lt;timedgoto &quot;Post Dodo&quot; 2s&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="3" name="Post Dodo" tags="" position="489,286">Vous vous réveillez d&#39;un long sommeil.</tw-passagedata>
+&lt;img src=&quot;http://img03.deviantart.net/4cb2/i/2005/156/9/a/sleeping_wizard_by_katryn_noquisi.jpg&quot; width=&quot;300&quot; alt=&quot;Sleeping sorcerer&quot;&gt;
+
+
+&lt;&lt;timedgoto &quot;Post Dodo&quot; 5s&gt;&gt;</tw-passagedata>
+<tw-passagedata pid="3" name="Post Dodo" tags="" position="489,286">&lt;&lt;audio &quot;bird&quot; play&gt;&gt;
+
+Vous vous réveillez d&#39;un long sommeil.</tw-passagedata>
+<tw-passagedata pid="4" name="StoryInit" tags="" position="154,33">&lt;&lt;set $heure = 12&gt;&gt;</tw-passagedata>
 </tw-storydata>
 </div>
 	<script id="script-sugarcube" type="text/javascript">
