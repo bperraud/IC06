@@ -98,7 +98,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<p id="init-lacking">Apologies! You are using an <strong>outdated</strong> browser which lacks required capabilities. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<p id="init-loading">Initializing. Please wait&hellip;<br /><progress></progress></p>
 	</div>
-	<div id="store-area" hidden><tw-storydata name="Chaudron magique" startnode="1" creator="Twine" creator-version="2.0.11" ifid="B438D342-7306-4755-86C5-7C1B58F19F36" format="SugarCube 2 (local/offline)" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
+	<div id="store-area" hidden><tw-storydata name="Chaudron magique" startnode="5" creator="Twine" creator-version="2.0.11" ifid="B438D342-7306-4755-86C5-7C1B58F19F36" format="SugarCube 2 (local/offline)" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
  
 body, tw-story {
   font-family: Lora, serif;
@@ -109,7 +109,9 @@ body
 {
   background-color: #4c4c4c;
   color: #f2f2f2;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
+}
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 /**
 * macro that displays a Passage automatically after another
@@ -181,23 +183,143 @@ macros["goto"]=macros["timedgoto"]={
 		}
 	}
 };
-</script><tw-passagedata pid="1" name="Le chaudron bout" tags="" position="300,133">&lt;&lt;cacheaudio &quot;bird&quot; &quot;media/sound/Sunny Day-SoundBible.com-2064222612.mp3&quot;&gt;&gt;
+
+
+</script><tw-passagedata pid="1" name="Le chaudron bout" tags="" position="86,134">&lt;&lt;cacheaudio &quot;bird&quot; &quot;media/sound/Sunny Day-SoundBible.com-2064222612.mp3&quot;&gt;&gt;
 
 Le chaudron bout... bout beaucoup trop vite, trop fort, trop... &lt;b&gt;Trop&lt;/b&gt; !! Il est &lt;&lt;print $heure&gt;&gt; heures.
 
 Custom macro: &lt;&lt;macrodemo&gt;&gt;
 
 &lt;&lt;wait 3500 &quot;Dodo&quot;&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="2" name="Dodo" tags="" position="324,273">Oups, vous vous endormez dans un profond sommeil... :(
+<tw-passagedata pid="2" name="Dodo" tags="" position="78,259">Oups, vous vous endormez dans un profond sommeil... :(
 
 &lt;img src=&quot;http://img03.deviantart.net/4cb2/i/2005/156/9/a/sleeping_wizard_by_katryn_noquisi.jpg&quot; width=&quot;300&quot; alt=&quot;Sleeping sorcerer&quot;&gt;
 
 
 &lt;&lt;timedgoto &quot;Post Dodo&quot; 5s&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="3" name="Post Dodo" tags="" position="489,286">&lt;&lt;audio &quot;bird&quot; play&gt;&gt;
+<tw-passagedata pid="3" name="Post Dodo" tags="" position="81,389">&lt;&lt;audio &quot;bird&quot; play&gt;&gt;
 
 Vous vous réveillez d&#39;un long sommeil.</tw-passagedata>
-<tw-passagedata pid="4" name="StoryInit" tags="" position="154,33">&lt;&lt;set $heure = 12&gt;&gt;</tw-passagedata>
+<tw-passagedata pid="4" name="StoryInit" tags="" position="85,9">&lt;&lt;set $heure = 12&gt;&gt;
+&lt;&lt;set $sandwich = 0&gt;&gt;
+&lt;&lt;set $biscuit = 0&gt;&gt;
+&lt;&lt;set $temps = 0&gt;&gt;</tw-passagedata>
+<tw-passagedata pid="5" name="Réveil initial" tags="" position="899,35">&lt;&lt;cacheaudio &quot;bird&quot; &quot;media/sound/Sunny Day-SoundBible.com-2064222612.mp3&quot;&gt;&gt;
+
+&lt;img src=&quot;http://img03.deviantart.net/4cb2/i/2005/156/9/a/sleeping_wizard_by_katryn_noquisi.jpg&quot; width=&quot;300&quot; alt=&quot;Sleeping sorcerer&quot;&gt;
+
+&lt;&lt;audio &quot;bird&quot; play&gt;&gt;
+
+Vous vous éveillez d&#39;un profond sommeil avec seulement le très vague souvenir d&#39;un rêve empli d&#39;absurdité. Autour de vous, vous distinguez, entre vos paupières encore à demi fermées, le décor familier de l&#39;intérieur de votre hutte. Dans un coin, un énorme chaudron bout bruillamment, s&#39;agitant violemment, de manière presque inquiétante, au-dessus d&#39;un feu.
+
+Vous vous rappelez qu&#39;il s&#39;agit d&#39;une décoction complexe dont vous avez lancé la cuisson la veille au soir. Un long gargouillement s&#39;élève de votre ventre tandis qu&#39;une faim de loup se rappelle à vous.
+
+[[Essayer de vous rappeler de votre rêve-&gt;Rêve]]
+[[Aller chercher quelque chose à manger-&gt;Petit-déjeûner]]
+[[Aller inspecter le chaudron-&gt;Chaudron bouillant]]
+
+&lt;&lt;timedgoto &quot;Rendormi&quot; 15s&gt;&gt;</tw-passagedata>
+<tw-passagedata pid="6" name="Rêve" tags="" position="588,211">Vous essayez de rappeler à vous le souvenir de votre rêve. Il vous revient alors en mémoire que vous y étiez affairé devant un chaudron et finissiez par y jeter un sandwich aux anchois.
+
+Pendant ce temps, la faim persiste à vous remuer les entrailles et votre chaudron continue à s&#39;agiter, avec de plus en plus de véhémence.
+
+[[Aller chercher quelque chose à manger-&gt;Petit-déjeûner]] 
+[[S&#39;approcher du chaudron-&gt;Chaudron bouillant]]
+
+&lt;&lt;timedgoto &quot;Rendormi&quot; 10s&gt;&gt;</tw-passagedata>
+<tw-passagedata pid="7" name="Petit-déjeûner" tags="" position="811,188">Vous vous approchez d&#39;un placard entrouvert et jetez un coup d&#39;oeil dans l&#39;entrebaillement, à la recherche de quelque chose à vous mettre sous la dent. Au milieu des cadavres d&#39;insectes, la seule chose d&#39;apparence mangeable semble être un vieux biscuit couvert de poussière, et sans nul doute devenu aussi dur que de la roche.
+
+Un autre regard lancé sur les alentours du placard vous permet cependant de repérer ce qui ressemble à un morceau de sandwich abandonné au milieu du bazar qui règne dans la pièce.
+
+De l&#39;autre côté de la salle, vous remarquez que le chaudron continue à s&#39;agiter. La potion qu&#39;il contient s&#39;en échappe petit à petit, par éclaboussures brûlantes.
+
+&lt;&lt;link &quot;Prendre le biscuit&quot; &quot;Chaudron bouillant&quot;&gt;&gt;
+	&lt;&lt;set $biscuit = 1&gt;&gt;
+	&lt;&lt;set $temps = 1&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+&lt;&lt;link &quot;Ramasser le sandwich&quot; &quot;Chaudron bouillant&quot;&gt;&gt;
+	&lt;&lt;set $sandwich = 1&gt;&gt;
+	&lt;&lt;set $temps = 1&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+[[Aller voir ce qu&#39;il se passe avec le chaudron-&gt;Chaudron bouillant]]</tw-passagedata>
+<tw-passagedata pid="8" name="Chaudron bouillant" tags="" position="943,358">&lt;&lt;if $temps eq 0&gt;&gt;
+  Vous vous approchez du chaudron remuant et constatez que la décoction a pris une couleur brune peu ragoûtante et loin de l&#39;onctueux orange qu&#39;elle aurait dû arborer. Vous pressentez que vous avez dormi un peu trop longtemps, ou que vous avez fait une erreur quelconque au moment de préparer la potion hier soir.
+
+  Comme si cela ne suffisait pas, la potion semble de plus en plus instable, le chaudron se balançant d&#39;une façon de plus en plus menaçante au-dessus des flammes. La vapeur qui commence à s&#39;élever de la mixture est très sombre et comme parcourue de petits éclairs de magie peu rassurants.
+
+Qui sait ce qu&#39;il adviendra si vous mettez trop de temps à agir ?
+
+&lt;&lt;link &quot;Eteindre les flammes sous le chaudron&quot; &quot;Feu éteint&quot;&gt;&gt;&lt;&lt;set $temps = 1&gt;&gt;&lt;&lt;/link&gt;&gt;
+
+&lt;&lt;link &quot;Fouiller la hutte à la recherche de quelque chose d&#39;utile&quot; &quot;Fouille hutte&quot;&gt;&gt;&lt;&lt;set $temps = 1&gt;&gt;&lt;&lt;/link&gt;&gt;
+
+&lt;&lt;elseif $temps eq 1&gt;&gt;
+	Vous vous approchez du chaudron alors que celui-ci se met à émettre une épaisse vapeur sombre, parcourue d&#39;éclairs de magie. L&#39;intérieur de la hutte s&#39;assombrit et l&#39;atmosphère devient littéralement électrique. En arrivant près du récipient, vous vous rendez compte que la catastrophe est proche. Vous ne savez pas ce qui est allé de travers, mais la potion a pris une couleur brune peu ragoûtante et tout semble indiquer une issue défavorable aux êtres vivants présents dans la cabane. C&#39;est-à-dire vous.
+
+&lt;&lt;if $sandwich eq 1&gt;&gt;
+&lt;&lt;link &quot;Jeter votre sandwich dans le chaudron&quot; &quot;Chaudron aux anchois&quot;&gt;&gt;&lt;&lt;set $sandwich = 0&gt;&gt;&lt;&lt;set $temps = 2&gt;&gt;&lt;&lt;/link&gt;&gt;
+
+&lt;&lt;elseif $biscuit eq 1&gt;&gt;
+&lt;&lt;link &quot;Laisser tomber votre biscuit dans le chaudron&quot; &quot;Chaudron au biscuit&quot;&gt;&gt;&lt;&lt;set $biscuit = 0&gt;&gt;&lt;&lt;set $temps = 2&gt;&gt;&lt;&lt;/link&gt;&gt;
+
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;link &quot;Eteindre les flammes sous le chaudron&quot; &quot;Feu éteint&quot;&gt;&gt;&lt;&lt;set $temps = 2&gt;&gt;&lt;&lt;/link&gt;&gt;
+
+&lt;&lt;timedgoto &quot;BOOM&quot; 10s&gt;&gt;
+
+&lt;&lt;/if&gt;&gt;</tw-passagedata>
+<tw-passagedata pid="9" name="Rendormi" tags="" position="605,53">Alors que vous laissez vos pensées divaguer, incapable de vous décider à tout à fait émerger votre sommeil, les bras de Morphée s&#39;offrent à nouveau à vous.
+
+Vous vous rendormez sans une pensée pour le chaudron qui bouillonne de façon de plus en plus inquiétante...</tw-passagedata>
+<tw-passagedata pid="10" name="Chaudron aux anchois" tags="" position="1201,308">En jetant votre sandwich dans le chaudron (non sans une pointe de regret), un certain effet de déjà-vu s&#39;empare de vous.
+
+D&#39;abord, cela semble avoir été sans effet, et vous êtes étonnament insatisfait (rien ne laissait pourtant ne serait-ce qu&#39;espérer qu&#39;un sandwich règle l&#39;affaire). Alors que vous êtes déjà en train d&#39;explorer mentalement vos autres options, le chaudron cesse soudain toute activité, devenant absolument inerte. Surpris, vous vous penchez sur son contenu et découvrez qu&#39;il est devenu clair comme de l&#39;eau. Un son étrange, qui n&#39;est pas sans rappeler un rot, retentit, comme venant du chaudron.
+
+Vous haussez les épaules et essuyez la sueur qui perle sur votre front. Il semblerait que vous vous en soyez bien sorti. Yay !</tw-passagedata>
+<tw-passagedata pid="11" name="Chaudron au biscuit" tags="" position="1158,490">Vous laissez tomber le biscuit (ou ce que vous pensez être un biscuit, bien que son poids et sa fermeté commencent à vous faire vous demander si ce ne serait pas un galet couvert de poussière) dans le chaudron énervé.
+
+Il ne faut pas longtemps pour que vous vous rendiez compte que c&#39;était probablement une mauvaise idée. Le chaudron se met soudain à rougeoyer, comme chauffé à blanc, puis à irradier d&#39;une aveuglante et brûlante lumière blanche. Vous n&#39;avez pas le temps de comprendre ce qu&#39;il se passe que le chaudron explose &quot;chromatiquement&quot;, effaçant toutes les couleurs que le souffle de l&#39;explosion rencontre...</tw-passagedata>
+<tw-passagedata pid="12" name="Feu éteint" tags="" position="783,524">&lt;&lt;if $temps eq 1&gt;&gt;
+Vous éteignez les flammes et le chaudron semble se calmer.
+Enfin, seulement pour quelques instants, comme vous pouvez vous en rendre compte en voyant le chaudron se mettre à se balancer de plus belle, la potion semblant agitée par une énergie interne et électrique. La vapeur qui envahit la pièce devient étouffante et l&#39;atmosphère se charge d&#39;une énergie qui fait se dresser tous les poils de votre corps.
+
+&lt;&lt;link &quot;Fouiller la hutte à la recherche de quelque chose qui pourrait vous sauver&quot; &quot;Fouille hutte&quot;&gt;&gt;&lt;&lt;set $temps = 2&gt;&gt;&lt;&lt;/link&gt;&gt;
+
+&lt;&lt;timedgoto &quot;BOOM&quot; 7s&gt;&gt;
+
+&lt;&lt;elseif $temps eq 2&gt;&gt;
+Vous vous hâtez d&#39;éteindre les flammes avec les moyens du bord, mais c&#39;est manifestement trop tard. Le chaudron effectue un bond soudain et se retrouve à flotter dans la pièce, filant à toute allure et rebondissant dans de grands fracas contre les murs. Il fait maintenant tout à fait noir dans la hutte, bien que la potion ait pris une couleur vert fluorescent. Vous vous jetez au sol, les mains sur le chapeau pointu, et un grand grondement commence à se faire entendre en provenance du chaudron.
+
+[[BOOM!!!-&gt;BOOM]]
+
+&lt;&lt;/if&gt;&gt;</tw-passagedata>
+<tw-passagedata pid="13" name="Fouille hutte" tags="" position="995,598">&lt;&lt;if $temps eq 1&gt;&gt;
+Vous parcourez la salle du regard, espérant apercevoir quelque chose qui vous permettrait de sauver les meubles. Contre un mur, à côté de votre couchette, se trouve votre bien-aimée bibliothèque. En face, un placard poussiéreux à demi-ouvert.
+
+[[Aller vers la bibliothèque-&gt;Biblio]]
+[[Aller vers le placard-&gt;Placard]]
+
+&lt;&lt;elseif $temps eq 2&gt;&gt;
+Vous parcourez la salle d&#39;un regard affolé, espérant apercevoir quelque chose qui vous permettrait de sauver, littéralement, les meubles. Il fait très sombre mais vous distinguez, contre un mur votre bibliothèque. En face, ce qui ressemble à un placard à demi-ouvert.
+
+&lt;&lt;link &quot;Aller vers la bibliothèque&quot; &quot;BOOM&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;
+&lt;&lt;link &quot;Aller vers le placard&quot; &quot;BOOM&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;
+
+&lt;&lt;/if&gt;&gt;</tw-passagedata>
+<tw-passagedata pid="14" name="BOOM" tags="" position="783,674">Brusquement, le chaudron se met à émettre un sifflement strident qui vous rend comme sourd, puis à tourbillonner sur lui-même à une vitesse qu&#39;on n&#39;hésiterait pas à qualifier de supersonique.
+
+Alors que vous vous plaquez les mains sur les oreilles dans une vaine tentative de sauver vos tympans, vous assistez impuissant à la fracturation de l&#39;espace-temps...</tw-passagedata>
+<tw-passagedata pid="15" name="Biblio" tags="" position="994,747">&lt;&lt;set $temps = 2&gt;&gt;
+
+Alors que vous vous dirigez vers la bibliothèque, un grand bruit d&#39;éclaboussure, suivi d&#39;un crépitement, retentit. Vous avez seulement le temps de vous retourner avant qu&#39;un second bruit exactement similaire retentisse. Le chaudron est littéralement entré en éruption et des jerbes d&#39;un liquide devenu verdâtre sont projetées à travers toute la pièce. Là où la potion se répand, des flammes vertes, manifestement magiques, s&#39;élèvent et commencent à envahir toute la cabane.
+
+Il n&#39;y a plus grand chose à faire, et pendant que vous courez vers la sortie, les flammes vous rattrappent et votre robe de magicien s&#39;embrase...</tw-passagedata>
+<tw-passagedata pid="16" name="Placard" tags="" position="1144,747">&lt;&lt;set $temps = 2&gt;&gt;
+
+Alors que vous vous dirigez vers le placard, un grand bruit d&#39;éclaboussure, suivi d&#39;un crépitement, retentit. Vous avez seulement le temps de vous retourner avant qu&#39;un second bruit exactement similaire retentisse. Le chaudron est littéralement entré en éruption et des jerbes d&#39;un liquide devenu verdâtre sont projetées à travers toute la pièce. Là où la potion se répand, des flammes vertes, manifestement magiques, s&#39;élèvent et commencent à envahir toute la cabane.
+
+Il n&#39;y a plus grand chose à faire, et pendant que vous courez vers la sortie, les flammes vous rattrappent et votre robe de magicien s&#39;embrase...</tw-passagedata>
 </tw-storydata>
 </div>
 	<script id="script-sugarcube" type="text/javascript">
