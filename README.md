@@ -4,6 +4,7 @@
 - S'assurer que le repository est bien cloné
 - _Pull_ pour récupérer les dernières modifications
 - Ouvrir Twine 2.x puis dans le menu sélectionner **"Importer depuis un Fichier"**
+- Sélectionner le fichier .html du _repository_
 - Éventuellement supprimer les doublons plus anciens
 - Effectuer les modifications nécessaires
 - Une fois ces dernières accomplies, dans le menu de l'histoire, sélectionner **"Publier vers un Fichier"**

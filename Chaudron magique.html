@@ -111,6 +111,8 @@ body
   color: #f2f2f2;
 }
 
+
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 /**
@@ -185,6 +187,8 @@ macros["goto"]=macros["timedgoto"]={
 };
 
 
+
+
 </script><tw-passagedata pid="1" name="Le chaudron bout" tags="" position="86,134">&lt;&lt;cacheaudio &quot;bird&quot; &quot;media/sound/Sunny Day-SoundBible.com-2064222612.mp3&quot;&gt;&gt;
 
 Le chaudron bout... bout beaucoup trop vite, trop fort, trop... &lt;b&gt;Trop&lt;/b&gt; !! Il est &lt;&lt;print $heure&gt;&gt; heures.
@@ -250,21 +254,23 @@ De l&#39;autre côté de la salle, vous remarquez que le chaudron continue à s&
 
 Qui sait ce qu&#39;il adviendra si vous mettez trop de temps à agir ?
 
-&lt;&lt;link &quot;Eteindre les flammes sous le chaudron&quot; &quot;Feu éteint&quot;&gt;&gt;&lt;&lt;set $temps = 1&gt;&gt;&lt;&lt;/link&gt;&gt;
+[[Éteindre les flammes sous le chaudron|Feu éteint][$temps = 1]]
 
-&lt;&lt;link &quot;Fouiller la hutte à la recherche de quelque chose d&#39;utile&quot; &quot;Fouille hutte&quot;&gt;&gt;&lt;&lt;set $temps = 1&gt;&gt;&lt;&lt;/link&gt;&gt;
+[[Fouiller la hutte à la recherche de quelque chose d&#39;utile|Fouille hutte][$temps = 1]]
+
 
 &lt;&lt;elseif $temps eq 1&gt;&gt;
 	Vous vous approchez du chaudron alors que celui-ci se met à émettre une épaisse vapeur sombre, parcourue d&#39;éclairs de magie. L&#39;intérieur de la hutte s&#39;assombrit et l&#39;atmosphère devient littéralement électrique. En arrivant près du récipient, vous vous rendez compte que la catastrophe est proche. Vous ne savez pas ce qui est allé de travers, mais la potion a pris une couleur brune peu ragoûtante et tout semble indiquer une issue défavorable aux êtres vivants présents dans la cabane. C&#39;est-à-dire vous.
 
 &lt;&lt;if $sandwich eq 1&gt;&gt;
-&lt;&lt;link &quot;Jeter votre sandwich dans le chaudron&quot; &quot;Chaudron aux anchois&quot;&gt;&gt;&lt;&lt;set $sandwich = 0&gt;&gt;&lt;&lt;set $temps = 2&gt;&gt;&lt;&lt;/link&gt;&gt;
+[[Jeter votre sandwich dans le chaudron|Chaudron aux anchois][$sandwich = 0; $temps = 2]]
 
 &lt;&lt;elseif $biscuit eq 1&gt;&gt;
-&lt;&lt;link &quot;Laisser tomber votre biscuit dans le chaudron&quot; &quot;Chaudron au biscuit&quot;&gt;&gt;&lt;&lt;set $biscuit = 0&gt;&gt;&lt;&lt;set $temps = 2&gt;&gt;&lt;&lt;/link&gt;&gt;
+[[Laisser tomber votre biscuit dans le chaudron|Chaudron au biscuit][$biscuit = 0; $temps = 2]]
 
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;link &quot;Eteindre les flammes sous le chaudron&quot; &quot;Feu éteint&quot;&gt;&gt;&lt;&lt;set $temps = 2&gt;&gt;&lt;&lt;/link&gt;&gt;
+
+[[Éteindre les flammes sous le chaudron|Feu éteint][$temps = 2]]
 
 &lt;&lt;timedgoto &quot;BOOM&quot; 10s&gt;&gt;
 
