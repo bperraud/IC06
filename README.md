@@ -18,7 +18,7 @@ changements faits dans l'interface du logiciel. Il est donc nécessaire de syst�
 exporter l'histoire vers le _repository_.**
 
 _Note : pour tester l'histoire avec les médias importés, il faut lancer le fichier .html du
-repository (je ne sais pas encore comment faire en local...).
+repository (~~je ne sais pas encore comment faire en local...~~ impossible : <https://twinery.org/wiki/twine2:add_an_image_movie_sound_effect_or_music>)._
 
 ## Procédure d'installation de SugarCube 2.x pour Twine 2.x
 

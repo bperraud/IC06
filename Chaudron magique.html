@@ -98,7 +98,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<p id="init-lacking">Apologies! You are using an <strong>outdated</strong> browser which lacks required capabilities. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<p id="init-loading">Initializing. Please wait&hellip;<br /><progress></progress></p>
 	</div>
-	<div id="store-area" hidden><tw-storydata name="Chaudron magique" startnode="5" creator="Twine" creator-version="2.0.11" ifid="B438D342-7306-4755-86C5-7C1B58F19F36" format="SugarCube 2 (local/offline)" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
+	<div id="store-area" hidden><tw-storydata name="Chaudron magique" startnode="5" creator="Twine" creator-version="2.0.11" ifid="B438D342-7306-4755-86C5-7C1B58F19F36" format="SugarCube 2 (local/offline)" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/*@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
  
 body, tw-story {
   font-family: Lora, serif;
@@ -110,6 +110,104 @@ body
   background-color: #4c4c4c;
   color: #f2f2f2;
 }
+*/
+
+
+#ui-bar {
+	display: none;
+}
+
+html {
+    background-image: url(media/pictures/bg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+body {
+  /* Remove default styles */
+	margin: 10% 0 0 0;
+  background-color: transparent;
+  font-size: 100%;
+  /* Used to center the box */
+  text-align: center;
+}
+
+#story {
+	margin: 0;
+}
+
+#passages {
+	border: 2px solid #212121;
+	box-shadow: 0 0 20px 6px #545454;
+	
+	background-image: url(media/pictures/paperborder3.png), url(media/pictures/paperborder2.png), url(media/pictures/paperborder4.png), url(media/pictures/paperborder5.png), url(media/pictures/pattern.jpg);
+	background-position: top, bottom, left, right, center;
+	background-size: 100% auto, 100% auto, auto 100%, auto 100%, auto;
+	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;
+
+  /* Box width */
+  width: 60%;
+
+  /* Center the box */
+  display: inline-block;
+  min-height: 400px;
+  margin:auto;
+  margin-bottom: 5%;
+  padding: 0px;
+}
+
+#passages img {
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+	border: 2px solid rgba(64, 64, 64, 0.8);
+}
+
+.passage {
+	min-height: 50vh;
+  margin: 0px;
+  /* Inner margin within the box */
+  padding: 4em 8em;
+
+  /* Text formatting */
+  color: black;
+  font-size: 100%;
+  text-align:justify;
+	
+	position: relative;
+}
+
+/* No sidebar */
+#sidebar {
+  display:none;
+}
+
+/* Links */
+a.internalLink, a.externalLink {
+  color: royalblue;
+}
+a.internalLink:hover, a.externalLink:hover {
+  color: deepskyblue;
+  text-decoration: none;
+}
+
+/* Shrink the page when viewed on devices with a low screen width */
+@media screen and (max-width: 960px) {
+  .passage { font-size: 90%;}
+  #passages { width: 70%; }
+}
+@media screen and (max-width: 840px) {
+  .passage {  font-size: 87.5%; }
+  #passages { width: 80%; }
+}
+@media screen and (max-width: 720px) {
+  .passage { font-size: 75%; }
+  #passages { width: 90%; }
+}
+
+
+
+
+
 
 
 
@@ -189,6 +287,7 @@ macros["goto"]=macros["timedgoto"]={
 
 
 
+
 </script><tw-passagedata pid="1" name="Le chaudron bout" tags="" position="86,134">&lt;&lt;cacheaudio &quot;bird&quot; &quot;media/sound/Sunny Day-SoundBible.com-2064222612.mp3&quot;&gt;&gt;
 
 Le chaudron bout... bout beaucoup trop vite, trop fort, trop... &lt;b&gt;Trop&lt;/b&gt; !! Il est &lt;&lt;print $heure&gt;&gt; heures.
@@ -223,7 +322,7 @@ Vous vous rappelez qu&#39;il s&#39;agit d&#39;une décoction complexe dont vous 
 [[Aller chercher quelque chose à manger-&gt;Petit-déjeûner]]
 [[Aller inspecter le chaudron-&gt;Chaudron bouillant]]
 
-&lt;&lt;timedgoto &quot;Rendormi&quot; 15s&gt;&gt;</tw-passagedata>
+&lt;!--&lt;&lt;timedgoto &quot;Rendormi&quot; 15s&gt;&gt;--&gt;</tw-passagedata>
 <tw-passagedata pid="6" name="Rêve" tags="" position="588,211">Vous essayez de rappeler à vous le souvenir de votre rêve. Il vous revient alors en mémoire que vous y étiez affairé devant un chaudron et finissiez par y jeter un sandwich aux anchois.
 
 Pendant ce temps, la faim persiste à vous remuer les entrailles et votre chaudron continue à s&#39;agiter, avec de plus en plus de véhémence.
@@ -255,21 +354,16 @@ De l&#39;autre côté de la salle, vous remarquez que le chaudron continue à s&
 Qui sait ce qu&#39;il adviendra si vous mettez trop de temps à agir ?
 
 [[Éteindre les flammes sous le chaudron|Feu éteint][$temps = 1]]
-
 [[Fouiller la hutte à la recherche de quelque chose d&#39;utile|Fouille hutte][$temps = 1]]
-
 
 &lt;&lt;elseif $temps eq 1&gt;&gt;
 	Vous vous approchez du chaudron alors que celui-ci se met à émettre une épaisse vapeur sombre, parcourue d&#39;éclairs de magie. L&#39;intérieur de la hutte s&#39;assombrit et l&#39;atmosphère devient littéralement électrique. En arrivant près du récipient, vous vous rendez compte que la catastrophe est proche. Vous ne savez pas ce qui est allé de travers, mais la potion a pris une couleur brune peu ragoûtante et tout semble indiquer une issue défavorable aux êtres vivants présents dans la cabane. C&#39;est-à-dire vous.
 
 &lt;&lt;if $sandwich eq 1&gt;&gt;
 [[Jeter votre sandwich dans le chaudron|Chaudron aux anchois][$sandwich = 0; $temps = 2]]
-
 &lt;&lt;elseif $biscuit eq 1&gt;&gt;
 [[Laisser tomber votre biscuit dans le chaudron|Chaudron au biscuit][$biscuit = 0; $temps = 2]]
-
 &lt;&lt;/if&gt;&gt;
-
 [[Éteindre les flammes sous le chaudron|Feu éteint][$temps = 2]]
 
 &lt;&lt;timedgoto &quot;BOOM&quot; 10s&gt;&gt;
