@@ -99,18 +99,43 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<p id="init-loading">Initializing. Please wait&hellip;<br /><progress></progress></p>
 	</div>
 	<div id="store-area" hidden><tw-storydata name="Chaudron magique" startnode="5" creator="Twine" creator-version="2.0.11" ifid="B438D342-7306-4755-86C5-7C1B58F19F36" format="SugarCube 2 (local/offline)" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/*@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
- 
-body, tw-story {
-  font-family: Lora, serif;
-  font-size: 18px;
+*/
+
+@font-face {
+	font-family: AGaramondPro;
+	src: url(fonts/AGaramondPro-Regular.otf);
+}
+@font-face {
+	font-family: AGaramondPro;
+	src: url(fonts/AGaramondPro-Bold.otf);
+	font-weight: bold;
+}
+@font-face {
+	font-family: AGaramondPro;
+	src: url(fonts/AGaramondPro-Italic.otf);
+	font-style: italic;
+}
+@font-face {
+	font-family: AGaramondPro;
+	src: url(fonts/AGaramondPro-BoldItalic.otf);
+	font-weight: bold;
+	font-style: italic;
 }
 
-body
-{
-  background-color: #4c4c4c;
-  color: #f2f2f2;
+@font-face {
+    font-family: Blacksword;
+    src: url(fonts/Blacksword.otf);
 }
-*/
+
+@font-face {
+    font-family: Humanistic;
+    src: url(fonts/Humanistic.ttf);
+}
+
+body, tw-story {
+  font-family: AGaramondPro, serif;
+  font-size: 18px;
+}
 
 
 #ui-bar {
@@ -145,7 +170,8 @@ body {
 	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;
 
   /* Box width */
-  width: 60%;
+  width: 100%;
+	max-width: 40%;
 
   /* Center the box */
   display: inline-block;
@@ -153,6 +179,8 @@ body {
   margin:auto;
   margin-bottom: 5%;
   padding: 0px;
+	
+	font-size: 24px;
 }
 
 #passages img {
@@ -203,6 +231,7 @@ a.internalLink:hover, a.externalLink:hover {
   .passage { font-size: 75%; }
   #passages { width: 90%; }
 }
+
 
 
 
@@ -288,6 +317,7 @@ macros["goto"]=macros["timedgoto"]={
 
 
 
+
 </script><tw-passagedata pid="1" name="Le chaudron bout" tags="" position="86,134">&lt;&lt;cacheaudio &quot;bird&quot; &quot;media/sound/Sunny Day-SoundBible.com-2064222612.mp3&quot;&gt;&gt;
 
 Le chaudron bout... bout beaucoup trop vite, trop fort, trop... &lt;b&gt;Trop&lt;/b&gt; !! Il est &lt;&lt;print $heure&gt;&gt; heures.
@@ -308,12 +338,13 @@ Vous vous réveillez d&#39;un long sommeil.</tw-passagedata>
 &lt;&lt;set $sandwich = 0&gt;&gt;
 &lt;&lt;set $biscuit = 0&gt;&gt;
 &lt;&lt;set $temps = 0&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="5" name="Réveil initial" tags="" position="899,35">&lt;&lt;cacheaudio &quot;bird&quot; &quot;media/sound/Sunny Day-SoundBible.com-2064222612.mp3&quot;&gt;&gt;
+<tw-passagedata pid="5" name="Réveil initial" tags="" position="899,35">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;cacheaudio &quot;bird&quot; &quot;media/sound/Sunny Day-SoundBible.com-2064222612.mp3&quot;&gt;&gt;
+&lt;&lt;audio &quot;bird&quot; play&gt;&gt;
 
 &lt;img src=&quot;http://img03.deviantart.net/4cb2/i/2005/156/9/a/sleeping_wizard_by_katryn_noquisi.jpg&quot; width=&quot;300&quot; alt=&quot;Sleeping sorcerer&quot;&gt;
 
-&lt;&lt;audio &quot;bird&quot; play&gt;&gt;
-
+&lt;&lt;/nobr&gt;&gt;
 Vous vous éveillez d&#39;un profond sommeil avec seulement le très vague souvenir d&#39;un rêve empli d&#39;absurdité. Autour de vous, vous distinguez, entre vos paupières encore à demi fermées, le décor familier de l&#39;intérieur de votre hutte. Dans un coin, un énorme chaudron bout bruillamment, s&#39;agitant violemment, de manière presque inquiétante, au-dessus d&#39;un feu.
 
 Vous vous rappelez qu&#39;il s&#39;agit d&#39;une décoction complexe dont vous avez lancé la cuisson la veille au soir. Un long gargouillement s&#39;élève de votre ventre tandis qu&#39;une faim de loup se rappelle à vous.
