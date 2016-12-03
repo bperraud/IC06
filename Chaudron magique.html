@@ -98,28 +98,210 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<p id="init-lacking">Apologies! You are using an <strong>outdated</strong> browser which lacks required capabilities. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<p id="init-loading">Initializing. Please wait&hellip;<br /><progress></progress></p>
 	</div>
-	<div id="store-area" hidden><tw-storydata name="Scénario Chaudron" startnode="14" creator="Twine" creator-version="2.0.11" ifid="A1089D4E-9A0F-4011-953B-C64AFD1CEFEC" format="SugarCube 2 (local/offline)" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+	<div id="store-area" hidden><tw-storydata name="Scénario Chaudron" startnode="14" creator="Twine" creator-version="2.0.11" ifid="A1089D4E-9A0F-4011-953B-C64AFD1CEFEC" format="SugarCube 2 (local/offline)" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/*@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
+*/
+
+@font-face {
+	font-family: AGaramondPro;
+	src: url(fonts/AGaramondPro-Regular.otf);
+}
+@font-face {
+	font-family: AGaramondPro;
+	src: url(fonts/AGaramondPro-Bold.otf);
+	font-weight: bold;
+}
+@font-face {
+	font-family: AGaramondPro;
+	src: url(fonts/AGaramondPro-Italic.otf);
+	font-style: italic;
+}
+@font-face {
+	font-family: AGaramondPro;
+	src: url(fonts/AGaramondPro-BoldItalic.otf);
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: Blacksword;
+    src: url(fonts/Blacksword.otf);
+}
+
+@font-face {
+    font-family: Humanistic;
+    src: url(fonts/Humanistic.ttf);
+}
+
+body, tw-story {
+  font-family: AGaramondPro, serif;
+  font-size: 18px;
+}
 
 
+#ui-bar {
+	display: none;
+}
+
+html {
+    background-image: url(media/pictures/bg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+body {
+  /* Remove default styles */
+	margin: 10% 0 0 0;
+  background-color: transparent;
+  font-size: 100%;
+  /* Used to center the box */
+  text-align: center;
+}
+
+#story {
+	margin: 0;
+}
+
+#passages {
+	border: 2px solid #212121;
+	box-shadow: 0 0 20px 6px #545454;
+	
+	background-image: url(media/pictures/paperborder3.png), url(media/pictures/paperborder2.png), url(media/pictures/paperborder4.png), url(media/pictures/paperborder5.png), url(media/pictures/pattern.jpg);
+	background-position: top, bottom, left, right, center;
+	background-size: 100% auto, 100% auto, auto 100%, auto 100%, auto;
+	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;
+
+  /* Box width */
+  width: 100%;
+	max-width: 40%;
+
+  /* Center the box */
+  display: inline-block;
+  min-height: 400px;
+  margin:auto;
+  margin-bottom: 5%;
+  padding: 0px;
+	
+	font-size: 24px;
+}
+
+#passages img {
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+	border: 2px solid rgba(64, 64, 64, 0.8);
+}
+
+.passage {
+	min-height: 50vh;
+  margin: 0px;
+  /* Inner margin within the box */
+  padding: 4em 8em;
+
+  /* Text formatting */
+  color: black;
+  font-size: 100%;
+  text-align:justify;
+	
+	position: relative;
+}
+
+/* No sidebar */
+#sidebar {
+  display:none;
+}
+
+/* Links */
+a.internalLink, a.externalLink {
+  color: royalblue;
+}
+a.internalLink:hover, a.externalLink:hover {
+  color: deepskyblue;
+  text-decoration: none;
+}
+
+/* Shrink the page when viewed on devices with a low screen width */
+@media screen and (max-width: 960px) {
+  .passage { font-size: 90%;}
+  #passages { width: 70%; }
+}
+@media screen and (max-width: 840px) {
+  .passage {  font-size: 87.5%; }
+  #passages { width: 80%; }
+}
+@media screen and (max-width: 720px) {
+  .passage { font-size: 75%; }
+  #passages { width: 90%; }
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
+
+/**
+* macro that displays a Passage automatically after another
+* @param[0] : time before displaying the passage
+* @param[1] : name of the passage to display
+*/
+
+macros.wait = {
+	handler: function(place, macroName, params, parser) {
+		window.setTimeout(function(){
+			state.display(params[1]);
+		}, params[0]);
+	},
+};
+
+try {
+  version.extensions['macrodemoMacro'] = { 
+    major:1, minor:0, revision:0 
+  };
+  macros['macrodemo'] = {
+    handler: function(place, macroName, params, parser) {
+      new Wikifier(place, "Hello World!");
+    },
+    init: function() { },
+  };
+} catch(e) {
+  throwError(place,"macrodemo Setup Error: "+e.message); 
+}
 
 
-
-
-
-
-
-
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">
-
-
-
-
-
-
-
-
-
-
+version.extensions.timedgotoMacro={
+	major:1,minor:1,revision:1 /*SugarCube version*/
+};
+macros["goto"]=macros["timedgoto"]={
+	timer:null,handler:function(a,b,c,d){
+		function cssTimeUnit(s){
+			if(typeof s=="string"){
+				if(s.slice(-2).toLowerCase()=="ms"){
+					return Number(s.slice(0,-2))||0;
+				}
+				else{
+					if(s.slice(-1).toLowerCase()=="s"){
+						return Number(s.slice(0,-1))*1000||0;
+					}
+				}
+			}
+			throwError(a,s+" isn't a CSS time unit");
+			return 0;
+		}
+		var t,d,m,s;
+		t=c[c.length-1];
+		d=d.fullArgs();
+		m=0;
+		if(b!="goto"){
+			d=d.slice(0,d.lastIndexOf(t));
+			m=cssTimeUnit(t);
+		}
+		d=eval(Wikifier.parse(d));
+		if(d+""){
+			if(this.timer){
+			clearTimeout(this.timer);
+			}	
+			s=state.active.title;
+			this.timer=setTimeout(function(){
+				if(state.active.title==s){
+					state.display(d,a);
+				}
+			},m);
+		}
+	}
+};
 </script><tw-passagedata pid="1" name="Rivière" tags="" position="1340,1261">&lt;&lt;if $glace eq true&gt;&gt;
 Alors que le temps est fort agréable, vous arrivez devant une rivière gelée. Ne voyant pas de pont à l&#39;horizon, vous juger que l&#39;épaisseur de la glace n&#39;est pas très importante au vu des fissures présentes dans celle ci. Après un court instant de réfléxion, elle a l&#39;air assez épaisse pour passer sans sac à dos et éventuellement assez si vous ne déposez que votre bâton.
 [[Abandonner votre sac à dos-&gt;bruit]]&lt;!--&lt;&lt;set $allumette to false&gt;&gt;&lt;&lt;set $lampe to false&gt;&gt;&lt;!-- 100% de réussite--&gt;
