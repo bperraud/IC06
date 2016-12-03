@@ -200,6 +200,17 @@ a.internalLink:hover, a.externalLink:hover {
 	border: 0px;
 }
 
+.black_overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: black;
+	z-index: 1;
+	top: 0;
+	left: 0;
+}
+
+
 /* Shrink the page when viewed on devices with a low screen width */
 @media screen and (max-width: 960px) {
   .passage { font-size: 90%;}
@@ -447,20 +458,30 @@ Vous tentez vorte chance face au dragon en espérant que ces années resté sans
 &lt;&lt;/if&gt;&gt;
 --&gt;
 </tw-passagedata>
-<tw-passagedata pid="14" name="Début" tags="" position="18,1267">
-
+<tw-passagedata pid="14" name="Début" tags="" position="18,1269">&lt;div class=&quot;black_overlay&quot;&gt;&lt;/div&gt;
+&lt;img class=&quot;illustration&quot; alt=&quot;reveil&quot; src=&quot;media/pictures/illustrations/reveil.png&quot;/&gt;
+&lt;&lt;audio &quot;snoring&quot; loop play volume 0.5 fadein&gt;&gt;
+&lt;&lt;script&gt;&gt;
+setTimeout(function() {
+	$(&quot;.black_overlay&quot;)
+	.animate({opacity: 0.5}, 1000)
+	.animate({opacity: 1}, 1000)
+	.delay(2000)
+	.animate({opacity: 0.3}, 1000)
+	.animate({opacity: 1}, 1000)
+	.delay(2000)
+	.animate({opacity: 0}, 1000, &quot;swing&quot;, function() {
+		&lt;&lt;audio &quot;snoring&quot; stop&gt;&gt;
+	});
+}, 5000);
+&lt;&lt;/script&gt;&gt;
 
 Introduction narrative
-
 
 Vous avez faim mais vous vous souvenez que vous aviez laissé une potion mijoter
 
 [[Aller voir la potion-&gt;marmite]]
-[[Commencer par aller chercher quelque chose à manger-&gt;placard]]
-
-
-
-</tw-passagedata>
+[[Commencer par aller chercher quelque chose à manger-&gt;placard]]</tw-passagedata>
 <tw-passagedata pid="15" name="1er_ingrédient" tags="" position="335,1296">La potion de liquéfaction doit être neutralisé en annulant son acidité et sa liquidité :
 
 Ajouter :
@@ -628,6 +649,10 @@ Alors qu&#39;elle tombe dans le liquide, bouillonant, une réaction inatentu se 
 &lt;&lt;set $scoutperduvu to false&gt;&gt;&lt;!--le scout perdu a été rencontré?--&gt;
 
 &lt;&lt;set $scoutaide to false&gt;&gt;&lt;!--vous avez aidé le groupe de scout?--&gt;
+
+&lt;!--Bruitages--&gt;
+
+&lt;&lt;cacheaudio &quot;snoring&quot; &quot;media/audio/snoring.mp3&quot;&gt;&gt;
 
 [[lancer-&gt;menu]]</tw-passagedata>
 <tw-passagedata pid="27" name="Phase2" tags="" position="1181,1260">&lt;!-- Retour dans le passé =&gt; flash pour marquer une ellipse temporelle--&gt;
