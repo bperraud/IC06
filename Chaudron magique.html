@@ -331,7 +331,7 @@ Arrivé à un embranchement, vous voyez deux chemins qui s&#39;offrent à vous :
 - un chemin sombre, où vous ne distinguez même pas les branches des arbres à la lisière
 - un chemin indiqué par un panneau affichant &quot;racourci&quot; mais qui vous semble glissant et escarpé
 [[aller vers le chemin sombre-&gt;chemin sombre]]
-[[Tenter le raccourcit-&gt;raccourci]]</tw-passagedata>
+[[Tenter le raccourci-&gt;raccourci]]</tw-passagedata>
 <tw-passagedata pid="9" name="Dialogue scouts" tags="" position="2501,1430">&lt;&lt;if $champignon eq true&gt;&gt;
 &lt;!-- texte multicolor--&gt;
 - Bonjour l&#39;ami, dis moi tu dois être perdu non?
@@ -352,22 +352,19 @@ Arrivé à un embranchement, vous voyez deux chemins qui s&#39;offrent à vous :
 	&lt;&lt;else&gt;&gt;--&gt;
 	&lt;&lt;/if&gt;&gt;
 [[Retourner sur la route-&gt;Embranchement]] 
-&lt;&lt;/if&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="10" name="chemin sombre" tags="" position="2778,1010">La visibilité est faible
+&lt;&lt;/if&gt;&gt;
+</tw-passagedata>
+<tw-passagedata pid="10" name="chemin sombre" tags="" position="2778,1010">Vous avancez alors en direction du chemin sombre où la visibilité est faible.
 &lt;&lt;if $alumette eq true&gt;&gt;
 [[Allumer une alumette-&gt;pièce or]]
-
-
-&lt;!--
-50% de chance de trouver une pièce d&#39;or -&gt;pièce or]] 
---&gt;
-
+&lt;!--50% de chance de trouver une pièce d&#39;or -&gt;pièce or]] --&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $lampe eq true&gt;&gt;
-[[sortir la lampe de poche-&gt;pièce or]]
-&lt;!--
-90% de chance de trouver une pièce d&#39;or -&gt;pièce or]]
---&gt;
+[[Sortir la lampe de poche-&gt;pièce or]]
+&lt;!--90% de chance de trouver une pièce d&#39;or -&gt;pièce or]]--&gt;
+&lt;&lt;else&gt;&gt;
+	&lt;&lt;if $alumette eq false&gt;&gt;
+N&#39;ayant plus de moyens d&#39;éclairer la route, vous vous enffoncez dans l&#39;obscurité.
 &lt;&lt;/if&gt;&gt;
 
 [[continuer dans la pénombre-&gt;antre du dragon]]
@@ -397,39 +394,53 @@ si bave de crapaud 20% de chance de réussite
  	&lt;&lt;/if&gt;&gt;
  
 &lt;&lt;/if&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="12" name="pièce or" tags="" position="2947,861">[[Prendre la pièce-&gt;antre du dragon]]
-[[Laisser la pièce-&gt;antre du dragon]]</tw-passagedata>
+<tw-passagedata pid="12" name="pièce or" tags="" position="2947,860">Eclairé, votre progression est facilitée et vous avancez plus serainenement malgré les bruits d&#39;animaux environnant. C&#39;est alors que vous voyez un objet brillant sur le sol. Après l&#39;avoir nétoyé de la terre qui le recouvrait, vous constatez qu&#39;il s&#39;agit d&#39;une pièce en or...
+[[Prendre la pièce-&gt;antre du dragon]]&lt;&lt;set $pieceor to true&gt;&gt;
+[[Reposer la pièce-&gt;antre du dragon]]</tw-passagedata>
 <tw-passagedata pid="13" name="antre du dragon" tags="" position="3125,1006">&lt;!-- bruit moto
 50% que l&#39;effet du sort de métamorphose ne fasse plus effet set $dragon to  dragon--&gt;
 
 autres options s&#39;il est encore sous forme d&#39;une moto--&gt;
+Alors que vous sortez de la pénombre du sombre chemin, vous arrivez devant une sorte de grotte contre laquelle est appuyée une moto. Au pied de la roue arrière, vous pouvez voir qu&#39;un chien soulage sa vessie.
 &lt;&lt;if $dragon eq dragon&gt;&gt;
+C&#39;est alors que la moto se met à vibrer et à se déformer pour prendre des dimensions gigantesques et laisser place à une créature semblable à un dragon. D&#39;un coup, il gobe le pauvre chien 
+- Ah la sale bête ! Enfin je t&#39;ai eu, depuis le temps ! ça t&#39;apprendra à venir tout les jours pour te soulager sur moi ! 
+Grouaahh que ça fait du bien de s&#39;étirer.
 
-discour
+
 
 
 
 &lt;&lt;if $pieceor eq true&gt;&gt;
 &lt;!-- bruit dragon qui sent qqch--&gt;
-Tu as volé ma piéce
+- C&#39;est quoi cette odeur, mes souvenir sont lointaint mais cette odeur m&#39;est agréable... N&#39;aurais tu pas de l&#39;or sur toi qui aurait appartenu à mon trésor?
 
 [[Mentir-&gt;Discussiondragon]]15% de réussite 50% avec le livre
 [[Donner pièce-&gt;Discussiondragon]] set $pieceor to false
 [[Fuir-&gt;Portesecrete]]
 
-&lt;!-- 
+&lt;!--lié à &quot;fuir&quot;--&gt; 
 	&lt;&lt;if $gateau eq true&gt;&gt;
-vous courez sentant le dragon se rapprocher, vous vous dites que votre vie ne vallait pas une pièce d&#39;or. Alors que vous sentez que votre fin est arrivée, vous n&#39;entendez plus la course lourde du dragon. Ne comprenant pas, vous vous retournez pour apercevoir que derrière vous se trouve un mouton qui broutte paisiblement l&#39;herbe qui se trouve le long du chemin.
-
+Vous courez et, le dragon se mettant à votre poursuite, vous vous dites que votre vie ne vallait peut-être pas une pièce d&#39;or en fin de compte. Alors que vous sentez que votre fin approche, vous n&#39;entendez plus la course lourde du dragon. Ne comprenant pas, vous vous retournez pour apercevoir que derrière vous se trouve un mouton qui broutte paisiblement l&#39;herbe le long du chemin.
+&lt;!-- bruit mouton--&gt;
 	&lt;&lt;else&gt;&gt;
-30% de réussite
+&lt;!--30% de réussite--&gt;
+Profitant d&#39;un moment d&#39;inatention de la part du dragon, vous fuyez en courant aussi vite que possible. Le dragon se mettant à votre poursuite et se raprochant de plus en plus, vous sentez la fin arriver et c&#39;est alors que vous glissez sur une pierre, vous faisant alors tomber dans le ravin bordant le chemin.
+Tant bien que mal, vous vous en sortez sans blessures et vous entendez alors le dragon proférer ses dernières mences :
+-Tu as de la chance que c&#39;est plus de mon âge de voler à la poursuite de voleur de ton espèce mais soit sûr que la prochaine fois que tu passeras, je me chargerai de toi...
+&lt;!--70% d&#39;échec--&gt;
+Vous tentez vorte chance face au dragon en espérant que ces années resté sans bouger l&#39;empêcheront de vous rattraper. Vous courez aussi vite que possible pour lui échapper mais le bruit lourd de ses pas se rapproche rapidement. Sachant que c&#39;est la fin pour vous, vous regrettez d&#39;avoir risqué votre vie pour une simple pièce et c&#39;est alors que la machoire du dragon se referme sur vous...
+[[badend]] 
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
 [[repartir-&gt;Portesecrete]]
 &lt;&lt;/if&gt;&gt;
 --&gt;
 </tw-passagedata>
-<tw-passagedata pid="14" name="Début" tags="" position="18,1267">Introduction narrative
+<tw-passagedata pid="14" name="Début" tags="" position="18,1267">
+
+
+Introduction narrative
 
 
 Vous avez faim mais vous vous souvenez que vous aviez laissé une potion mijoter
