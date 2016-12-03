@@ -362,13 +362,13 @@ Arrivé à un embranchement, vous voyez deux chemins qui s&#39;offrent à vous :
 - Encore un éléphant qui se promène dans le bois je ne savais pas qu&#39;il y en avait dans le coin
 [[Les laisser dans leur monde-&gt;Embranchement]] 
 &lt;&lt;else&gt;&gt;
--Eh bonjour ! c&#39;est rare de rencontrer des gens par ici. Ca fait des semaines que nous examinons cette forêt et à par quelques animaux, nous ne voyons rien d&#39;intéressant.
+- Eh bonjour ! c&#39;est rare de rencontrer des gens par ici. Ca fait des semaines que nous examinons cette forêt et à par quelques animaux, nous ne voyons rien d&#39;intéressant.
 - Encore un citadin qui se perd dans le bois
 - DItes moi,je galère un peu à attraper cette pomme, vous ne pourrez pas m&#39;aider à l&#39;attraper ?
 [[Aider]]&lt;&lt;set $scoutaide to true&gt;&gt;
 [[Refuser]]
 &lt;!-- ou alors attraper papillon qui bouge à l&#39;écran(GIF)--&gt;
-	&lt;&lt;if $scoutperduvu eq true
+	&lt;&lt;if $scoutperduvu eq true&gt;&gt;
 &lt;!--[[Mentionner le scout perdu]]
 - roh toujours la tête en l&#39;air celui-là heureusement qu&#39;on lui a mis une pancarte
 - C&#39;est qu&#39;il nous mettra en retard avec ses bêtises et dire qu&#39;on doit retourner le chercher
@@ -376,8 +376,7 @@ Arrivé à un embranchement, vous voyez deux chemins qui s&#39;offrent à vous :
 	&lt;&lt;else&gt;&gt;--&gt;
 	&lt;&lt;/if&gt;&gt;
 [[Retourner sur la route-&gt;Embranchement]] 
-&lt;&lt;/if&gt;&gt;
-</tw-passagedata>
+&lt;&lt;/if&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="10" name="chemin sombre" tags="" position="2778,1010">La visibilité est faible
 &lt;&lt;if $alumette eq true&gt;&gt;
 [[Allumer une alumette-&gt;pièce or]]
@@ -480,7 +479,6 @@ Il reste encore l&#39;effet acide à réduire.
 
 Ajouter :
 &lt;&lt;if $livre eq true&gt;&gt;
-&lt;&lt;if $poussièredefeu eq true&gt;&gt;
 [[Tabac-&gt;tabac]]
 [[Feuilles d&#39;orties-&gt;orties]]
 [[Bave de crapeau-&gt;bave]]
