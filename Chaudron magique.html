@@ -226,6 +226,7 @@ a.internalLink:hover, a.externalLink:hover {
 }
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 /**
@@ -298,6 +299,7 @@ macros["goto"]=macros["timedgoto"]={
 		}
 	}
 };
+
 
 
 
@@ -535,21 +537,12 @@ Ajouter :
 [[Bave de crapeau-&gt;bave]]
 [[Os-&gt;os]]
 &lt;&lt;/if&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="19" name="tabac" tags="" position="941,986">&lt;&lt;set $tabac to true&gt;&gt;
+<tw-passagedata pid="19" name="tabac" tags="" position="940,984">&lt;&lt;set $tabac to true&gt;&gt;
 &lt;!-- les nains de jardin tousseront en pestant contre le sorcier et ses expériences--&gt;
-&lt;&lt;if $champignon eq true&gt;&gt;
-Afin d&#39;épaissir la potion, vous jeter dans la potion votre restant de tabac, sans toutefois en avoir gardé une poignée pour votre pipe. 
-&lt;&lt;else&gt;&gt;
-
-	&lt;&lt;if $poussièredefeu eq true&gt;&gt;
-Vous décidez d&#39;ajouter le tabac à la mixture afin que celle-ci n&#39;aie plus d&#39;effet acide mais une fumée importante apparaît suite à la réaction avec la poussière de feu.
-	&lt;&lt;else&gt;&gt;
-Vous décidez d&#39;ajouter le tabac à la mixture afin que celle-ci n&#39;aie plus d&#39;effet acide mais une odeur importante de tabac froid se fait ressentir.
-	&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-[[Finir-&gt;Phase2]] </tw-passagedata>
+Devant l&#39;urgence de la situation, vous choisissez de sacrifier votre prestigieux tabac, importé tout droit d&#39;un fameux petit village dont les producteurs maîtrisent les techniques ancestrales de fabrication, depuis des millénaires. C&#39;est donc à contrecoeur que vous jetez dans la mixture votre onéreux tabac, afin d&#39;épaissir la potion, tout en gardant une quantité raisonnable pour votre pipe.
+ Le tabac dissout dans la potion, le chaudron semble alors retrouver sa quiétude habituelle. Fatigué par les événements, vous décidez de vous allongez sur votre lit quelques instants, le temps de récupérer.
+Et c&#39;est lentement que vos yeux se ferment, et que vous sombrez dans les bras de Morphée...
+[[Poursuivre l&#39;histoire-&gt;Phase2]] </tw-passagedata>
 <tw-passagedata pid="20" name="orties" tags="" position="938,1258">&lt;&lt;set $orties to true&gt;&gt;
 &lt;!-- les nains de jardin se gratteront en pestant contre le sorcier et ses expériences--&gt;
 Décidé à épaissir la potion instable, et ne trouvant pas vos gants, vous décidez de prendre la poignée d&#39;orties à pleines mains pour l&#39;incorporer à la mixture.
