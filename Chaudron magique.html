@@ -586,19 +586,35 @@ Note : Bruit d&#39;ébullition
 Le ventre vide, vous devez maintenant vous débrouiller pour stabiliser rapidement la potion avant que cela ne dégénère d&#39;avantage...
 
 [[Stabiliser-&gt;1er_ingrédient]]</tw-passagedata>
-<tw-passagedata pid="24" name="os" tags="" position="935,1391">&lt;&lt;set $os to treu&gt;&gt;
+<tw-passagedata pid="24" name="os" tags="" position="935,1391">&lt;&lt;set $os to true&gt;&gt;
 &lt;!-- fera apparaître des fantômes d&#39;animaux dans la clairière--&gt;
 Prenant les os sur la table, obtenus par vos différents repas, du lapin à la moutarde, du faisant farci, et d&#39;autres mets appétissants. C&#39;est alors que vous vous remémorez les cours de votre enfance, où votre professeur vous avait fait recopier 100 fois les propriétés épaississante et anti-acidifiante des os. Secouant la tête par dépit, vous ajoutez cet ingrédient à la potion. La potion semblant se calmer et fatigué par les événements, vous décidez de vous allongez sur votre lit quelques instants, le temps de récupérer un peu.
 Et c&#39;est lentement que vos yeux se ferment, et que vous sombrez dans les bras de Morphée...
 [[Poursuivre l&#39;histoire-&gt;Phase2]] </tw-passagedata>
 <tw-passagedata pid="25" name="corne" tags="" position="933,1541">&lt;&lt;set $corne to true&gt;&gt;
 &lt;!-- fera intervenir un rhinocéros dans le procès--&gt;
-A contre-coeur, vous ajoutez la corne de licorne, qui vous avait coûté un bras, afin que ses propriétés magiques stabilise complétement la mixture.
+A contre-coeur, vous ajoutez la corne de licorne, qui vous avait coûté un bras une dizaine d&#39;années auparavant auprès d&#39;un marchant ambulant garantissant des propriétés exceptionnelles. Alors qu&#39;elle tombe dans le liquide bouillonant, vous attendant à ce que la magie de la corne stabilise complétement la mixture, une réaction inatentu se produit. 
 
-Alors qu&#39;elle tombe dans le liquide, bouillonant, une réaction inatentu se produit et après s&#39;être stabilisée, la potion 
+&lt;!--tempo pour que le joueur lance un sort de protection--&gt;
 
+&lt;span id=&quot;sortillege&quot;&gt;
+		&lt;&lt;click &quot;Lancer un sortillège de protection&quot;&gt;&gt;
+			&lt;&lt;replace &quot;#sortillege&quot;&gt;&gt;
+				Sentant le danger arriver, vous lancer un sort de protection autour du chaudron. Une fraction de seconde après, vous pouvez le voir exploser....
 
-[[Finir-&gt;Phase2]] </tw-passagedata>
+&lt;!--explosion et image noire--&gt;
+[[Poursuivre l&#39;histoire-&gt;Phase2]]
+			&lt;&lt;/replace&gt;&gt;
+		&lt;&lt;/click&gt;&gt;
+	&lt;/span&gt;
+
+&lt;!-- si tempo écoulé--&gt;
+
+N&#39;ayant pas eu le réflexe de lancer un sort de protection, vous voyez le chaudron exploser...
+
+&lt;!--explosion et image noire--&gt;
+
+[[Poursuivre l&#39;histoire-&gt;Phase2]] </tw-passagedata>
 <tw-passagedata pid="26" name="StoryInit" tags="" position="20,996">&lt;!--ingrédients--&gt;
 &lt;&lt;set $livre to false&gt;&gt;&lt;!--apparition annimaux savants dans la clairière--&gt;
 
