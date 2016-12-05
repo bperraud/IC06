@@ -62,7 +62,7 @@ if(e&&1===a.nodeType)while(c=e[d++])a.removeAttribute(c)}}),hb={set:function(a,b
 /*
  * jQuery throttle / debounce - v1.1 - 3/7/2010
  * http://benalman.com/projects/jquery-throttle-debounce-plugin/
- * 
+ *
  * Copyright (c) 2010 "Cowboy" Ben Alman
  * Dual licensed under the MIT and GPL licenses.
  * http://benalman.com/about/license/
@@ -138,7 +138,7 @@ body {
 #passages {
 	border: 2px solid #212121;
 	box-shadow: 0 0 20px 6px #545454;
-	
+
 	background-image: url(media/pictures/paperborder3.png), url(media/pictures/paperborder2.png), url(media/pictures/paperborder4.png), url(media/pictures/paperborder5.png), url(media/pictures/pattern.jpg);
 	background-position: top, bottom, left, right, center;
 	background-size: 100% auto, 100% auto, auto 100%, auto 100%, auto;
@@ -155,7 +155,7 @@ body {
 	margin-top: 5%;
   margin-bottom: 5%;
   padding: 0px;
-	
+
 	font-size: 24px;
 }
 
@@ -164,6 +164,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 	border: 2px solid rgba(64, 64, 64, 0.8);
+  max-width: 100%;
 }
 
 .passage {
@@ -176,7 +177,7 @@ body {
   color: black;
   font-size: .9em;
   text-align:justify;
-	
+
 	position: relative;
 }
 
@@ -244,8 +245,8 @@ macros.wait = {
 };
 
 try {
-  version.extensions['macrodemoMacro'] = { 
-    major:1, minor:0, revision:0 
+  version.extensions['macrodemoMacro'] = {
+    major:1, minor:0, revision:0
   };
   macros['macrodemo'] = {
     handler: function(place, macroName, params, parser) {
@@ -254,7 +255,7 @@ try {
     init: function() { },
   };
 } catch(e) {
-  throwError(place,"macrodemo Setup Error: "+e.message); 
+  throwError(place,"macrodemo Setup Error: "+e.message);
 }
 
 
@@ -289,7 +290,7 @@ macros["goto"]=macros["timedgoto"]={
 		if(d+""){
 			if(this.timer){
 			clearTimeout(this.timer);
-			}	
+			}
 			s=state.active.title;
 			this.timer=setTimeout(function(){
 				if(state.active.title==s){
@@ -339,7 +340,7 @@ Le bruit provient d&#39;un chemin discret sur votre droite. Vous rappelant les d
 </tw-passagedata>
 <tw-passagedata pid="4" name="porter le bâton" tags="" position="1508,1560">&lt;&lt;set $allumette to false&gt;&gt;
 Vous décider alors de porter vôtre bâton hors de l&#39;eau. Une fois de l&#39;autre côté de la rive, vous vous retrouvez humide, comme les amulettes que vous avez oublié dans votre sac. Une fois séché au soleil, par ce temps agréable, vous reprenez la route.
-[[suite-&gt;bruit]] 
+[[suite-&gt;bruit]]
 </tw-passagedata>
 <tw-passagedata pid="5" name="Groupe de scout" tags="" position="2370,1270">Sur votre chemin, vous rencontrez un groupe de quatre scouts affairés à étudier la nature. L&#39;un regarde les champignons le long du sentier, un autre les papillons, le troisième ramasse des feuilles et le dernier regarde les nuages...
 &lt;&lt;if $champignon eq true&gt;&gt; Une drôle de lueur émane de leurs yeux et leurs gestes semblent mous.&lt;&lt;/if&gt;&gt;
@@ -351,7 +352,7 @@ Vous décider alors de porter vôtre bâton hors de l&#39;eau. Une fois de l&#39
 [[Décliner la proposition et s&#39;en aller-&gt;Groupe de scout]] </tw-passagedata>
 <tw-passagedata pid="7" name="Dicussion" tags="" position="2297,1729">Vous vous lancez donc dans un débat face au lapin qui ne semble pas à court d&#39;arguments. Le temps défillant, personne ne semble toutefois décidé à admettre le point de vue de l&#39;autre.
 [[badend]] </tw-passagedata>
-<tw-passagedata pid="8" name="Embranchement" tags="" position="2676,1266">Vous abandonner la jeunesse à la rêverie pour continuer votre chemin. 
+<tw-passagedata pid="8" name="Embranchement" tags="" position="2676,1266">Vous abandonner la jeunesse à la rêverie pour continuer votre chemin.
 Arrivé à un embranchement, vous voyez deux chemins qui s&#39;offrent à vous :
 - un chemin sombre, où vous ne distinguez même pas les branches des arbres à la lisière
 - un chemin indiqué par un panneau affichant &quot;racourci&quot; mais qui vous semble glissant et escarpé
@@ -361,7 +362,7 @@ Arrivé à un embranchement, vous voyez deux chemins qui s&#39;offrent à vous :
 &lt;!-- texte multicolor--&gt;
 - Bonjour l&#39;ami, dis moi tu dois être perdu non?
 - Encore un éléphant qui se promène dans le bois je ne savais pas qu&#39;il y en avait dans le coin
-[[Les laisser dans leur monde-&gt;Embranchement]] 
+[[Les laisser dans leur monde-&gt;Embranchement]]
 &lt;&lt;else&gt;&gt;
 - Eh bonjour ! c&#39;est rare de rencontrer des gens par ici. Ca fait des semaines que nous examinons cette forêt et à par quelques animaux, nous ne voyons rien d&#39;intéressant.
 - Encore un citadin qui se perd dans le bois
@@ -376,7 +377,7 @@ Arrivé à un embranchement, vous voyez deux chemins qui s&#39;offrent à vous :
 -En tout cas merci et bonne route &lt;&lt;set $scoutaide to true&gt;&gt;
 	&lt;&lt;else&gt;&gt;--&gt;
 	&lt;&lt;/if&gt;&gt;
-[[Retourner sur la route-&gt;Embranchement]] 
+[[Retourner sur la route-&gt;Embranchement]]
 &lt;&lt;/if&gt;&gt;
 </tw-passagedata>
 <tw-passagedata pid="10" name="chemin sombre" tags="" position="2778,1010">Vous avancez alors en direction du chemin sombre où la visibilité est faible.
@@ -396,7 +397,7 @@ N&#39;ayant plus de moyens d&#39;éclairer la route, vous vous enffoncez dans l&
 </tw-passagedata>
 <tw-passagedata pid="11" name="raccourci" tags="" position="3013,1263">&lt;&lt;if $baton eq true&gt;&gt;
 Souhaitant gagner du temps, vous emprûntez le raccourcit et aidé de votre bâton vous avancez sans glisser et sans chuter dans le ravin.
-[[Poursuivre-&gt;cabane]] 
+[[Poursuivre-&gt;cabane]]
 &lt;&lt;else&gt;&gt;
 	&lt;&lt;if $couteau eq true&gt;&gt;
 N&#39;ayant plus de bâton, pour vous aider dans votre ascension, vous avez la possibilité d&#39;utiliser les arbres à disposition pour en fabriquer un tout nouveau.
@@ -417,7 +418,7 @@ sinon -&gt;chute
 si bave de crapaud 20% de chance de réussite
  --&gt;
  	&lt;&lt;/if&gt;&gt;
- 
+
 &lt;&lt;/if&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="12" name="pièce or" tags="" position="2947,860">Eclairé, votre progression est facilitée et vous avancez plus serainenement malgré les bruits d&#39;animaux environnant. C&#39;est alors que vous voyez un objet brillant sur le sol. Après l&#39;avoir nétoyé de la terre qui le recouvrait, vous constatez qu&#39;il s&#39;agit d&#39;une pièce en or...
 [[Prendre la pièce-&gt;antre du dragon]]&lt;&lt;set $pieceor to true&gt;&gt;
@@ -428,8 +429,8 @@ si bave de crapaud 20% de chance de réussite
 autres options s&#39;il est encore sous forme d&#39;une moto--&gt;
 Alors que vous sortez de la pénombre du sombre chemin, vous arrivez devant une sorte de grotte contre laquelle est appuyée une moto. Au pied de la roue arrière, vous pouvez voir qu&#39;un chien soulage sa vessie.
 &lt;&lt;if $dragon eq dragon&gt;&gt;
-C&#39;est alors que la moto se met à vibrer et à se déformer pour prendre des dimensions gigantesques et laisser place à une créature semblable à un dragon. D&#39;un coup, il gobe le pauvre chien 
-- Ah la sale bête ! Enfin je t&#39;ai eu, depuis le temps ! ça t&#39;apprendra à venir tout les jours pour te soulager sur moi ! 
+C&#39;est alors que la moto se met à vibrer et à se déformer pour prendre des dimensions gigantesques et laisser place à une créature semblable à un dragon. D&#39;un coup, il gobe le pauvre chien
+- Ah la sale bête ! Enfin je t&#39;ai eu, depuis le temps ! ça t&#39;apprendra à venir tout les jours pour te soulager sur moi !
 Grouaahh que ça fait du bien de s&#39;étirer.
 
 
@@ -444,7 +445,7 @@ Grouaahh que ça fait du bien de s&#39;étirer.
 [[Donner pièce-&gt;Discussiondragon]] set $pieceor to false
 [[Fuir-&gt;Portesecrete]]
 
-&lt;!--lié à &quot;fuir&quot;--&gt; 
+&lt;!--lié à &quot;fuir&quot;--&gt;
 	&lt;&lt;if $gateau eq true&gt;&gt;
 Vous courez et, le dragon se mettant à votre poursuite, vous vous dites que votre vie ne vallait peut-être pas une pièce d&#39;or en fin de compte. Alors que vous sentez que votre fin approche, vous n&#39;entendez plus la course lourde du dragon. Ne comprenant pas, vous vous retournez pour apercevoir que derrière vous se trouve un mouton qui broutte paisiblement l&#39;herbe le long du chemin.
 &lt;!-- bruit mouton--&gt;
@@ -455,7 +456,7 @@ Tant bien que mal, vous vous en sortez sans blessures et vous entendez alors le 
 -Tu as de la chance que c&#39;est plus de mon âge de voler à la poursuite de voleur de ton espèce mais soit sûr que la prochaine fois que tu passeras, je me chargerai de toi...
 &lt;!--70% d&#39;échec--&gt;
 Vous tentez vorte chance face au dragon en espérant que ces années resté sans bouger l&#39;empêcheront de vous rattraper. Vous courez aussi vite que possible pour lui échapper mais le bruit lourd de ses pas se rapproche rapidement. Sachant que c&#39;est la fin pour vous, vous regrettez d&#39;avoir risqué votre vie pour une simple pièce et c&#39;est alors que la machoire du dragon se referme sur vous...
-[[badend]] 
+[[badend]]
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
 [[repartir-&gt;Portesecrete]]
@@ -593,7 +594,7 @@ Et c&#39;est lentement que vos yeux se ferment, et que vous sombrez dans les bra
 [[Poursuivre l&#39;histoire-&gt;Phase2]] </tw-passagedata>
 <tw-passagedata pid="25" name="corne" tags="" position="933,1541">&lt;&lt;set $corne to true&gt;&gt;
 &lt;!-- fera intervenir un rhinocéros dans le procès--&gt;
-A contre-coeur, vous ajoutez la corne de licorne, qui vous avait coûté un bras une dizaine d&#39;années auparavant auprès d&#39;un marchant ambulant garantissant des propriétés exceptionnelles. Alors qu&#39;elle tombe dans le liquide bouillonant, vous attendant à ce que la magie de la corne stabilise complétement la mixture, une réaction inatentu se produit. 
+A contre-coeur, vous ajoutez la corne de licorne, qui vous avait coûté un bras une dizaine d&#39;années auparavant auprès d&#39;un marchant ambulant garantissant des propriétés exceptionnelles. Alors qu&#39;elle tombe dans le liquide bouillonant, vous attendant à ce que la magie de la corne stabilise complétement la mixture, une réaction inatentu se produit.
 
 &lt;!--tempo pour que le joueur lance un sort de protection--&gt;
 
@@ -684,7 +685,7 @@ discour avec les nains de jardins
 
 discour de &quot;procès&quot;</tw-passagedata>
 <tw-passagedata pid="30" name="retourdiscret" tags="" position="2073,1446">N&#39;écoutant que votre courage, vous revenez sur vos pas, sans que les étranges créatures ne s&#39;en rende compte.
-[[Continuer-&gt;Groupe de scout]] 
+[[Continuer-&gt;Groupe de scout]]
 </tw-passagedata>
 <tw-passagedata pid="31" name="retourfuite" tags="" position="2071,1595">Perdant tout courage, vous prenez vos jambes à votre cou et vous partez sans vous retourner. Une fois à bonne distance, vous reprenez votre souffle ...
 &lt;--!Dans votre fuite, vous avez perdu ...
@@ -692,7 +693,7 @@ lampe (tombée du sac)	&lt;&lt;set $lampe to false&gt;&gt;
 sac (pris dans une branche) &lt;&lt;set $allumette to false&gt;&gt; &lt;&lt;set $lampe to false&gt;&gt;
 Couteau (tombé de la poche) &lt;&lt;set $couteau to false&gt;&gt;
 --&gt;
-[[Poursuivre votre chemin-&gt;Groupe de scout]] 
+[[Poursuivre votre chemin-&gt;Groupe de scout]]
 </tw-passagedata>
 <tw-passagedata pid="32" name="Passer au travers de la glace" tags="" position="1486,1006">Alors que vous traversez cette rivière gelé, vous entendez des fisures se propager à chacun de vos pas. Alors que vous regrettez d&#39;avoir gardé autant de poids sur vous, la glace se brise sous vos pieds, vous retrouvant alors dans une eau gelée dont vous devez vite vous extirper avant de mourir gelé...
 &lt;--! cliquer plusieurs fois pour avancer avec temps limité et fondu glacial (bad end)--&gt;
@@ -718,22 +719,22 @@ Répondre à une question pour obtenir le livre
 </tw-passagedata>
 <tw-passagedata pid="35" name="Clairrière" tags="" position="1881,1385">&lt;&lt;if $livre eq true&gt;&gt;
 Alors que vous avancer dans le sentier, les bruits deviennent de plus en plus clair et vous devinez une conversation. Alors que vous alliez vous manifester, vour voyez des animaux parlant entre-eux. Absorbé par leur conversation, ils ne semblent pas vous avoir vu...
-[[Se manifester-&gt;Manifestation]] 
-[[Repartir discrètement-&gt;retourdiscret]] 
+[[Se manifester-&gt;Manifestation]]
+[[Repartir discrètement-&gt;retourdiscret]]
 [[Fuir-&gt;retourfuite]]
 &lt;&lt;else&gt;&gt;
 	&lt;&lt;if $os eq true&gt;&gt;
 Alors que vous avancer dans le sentier, les bruits restent incompréhensibles et semble provenir d&#39;outre-tombe. C&#39;est alors que, du coin de l&#39;oeil, vous apercevez des animaux à l&#39;aspect fantomatique...
-[[Repartir discrètement-&gt;retourdiscret]] 
+[[Repartir discrètement-&gt;retourdiscret]]
 [[Fuir-&gt;retourfuite]]
 	&lt;&lt;else&gt;&gt;
 &lt;&lt;set $tresor to true&gt;&gt;
 Empruntant le sentier, vous débouchez sur une paisible clairrière délimitée par une haute et épaisse haie. Après l&#39;avoir contemplée, alors que vous repartiez, vous apercevez un objet brillant dans l&#39;herbe. Vous découvrez alors une ancienne chevalière en or de très belle facture, portant comme sceau un chevalier. Content de cette trouvaille, vous repartez sur vos pas pour reprendre votre route...
-[[Continuer-&gt;Groupe de scout]] 
+[[Continuer-&gt;Groupe de scout]]
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="36" name="badend" tags="" position="4056,1775">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
-<tw-passagedata pid="37" name="Portesecrete" tags="" position="3416,1125">Alors que vous avancer paisiblement, 
+<tw-passagedata pid="37" name="Portesecrete" tags="" position="3416,1125">Alors que vous avancer paisiblement,
 mur composés de 11 étranges symboles composé d&#39;or (des chevaliers en armure)
 il doit y en manquer un car un trou
 Mettre la chevalière das le trou
@@ -768,10 +769,10 @@ Blabla
 			&lt;&lt;replace &quot;#qui&quot;&gt;&gt;
 				Les dernières brumes du sommeil commençant à s&#39;évaporer, vous vous rappelez que vous êtes un magicien (et un bon ! ajoutez-vous alors que les mots vous reviennent) vivant reclus dans la forêt depuis qu&#39;une malencontreuse formule magique a semé la zizanie dans votre précédente commune de résidence, bien des années plus tôt, et que vos concitoyens en ont eu assez de ces remue-ménages dont vous avez le secret.
 		A ce souvenir vous ne pouvez réprimer un sourire de jubilation et un haussement d&#39;épaules. Vous êtes aussi bien ici à vrai dire, et la tranquilité est une composante importante de tout sortilège réussi. Vous hochez la tête, manifestement qu&#39;à moitié convaincu par vos propres arguments.
-		
+
 				Vous vous rendez compte qu&#39;un gargouillement se fait entendre de manière continue dans votre cabane et vous décidez d&#39;ouvrir vos yeux, tant bien que mal, pour en identifier l&#39;origine. C&#39;est votre chaudron. Il bouillonne apparemment tranquillement (enfin, il y a quand même une odeur bizarre) au-dessus d&#39;un feu que vous avez allumé la veille. Vous vous demandez où en est la cuisson de votre décoction. C&#39;est une potion extrêmement délicate à préparer à laquelle vous vous êtes attaqué, mais il vous semble que rien ne vous est impossible.
 				Alors que vous commencez à remuer sur votre couchette, votre ventre se rappelle à vous avec un gros gargouilli. La faim vous tenaille. Par quoi commencer ?
-				
+
 				[[Aller chercher quelque chose à grignoter-&gt;Manger!]]
 				[[Aller jeter un oeil à votre potion-&gt;Inspection du Chaudron]]
 			&lt;&lt;/replace&gt;&gt;
@@ -787,15 +788,15 @@ Note : Bruit d&#39;ébullition
 		&lt;&lt;click &quot;Mais...&quot;&gt;&gt;
 			&lt;&lt;replace &quot;#rebonds&quot;&gt;&gt;
 				Il semble cependant que la dégradation du muffin l&#39;a rendu particulièrement caoutchouteux et le voilà qui rebondit contre le plancher, &lt;span id=&quot;r1&quot;&gt;&lt;&lt;click &quot;propulsé à toute vitesse vers votre bibliothèque...&quot;&gt;&gt;&lt;/span&gt;&lt;&lt;replace &quot;#r1&quot;&gt;&gt;propulsé à toute vitesse vers votre bibliothèque...&lt;&lt;/replace&gt;&gt;
-				
+
 					&lt;&lt;append &quot;#rebonds&quot;&gt;&gt;
 					...Laquelle est dangereusement ébranlée par le choc avec le muffin, et vous avez l&#39;espace d&#39;un instant une vision d&#39;horreur de la lourde bibliothèque s&#39;effondrant sur le sol. Elle finit toutefois par se stabiliser tandis que le muffin, fort d&#39;un nouveau rebond, part plus vite encore à travers la pièce. Atterré par la propension tout à fait magique de ce muffin à défier les lois de la nature en gagnant en énergie cinétique à chaque heurt, &lt;span id=&quot;r2&quot;&gt;&lt;&lt;click &quot;vous assistez impuissant au parcours rebondissant du muffin...&quot;&gt;&gt;&lt;/span&gt;&lt;&lt;replace &quot;#r2&quot;&gt;&gt;vous assistez impuissant au parcours rebondissant du muffin...&lt;&lt;/replace&gt;&gt;
-					
+
 						&lt;&lt;append &quot;#rebonds&quot;&gt;&gt;
 							... Qui va à toute vitesse d&#39;une poutre au plancher, puis du plancher à la poignée de votre porte d&#39;entrée, puis de la poignée à un des pieds de votre table qui émet un craquement inquiétant, etc. Vous vous abritez quant à vous sous votre chapeau de magicien, terrifié à l&#39;idée d&#39;être touché par le projectile. Mais par chance (ou peut-être par terrible malchance ? Seul l&#39;avenir le dira...) le muffin termine finalement sa folle envolée par un magistral &quot;PLOUF!&quot; dans le chaudron.
 							Alors que vous commencez à pousser un soupir de soulagement, la marmite, elle, ne semble pas avoir apprécié l&#39;offrande périmée et se met à trembler de manière menaçante sur son support, les bouillonnements se faisant de plus en plus fort.
 							Vous voilà donc confronté le ventre vide à la nécessité de stabiliser la potion avant que les choses ne dégénèrent encore davantage...
-							
+
 							[[Il est temps de faire preuve d&#39;un peu de connaissances alchimiques.-&gt;Premier_ingrédient]]
 						&lt;&lt;/append&gt;&gt;
 					&lt;&lt;/click&gt;&gt;
@@ -811,7 +812,7 @@ Note : Bruit d&#39;ébullition
 
 Mais en vous penchant au-dessus de la décoction, vous vous rendez compte que c&#39;est le drame. Vous avez manifestement raté quelque chose pendant la préparation de la veille, car la potion a pris une couleur et une odeur inquiétantes, sans parler du fait qu&#39;elle bout dangereusement fort. Au cours de votre longue vie de magicien vous avez déjà connu de telles situations et vous savez que si vous ne faîtes rien pour arranger les choses tout peut vite dégénérer et passer hors de contrôle.
 
-Ne sachant précisément d&#39;où vient le problème et ne sachant donc pas comment arranger les choses, vous courez à votre bibliothèque afin de trouver une solution. Après un coup d&#39;oeil rapide sur vos étagères 
+Ne sachant précisément d&#39;où vient le problème et ne sachant donc pas comment arranger les choses, vous courez à votre bibliothèque afin de trouver une solution. Après un coup d&#39;oeil rapide sur vos étagères
 
 Une fois devant la potion, vous vous rendez compte que le livre, prit à la hâte, porte comme titre &quot;L&#39;alchimie pour les nuls&quot;.
 Dépité, vous balancez le bouquin dans la potion...
