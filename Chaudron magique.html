@@ -239,6 +239,7 @@ a.internalLink:hover, a.externalLink:hover {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 /**
@@ -311,6 +312,7 @@ macros["goto"]=macros["timedgoto"]={
 		}
 	}
 };
+
 </script><tw-passagedata pid="1" name="Rivière" tags="" position="1340,1261">&lt;&lt;if $glace eq true&gt;&gt;
 Alors que le temps est fort agréable, vous arrivez devant une rivière gelée. Ne voyant pas de pont à l&#39;horizon, vous juger que l&#39;épaisseur de la glace n&#39;est pas très importante au vu des fissures présentes dans celle ci. Après un court instant de réfléxion, elle a l&#39;air assez épaisse pour passer sans sac à dos et éventuellement assez si vous ne déposez que votre bâton.
 [[Abandonner votre sac à dos-&gt;bruit]]&lt;!--&lt;&lt;set $allumette to false&gt;&gt;&lt;&lt;set $lampe to false&gt;&gt;&lt;!-- 100% de réussite--&gt;
@@ -470,7 +472,9 @@ Vous tentez vorte chance face au dragon en espérant que ces années resté sans
 &lt;&lt;/if&gt;&gt;
 --&gt;
 </tw-passagedata>
-<tw-passagedata pid="14" name="1er_ingrédient" tags="" position="335,1296">La potion de liquéfaction doit être neutralisé en annulant son acidité et sa liquidité :
+<tw-passagedata pid="14" name="1er_ingrédient" tags="" position="335,1296">  Vous reprenez place au-dessus du chaudron 
+  
+  La potion de liquéfaction doit être neutralisé en annulant son acidité et sa liquidité :
 
 Ajouter :
 [[Poussière de feu-&gt;poussièredefeu]] pour assècher la potion
@@ -540,35 +544,169 @@ Et c&#39;est lentement que vos yeux se ferment, et que vous sombrez dans les bra
 [[Poursuivre l&#39;histoire-&gt;Phase2]] </tw-passagedata>
 <tw-passagedata pid="21" name="marmite" tags="" position="191,1150">&lt;&lt;set $livre to true&gt;&gt;
 
-Tranquillement, vous vous dirigez vers la marmite ...
+Après vous être rapidement étiré (dans une cacophonie de craquements osseux, la vieillesse ne vous a pas épargné), vous vous dirigez le plus tranquillement du monde vers votre chaudron.
 
 Note : Bruit d&#39;ébullition
 
-Durant votre sommeil, la potion destinée à liquéfier la matière à dégénéré.
+Mais en vous penchant au-dessus de la décoction, vous vous rendez compte que c&#39;est le drame. Vous avez manifestement raté quelque chose pendant la préparation de la veille, car la potion a pris une couleur et une odeur inquiétantes, sans parler du fait qu&#39;elle bout dangereusement fort. Au cours de votre longue vie de magicien vous avez déjà connu de telles situations et vous savez que si vous ne faîtes rien pour arranger les choses tout peut vite dégénérer et passer hors de contrôle.
 
-Ne sachant que faire, vous courez à votre bibliothèque afin de trouver une solution. Prenant le premier livre venu, vous repartez vers la marmite pour voir les effets.
+Ne sachant précisément d&#39;où vient le problème et ne sachant donc pas comment arranger les choses, vous courez à votre bibliothèque afin de trouver une solution. Après un coup d&#39;oeil rapide sur vos étagères c&#39;est un trio de trois tranches de livre sur lesquelles aucun titre n&#39;est indiqué qui retient votre attention. Il vous semble que parmi ceux-là se trouve une référence des ouvrages alchimiques...
 
-Une fois devant la potion, vous vous rendez compte que le livre, prit à la hâte, porte comme titre &quot;L&#39;alchimie pour les nuls&quot;.
-Dépité, vous balancez le bouquin dans la potion...
+&lt;span id=&quot;livre&quot;&gt;
+&lt;&lt;link &quot;Prendre le livre violet&quot;&gt;&gt;
+&lt;&lt;replace &quot;#livre&quot;&gt;&gt;
+	Vous délogez le livre à la couverture violette de son étagère et vous apprêtez à l&#39;ouvrir lorsque votre porte d&#39;entrée s&#39;ouvre avec violence. Vous sursautez et portez un regard inquiet sur l&#39;entrée désormais bâillante de votre cabane. Il semble pourtant que cela n&#39;était qu&#39;un fort courant d&#39;air, car vous n&#39;y apercevez personne. Vous reportez donc une nouvelle fois votre attention sur le livre encore entre vos mains...
+- En bas, vieux schnock !
+Vous sursautez une nouvelle fois mais baissez les yeux vers le sol où vous découvrez trois nains de jardins tout ce qu&#39;il y a de plus animés et visiblement mécontents, à en juger par leurs bras croisés et leurs sourcils froncés.
+- Ah ! Vous ! Ce n&#39;est vraiment pas le moment..., commencez-vous à dire, avant d&#39;être brutalement coupé par un des intrus.
+- Assez de vos excuses vieillard ! Nous avons rédigé une liste de réclamations regardant notre condition d&#39;esclaves forcés magiquement à vous obéir, que nous considérons tout à fait raisonnable compte-tenu de l&#39;illégalité totale de notre situation. Il n&#39;est plus acceptable à notre époque, même pour des nains de jardin, de continuer à vivre dans les conditions effroyables dans lesquelles vous nous laissez...
 
-Note : Bruit &quot;plouf&quot;
+&lt;span id=&quot;choix1&quot;&gt;&lt;&lt;link &quot;Continuer à écouter les réclamations des nains de jardin&quot;&gt;&gt;
+&lt;&lt;replace &quot;#choix1&quot;&gt;&gt;
+	Vous serrez les dents, ravalez vos remarques acerbes et vous vous préparez à subir la diarrhée verbale qui s&#39;apprête à se déverser sur vous.
+- Nous exigeons donc: 1. de ne plus dormir dehors, c&#39;est extrêmement dégradant, et d&#39;au moins obtenir un abri, une cabane à notre taille, que nous ne doutons pas que votre magie soit capable de faire apparaître en un instant...
+	Vous battez du pied contre le sol et vous contorsionnez sur vous-mêmes d&#39;impatience et d&#39;inquiétude par rapport au chaudron dont les bouillonnements sont loins de diminuer.
+- Nous exigeons également: 2. Un salaire, au moins suffisamment substantiel pour acheter régulièrement des bonbons chez &quot;Les fins gourmets de la forêt&quot;. Tout travail mérite rétribution et ce n&#39;est pas parce que nous n&#39;avons pas d&#39;impératif biologique à nous nourrir que nous n&#39;apprécions pas une petite friandise occasionnelle !
+	Vos yeux vont du chaudron décidément de plus en plus énervé au livre que vous avez ouvert au hasard pour vous essayer au multitâche. Hélas, la logorrhée des nains aux timbres particulièrement aigus et discordant vous tape sur les nerfs et vous n&#39;arrivez pas à comprendre un traître mot de ce que vous lisez.
+- Et nous exigeons aussi: 3. Au moins une journée de repos par semaine, ainsi que chacun devrait pouvoir le réclam...
+	Soudain c&#39;en est trop ! La pression vous écrase, la sueur dégouline de votre visage jusque dans votre barbe habituellement si soyeuse (ou en tout cas, ce que vous prenez pour soyeux...) ! Dans un geste rageur vous jetez votre livre, dont vous vous rendez compte au dernier moment que le titre était en fait &quot;L&#39;illusion du choix, tome 1&quot;, dans le chaudron, qui semble surpris par cette offrande et cesse un moment de s&#39;agiter. Toujours habité par la colère, vous vous employez alors à mettre les nains à la porte à force de coups de pied (ils sont solides, il y a plus à s&#39;en faire pour votre pied que pour eux) et à grand renfort d&#39;insultes.
+	
+	Vous refermez la porte derrière vous et laissez échapper un soupir de soulagement. Soulagement de courte de durée cependant, car soudain le chaudron se met à trembler de plus belle, comme de rage, sous l&#39;effet du bouillonnement encore renforcé de la potion. Vous sentez que les choses sont en train de vous échapper. Il faut vite que vous vous débrouilliez pour stabiliser la potion avant que tout ne dégénère davantage...
+	
+	[[Il est temps de faire preuve d&#39;un peu de connaissances alchimiques.-&gt;1er_ingrédient]]
+&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/link&gt;&gt;
 
-Vous devez maintenant vous débrouiller pour stabiliser rapidement la potion instable avant que cela ne dégénère d&#39;avantage
+&lt;&lt;link &quot;Rendre muets les empêcheurs de tourner en rond avec un sortilège à durée limitée&quot;&gt;&gt;
+&lt;&lt;replace &quot;#choix1&quot;&gt;&gt;
+Vous essayez de vous rappeler de la formule adéquate...
 
-[[Stabiliser-&gt;1er_ingrédient]]</tw-passagedata>
+&lt;span id=&quot;choix2&quot;&gt;&lt;&lt;link &quot;- Fermesez voses bouchesées !&quot;&gt;&gt;
+&lt;&lt;replace &quot;#choix2&quot;&gt;&gt;
+- Fermesez voses bouchesées ! vous écriez vous soudain en dirigeant vos mains grandes ouvertes sur les nains.
+
+Surpris, les nains cessent un instant de parler, les yeux ronds d&#39;étonnement. Puis, leurs bouches s&#39;ouvrent à nouveau, dans une tentative de crier au scandale. Hélas pour eux, leurs récriminations semblent bien être bloquées au fond de leur gorge, et aucun son n&#39;en peut plus sortir pour une petite heure.
+	Fort satisfait de votre performance, vous ouvrez le livre violet et commencez à en lire quelques lignes. C&#39;était cependant sans compter sur la rage des petits êtres de jardin, visiblement peu heureux d&#39;avoir à subir un nouvel outrage magique de votre part. Ils se jettent sur vous et vous destabilisent. Vous êtes contraints, pour ne pas vous étaler de tout votre long, de laisser échapper le livre, dont vous apercevez alors seulement le titre écrit sur la couverture, tandis qu&#39;il chute dans les eaux sombres du chaudron: &quot;L&#39;illusion du choix, tome 1&quot;.
+	Le chaudron semble surpris par cette offrande et cesse un moment de s&#39;agiter. Quant à vous, une fois votre équilibre retrouvé, vous ripostez avec fermeté et vous vous employez à mettre les nains à la porte à coups de pied (ils sont solides, il y a plus à s&#39;en faire pour votre pied que pour eux) et à grand renfort d&#39;insultes.
+	
+	Vous refermez la porte derrière vous et laissez échapper un soupir de soulagement. Soulagement de courte de durée cependant, car soudain le chaudron se met à trembler de plus belle, comme de rage, sous l&#39;effet du bouillonnement encore renforcé de la potion. Vous sentez que les choses sont en train de vous échapper. Il faut vite que vous vous débrouilliez pour stabiliser la potion avant que tout ne dégénère davantage...
+	
+	[[Il est temps de faire preuve d&#39;un peu de connaissances alchimiques.-&gt;1er_ingrédient]]
+&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+&lt;&lt;link &quot;- Chutatis toutabra d&#39;suitam !&quot;&gt;&gt;
+&lt;&lt;replace &quot;#choix2&quot;&gt;&gt;
+- Chutatis toutabra d&#39;suitam ! vous écriez vous soudain en dirigeant vos mains grandes ouvertes sur les nains.
+
+Surpris, les nains cessent un instant de parler, les yeux ronds d&#39;étonnement. Puis, leurs bouches s&#39;ouvrent à nouveau, dans une tentative de crier au scandale. Hélas pour vous, vous réalisez alors que ce n&#39;était pas du tout la bonne formule, et ce sont des cris tonitruants qui sortent alors de la bouche des petits nains de jardin et vous vrillent les tympans. Vous avez augmenté leur puissance vocale pour une heure !
+	Assourdi, vous essayez d&#39;abord de porter vos mains à vos oreilles pour vous protéger, mais ce n&#39;est guère efficace et les nains ne semblent pas portés sur l&#39;idée de se taire. Aux grands maux, les grands remèdes, vous jetez votre livre violet sur eux, réalisant ainsi un superbe strike qui renvoie les nains hors de la cabane. Toutefois, le livre rebondit inexplicablement sur le plancher et atterrit dans la potion, sans que vous ayez le temps de faire quoi que ce soit d&#39;autre qu&#39;entr&#39;apercevoir le titre du livre: &quot;L&#39;illusion du choix, tome 1&quot;.
+	
+	Le chaudron se met alors à trembler de plus belle, comme de rage, sous l&#39;effet du bouillonnement encore renforcé de la potion. Vous sentez que les choses sont en train de vous échapper. Il faut vite que vous vous débrouilliez pour stabiliser la potion avant que tout ne dégénère davantage...
+	
+	[[Il est temps de faire preuve d&#39;un peu de connaissances alchimiques.-&gt;1er_ingrédient]]
+&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+&lt;/span&gt;
+
+&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+&lt;/span&gt;
+
+&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+
+&lt;&lt;link &quot;Prendre le livre vert&quot;&gt;&gt;
+&lt;&lt;replace &quot;#livre&quot;&gt;&gt;
+	Vous délogez le livre à la couverture verte de son étagère et vous vous apprêtez à l&#39;ouvrir lorsque votre fenêtre s&#39;ouvre avec violence. Ce qui vous semble être un projectile lancé à toute vitesse exécute plusieurs cercles à raz de votre plafond avant de se poser au sommet de votre bibliothèque.
+	Une fois la frayeur première passée, vous réalisez qu&#39;il s&#39;agit d&#39;un hibou, et qu&#39;il vous fixe d&#39;un regard intense qui n&#39;est pas sans vous mettre mal à l&#39;aise.
+	
+&lt;span id=&quot;choixhibou1&quot;&gt;
+&lt;&lt;link &quot;Ignorer le hibou pour l&#39;instant et vous concentrer sur le livre que vous venez de récupérer&quot;&gt;&gt;
+&lt;&lt;replace &quot;#choixhibou1&quot;&gt;&gt;
+	Vous effectuez un petit mouvement réprobatif de la tête mais haussez les épaules et ouvrez votre livre, espérant y trouver les précieuses informations dont vous avez besoin. Pourtant, vous vous apercevez vite que vous n&#39;arrivez pas à vous concentrer sur votre lecture: vous n&#39;arrivez pas à arrêter de surveiller l&#39;oiseau du coin de l&#39;oeil. Celui-ci n&#39;arrête pas non plus de vous fixer, et un frisson monte le long de votre échine sous ce regard scrutateur. Serait-ce un mauvais esprit ou un démon déguisé en hibou et venu vous tourmenter ?... Ou pire ?
+	Bientôt, vos pensées sont totalement obnubilées par l&#39;oiseau, l&#39;obsession vous prend, vous ne pouvez plus penser à rien d&#39;autre. Est-ce qu&#39;il vous regarde encore ? Et ce bec ? N&#39;est-il pas particulièrement aiguisé ? Trop acéré pour être  celui d&#39;un simple oiseau ?...
+	
+	Soudain, un ululement strident retentit et vous fait violemment sursauter, vous tirant enfin de vos pensées, mais faisant également bondir le livre que vous aviez oublié entre vos mains. A l&#39;issue d&#39;un vol plané auquel vous ne pouvez qu&#39;assister, le coeur battant, l&#39;ouvrage termine sa course dans la potion, non sans que vous ayez au moins eu le temps d&#39;enfin apercevoir son titre: &quot;L&#39;illusion du choix, tome 2&quot;. Vous restez estomaqué encore quelques secondes, lesquelles le hibou décide de mettre à profit pour repartir par la fenêtre aussi diligemment qu&#39;il était venu.
+	Le chaudron quant à lui s&#39;est mis à trembler de plus belle, comme de rage, sous l&#39;effet du bouillonnement encore renforcé par l&#39;intrusion du livre dans la potion. Reprenant peu à peu vos esprits, vous sentez que les choses sont en train de vous échapper. Il faut vite que vous vous débrouilliez pour stabiliser la potion avant que tout ne dégénère davantage...
+	
+	[[Il est temps de faire preuve d&#39;un peu de connaissances alchimiques.-&gt;1er_ingrédient]]
+&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+
+&lt;&lt;link &quot;Chasser l&#39;oiseau de votre demeure, vous n&#39;avez pas besoin d&#39;avoir à vous inquiéter de ça en plus&quot;&gt;&gt;
+&lt;&lt;replace &quot;#choixhibou1&quot;&gt;&gt;
+&lt;&lt;link &quot;Battre des bras dans les airs en lui criant dessus&quot;&gt;&gt;
+&lt;&lt;replace &quot;#choixhibou1&quot;&gt;&gt;
+	Prenant votre courage à deux mains, vous vous mettez à gesticuler avec force en criant sur le hibou.
+-Du balai oiseau de malheur ! Tu ne vois donc pas que l&#39;heure est grave ?! Et puis qu&#39;est-ce que c&#39;est que ces façons ? On ne rentre pas comme ça, non invité, chez les gens ! Allez ouste !
+	Le hibou n&#39;est visiblement pas ravi par vos cris et il semble froncer les sourcils en penchant sa tête latéralement. Vous ne relâchez pas la pression pour autant, et intensifiez même vos injures, qui deviennent trop indécentes pour être retranscrites. Finalement, l&#39;oiseau craque avant vous (vous êtes très têtu) et après s&#39;être ébroué les ailes d&#39;un air menaçant, il s&#39;élance...
+	...Droit sur vous ! Vous n&#39;avez que le temps d&#39;esquisser une esquive, qui expose cependant votre livre aux serres redoutables du hibou qui s&#39;en empare et, après vous avoir lancé un dernier regard noir, le lâche dans la potion et s&#39;en va par là où il était venu. Juste avant que l&#39;ouvrage ne soit englouti par les eaux sombres de la décoction, vous avez le temps d&#39;enfin lire le titre de l&#39;ouvrage: &quot;L&#39;illusion du choix, tome 2&quot;.
+	Tandis que vous redoublez d&#39;inventivité dans vos injures, boosté par ce nouvel affront, le chaudron quant à lui s&#39;est mis à trembler de plus belle, comme de rage, sous l&#39;effet du bouillonnement encore renforcé par l&#39;intrusion du livre dans la potion. Vous reconcentrant sur le danger le plus immédiat, vous sentez que les choses sont en train de vous échapper. Il faut vite que vous vous débrouilliez pour stabiliser la potion avant que tout ne dégénère davantage...
+	
+	[[Il est temps de faire preuve d&#39;un peu de connaissances alchimiques.-&gt;1er_ingrédient]]
+&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+
+&lt;&lt;link &quot;Secouer la bibliothèque pour l&#39;en déloger&quot;&gt;&gt;
+&lt;&lt;replace &quot;#choixhibou1&quot;&gt;&gt;
+	Agacé par cet intrus à plumes, vous vous rapprochez de la bibliothèque et, plantant votre regard le plus noir dans celui, dédaigneux, du rapace, vous vous employez à secouer votre meuble avec énergie. Le hibou fronce les sourcils (enfin, c&#39;est ce qu&#39;il vous semble), et plante d&#39;autant plus fermement ses serres dans le bois de son support. Par on ne sait quelle magie (vous ne vous rappelez pas en avoir fait usage), aucun livre ne tombe, malgré vos efforts énergiques.
+	Les minutes passent difficilement tandis que vous ahanez, haletez, grognez, rugissez, et que la sueur coule sur votre visage. Finalement, vous vous révélez plus têtu que l&#39;oiseau et il renonce à rester en place, manifestement agacé par ce jeu de rodéo. Après s&#39;être ébroué les ailes d&#39;un air menaçant, il s&#39;élance...
+	...Droit sur vous ! Vous n&#39;avez que le temps d&#39;esquisser une esquive, qui expose cependant votre livre aux serres redoutables du hibou qui s&#39;en empare et, après vous avoir lancé un dernier regard noir, le lâche dans la potion et s&#39;en va par là où il était venu. Juste avant que l&#39;ouvrage ne soit englouti par les eaux sombres de la décoction, vous avez le temps d&#39;enfin lire le titre de l&#39;ouvrage: &quot;L&#39;illusion du choix, tome 2&quot;.
+	Tandis que vous redoublez d&#39;inventivité dans vos injures, boosté par ce nouvel affront, le chaudron quant à lui s&#39;est mis à trembler de plus belle, comme de rage, sous l&#39;effet du bouillonnement encore renforcé par l&#39;intrusion du livre dans la potion. Vous reconcentrant sur le danger le plus immédiat, vous sentez que les choses sont en train de vous échapper. Il faut vite que vous vous débrouilliez pour stabiliser la potion avant que tout ne dégénère davantage...
+	
+	[[Il est temps de faire preuve d&#39;un peu de connaissances alchimiques.-&gt;1er_ingrédient]]
+&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+&lt;/span&gt;
+&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+
+&lt;&lt;link &quot;Prendre le livre jaune&quot;&gt;&gt;
+&lt;&lt;replace &quot;#livre&quot;&gt;&gt;
+	Vous essayez d&#39;extraire le livre à la couverture jaune de son étagère, mais il semble qu&#39;une substance collante se soit déversée sur lui à un moment donné, et il refuse désormais de bouger. Y voyant un signe du destin vous assurant que c&#39;est exactement l&#39;ouvrage qu&#39;il vous faut, vous vous mettez à tirer plus &lt;span id=&quot;jaune1&quot;&gt;&lt;&lt;link &quot;fort...&quot;&gt;&gt;&lt;/span&gt;&lt;&lt;replace &quot;#jaune1&quot;&gt;&gt;fort...&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;append &quot;#livre&quot;&gt;&gt;
+	...Et encore plus fort, jusqu&#39;à ce que votre visage devienne tout rouge sous l&#39;effort et que vous deviez finalement prendre appui sur la bibliothèque avec vos jambes, essayant de faire levier sur le livre qui résiste encore et toujours. Et puis &lt;span id=&quot;jaune2&quot;&gt;&lt;&lt;link &quot;soudain...&quot;&gt;&gt;&lt;/span&gt;&lt;&lt;replace &quot;#jaune2&quot;&gt;&gt;soudain...&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;append &quot;#livre&quot;&gt;&gt;
+	... Le livre renonce à persister dans son état inamovible et, dans un terrible bruit de ventouse et de feuilles froissées, cède d&#39;un seul coup. Ne vous y attendant pas du tout, vous le laissez échapper en vous effondrant par terre, et le livre exécute un fantastique vol plané en cloche, atterrissant avec grâce en plein dans le chaudron, et ne vous laissant que le temps d&#39;apercevoir son titre: &quot;L&#39;illusion du choix, tome 3&quot;.
+	Le chaudron se met à trembler de plus belle, comme de rage, sous l&#39;effet du bouillonnement encore renforcé par l&#39;intrusion du livre dans la potion. Reprenant peu à peu vos esprits et après vous être remis sur vos pieds, vous réalisez que les choses sont en train de vous échapper. Il faut vite que vous mettiez cette mésaventure derrière vous et que vous vous débrouilliez pour stabiliser la potion avant que tout ne dégénère davantage...
+	
+	[[Il est temps de faire preuve d&#39;un peu de connaissances alchimiques.-&gt;1er_ingrédient]]
+	&lt;&lt;/append&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+	&lt;&lt;/append&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+
+&lt;/span&gt;</tw-passagedata>
 <tw-passagedata pid="22" name="placard" tags="" position="182,1385">&lt;&lt;set $gateau to true&gt;&gt;
-
-N&#39;écoutant que l&#39;apel de votre ventre, vous partez chercher quelque chose à grignoter dans le garde manger.
-N&#39;y ayant qu&#39;un simple mufin dans le placard, vous pestez contre vous-même d&#39;avoir oublié de faire les provisions chez &quot;Les fins gourmets&quot;.
-Irrité, vous prenez le gâteau pour ensuite vous diriger vers la potion.
-
-Alors que vous goûtez au gâteau, vous avez un haut le coeur face à la moississure présente dessus. Tel un enfant, vous balancez le gâteau qui, par un hasard imcompréhensible, tombe dans la marmite bouillonnant anormalement.
-
 Note : Bruit d&#39;ébullition
 
-Le ventre vide, vous devez maintenant vous débrouiller pour stabiliser rapidement la potion avant que cela ne dégénère d&#39;avantage...
+	N&#39;écoutant que l&#39;appel de votre ventre, vous partez chercher quelque chose à grignoter dans le garde-manger. Hélas, votre déception est grande lorsque vous n&#39;y découvrez qu&#39;un triste désert alimentaire, à l&#39;exception de ce qui semble être un muffin. Vous pestez à votre encontre, vous auriez dû penser à aller refaire vos provisions chez &quot;Les fins gourmets de la forêt&quot;. Avec un soupir d&#39;irritation vous vous emparez malgré tout du muffin et vous dirigez vers le chaudron.
+	En vous penchant au-dessus de ce dernier vous vous rendez finalement compte que son bouillonnement est plus fort qu&#39;il ne devrait l&#39;être, ce qui, associé à l&#39;odeur étonnament désagréable qui s&#39;en échappe et la couleur verdâtre de la potion, vous fait froncer les sourcils. Serait-il possible que vous ayez fait une erreur dans votre préparation de la veille ? Soucieux, vous portez votre muffin à vos lèvres. Mais alors que vous mordez dedans, un horrible goût de moisissure vous donne un haut-le-coeur.
+	Dans un geste rageur vous jetez violemment le gâteau par terre.
+	&lt;span id=&quot;rebonds&quot;&gt;
+		&lt;&lt;link &quot;Mais...&quot;&gt;&gt;
+			&lt;&lt;replace &quot;#rebonds&quot;&gt;&gt;
+				Il semble cependant que la dégradation du muffin l&#39;a rendu particulièrement caoutchouteux et le voilà qui rebondit contre le plancher, &lt;span id=&quot;r1&quot;&gt;&lt;&lt;link &quot;propulsé à toute vitesse vers votre bibliothèque...&quot;&gt;&gt;&lt;/span&gt;&lt;&lt;replace &quot;#r1&quot;&gt;&gt;propulsé à toute vitesse vers votre bibliothèque...&lt;&lt;/replace&gt;&gt;
 
-[[Stabiliser-&gt;1er_ingrédient]]</tw-passagedata>
+					&lt;&lt;append &quot;#rebonds&quot;&gt;&gt;
+					...Laquelle est dangereusement ébranlée par le choc avec le muffin, et vous avez l&#39;espace d&#39;un instant une vision d&#39;horreur de la lourde bibliothèque s&#39;effondrant sur le sol. Elle finit toutefois par se stabiliser tandis que le muffin, fort d&#39;un nouveau rebond, part plus vite encore à travers la pièce. Atterré par la propension tout à fait magique de ce muffin à défier les lois de la nature en gagnant en énergie cinétique à chaque heurt, &lt;span id=&quot;r2&quot;&gt;&lt;&lt;link &quot;vous assistez impuissant au parcours rebondissant du muffin...&quot;&gt;&gt;&lt;/span&gt;&lt;&lt;replace &quot;#r2&quot;&gt;&gt;vous assistez impuissant au parcours rebondissant du muffin...&lt;&lt;/replace&gt;&gt;
+
+						&lt;&lt;append &quot;#rebonds&quot;&gt;&gt;
+							... Qui va à toute vitesse d&#39;une poutre au plancher, puis du plancher à la poignée de votre porte d&#39;entrée, puis de la poignée à un des pieds de votre table qui émet un craquement inquiétant, etc. Vous vous abritez quant à vous sous votre chapeau de magicien, terrifié à l&#39;idée d&#39;être touché par le projectile. Mais par chance (ou peut-être par terrible malchance ? Seul l&#39;avenir le dira...) le muffin termine finalement sa folle envolée par un magistral &quot;PLOUF!&quot; dans le chaudron.
+							Alors que vous commencez à pousser un soupir de soulagement, la marmite, elle, ne semble pas avoir apprécié l&#39;offrande périmée et se met à trembler de manière menaçante sur son support, les bouillonnements se faisant de plus en plus fort.
+							Vous voilà donc confronté le ventre vide à la nécessité de stabiliser la potion avant que les choses ne dégénèrent encore davantage...
+
+							[[Il est temps de faire preuve d&#39;un peu de connaissances alchimiques.-&gt;1er_ingrédient]]
+						&lt;&lt;/append&gt;&gt;
+					&lt;&lt;/link&gt;&gt;
+					&lt;&lt;/append&gt;&gt;
+				&lt;&lt;/link&gt;&gt;
+			&lt;&lt;/replace&gt;&gt;
+		&lt;&lt;/link&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="23" name="os" tags="" position="935,1391">&lt;&lt;set $os to true&gt;&gt;
 &lt;!-- fera apparaître des fantômes d&#39;animaux dans la clairière--&gt;
 Prenant les os sur la table, obtenus par vos différents repas, du lapin à la moutarde, du faisant farci, et d&#39;autres mets appétissants. C&#39;est alors que vous vous remémorez les cours de votre enfance, où votre professeur vous avait fait recopier 100 fois les propriétés épaississante et anti-acidifiante des os. Secouant la tête par dépit, vous ajoutez cet ingrédient à la potion. La potion semblant se calmer et fatigué par les événements, vous décidez de vous allongez sur votre lit quelques instants, le temps de récupérer un peu.
@@ -744,74 +882,13 @@ Ressources :
 Blabla
 
 [[Retour au menu-&gt;menu]]</tw-passagedata>
-<tw-passagedata pid="41" name="Réveil difficile" tags="" position="7,1551">Alors que doucement la forêt s&#39;éveille sous les doux et chauds rayons solaires de l&#39;aube, tout semble indiquer que la journée sera belle. La lumière matinale trouve son chemin jusqu&#39;à la fenêtre d&#39;une petite cabane où vous dormez d&#39;un sommeil manifestement agité. A mesure que l&#39;obscurité de la nuit est chassée de votre humble demeure vous vous arrachez aux bras de Morphée, le corps encore tout engourdi, le ventre gargouillant de faim.
-	Le réveil est toujours comme une nouvelle naissance: il vous semble que vous ne connaissez plus rien ni ne savez plus rien faire.
-	&lt;span id=&quot;qui&quot;&gt;
-		&lt;&lt;click &quot;J&#39;suis qui déjà ?&quot;&gt;&gt;
-			&lt;&lt;replace &quot;#qui&quot;&gt;&gt;
-				Les dernières brumes du sommeil commençant à s&#39;évaporer, vous vous rappelez que vous êtes un magicien (et un bon ! ajoutez-vous alors que les mots vous reviennent) vivant reclus dans la forêt depuis qu&#39;une malencontreuse formule magique a semé la zizanie dans votre précédente commune de résidence, bien des années plus tôt, et que vos concitoyens en ont eu assez de ces remue-ménages dont vous avez le secret.
-		A ce souvenir vous ne pouvez réprimer un sourire de jubilation et un haussement d&#39;épaules. Vous êtes aussi bien ici à vrai dire, et la tranquilité est une composante importante de tout sortilège réussi. Vous hochez la tête, manifestement qu&#39;à moitié convaincu par vos propres arguments.
-
-				Vous vous rendez compte qu&#39;un gargouillement se fait entendre de manière continue dans votre cabane et vous décidez d&#39;ouvrir vos yeux, tant bien que mal, pour en identifier l&#39;origine. C&#39;est votre chaudron. Il bouillonne apparemment tranquillement (enfin, il y a quand même une odeur bizarre) au-dessus d&#39;un feu que vous avez allumé la veille. Vous vous demandez où en est la cuisson de votre décoction. C&#39;est une potion extrêmement délicate à préparer à laquelle vous vous êtes attaqué, mais il vous semble que rien ne vous est impossible.
-				Alors que vous commencez à remuer sur votre couchette, votre ventre se rappelle à vous avec un gros gargouilli. La faim vous tenaille. Par quoi commencer ?
-
-				[[Aller chercher quelque chose à grignoter-&gt;Manger!]]
-				[[Aller jeter un oeil à votre potion-&gt;Inspection du Chaudron]]
-			&lt;&lt;/replace&gt;&gt;
-		&lt;&lt;/click&gt;&gt;
-	&lt;/span&gt;</tw-passagedata>
-<tw-passagedata pid="42" name="Manger!" tags="" position="7,1701">&lt;&lt;set $gateau to true&gt;&gt;
-Note : Bruit d&#39;ébullition
-
-	N&#39;écoutant que l&#39;appel de votre ventre, vous partez chercher quelque chose à grignoter dans le garde-manger. Hélas, votre déception est grande lorsque vous n&#39;y découvrez qu&#39;un triste désert alimentaire, à l&#39;exception de ce qui semble être un muffin. Vous pestez à votre encontre, vous auriez dû penser à aller refaire vos provisions chez &quot;Les fins gourmets de la forêt&quot;. Avec un soupir d&#39;irritation vous vous emparez malgré tout du muffin et vous dirigez vers le chaudron.
-	En vous penchant au-dessus de ce dernier vous vous rendez finalement compte que son bouillonnement est plus fort qu&#39;il ne devrait l&#39;être, ce qui, associé à l&#39;odeur étonnament désagréable qui s&#39;en échappe et la couleur verdâtre de la potion, vous fait froncer les sourcils. Serait-il possible que vous ayez fait une erreur dans votre préparation de la veille ? Soucieux, vous portez votre muffin à vos lèvres. Mais alors que vous mordez dedans, un horrible goût de moisissure vous donne un haut-le-coeur.
-	Dans un geste rageur vous jetez violemment le gâteau par terre.
-	&lt;span id=&quot;rebonds&quot;&gt;
-		&lt;&lt;click &quot;Mais...&quot;&gt;&gt;
-			&lt;&lt;replace &quot;#rebonds&quot;&gt;&gt;
-				Il semble cependant que la dégradation du muffin l&#39;a rendu particulièrement caoutchouteux et le voilà qui rebondit contre le plancher, &lt;span id=&quot;r1&quot;&gt;&lt;&lt;click &quot;propulsé à toute vitesse vers votre bibliothèque...&quot;&gt;&gt;&lt;/span&gt;&lt;&lt;replace &quot;#r1&quot;&gt;&gt;propulsé à toute vitesse vers votre bibliothèque...&lt;&lt;/replace&gt;&gt;
-
-					&lt;&lt;append &quot;#rebonds&quot;&gt;&gt;
-					...Laquelle est dangereusement ébranlée par le choc avec le muffin, et vous avez l&#39;espace d&#39;un instant une vision d&#39;horreur de la lourde bibliothèque s&#39;effondrant sur le sol. Elle finit toutefois par se stabiliser tandis que le muffin, fort d&#39;un nouveau rebond, part plus vite encore à travers la pièce. Atterré par la propension tout à fait magique de ce muffin à défier les lois de la nature en gagnant en énergie cinétique à chaque heurt, &lt;span id=&quot;r2&quot;&gt;&lt;&lt;click &quot;vous assistez impuissant au parcours rebondissant du muffin...&quot;&gt;&gt;&lt;/span&gt;&lt;&lt;replace &quot;#r2&quot;&gt;&gt;vous assistez impuissant au parcours rebondissant du muffin...&lt;&lt;/replace&gt;&gt;
-
-						&lt;&lt;append &quot;#rebonds&quot;&gt;&gt;
-							... Qui va à toute vitesse d&#39;une poutre au plancher, puis du plancher à la poignée de votre porte d&#39;entrée, puis de la poignée à un des pieds de votre table qui émet un craquement inquiétant, etc. Vous vous abritez quant à vous sous votre chapeau de magicien, terrifié à l&#39;idée d&#39;être touché par le projectile. Mais par chance (ou peut-être par terrible malchance ? Seul l&#39;avenir le dira...) le muffin termine finalement sa folle envolée par un magistral &quot;PLOUF!&quot; dans le chaudron.
-							Alors que vous commencez à pousser un soupir de soulagement, la marmite, elle, ne semble pas avoir apprécié l&#39;offrande périmée et se met à trembler de manière menaçante sur son support, les bouillonnements se faisant de plus en plus fort.
-							Vous voilà donc confronté le ventre vide à la nécessité de stabiliser la potion avant que les choses ne dégénèrent encore davantage...
-
-							[[Il est temps de faire preuve d&#39;un peu de connaissances alchimiques.-&gt;Premier_ingrédient]]
-						&lt;&lt;/append&gt;&gt;
-					&lt;&lt;/click&gt;&gt;
-					&lt;&lt;/append&gt;&gt;
-				&lt;&lt;/click&gt;&gt;
-			&lt;&lt;/replace&gt;&gt;
-		&lt;&lt;/click&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="43" name="Inspection du Chaudron" tags="" position="157,1701">&lt;&lt;set $livre to true&gt;&gt;
-
-Après vous être rapidement étiré (dans une cacophonie de craquements osseux, la vieillesse ne vous a pas épargné), vous vous dirigez le plus tranquillement du monde vers votre chaudron.
-
-Note : Bruit d&#39;ébullition
-
-Mais en vous penchant au-dessus de la décoction, vous vous rendez compte que c&#39;est le drame. Vous avez manifestement raté quelque chose pendant la préparation de la veille, car la potion a pris une couleur et une odeur inquiétantes, sans parler du fait qu&#39;elle bout dangereusement fort. Au cours de votre longue vie de magicien vous avez déjà connu de telles situations et vous savez que si vous ne faîtes rien pour arranger les choses tout peut vite dégénérer et passer hors de contrôle.
-
-Ne sachant précisément d&#39;où vient le problème et ne sachant donc pas comment arranger les choses, vous courez à votre bibliothèque afin de trouver une solution. Après un coup d&#39;oeil rapide sur vos étagères
-
-Une fois devant la potion, vous vous rendez compte que le livre, prit à la hâte, porte comme titre &quot;L&#39;alchimie pour les nuls&quot;.
-Dépité, vous balancez le bouquin dans la potion...
-
-Note : Bruit &quot;plouf&quot;
-
-Vous devez maintenant vous débrouiller pour stabiliser rapidement la potion instable avant que cela ne dégénère d&#39;avantage
-
-[[Stabiliser-&gt;Premier_ingrédient]]</tw-passagedata>
-<tw-passagedata pid="44" name="Premier_ingrédient" tags="" position="7,1851">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
-<tw-passagedata pid="45" name="Intro" tags="" position="30,1229">&lt;&lt;nobr&gt;&gt;
+<tw-passagedata pid="41" name="Intro" tags="" position="30,1229">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;audio &quot;snoring&quot; loop play volume 0.5 fadein&gt;&gt;
 &lt;span id=&quot;intro_text&quot;&gt;
-Texte d&#39;intro en blanc sur fond noir...
+Alors que doucement la forêt s&#39;éveille sous les doux et chauds rayons solaires de l&#39;aube, tout semble indiquer que la journée sera belle. La lumière matinale trouve son chemin jusqu&#39;à la fenêtre d&#39;une petite cabane où vous dormez d&#39;un sommeil manifestement agité. A mesure que l&#39;obscurité de la nuit est chassée de votre humble demeure vous vous arrachez
 &lt;/span&gt;
 &lt;&lt;/nobr&gt;&gt;
-&lt;&lt;linkreplace &quot;Avancer&quot;&gt;&gt;
+&lt;&lt;linkreplace &quot; aux bras de Morphée...&quot;&gt;&gt;
 	&lt;&lt;nobr&gt;&gt;
 	&lt;&lt;remove &quot;#intro_text&quot;&gt;&gt;
   	&lt;&lt;audio &quot;snoring&quot; stop&gt;&gt;
@@ -838,13 +915,21 @@ Texte d&#39;intro en blanc sur fond noir...
   }, 1000);
  	&lt;&lt;/script&gt;&gt;
 	&lt;&lt;timed 11s t8n&gt;&gt;
-	&lt;&lt;linkreplace &quot;Wow, c&#39;est chez moi...&quot;&gt;&gt;
-	Introduction narrative
-	Vous avez faim mais vous vous souvenez que vous aviez laissé une potion mijoter
+	Le réveil est toujours comme une nouvelle naissance: il vous semble que vous ne connaissez plus rien ni ne savez plus rien faire.
+	&lt;span id=&quot;qui&quot;&gt;
+		&lt;&lt;link &quot;J&#39;suis qui déjà ?&quot;&gt;&gt;
+			&lt;&lt;replace &quot;#qui&quot;&gt;&gt;
+				Les dernières brumes du sommeil commençant à s&#39;évaporer, vous vous rappelez que vous êtes un magicien (et un bon ! ajoutez-vous alors que les mots vous reviennent) vivant reclus dans la forêt depuis qu&#39;une malencontreuse formule magique a semé la zizanie dans votre précédente commune de résidence, bien des années plus tôt, et que vos concitoyens en ont eu assez de ces remue-ménages dont vous avez le secret.
+		A ce souvenir vous ne pouvez réprimer un sourire de jubilation et un haussement d&#39;épaules. Vous êtes aussi bien ici à vrai dire, et la tranquilité est une composante importante de tout sortilège réussi. Vous hochez la tête, manifestement qu&#39;à moitié convaincu par vos propres arguments.
 
-	[[Aller voir la potion-&gt;marmite]]
-	[[Commencer par aller chercher quelque chose à manger-&gt;placard]]
- 	&lt;&lt;/linkreplace&gt;&gt;
+				Vous vous rendez compte qu&#39;un gargouillement se fait entendre de manière continue dans votre cabane et vous décidez d&#39;ouvrir vos yeux, tant bien que mal, pour en identifier l&#39;origine. C&#39;est votre chaudron. Il bouillonne apparemment tranquillement (enfin, il y a quand même une odeur bizarre) au-dessus d&#39;un feu que vous avez allumé la veille. Vous vous demandez où en est la cuisson de votre décoction. C&#39;est une potion extrêmement délicate à préparer à laquelle vous vous êtes attaqué, mais il vous semble que rien ne vous est impossible.
+				Alors que vous commencez à remuer sur votre couchette, votre ventre se rappelle à vous avec un gros gargouilli. La faim vous tenaille. Par quoi commencer ?
+
+				[[Aller chercher quelque chose à grignoter-&gt;placard]]
+				[[Aller jeter un oeil à votre potion-&gt;marmite]]
+			&lt;&lt;/replace&gt;&gt;
+		&lt;&lt;/link&gt;&gt;
+	&lt;/span&gt;
 	&lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;/linkreplace&gt;&gt;
