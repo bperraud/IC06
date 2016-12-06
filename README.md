@@ -28,7 +28,22 @@ repository (~~je ne sais pas encore comment faire en local...~~ impossible : <ht
 
 ## Todos et notes
 
-- Augmenter les _timers_ de la phase 1
+- "Finaliser" la mise en place des _timers_ de la phase 1, cf. ci-dessous
 - Corriger le saut de ligne dans le passage du réveil
 - Corriger le bug visuel de la texture qui "bave"
 - Ajouter le mécanisme de jet aléatoire pour le choix forcé d'un ingrédient
+
+## Question du timer
+
+- visuel du chaudron en plusieurs étapes :
+    - immobile
+    - bout
+    - bouillonne
+    - explose
+- positionnement des images du chaudron (sorcier ?) :
+    - zone fixe hors cadre textuel
+    - intercalé au texte
+- selon les étapes du chaudron, timer enclenché ; il pourrait être déclenché seulement au niveau de l'étape 3 du chaudron. On peut également considérer que l'étape 2 déclenche elle-même l'étape suivante, etc.
+- quand on arrive sur la page, on dispose inconsciemment de x s pour que chaudron arrive à l'état "bout", puis y s à l'état "bouillonne", etc.
+- le joueur sait qu'il doit se presser si le visuel évolue alors qu'il est retard sur le texte !
+- la musique peut donc être composée de manière fixe et évoluer graduellement pour accentuer la sensation de stress
