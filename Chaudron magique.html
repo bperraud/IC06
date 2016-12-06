@@ -454,16 +454,17 @@ Arrivé à un embranchement, vous voyez deux chemins qui s&#39;offrent à vous :
 [[aller vers le chemin sombre-&gt;chemin sombre]]
 [[Tenter le raccourci-&gt;raccourci]]</tw-passagedata>
 <tw-passagedata pid="9" name="chemin sombre" tags="" position="2778,1010">Vous avancez alors en direction du chemin sombre où la visibilité est faible.
-&lt;&lt;if $alumette eq true&gt;&gt;
-[[Allumer une alumette-&gt;pièce or]]
+&lt;&lt;if $allumette eq true&gt;&gt;
+[[Allumer une allumette-&gt;pièce or]]
 &lt;!--50% de chance de trouver une pièce d&#39;or -&gt;pièce or]] --&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $lampe eq true&gt;&gt;
 [[Sortir la lampe de poche-&gt;pièce or]]
 &lt;!--90% de chance de trouver une pièce d&#39;or -&gt;pièce or]]--&gt;
 &lt;&lt;else&gt;&gt;
-	&lt;&lt;if $alumette eq false&gt;&gt;
-N&#39;ayant plus de moyens d&#39;éclairer la route, vous vous enffoncez dans l&#39;obscurité.
+	&lt;&lt;if $allumette eq false&gt;&gt;
+N&#39;ayant plus de moyens d&#39;éclairer la route, vous vous enfoncez dans l&#39;obscurité.
+	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 [[continuer dans la pénombre-&gt;antre du dragon]]
@@ -497,11 +498,11 @@ si bave de crapaud 20% de chance de réussite
 [[Prendre la pièce-&gt;antre du dragon]]&lt;&lt;set $pieceor to true&gt;&gt;
 [[Reposer la pièce-&gt;antre du dragon]]</tw-passagedata>
 <tw-passagedata pid="12" name="antre du dragon" tags="" position="3125,1006">&lt;!-- bruit moto
-50% que l&#39;effet du sort de métamorphose ne fasse plus effet set $dragon to  dragon--&gt;
+50% que l&#39;effet du sort de métamorphose ne fasse plus effet set $dragon to  &quot;dragon&quot;--&gt;
 
 autres options s&#39;il est encore sous forme d&#39;une moto--&gt;
 Alors que vous sortez de la pénombre du sombre chemin, vous arrivez devant une sorte de grotte contre laquelle est appuyée une moto. Au pied de la roue arrière, vous pouvez voir qu&#39;un chien soulage sa vessie.
-&lt;&lt;if $dragon eq dragon&gt;&gt;
+&lt;&lt;if $dragon eq &quot;dragon&quot;&gt;&gt;
 C&#39;est alors que la moto se met à vibrer et à se déformer pour prendre des dimensions gigantesques et laisser place à une créature semblable à un dragon. D&#39;un coup, il gobe le pauvre chien
 - Ah la sale bête ! Enfin je t&#39;ai eu, depuis le temps ! ça t&#39;apprendra à venir tout les jours pour te soulager sur moi !
 Grouaahh que ça fait du bien de s&#39;étirer.
