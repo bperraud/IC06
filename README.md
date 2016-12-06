@@ -1,6 +1,7 @@
 # IC06
 
 ## Procédure de modification du projet
+
 - S'assurer que le repository est bien cloné
 - _Pull_ pour récupérer les dernières modifications
 - Ouvrir Twine 2.x puis dans le menu sélectionner **"Importer depuis un Fichier"**
@@ -24,3 +25,10 @@ repository (~~je ne sais pas encore comment faire en local...~~ impossible : <ht
 
 - Mettre à jour le _local repository_ pour avoir le fichier source du format ;
 - Suivre les instructions sur le site <http://www.motoslave.net/sugarcube/2/docs/twine-2.html>.
+
+## Todos et notes
+
+- Augmenter les _timers_ de la phase 1
+- Corriger le saut de ligne dans le passage du réveil
+- Corriger le bug visuel de la texture qui "bave"
+- Ajouter le mécanisme de jet aléatoire pour le choix forcé d'un ingrédient
