@@ -240,6 +240,7 @@ a.internalLink:hover, a.externalLink:hover {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 /**
@@ -312,6 +313,7 @@ macros["goto"]=macros["timedgoto"]={
 		}
 	}
 };
+
 
 </script><tw-passagedata pid="1" name="Rivière" tags="" position="1340,1261">&lt;&lt;if $glace eq true&gt;&gt;
 Alors que le temps est fort agréable, vous arrivez devant une rivière gelée. Ne voyant pas de pont à l&#39;horizon, vous juger que l&#39;épaisseur de la glace n&#39;est pas très importante au vu des fissures présentes dans celle ci. Après un court instant de réfléxion, elle a l&#39;air assez épaisse pour passer sans sac à dos et éventuellement assez si vous ne déposez que votre bâton.
@@ -472,74 +474,153 @@ Vous tentez vorte chance face au dragon en espérant que ces années resté sans
 &lt;&lt;/if&gt;&gt;
 --&gt;
 </tw-passagedata>
-<tw-passagedata pid="14" name="1er_ingrédient" tags="" position="335,1296">  Vous reprenez place au-dessus du chaudron 
-  
-  La potion de liquéfaction doit être neutralisé en annulant son acidité et sa liquidité :
+<tw-passagedata pid="14" name="1er_ingrédient" tags="" position="335,1296">  &lt;!-- La potion de liquéfaction doit être neutralisé en annulant son acidité et sa liquidité :
+ Poussière de feu pour assécher la potion
+ Glace pour solidifier la potion
+ Champignon pour diminuer l&#39;acidité de la potion --&gt;
+ 
+	Vous reprenez place au-dessus du chaudron, lequel est plus agité et menaçant que jamais, et observez son contenu. Vous n&#39;avez encore jamais rien vu de tel: la potion semble avoir atteint un état de fluidité, de liquidité si totale, que l&#39;oeil humain peine à encore la percevoir comme liquide. Le contenu du chaudron relève presque plus d&#39;un nuage d&#39;orage sombre, habité d&#39;éclairs magiques occasionnels qui vous inquiètent au plus haut point. La substance est manifestement hautement volatile. Pour ne rien arranger, il vous semble que les relents acides de la potion sont particulièrement corrosifs, et vous sentez votre peau et vos poils commencer respectivement à vous démanger et à tomber au bout d&#39;à peine quelques instants passés penché sur le chaudron.
+	
+	Il semble donc que votre objectif soit de neutraliser cette fichue potion en annulant son acidité et en lui redonnant une consistance plus proche de la soupe épaisse que du liquide pur. Vous vous dirigez donc vers votre table de travail, le front cerné de plis soucieux, et essayez de farfouiller dans les ingrédients qu&#39;il vous reste. Trois d&#39;entre eux retiennent votre attention dans un premier temps, bien que vos connaissances alchimiques ne soient plus aussi bonnes que par le passé et que vous craignez de faire une terrible erreur. Mais on ne vit qu&#39;une fois !
 
-Ajouter :
-[[Poussière de feu-&gt;poussièredefeu]] pour assècher la potion
-[[Glace-&gt;glace]] pour solidifier la potion
-[[Champignon-&gt;champignon]] pour diminuer l&#39;acidité de la potion</tw-passagedata>
+&lt;span id=&quot;1eringr&quot;&gt;[[Ajouter de la poussière de feu-&gt;poussièredefeu]]
+[[Ajouter un fragment de glace éternelle-&gt;glace]]
+[[Jeter négligemment quelques champignons-&gt;champignon]]&lt;/span&gt;
+
+&lt;&lt;timed 33s&gt;&gt;
+	&lt;&lt;replace &quot;#1eringr&quot;&gt;&gt;
+	Vous êtes manifestement indécis, mais le temps ne vous attend pas et le chaudron s&#39;agite de plus en plus. Bientôt, il semble comme sur le point d&#39;exploser, bouillonnant avec des bruits de tonnerre, attendre plus longtemps pour agir n&#39;est vraiment plus raisonnable. Par dépit vous vous emparez de la poussière de feu et la jetez dans la potion.
+	[[Un peu de poussière de feu...-&gt;poussièredefeu]]
+	&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+</tw-passagedata>
 <tw-passagedata pid="15" name="poussièredefeu" tags="" position="575,1251">&lt;&lt;set $poussièredefeu to true&gt;&gt;
 &lt;!-- fera brûler  le bâton dans la rivière s&#39;il nest pas porté hors de l&#39;eau--&gt;
-Il reste encore l&#39;effet acide à réduire.
+&lt;!-- Il reste encore l&#39;effet acide à réduire. --&gt;
 
-Ajouter :
+	La décision d&#39;incorporer de la poussière de feu à la préparation n&#39;était manifestement pas la meilleure, découvrez-vous une fois le forfait accompli. En effet, voilà que la potion semble avoir tout à fait renoncer à son état liquide et s&#39;être changée en un épais nuage de fumée noire d&#39;où il vous semble entendre résonner les rires démoniaques de créatures infernales que vous n&#39;avez aucune envie de rencontrer un jour.
+	Cela se présente mal, mais vous avez encore manifestement la possibilité de tenter quelque chose. Vous vous mettez alors à fouiller parmi le reste de vos ingrédients à la recherche de quelque chose qui pourrait vous aider à stabiliser la potion.
+
+
 &lt;&lt;if $livre eq true&gt;&gt;
-[[Tabac-&gt;tabac]]
-[[Feuilles d&#39;orties-&gt;orties]]
-[[Bave de crapeau-&gt;bave]]
+	Finalement, ce sont votre précieux tabac, quelques feuilles d&#39;orties a priori tout à fait banales, et un flacon de bave de crapaud qui retiennent votre attention pour une nouvelle tentative de calmer le jeu. Les grondements du chaudron sont de plus en plus forts et la mixture, parsemée de lueurs manifestement magiques et inquiétantes, menace de se renverser à tout instant.
+	
+&lt;span id=&quot;2eingr3&quot;&gt;[[Renoncer à votre tabac-&gt;tabac]]
+[[Vous débarasser des feuilles d&#39;orties-&gt;orties]]
+[[Verser la bave de crapaud dans le chaudron-&gt;bave]]&lt;/span&gt;
+
+&lt;&lt;timed 20s&gt;&gt;
+	&lt;&lt;replace &quot;#2eingr3&quot;&gt;&gt;
+		Le choix est difficile, et il faut bien dire qu&#39;aucune solution ne vous inspire confiance. Cependant, il faut vraiment vraiment faire un choix maintenant, car le chaudron s&#39;est soudain arrêter de bouillonner, pour plutôt se montrer comme secoué de soubresauts à intervalles réguliers. Un peu comme si quelque chose essayait d&#39;enfoncer une porte, une porte entre les dimensions en l&#39;occurence... Vous décidez donc de tenter le coup avec le tabac, en urgence.
+		[[Et un peu de tabac...-&gt;tabac]]
+	&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
-[[Feuilles d&#39;orties-&gt;orties]]
-[[Bave de crapeau-&gt;bave]]
-[[Os-&gt;os]]
+Finalement, ce sont quelques feuilles d&#39;orties a priori tout à fait banales, un flacon de bave de crapaud et une maigre collection d&#39;ossements (qui maintenant que vous les remarquez vous font froid dans le dos) qui retiennent votre attention pour une nouvelle tentative de calmer le jeu. Les grondements du chaudron sont de plus en plus forts et la mixture, parsemée de lueurs manifestement magiques et inquiétantes, menace de se renverser à tout instant.
+	
+&lt;span id=&quot;2eingr4&quot;&gt;[[Vous débarasser des feuilles d&#39;orties-&gt;orties]]
+[[Verser la bave de crapaud dans le chaudron-&gt;bave]]
+[[Tenter votre chance en introduisant un des os dans la mixture-&gt;os]]&lt;/span&gt;
+
+&lt;&lt;timed 20s&gt;&gt;
+	&lt;&lt;replace &quot;#2eingr4&quot;&gt;&gt;
+		Le choix est difficile, et il faut bien dire qu&#39;aucune solution ne vous inspire confiance. Cependant, il faut vraiment vraiment faire un choix maintenant, car le chaudron s&#39;est soudain arrêter de bouillonner, pour plutôt se montrer comme secoué de soubresauts à intervalles réguliers. Un peu comme si quelque chose essayait d&#39;enfoncer une porte, une porte entre les dimensions en l&#39;occurence... Vous décidez donc de tenter le coup avec l&#39;un des os, en urgence.
+		[[- Espérons ne pas tomber sur celui à qui appartenait cet os...-&gt;os]]
+	&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="16" name="glace" tags="" position="577,1047">&lt;&lt;set $glace to true&gt;&gt;
 &lt;!-- fera geler la rivière--&gt;
-Il reste encore l&#39;effet acide à réduire.
+&lt;!-- Il reste encore l&#39;effet acide à réduire. --&gt;
 
-Ajouter :
+	Après avoir sacrifié au chaudron un fragment de glace éternelle de votre collection personnelle d&#39;objets magiques rares, vous constatez une amélioration relative. En tout cas, la potion vous semble d&#39;un seul coup beaucoup plus épaisse et vous ne la confondez plus avec un nuage.
+	Pour autant, vous n&#39;êtes pas encore sorti d&#39;affaire, et le chaudron ne semble pas s&#39;être calmé le moins du monde. Il est violemment secoué sous l&#39;effet de ses bouillonnements assourdissants, et si avant vous pouviez redouter l&#39;expansion d&#39;une tempête magique, vous êtes maintenant tout à fait livré à l&#39;inconnu quant à la façon dont les choses peuvent empirer. Autant dire que l&#39;inquiétude se renforce encore sur votre visage.
+	Vous vous mettez alors à fouiller parmi le reste de vos ingrédients à la recherche de quelque chose qui pourrait vous aider à stabiliser la potion.
+
 &lt;&lt;if $livre eq true&gt;&gt;
+	Finalement, ce sont votre précieux tabac, quelques feuilles d&#39;orties a priori tout à fait banales, et un flacon de bave de crapaud qui retiennent votre attention pour une nouvelle tentative de calmer le jeu. Les grondements du chaudron sont de plus en plus forts et la mixture, parsemée de lueurs manifestement magiques et inquiétantes, menace de se renverser à tout instant.
+	
+&lt;span id=&quot;2eingr1&quot;&gt;[[Renoncer à votre tabac-&gt;tabac]]
+[[Vous débarasser des feuilles d&#39;orties-&gt;orties]]
+[[Verser la bave de crapaud dans le chaudron-&gt;bave]]&lt;/span&gt;
 
-[[Tabac-&gt;tabac]]
-[[Feuilles d&#39;orties-&gt;orties]]
-[[Bave de crapeau-&gt;bave]]
+&lt;&lt;timed 20s&gt;&gt;
+	&lt;&lt;replace &quot;#2eingr1&quot;&gt;&gt;
+		Le choix est difficile, et il faut bien dire qu&#39;aucune solution ne vous inspire confiance. Cependant, il faut vraiment vraiment faire un choix maintenant, car le chaudron a déjà commencé à basculer et que quelques gouttes de la potion se sont répandues sur le feu. Ce dernier crépite violemment de flammes vertes, bleues, violettes, et vous craignez que toute votre cabane ne prenne feu. Vous décidez donc de tenter le coup avec le tabac, en urgence.
+		[[Et un peu de tabac...-&gt;tabac]]
+	&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
-[[Feuilles d&#39;orties-&gt;orties]]
-[[Bave de crapeau-&gt;bave]]
-[[Os-&gt;os]]
+	Finalement, ce sont quelques feuilles d&#39;orties a priori tout à fait banales, un flacon de bave de crapaud et une maigre collection d&#39;ossements (qui maintenant que vous les remarquez vous font froid dans le dos) qui retiennent votre attention pour une nouvelle tentative de calmer le jeu. Les grondements du chaudron sont de plus en plus forts et la mixture, parsemée de lueurs manifestement magiques et inquiétantes, menace de se renverser à tout instant.
+	
+&lt;span id=&quot;2eingr2&quot;&gt;[[Vous débarasser des feuilles d&#39;orties-&gt;orties]]
+[[Verser la bave de crapaud dans le chaudron-&gt;bave]]
+[[Tenter votre chance en introduisant un des os dans la mixture-&gt;os]]&lt;/span&gt;
+
+&lt;&lt;timed 20s&gt;&gt;
+	&lt;&lt;replace &quot;#2eingr2&quot;&gt;&gt;
+		Le choix est difficile, et il faut bien dire qu&#39;aucune solution ne vous inspire confiance. Cependant, il faut vraiment vraiment faire un choix maintenant, car le chaudron a déjà commencé à basculer et que quelques gouttes de la potion se sont répandues sur le feu. Ce dernier crépite violemment de flammes vertes, bleues, violettes, et vous craignez que toute votre cabane ne prenne feu. Vous décidez donc de tenter le coup avec l&#39;un des os, en urgence.
+		[[- Espérons ne pas tomber sur un os...-&gt;os]]
+	&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
 &lt;&lt;/if&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="17" name="champignon" tags="" position="575,1443">&lt;&lt;set $champignon to true&gt;&gt;
 &lt;!-- champignons hallucinogènes qui agiront sur le groupe de scouts--&gt;
-L&#39;effet acide étant annulé, il faut estomper l&#39;effet liquide
+&lt;!-- L&#39;effet acide étant annulé, il faut estomper l&#39;effet liquide --&gt;
 
-Ajouter :
+	Vous vous sentez partiellement rassuré quand, une fois les champignons disparus dans la mixture, l&#39;atmosphère commence à redevenir respirable et que vos réactions cutanées s&#39;estompent. Vous avez apparemment porté un grand coup à l&#39;acidité de la potion !
+	Cela dit, la joie est de courte durée, car vous vous rendez bien vite compte que les choses ne s&#39;arrangent pas forcément aussi facilement. Certes, la potion n&#39;est plus corrosive, mais elle a toujours cette étrange apparence de nuage liquide, et de nuage très menaçant, pour le coup. Vous avez de quoi craindre qu&#39;une tempête magique, un ouragan (que dîtes-vous, un cyclone même !) ne se déclenche depuis votre chaudron qui gronde, gronde, et gronde encore, habité d&#39;éclairs d&#39;énergie multicolores.
+	Cela se présente mal, mais vous avez encore manifestement la possibilité de tenter quelque chose. Vous vous mettez alors à fouiller parmi le reste de vos ingrédients à la recherche de quelque chose qui pourrait vous aider à stabiliser la potion.
+
 &lt;&lt;if $livre eq true&gt;&gt;
+	Finalement, ce sont votre précieux tabac, une corne de licorne aux propriétés magiques réputées extraordinaires en toutes circonstances, et un flacon de bave de crapaud qui retiennent votre attention pour une nouvelle tentative de calmer le jeu. Les grondements du chaudron sont de plus en plus forts et la mixture, devenue petit phénomène météorologique magique, menace de laisser éclater sa puissance à tout instant.
+	
+&lt;span id=&quot;2eingr5&quot;&gt;[[Renoncer à votre tabac-&gt;tabac]]
+[[Sacrifier votre précieuse corne de licorne-&gt;corne]]
+[[Verser la bave de crapaud dans le chaudron-&gt;bave]]&lt;/span&gt;
 
-[[Tabac-&gt;tabac]]
-[[Corne de licorne-&gt;corne]]
-[[Bave de crapeau-&gt;bave]]
+&lt;&lt;timed 20s&gt;&gt;
+	&lt;&lt;replace &quot;#2eingr5&quot;&gt;&gt;
+		Alors que vous êtes plongé dans vos réflexions et vos calculs magiques, un formidable coup de tonnerre vous fait faire un bond. Un coup d&#39;oeil au chaudron vous informe de l&#39;extrême urgence de la situation, étant donné le fait que le nuage liquide noir a commencé à prendre de l&#39;ampleur et à s&#39;extraire de son récipient. L&#39;heure n&#39;est plus aux tergiversations, il faut agir. Et la solution qui vous semble la plus sûre est encore de sacrifier votre corne de licorne au profit du bien commun (enfin, au profit de votre bonne santé surtout).
+		[[- Adieu, belle corne de licorne !-&gt;corne]]
+	&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
-[[Corne de licorne-&gt;corne]]
-[[Bave de crapeau-&gt;bave]]
-[[Os-&gt;os]]
+	Finalement, ce sont une corne de licorne aux propriétés magiques réputées extraordinaires en toutes circonstances, un flacon de bave de crapaud, et une maigre collection d&#39;ossements (qui maintenant que vous les remarquez vous font froid dans le dos) qui retiennent votre attention pour une nouvelle tentative de calmer le jeu. Les grondements du chaudron sont de plus en plus forts et la mixture, devenue petit phénomène météorologique magique, menace de laisser éclater sa puissance à tout instant.
+	
+&lt;span id=&quot;2eingr6&quot;&gt;[[Sacrifier votre précieuse corne de licorne-&gt;corne]]
+[[Verser la bave de crapaud dans le chaudron-&gt;bave]]
+[[Tenter votre chance en introduisant un des os dans la mixture-&gt;os]]&lt;/span&gt;
+
+&lt;&lt;timed 20s&gt;&gt;
+	&lt;&lt;replace &quot;#2eingr6&quot;&gt;&gt;
+		Alors que vous êtes plongé dans vos réflexions et vos calculs magiques, un formidable coup de tonnerre vous fait faire un bond. Un coup d&#39;oeil au chaudron vous informe de l&#39;extrême urgence de la situation, étant donné le fait que le nuage liquide noir a commencé à prendre de l&#39;ampleur et à s&#39;extraire de son récipient. L&#39;heure n&#39;est plus aux tergiversations, il faut agir. Et la solution qui vous semble la plus sûre est encore de sacrifier votre corne de licorne au profit du bien commun (enfin, au profit de votre bonne santé surtout).
+		[[- Adieu, belle corne de licorne !-&gt;corne]]
+	&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
 &lt;&lt;/if&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="18" name="tabac" tags="" position="940,984">&lt;&lt;set $tabac to true&gt;&gt;
 &lt;!-- les nains de jardin tousseront en pestant contre le sorcier et ses expériences--&gt;
 Devant l&#39;urgence de la situation, vous choisissez de sacrifier votre prestigieux tabac, importé tout droit d&#39;un fameux petit village dont les producteurs maîtrisent les techniques ancestrales de fabrication, depuis des millénaires. C&#39;est donc à contrecoeur que vous jetez dans la mixture votre onéreux tabac, afin d&#39;épaissir la potion, tout en gardant une quantité raisonnable pour votre pipe.
  Le tabac dissout dans la potion, le chaudron semble alors retrouver sa quiétude habituelle. Fatigué par les événements, vous décidez de vous allongez sur votre lit quelques instants, le temps de récupérer.
-Et c&#39;est lentement que vos yeux se ferment, et que vous sombrez dans les bras de Morphée...
+Et c&#39;est lentement que vos yeux se ferment, et que vous retournez vous nicher dans les bras de Morphée...
 [[Poursuivre l&#39;histoire-&gt;Phase2]] </tw-passagedata>
 <tw-passagedata pid="19" name="orties" tags="" position="938,1258">&lt;&lt;set $orties to true&gt;&gt;
 &lt;!-- les nains de jardin se gratteront en pestant contre le sorcier et ses expériences--&gt;
 Dépéché, par l&#39;urgence de la situation, à épaissir la mixture instable, et ne trouvant pas vos gants, vous décidez de prendre la poignée d&#39;orties à pleines mains pour l&#39;incorporer à la mixture. Ravalant l&#39;envie de vous gratter, vous regardez les feuilles se dissoudrent dans la décoction instable. La marmite se stabilisant et reprenant son habituelle quiétude, vous vous félicitez de votre prouesse à faire face à l&#39;imprévu. Vos démangeaisons persistant, vous vous essuyez  vos mains dans votre chiffon magique.
 Fatigué par les événements, vous décidez de vous allongez sur votre lit quelques instants, le temps de récupérer.
-Et c&#39;est lentement que vos yeux se ferment, et que vous sombrez dans les bras de Morphée...
+Et c&#39;est lentement que vos yeux se ferment, et que vous retournez vous nicher dans les bras de Morphée...
 [[Poursuivre l&#39;histoire-&gt;Phase2]] </tw-passagedata>
 <tw-passagedata pid="20" name="bave" tags="" position="940,1132">&lt;&lt;set $bave to true&gt;&gt;
 &lt;!-- augmentera les chances de chute dans le raccourci--&gt;
-Prenant le bocal vitrifié de bave de crapaud, collectée au cours de ces dernières semaines de chasse, par un temps pluvieux, vous tentez de l&#39;ouvrir. N&#39;y arrivant pas, poussé par l&#39;urgence de la situation, vous le jetez dans la marmite en espérant que le bocal ne résiste pas à l&#39;effet de la mixture. En voyant le bocal couler, vous vous sentez rassuré losque la marmite se stabilise pour retrouver sa quiétude innofensive. Fatigué par les événements, vous décidez de vous allongez sur votre lit quelques instants, le temps de récupérer.
-Et c&#39;est lentement que vos yeux se ferment, et que vous sombrez dans les bras de Morphée...
+Prenant le bocal vitrifié de bave de crapaud, collectée au cours de ces dernières semaines de chasse, par un temps pluvieux, vous tentez de l&#39;ouvrir. N&#39;y arrivant pas, poussé par l&#39;urgence de la situation, vous le jetez dans la marmite en espérant que le bocal ne résiste pas à l&#39;effet de la mixture. En voyant le bocal couler, vous vous sentez rassuré losque la marmite se stabilise pour retrouver sa quiétude innoffensive. Fatigué par les événements, vous décidez de vous allongez sur votre lit quelques instants, le temps de récupérer.
+Et c&#39;est lentement que vos yeux se ferment, et que vous retournez vous nicher dans les bras de Morphée...
 
 [[Poursuivre l&#39;histoire-&gt;Phase2]] </tw-passagedata>
 <tw-passagedata pid="21" name="marmite" tags="" position="191,1150">&lt;&lt;set $livre to true&gt;&gt;
@@ -710,32 +791,35 @@ Note : Bruit d&#39;ébullition
 <tw-passagedata pid="23" name="os" tags="" position="935,1391">&lt;&lt;set $os to true&gt;&gt;
 &lt;!-- fera apparaître des fantômes d&#39;animaux dans la clairière--&gt;
 Prenant les os sur la table, obtenus par vos différents repas, du lapin à la moutarde, du faisant farci, et d&#39;autres mets appétissants. C&#39;est alors que vous vous remémorez les cours de votre enfance, où votre professeur vous avait fait recopier 100 fois les propriétés épaississante et anti-acidifiante des os. Secouant la tête par dépit, vous ajoutez cet ingrédient à la potion. La potion semblant se calmer et fatigué par les événements, vous décidez de vous allongez sur votre lit quelques instants, le temps de récupérer un peu.
-Et c&#39;est lentement que vos yeux se ferment, et que vous sombrez dans les bras de Morphée...
+Et c&#39;est lentement que vos yeux se ferment, et que vous retournez vous nicher dans les bras de Morphée...
 [[Poursuivre l&#39;histoire-&gt;Phase2]] </tw-passagedata>
 <tw-passagedata pid="24" name="corne" tags="" position="933,1541">&lt;&lt;set $corne to true&gt;&gt;
 &lt;!-- fera intervenir un rhinocéros dans le procès--&gt;
-A contre-coeur, vous ajoutez la corne de licorne, qui vous avait coûté un bras une dizaine d&#39;années auparavant auprès d&#39;un marchant ambulant garantissant des propriétés exceptionnelles. Alors qu&#39;elle tombe dans le liquide bouillonant, vous attendant à ce que la magie de la corne stabilise complétement la mixture, une réaction inatentu se produit.
+A contre-coeur, vous ajoutez la corne de licorne, qui vous avait coûté un bras une dizaine d&#39;années auparavant auprès d&#39;un marchant ambulant garantissant des propriétés exceptionnelles. Alors qu&#39;elle tombe dans le liquide bouillonant, vous attendant à ce que la magie de la corne stabilise complétement la mixture, une réaction inattendue se produit.
 
 &lt;!--tempo pour que le joueur lance un sort de protection--&gt;
 
 &lt;span id=&quot;sortillege&quot;&gt;
-		&lt;&lt;click &quot;Lancer un sortillège de protection&quot;&gt;&gt;
+		&lt;&lt;link &quot;Lancer un sortillège de protection&quot;&gt;&gt;
 			&lt;&lt;replace &quot;#sortillege&quot;&gt;&gt;
-				Sentant le danger arriver, vous lancer un sort de protection autour du chaudron. Une fraction de seconde après, vous pouvez le voir exploser....
+				Sentant le danger arriver, vous lancez un sort de protection autour du chaudron. Une fraction de seconde après, vous pouvez le voir exploser....
 
 &lt;!--explosion et image noire--&gt;
 [[Poursuivre l&#39;histoire-&gt;Phase2]]
 			&lt;&lt;/replace&gt;&gt;
-		&lt;&lt;/click&gt;&gt;
+		&lt;&lt;/link&gt;&gt;
 	&lt;/span&gt;
 
 &lt;!-- si tempo écoulé--&gt;
-
+&lt;&lt;timed 12s&gt;&gt;
+&lt;&lt;replace &quot;#sortillege&quot;&gt;&gt;
 N&#39;ayant pas eu le réflexe de lancer un sort de protection, vous voyez le chaudron exploser...
 
 &lt;!--explosion et image noire--&gt;
 
-[[Poursuivre l&#39;histoire-&gt;Phase2]] </tw-passagedata>
+[[Poursuivre l&#39;histoire-&gt;Phase2]] 
+&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="25" name="StoryInit" tags="" position="20,996">&lt;!--ingrédients--&gt;
 &lt;&lt;set $livre to false&gt;&gt;&lt;!--apparition annimaux savants dans la clairière--&gt;
 
