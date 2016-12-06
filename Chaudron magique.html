@@ -98,7 +98,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<p id="init-lacking">Apologies! You are using an <strong>outdated</strong> browser which lacks required capabilities. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<p id="init-loading">Initializing. Please wait&hellip;<br /><progress></progress></p>
 	</div>
-	<div id="store-area" hidden><tw-storydata name="Chaudron magique" startnode="39" creator="Twine" creator-version="2.0.11" ifid="A1089D4E-9A0F-4011-953B-C64AFD1CEFEC" format="SugarCube 2 (local/offline)" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/*@import url('https://fonts.googleapis.com/css?family=Open+Sans');*/
+	<div id="store-area" hidden><tw-storydata name="Chaudron magique" startnode="37" creator="Twine" creator-version="2.0.11" ifid="A1089D4E-9A0F-4011-953B-C64AFD1CEFEC" format="SugarCube 2 (local/offline)" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/*@import url('https://fonts.googleapis.com/css?family=Open+Sans');*/
 @import url('https://fonts.googleapis.com/css?family=Amaranth');
 /*@import url('https://fonts.googleapis.com/css?family=Lato');*/
 
@@ -241,6 +241,7 @@ a.internalLink:hover, a.externalLink:hover {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 /**
@@ -315,6 +316,7 @@ macros["goto"]=macros["timedgoto"]={
 };
 
 
+
 </script><tw-passagedata pid="1" name="Rivière" tags="" position="1340,1261">&lt;&lt;if $glace eq true&gt;&gt;
 Alors que le temps est fort agréable, vous arrivez devant une rivière gelée. Ne voyant pas de pont à l&#39;horizon, vous juger que l&#39;épaisseur de la glace n&#39;est pas très importante au vu des fissures présentes dans celle ci. Après un court instant de réfléxion, elle a l&#39;air assez épaisse pour passer sans sac à dos et éventuellement assez si vous ne déposez que votre bâton.
 [[Abandonner votre sac à dos-&gt;bruit]]&lt;!--&lt;&lt;set $allumette to false&gt;&gt;&lt;&lt;set $lampe to false&gt;&gt;&lt;!-- 100% de réussite--&gt;
@@ -353,11 +355,93 @@ Le bruit provient d&#39;un chemin discret sur votre droite. Vous rappelant les d
 Vous décider alors de porter vôtre bâton hors de l&#39;eau. Une fois de l&#39;autre côté de la rive, vous vous retrouvez humide, comme les amulettes que vous avez oublié dans votre sac. Une fois séché au soleil, par ce temps agréable, vous reprenez la route.
 [[suite-&gt;bruit]]
 </tw-passagedata>
-<tw-passagedata pid="5" name="Groupe de scout" tags="" position="2370,1270">Sur votre chemin, vous rencontrez un groupe de quatre scouts affairés à étudier la nature. L&#39;un regarde les champignons le long du sentier, un autre les papillons, le troisième ramasse des feuilles et le dernier regarde les nuages...
+<tw-passagedata pid="5" name="Groupe de scout" tags="" position="2370,1270">
+Sur votre chemin, vous rencontrez un groupe de jeunes scouts affairés à étudier la nature. L&#39;un ramasse des champignons, une autre des papillons, le troisième ramasse des feuilles et les examine avec une loupe et le dernier, perdu dans ses pensés, regarde les nuages...
+Ah la jeunesse, cela vous rappelle la votre où vous partiez avec votre grand-frère en forêt et où  vous imaginiez divers scénarios pour vous amuser : combat d&#39;épés, fabrication d&#39;arcs, construction de forteresse, opération commando,... A votre vu, ils se détournent de leur tâche pour vous saluer.
 &lt;&lt;if $champignon eq true&gt;&gt; Une drôle de lueur émane de leurs yeux et leurs gestes semblent mous.&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $scouteperduvu eq true&gt;&gt; Il doit surement s&#39;agir du groupe auquel appartient le scout vu précédemment.&lt;&lt;/if&gt;&gt;
-[[Les laisser à leurs occupations-&gt;Embranchement]]
-[[Les saluer-&gt;Dialogue scouts]]</tw-passagedata>
+
+&lt;span id=&quot;scouts&quot;&gt;
+	&lt;&lt;link &quot;Les saluer&quot;&gt;&gt;
+		&lt;&lt;replace &quot;#scouts&quot;&gt;&gt;
+&lt;&lt;if $champignon eq true&gt;&gt;
+&lt;!-- texte multicolor--&gt;
+- Bonjour l&#39;ami, dis moi tu dois être perdu non?
+- Encore un éléphant qui se promène dans le bois ?! Qui aurait dit qu&#39;il y en avait dans le coin...
+
+	&lt;span id=&quot;delire&quot;&gt;
+		&lt;&lt;link &quot;Les laisser dans leur monde&quot;&gt;&gt;
+			&lt;&lt;replace &quot;#delire&quot;&gt;&gt;
+Ne les comprenant pas, vous décidez de reprendre la route et ne pas perdre de temps avec eux...
+[[Suite-&gt;Embranchement]]
+			&lt;&lt;/replace&gt;&gt;
+		&lt;&lt;/link&gt;&gt;
+	&lt;/span&gt;
+&lt;&lt;else&gt;&gt;
+- Eh bonjour ! C&#39;est rare de rencontrer des gens par ici. Ca fait des semaines que nous examinons cette forêt et mis à part quelques animaux, nous ne voyons rien d&#39;intéressant.
+- Encore un citadin qui se perd dans le bois
+- Dites moi,je galère un peu à attraper cette pomme, vous ne pourrez pas m&#39;aider à l&#39;attraper ?
+&lt;!-- ou alors attraper papillon qui bouge à l&#39;écran(GIF)--&gt;
+	&lt;span id=&quot;help&quot;&gt;
+		&lt;&lt;link &quot;Aider&quot;&gt;&gt;
+			&lt;&lt;replace &quot;#help&quot;&gt;&gt;
+Il suffit juste de monter la chercher 
+Ah merci bien
+&lt;&lt;set $scoutaide to true&gt;&gt;
+&lt;span id=&quot;perdu&quot;&gt;
+	&lt;&lt;link &quot;Prendre congé&quot;&gt;&gt;
+		&lt;&lt;replace &quot;#perdu&quot;&gt;&gt;
+Devant vous remettre en route, vous laissez le groupe reprendre ses activités...
+[[Suite-&gt;Embranchement]]
+		&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+&lt;&lt;if $scoutperduvu eq true&gt;&gt;
+	&lt;&lt;link &quot;Mentionner le scout perdu&quot;&gt;&gt;
+		&lt;&lt;replace &quot;#perdu&quot;&gt;&gt;
+- roh toujours la tête en l&#39;air celui-là heureusement qu&#39;on lui a mis une pancarte
+- C&#39;est qu&#39;il nous mettra en retard avec ses bêtises et dire qu&#39;on doit retourner le chercher
+-En tout cas merci pour l&#39;indication et bonne route &lt;&lt;set $scoutaide to true&gt;&gt;
+[[Prendre congé-&gt;Embranchement]]
+		&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+	&lt;&lt;/if&gt;&gt;
+&lt;/span&gt;
+			&lt;&lt;/replace&gt;&gt;
+		&lt;&lt;/link&gt;&gt;
+		&lt;&lt;link &quot;Refuser&quot;&gt;&gt;
+			&lt;&lt;replace &quot;#help&quot;&gt;&gt;
+- Vous n&#39;êtes pas gentil ... en tout cas ne comptez pas sur nous pour vous aider en cas de besoin ...
+&lt;span id=&quot;perdu&quot;&gt;
+	&lt;&lt;link &quot;Prendre congé&quot;&gt;&gt;
+		&lt;&lt;replace &quot;#perdu&quot;&gt;&gt;
+Devant vous remettre en route, vous laissez le groupe reprendre ses activités...
+[[Suite-&gt;Embranchement]]
+		&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+&lt;&lt;if $scoutperduvu eq true&gt;&gt;
+	&lt;&lt;link &quot;Mentionner le scout perdu&quot;&gt;&gt;
+		&lt;&lt;replace &quot;#perdu&quot;&gt;&gt;
+- roh toujours la tête en l&#39;air celui-là heureusement qu&#39;on lui a mis une pancarte
+- C&#39;est qu&#39;il nous mettra en retard avec ses bêtises et dire qu&#39;on doit retourner le chercher
+-En tout cas merci pour l&#39;indication et bonne route &lt;&lt;set $scoutaide to true&gt;&gt;
+[[Prendre congé-&gt;Embranchement]]
+		&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+	&lt;&lt;/if&gt;&gt;
+&lt;/span&gt;
+			&lt;&lt;/replace&gt;&gt;
+		&lt;&lt;/link&gt;&gt;
+	&lt;/span&gt;
+&lt;&lt;/if&gt;&gt;
+		&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+	&lt;&lt;link &quot;Les laisser à leurs occupations&quot;&gt;&gt;
+		&lt;&lt;replace &quot;#scouts&quot;&gt;&gt;
+N&#39;ayant pas le temps pour dialoguer, vous laissez la jeunesse à leurs occupations et vous reprenez votre route
+[[Suite-&gt;Embranchement]]
+		&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+&lt;/span&gt;</tw-passagedata>
 <tw-passagedata pid="6" name="Manifestation" tags="" position="2081,1810">Interloqués de voir des animaux parlants, vous vous manifestez auprès d&#39;eux. Après plusieurs minutes de conversation au travers différents débats, vous allez reprendre la route vers la cabane du sorcier lorsqu&#39;un lapin vous propose d&#39;argumenter à propos de l&#39;existence et l’absurdité des sentiments avec un animal intelligent ...
 [[Relever le défit-&gt;Dicussion]]
 [[Décliner la proposition et s&#39;en aller-&gt;Groupe de scout]] </tw-passagedata>
@@ -369,29 +453,7 @@ Arrivé à un embranchement, vous voyez deux chemins qui s&#39;offrent à vous :
 - un chemin indiqué par un panneau affichant &quot;racourci&quot; mais qui vous semble glissant et escarpé
 [[aller vers le chemin sombre-&gt;chemin sombre]]
 [[Tenter le raccourci-&gt;raccourci]]</tw-passagedata>
-<tw-passagedata pid="9" name="Dialogue scouts" tags="" position="2501,1430">&lt;&lt;if $champignon eq true&gt;&gt;
-&lt;!-- texte multicolor--&gt;
-- Bonjour l&#39;ami, dis moi tu dois être perdu non?
-- Encore un éléphant qui se promène dans le bois je ne savais pas qu&#39;il y en avait dans le coin
-[[Les laisser dans leur monde-&gt;Embranchement]]
-&lt;&lt;else&gt;&gt;
-- Eh bonjour ! c&#39;est rare de rencontrer des gens par ici. Ca fait des semaines que nous examinons cette forêt et à par quelques animaux, nous ne voyons rien d&#39;intéressant.
-- Encore un citadin qui se perd dans le bois
-- DItes moi,je galère un peu à attraper cette pomme, vous ne pourrez pas m&#39;aider à l&#39;attraper ?
-[[Aider]]&lt;&lt;set $scoutaide to true&gt;&gt;
-[[Refuser]]
-&lt;!-- ou alors attraper papillon qui bouge à l&#39;écran(GIF)--&gt;
-	&lt;&lt;if $scoutperduvu eq true&gt;&gt;
-&lt;!--[[Mentionner le scout perdu]]
-- roh toujours la tête en l&#39;air celui-là heureusement qu&#39;on lui a mis une pancarte
-- C&#39;est qu&#39;il nous mettra en retard avec ses bêtises et dire qu&#39;on doit retourner le chercher
--En tout cas merci et bonne route &lt;&lt;set $scoutaide to true&gt;&gt;
-	&lt;&lt;else&gt;&gt;--&gt;
-	&lt;&lt;/if&gt;&gt;
-[[Retourner sur la route-&gt;Embranchement]]
-&lt;&lt;/if&gt;&gt;
-</tw-passagedata>
-<tw-passagedata pid="10" name="chemin sombre" tags="" position="2778,1010">Vous avancez alors en direction du chemin sombre où la visibilité est faible.
+<tw-passagedata pid="9" name="chemin sombre" tags="" position="2778,1010">Vous avancez alors en direction du chemin sombre où la visibilité est faible.
 &lt;&lt;if $alumette eq true&gt;&gt;
 [[Allumer une alumette-&gt;pièce or]]
 &lt;!--50% de chance de trouver une pièce d&#39;or -&gt;pièce or]] --&gt;
@@ -406,7 +468,7 @@ N&#39;ayant plus de moyens d&#39;éclairer la route, vous vous enffoncez dans l&
 
 [[continuer dans la pénombre-&gt;antre du dragon]]
 </tw-passagedata>
-<tw-passagedata pid="11" name="raccourci" tags="" position="3013,1263">&lt;&lt;if $baton eq true&gt;&gt;
+<tw-passagedata pid="10" name="raccourci" tags="" position="3013,1263">&lt;&lt;if $baton eq true&gt;&gt;
 Souhaitant gagner du temps, vous emprûntez le raccourcit et aidé de votre bâton vous avancez sans glisser et sans chuter dans le ravin.
 [[Poursuivre-&gt;cabane]]
 &lt;&lt;else&gt;&gt;
@@ -431,10 +493,10 @@ si bave de crapaud 20% de chance de réussite
  	&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="12" name="pièce or" tags="" position="2947,860">Eclairé, votre progression est facilitée et vous avancez plus serainenement malgré les bruits d&#39;animaux environnant. C&#39;est alors que vous voyez un objet brillant sur le sol. Après l&#39;avoir nétoyé de la terre qui le recouvrait, vous constatez qu&#39;il s&#39;agit d&#39;une pièce en or...
+<tw-passagedata pid="11" name="pièce or" tags="" position="2947,860">Eclairé, votre progression est facilitée et vous avancez plus serainenement malgré les bruits d&#39;animaux environnant. C&#39;est alors que vous voyez un objet brillant sur le sol. Après l&#39;avoir nétoyé de la terre qui le recouvrait, vous constatez qu&#39;il s&#39;agit d&#39;une pièce en or...
 [[Prendre la pièce-&gt;antre du dragon]]&lt;&lt;set $pieceor to true&gt;&gt;
 [[Reposer la pièce-&gt;antre du dragon]]</tw-passagedata>
-<tw-passagedata pid="13" name="antre du dragon" tags="" position="3125,1006">&lt;!-- bruit moto
+<tw-passagedata pid="12" name="antre du dragon" tags="" position="3125,1006">&lt;!-- bruit moto
 50% que l&#39;effet du sort de métamorphose ne fasse plus effet set $dragon to  dragon--&gt;
 
 autres options s&#39;il est encore sous forme d&#39;une moto--&gt;
@@ -474,7 +536,7 @@ Vous tentez vorte chance face au dragon en espérant que ces années resté sans
 &lt;&lt;/if&gt;&gt;
 --&gt;
 </tw-passagedata>
-<tw-passagedata pid="14" name="1er_ingrédient" tags="" position="335,1296">  &lt;!-- La potion de liquéfaction doit être neutralisé en annulant son acidité et sa liquidité :
+<tw-passagedata pid="13" name="1er_ingrédient" tags="" position="335,1296">  &lt;!-- La potion de liquéfaction doit être neutralisé en annulant son acidité et sa liquidité :
  Poussière de feu pour assécher la potion
  Glace pour solidifier la potion
  Champignon pour diminuer l&#39;acidité de la potion --&gt;
@@ -495,7 +557,7 @@ Vous tentez vorte chance face au dragon en espérant que ces années resté sans
 &lt;&lt;/timed&gt;&gt;
 
 </tw-passagedata>
-<tw-passagedata pid="15" name="poussièredefeu" tags="" position="575,1251">&lt;&lt;set $poussièredefeu to true&gt;&gt;
+<tw-passagedata pid="14" name="poussièredefeu" tags="" position="575,1251">&lt;&lt;set $poussièredefeu to true&gt;&gt;
 &lt;!-- fera brûler  le bâton dans la rivière s&#39;il nest pas porté hors de l&#39;eau--&gt;
 &lt;!-- Il reste encore l&#39;effet acide à réduire. --&gt;
 
@@ -531,7 +593,7 @@ Finalement, ce sont quelques feuilles d&#39;orties a priori tout à fait banales
 	&lt;&lt;/replace&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="16" name="glace" tags="" position="577,1047">&lt;&lt;set $glace to true&gt;&gt;
+<tw-passagedata pid="15" name="glace" tags="" position="577,1047">&lt;&lt;set $glace to true&gt;&gt;
 &lt;!-- fera geler la rivière--&gt;
 &lt;!-- Il reste encore l&#39;effet acide à réduire. --&gt;
 
@@ -568,7 +630,7 @@ Finalement, ce sont quelques feuilles d&#39;orties a priori tout à fait banales
 &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="17" name="champignon" tags="" position="575,1443">&lt;&lt;set $champignon to true&gt;&gt;
+<tw-passagedata pid="16" name="champignon" tags="" position="575,1443">&lt;&lt;set $champignon to true&gt;&gt;
 &lt;!-- champignons hallucinogènes qui agiront sur le groupe de scouts--&gt;
 &lt;!-- L&#39;effet acide étant annulé, il faut estomper l&#39;effet liquide --&gt;
 
@@ -605,25 +667,25 @@ Finalement, ce sont quelques feuilles d&#39;orties a priori tout à fait banales
 &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="18" name="tabac" tags="" position="940,984">&lt;&lt;set $tabac to true&gt;&gt;
+<tw-passagedata pid="17" name="tabac" tags="" position="940,984">&lt;&lt;set $tabac to true&gt;&gt;
 &lt;!-- les nains de jardin tousseront en pestant contre le sorcier et ses expériences--&gt;
 Devant l&#39;urgence de la situation, vous choisissez de sacrifier votre prestigieux tabac, importé tout droit d&#39;un fameux petit village dont les producteurs maîtrisent les techniques ancestrales de fabrication, depuis des millénaires. C&#39;est donc à contrecoeur que vous jetez dans la mixture votre onéreux tabac, afin d&#39;épaissir la potion, tout en gardant une quantité raisonnable pour votre pipe.
  Le tabac dissout dans la potion, le chaudron semble alors retrouver sa quiétude habituelle. Fatigué par les événements, vous décidez de vous allongez sur votre lit quelques instants, le temps de récupérer.
 Et c&#39;est lentement que vos yeux se ferment, et que vous retournez vous nicher dans les bras de Morphée...
 [[Poursuivre l&#39;histoire-&gt;Phase2]] </tw-passagedata>
-<tw-passagedata pid="19" name="orties" tags="" position="938,1258">&lt;&lt;set $orties to true&gt;&gt;
+<tw-passagedata pid="18" name="orties" tags="" position="938,1258">&lt;&lt;set $orties to true&gt;&gt;
 &lt;!-- les nains de jardin se gratteront en pestant contre le sorcier et ses expériences--&gt;
 Dépéché, par l&#39;urgence de la situation, à épaissir la mixture instable, et ne trouvant pas vos gants, vous décidez de prendre la poignée d&#39;orties à pleines mains pour l&#39;incorporer à la mixture. Ravalant l&#39;envie de vous gratter, vous regardez les feuilles se dissoudrent dans la décoction instable. La marmite se stabilisant et reprenant son habituelle quiétude, vous vous félicitez de votre prouesse à faire face à l&#39;imprévu. Vos démangeaisons persistant, vous vous essuyez  vos mains dans votre chiffon magique.
 Fatigué par les événements, vous décidez de vous allongez sur votre lit quelques instants, le temps de récupérer.
 Et c&#39;est lentement que vos yeux se ferment, et que vous retournez vous nicher dans les bras de Morphée...
 [[Poursuivre l&#39;histoire-&gt;Phase2]] </tw-passagedata>
-<tw-passagedata pid="20" name="bave" tags="" position="940,1132">&lt;&lt;set $bave to true&gt;&gt;
+<tw-passagedata pid="19" name="bave" tags="" position="940,1132">&lt;&lt;set $bave to true&gt;&gt;
 &lt;!-- augmentera les chances de chute dans le raccourci--&gt;
 Prenant le bocal vitrifié de bave de crapaud, collectée au cours de ces dernières semaines de chasse, par un temps pluvieux, vous tentez de l&#39;ouvrir. N&#39;y arrivant pas, poussé par l&#39;urgence de la situation, vous le jetez dans la marmite en espérant que le bocal ne résiste pas à l&#39;effet de la mixture. En voyant le bocal couler, vous vous sentez rassuré losque la marmite se stabilise pour retrouver sa quiétude innoffensive. Fatigué par les événements, vous décidez de vous allongez sur votre lit quelques instants, le temps de récupérer.
 Et c&#39;est lentement que vos yeux se ferment, et que vous retournez vous nicher dans les bras de Morphée...
 
 [[Poursuivre l&#39;histoire-&gt;Phase2]] </tw-passagedata>
-<tw-passagedata pid="21" name="marmite" tags="" position="191,1150">&lt;&lt;set $livre to true&gt;&gt;
+<tw-passagedata pid="20" name="marmite" tags="" position="191,1150">&lt;&lt;set $livre to true&gt;&gt;
 
 Après vous être rapidement étiré (dans une cacophonie de craquements osseux, la vieillesse ne vous a pas épargné), vous vous dirigez le plus tranquillement du monde vers votre chaudron.
 
@@ -762,7 +824,7 @@ Surpris, les nains cessent un instant de parler, les yeux ronds d&#39;étonnemen
 &lt;&lt;/link&gt;&gt;
 
 &lt;/span&gt;</tw-passagedata>
-<tw-passagedata pid="22" name="placard" tags="" position="182,1385">&lt;&lt;set $gateau to true&gt;&gt;
+<tw-passagedata pid="21" name="placard" tags="" position="182,1385">&lt;&lt;set $gateau to true&gt;&gt;
 Note : Bruit d&#39;ébullition
 
 	N&#39;écoutant que l&#39;appel de votre ventre, vous partez chercher quelque chose à grignoter dans le garde-manger. Hélas, votre déception est grande lorsque vous n&#39;y découvrez qu&#39;un triste désert alimentaire, à l&#39;exception de ce qui semble être un muffin. Vous pestez à votre encontre, vous auriez dû penser à aller refaire vos provisions chez &quot;Les fins gourmets de la forêt&quot;. Avec un soupir d&#39;irritation vous vous emparez malgré tout du muffin et vous dirigez vers le chaudron.
@@ -788,12 +850,12 @@ Note : Bruit d&#39;ébullition
 				&lt;&lt;/link&gt;&gt;
 			&lt;&lt;/replace&gt;&gt;
 		&lt;&lt;/link&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="23" name="os" tags="" position="935,1391">&lt;&lt;set $os to true&gt;&gt;
+<tw-passagedata pid="22" name="os" tags="" position="935,1391">&lt;&lt;set $os to true&gt;&gt;
 &lt;!-- fera apparaître des fantômes d&#39;animaux dans la clairière--&gt;
 Prenant les os sur la table, obtenus par vos différents repas, du lapin à la moutarde, du faisant farci, et d&#39;autres mets appétissants. C&#39;est alors que vous vous remémorez les cours de votre enfance, où votre professeur vous avait fait recopier 100 fois les propriétés épaississante et anti-acidifiante des os. Secouant la tête par dépit, vous ajoutez cet ingrédient à la potion. La potion semblant se calmer et fatigué par les événements, vous décidez de vous allongez sur votre lit quelques instants, le temps de récupérer un peu.
 Et c&#39;est lentement que vos yeux se ferment, et que vous retournez vous nicher dans les bras de Morphée...
 [[Poursuivre l&#39;histoire-&gt;Phase2]] </tw-passagedata>
-<tw-passagedata pid="24" name="corne" tags="" position="933,1541">&lt;&lt;set $corne to true&gt;&gt;
+<tw-passagedata pid="23" name="corne" tags="" position="933,1541">&lt;&lt;set $corne to true&gt;&gt;
 &lt;!-- fera intervenir un rhinocéros dans le procès--&gt;
 A contre-coeur, vous ajoutez la corne de licorne, qui vous avait coûté un bras une dizaine d&#39;années auparavant auprès d&#39;un marchant ambulant garantissant des propriétés exceptionnelles. Alors qu&#39;elle tombe dans le liquide bouillonant, vous attendant à ce que la magie de la corne stabilise complétement la mixture, une réaction inattendue se produit.
 
@@ -820,7 +882,7 @@ N&#39;ayant pas eu le réflexe de lancer un sort de protection, vous voyez le ch
 [[Poursuivre l&#39;histoire-&gt;Phase2]] 
 &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="25" name="StoryInit" tags="" position="20,996">&lt;!--ingrédients--&gt;
+<tw-passagedata pid="24" name="StoryInit" tags="" position="20,996">&lt;!--ingrédients--&gt;
 &lt;&lt;set $livre to false&gt;&gt;&lt;!--apparition annimaux savants dans la clairière--&gt;
 
 &lt;&lt;set $gateau to false&gt;&gt;&lt;!--transformation dragon en mouton--&gt;
@@ -871,7 +933,7 @@ N&#39;ayant pas eu le réflexe de lancer un sort de protection, vous voyez le ch
 &lt;&lt;cacheaudio &quot;snoring&quot; &quot;media/audio/snoring.mp3&quot;&gt;&gt;
 
 [[lancer-&gt;menu]]</tw-passagedata>
-<tw-passagedata pid="26" name="Phase2" tags="" position="1181,1260">&lt;!-- Retour dans le passé =&gt; flash pour marquer une ellipse temporelle--&gt;
+<tw-passagedata pid="25" name="Phase2" tags="" position="1181,1260">&lt;!-- Retour dans le passé =&gt; flash pour marquer une ellipse temporelle--&gt;
 
 Après avoir passé de nombreuses années à étudier les différentes facettes du droit, le diplôme en poche, Jean Charle de la Haute a décidé de visiter du pays. Il se retrouve ainsi à vaguer de ville en village et de village en ville, et à discutter avec diverses personnes, intellectuelles ou non, afin d&#39;argumenter sur tout sujet.
 
@@ -882,16 +944,16 @@ Il y a quelques semaines, durant vos habituelles argumentations vous avez eu ven
 Et c&#39;est ainsi que vous vous mettez en route, le sac sur le dos et le bâton à la main, afin de rencontrer ce mystérieux personnage à la réputation d&#39;enfant compulsif.
 
 [[Suite-&gt;Rivière]] </tw-passagedata>
-<tw-passagedata pid="27" name="Discussiondragon" tags="" position="3353,893">[[reprendre la route-&gt;Portesecrete]] </tw-passagedata>
-<tw-passagedata pid="28" name="cabane" tags="" position="3583,1266">&lt;!-- image de la cabane explosée ou non--&gt;
+<tw-passagedata pid="26" name="Discussiondragon" tags="" position="3353,893">[[reprendre la route-&gt;Portesecrete]] </tw-passagedata>
+<tw-passagedata pid="27" name="cabane" tags="" position="3583,1266">&lt;!-- image de la cabane explosée ou non--&gt;
 
 discour avec les nains de jardins
 
 discour de &quot;procès&quot;</tw-passagedata>
-<tw-passagedata pid="29" name="retourdiscret" tags="" position="2073,1446">N&#39;écoutant que votre courage, vous revenez sur vos pas, sans que les étranges créatures ne s&#39;en rende compte.
+<tw-passagedata pid="28" name="retourdiscret" tags="" position="2073,1446">N&#39;écoutant que votre courage, vous revenez sur vos pas, sans que les étranges créatures ne s&#39;en rende compte.
 [[Continuer-&gt;Groupe de scout]]
 </tw-passagedata>
-<tw-passagedata pid="30" name="retourfuite" tags="" position="2071,1595">Perdant tout courage, vous prenez vos jambes à votre cou et vous partez sans vous retourner. Une fois à bonne distance, vous reprenez votre souffle ...
+<tw-passagedata pid="29" name="retourfuite" tags="" position="2071,1595">Perdant tout courage, vous prenez vos jambes à votre cou et vous partez sans vous retourner. Une fois à bonne distance, vous reprenez votre souffle ...
 &lt;--!Dans votre fuite, vous avez perdu ...
 lampe (tombée du sac)	&lt;&lt;set $lampe to false&gt;&gt;
 sac (pris dans une branche) &lt;&lt;set $allumette to false&gt;&gt; &lt;&lt;set $lampe to false&gt;&gt;
@@ -899,13 +961,13 @@ Couteau (tombé de la poche) &lt;&lt;set $couteau to false&gt;&gt;
 --&gt;
 [[Poursuivre votre chemin-&gt;Groupe de scout]]
 </tw-passagedata>
-<tw-passagedata pid="31" name="Passer au travers de la glace" tags="" position="1486,1006">Alors que vous traversez cette rivière gelé, vous entendez des fisures se propager à chacun de vos pas. Alors que vous regrettez d&#39;avoir gardé autant de poids sur vous, la glace se brise sous vos pieds, vous retrouvant alors dans une eau gelée dont vous devez vite vous extirper avant de mourir gelé...
+<tw-passagedata pid="30" name="Passer au travers de la glace" tags="" position="1486,1006">Alors que vous traversez cette rivière gelé, vous entendez des fisures se propager à chacun de vos pas. Alors que vous regrettez d&#39;avoir gardé autant de poids sur vous, la glace se brise sous vos pieds, vous retrouvant alors dans une eau gelée dont vous devez vite vous extirper avant de mourir gelé...
 &lt;--! cliquer plusieurs fois pour avancer avec temps limité et fondu glacial (bad end)--&gt;
 [[badend_gelé]]
 Frigorifié, vous atteignez enfin l&#39;autre rive. Pour vous réchauffer, vous sortez la couverture de votre sac et vos vêtement séchant au soleil, vous vous demandez encore par quelle magie cette rivière peut être gelée.
 &lt;--!5secondes avec retour à image normale--&gt;Vos vêtements secs, et réchauffé, vous pouvez reprendre votre périple...
 [[Reprendre la route-&gt;bruit]] </tw-passagedata>
-<tw-passagedata pid="32" name="scoutperdu" tags="" position="30,833">&lt;!-- Lieux d&#39;apparition possibles du scout :
+<tw-passagedata pid="31" name="scoutperdu" tags="" position="30,833">&lt;!-- Lieux d&#39;apparition possibles du scout :
 - avant la rivière
 - après l&#39;avoir franchie
 - la clairière si pas d&#39;animaux ou fantômes (là où se situe la chevalière niveau secret, donc diminuerait encore plus la proba...)
@@ -918,10 +980,10 @@ Répondre à une question pour obtenir le livre
 &lt;!-- carte du chaudron retrouvée par le promeneur et utilisée dans le procès--&gt;
 
 &lt;!-- champignons --&gt;</tw-passagedata>
-<tw-passagedata pid="33" name="badend_gelé" tags="" position="1743,846">Lentement, vous sentez vos membres s&#39;engourdir jusqu&#39;au point de ne plus pouvoir bouger. Petit à petit, vos yeux se ferment et vous  partez à la dérive dans un sommeil sans fin.
+<tw-passagedata pid="32" name="badend_gelé" tags="" position="1743,846">Lentement, vous sentez vos membres s&#39;engourdir jusqu&#39;au point de ne plus pouvoir bouger. Petit à petit, vos yeux se ferment et vous  partez à la dérive dans un sommeil sans fin.
 [[badend]]
 </tw-passagedata>
-<tw-passagedata pid="34" name="Clairrière" tags="" position="1881,1385">&lt;&lt;if $livre eq true&gt;&gt;
+<tw-passagedata pid="33" name="Clairrière" tags="" position="1881,1385">&lt;&lt;if $livre eq true&gt;&gt;
 Alors que vous avancer dans le sentier, les bruits deviennent de plus en plus clair et vous devinez une conversation. Alors que vous alliez vous manifester, vour voyez des animaux parlant entre-eux. Absorbé par leur conversation, ils ne semblent pas vous avoir vu...
 [[Se manifester-&gt;Manifestation]]
 [[Repartir discrètement-&gt;retourdiscret]]
@@ -937,23 +999,22 @@ Empruntant le sentier, vous débouchez sur une paisible clairrière délimitée 
 [[Continuer-&gt;Groupe de scout]]
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="35" name="badend" tags="" position="4056,1775">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
-<tw-passagedata pid="36" name="Portesecrete" tags="" position="3416,1125">Alors que vous avancer paisiblement,
+<tw-passagedata pid="34" name="badend" tags="" position="4056,1775">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
+<tw-passagedata pid="35" name="Portesecrete" tags="" position="3416,1125">Alors que vous avancer paisiblement,
 mur composés de 11 étranges symboles composé d&#39;or (des chevaliers en armure)
 il doit y en manquer un car un trou
 Mettre la chevalière das le trou
 [[lieusecret]]
 [[cabane]]</tw-passagedata>
-<tw-passagedata pid="37" name="lieusecret" tags="" position="3565,1065">[[cabane]] </tw-passagedata>
-<tw-passagedata pid="38" name="Refuser" tags="" position="2651,1580">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
-<tw-passagedata pid="39" name="menu" tags="" position="233,866">&lt;img id=&quot;game_title&quot; alt=&quot;Chaudron magique&quot; src=&quot;media/pictures/title.png&quot; /&gt;
+<tw-passagedata pid="36" name="lieusecret" tags="" position="3565,1065">[[cabane]] </tw-passagedata>
+<tw-passagedata pid="37" name="menu" tags="" position="233,866">&lt;img id=&quot;game_title&quot; alt=&quot;Chaudron magique&quot; src=&quot;media/pictures/title.png&quot; /&gt;
 
 Chaudron magique est un jeu blabla...
 
 
 [[Jouer-&gt;Intro]]
 [[Crédits]]</tw-passagedata>
-<tw-passagedata pid="40" name="Crédits" tags="" position="383,1017">Jeu-vidéo réalisé dans le cadre de l&#39;UV IC06 à l&#39;UTC par :
+<tw-passagedata pid="38" name="Crédits" tags="" position="383,1017">Jeu-vidéo réalisé dans le cadre de l&#39;UV IC06 à l&#39;UTC par :
 &lt;&lt;nobr&gt;&gt;
 &lt;ul&gt;
 &lt;li&gt;Fabien Boucaud&lt;/li&gt;
@@ -966,7 +1027,7 @@ Ressources :
 Blabla
 
 [[Retour au menu-&gt;menu]]</tw-passagedata>
-<tw-passagedata pid="41" name="Intro" tags="" position="30,1229">&lt;&lt;nobr&gt;&gt;
+<tw-passagedata pid="39" name="Intro" tags="" position="30,1229">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;audio &quot;snoring&quot; loop play volume 0.5 fadein&gt;&gt;
 &lt;span id=&quot;intro_text&quot;&gt;
 Alors que doucement la forêt s&#39;éveille sous les doux et chauds rayons solaires de l&#39;aube, tout semble indiquer que la journée sera belle. La lumière matinale trouve son chemin jusqu&#39;à la fenêtre d&#39;une petite cabane où vous dormez d&#39;un sommeil manifestement agité. A mesure que l&#39;obscurité de la nuit est chassée de votre humble demeure vous vous arrachez
