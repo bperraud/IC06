@@ -498,7 +498,7 @@ si bave de crapaud 20% de chance de réussite
  	&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="11" name="pièce or" tags="" position="2947,860">Eclairé, votre progression est facilitée et vous avancez plus sereinement, malgré les bruits d&#39;animaux environnant. Et, heureusement pour vous, vous ne voyez pas les créatures qui vous scrutent.  Car aussi susceptibles qu’elles sont, elles vous mettraient en pièces si vous tentiez de les fuir par dégoût.  Admirant la triste végétation poussant en ces lieux, votre regard est attiré par un objet brillant sur le sol. Vous vous penchez donc pour ramasser ce précieux objet rond et doré et, après l&#39;avoir nettoyé de la terre qui le recouvrait, vous pouvez observer d’étranges motifs sur cette pièce d’or...
+<tw-passagedata pid="11" name="pièce or" tags="" position="2948,859">Eclairé, votre progression est facilitée et vous avancez plus sereinement, malgré les bruits d&#39;animaux environnant. Et, heureusement pour vous, vous ne voyez pas les créatures qui vous scrutent.  Car aussi susceptibles qu’elles sont, elles vous mettraient en pièces si vous tentiez de les fuir par dégoût.  Admirant la triste végétation poussant en ces lieux, votre regard est attiré par un objet brillant sur le sol. Vous vous penchez donc pour ramasser ce précieux objet rond et doré et, après l&#39;avoir nettoyé de la terre qui le recouvrait, vous pouvez observer d’étranges motifs sur cette pièce d’or...
 &lt;span id=&quot;pieceor&quot;&gt;
 	&lt;&lt;link &quot;Prendre la pièce&quot;&gt;&gt;
 		&lt;&lt;replace &quot;#pieceor&quot;&gt;&gt;
@@ -517,43 +517,73 @@ Devant l’incompréhension des symboles, vous préférez reposer la pièce plut
 </tw-passagedata>
 <tw-passagedata pid="12" name="antre du dragon" tags="" position="3125,1006">&lt;!-- bruit moto
 50% que l&#39;effet du sort de métamorphose ne fasse plus effet set $dragon to  &quot;dragon&quot;--&gt;
-
-autres options s&#39;il est encore sous forme d&#39;une moto--&gt;
 Alors que vous sortez de la pénombre du sombre chemin, vous arrivez devant une sorte de grotte contre laquelle est appuyée une moto. Au pied de la roue arrière, vous pouvez voir qu&#39;un chien soulage sa vessie.
 &lt;&lt;if $dragon eq &quot;dragon&quot;&gt;&gt;
 C&#39;est alors que la moto se met à vibrer et à se déformer pour prendre des dimensions gigantesques et laisser place à une créature semblable à un dragon. D&#39;un coup, il gobe le pauvre chien
-- Ah la sale bête ! Enfin je t&#39;ai eu, depuis le temps ! ça t&#39;apprendra à venir tout les jours pour te soulager sur moi !
+- Ah la sale bête ! Enfin je t&#39;ai eu, depuis le temps ! Ça t&#39;apprendra à venir tous les jours pour te soulager sur moi !
 Grouaahh que ça fait du bien de s&#39;étirer.
 
+BLABLABLA
 
-
-
+Reprendre la route
 
 &lt;&lt;if $pieceor eq true&gt;&gt;
 &lt;!-- bruit dragon qui sent qqch--&gt;
-- C&#39;est quoi cette odeur, mes souvenir sont lointaint mais cette odeur m&#39;est agréable... N&#39;aurais tu pas de l&#39;or sur toi qui aurait appartenu à mon trésor?
-
-[[Mentir-&gt;Discussiondragon]]15% de réussite 50% avec le livre
-[[Donner pièce-&gt;Discussiondragon]] set $pieceor to false
-[[Fuir-&gt;Portesecrete]]
-
-&lt;!--lié à &quot;fuir&quot;--&gt;
+- C&#39;est quoi cette odeur, mes souvenir sont lointains mais cette odeur m&#39;est fort agréable... N&#39;aurais tu pas de l&#39;or sur toi qui aurait appartenu à mon trésor?
+&lt;span id=&quot;voleur&quot;&gt;
+	&lt;&lt;link &quot;Mentir&quot;&gt;&gt;
+		&lt;&lt;replace &quot;#voleur&quot;&gt;&gt;
+15% de réussite 50% avec le livre 
+[[Suite-&gt;Portesecrete]]
+[[badend]]
+		&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+	&lt;&lt;link &quot;Donner la pièce&quot;&gt;&gt;
+		&lt;&lt;replace &quot;#voleur&quot;&gt;&gt;
+&lt;&lt;set $pieceor to false&gt;&gt;
+[[Suite-&gt;Portesecrete]]
+		&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+	&lt;&lt;link &quot;Fuir&quot;&gt;&gt;
+		&lt;&lt;replace &quot;#voleur&quot;&gt;&gt;
 	&lt;&lt;if $gateau eq true&gt;&gt;
-Vous courez et, le dragon se mettant à votre poursuite, vous vous dites que votre vie ne vallait peut-être pas une pièce d&#39;or en fin de compte. Alors que vous sentez que votre fin approche, vous n&#39;entendez plus la course lourde du dragon. Ne comprenant pas, vous vous retournez pour apercevoir que derrière vous se trouve un mouton qui broutte paisiblement l&#39;herbe le long du chemin.
+Vous courez et, le dragon se mettant à votre poursuite, vous vous dites que votre vie ne valait peut-être pas une pièce d&#39;or en fin de compte. Alors que vous sentez que votre fin approche, vous n&#39;entendez plus la course lourde du dragon. Ne comprenant pas, vous vous retournez pour apercevoir que derrière vous se trouve un mouton qui broute paisiblement l&#39;herbe le long du chemin.
+[[Suite-&gt;Portesecrete]]
 &lt;!-- bruit mouton--&gt;
 	&lt;&lt;else&gt;&gt;
 &lt;!--30% de réussite--&gt;
-Profitant d&#39;un moment d&#39;inatention de la part du dragon, vous fuyez en courant aussi vite que possible. Le dragon se mettant à votre poursuite et se raprochant de plus en plus, vous sentez la fin arriver et c&#39;est alors que vous glissez sur une pierre, vous faisant alors tomber dans le ravin bordant le chemin.
-Tant bien que mal, vous vous en sortez sans blessures et vous entendez alors le dragon proférer ses dernières mences :
+Profitant d&#39;un moment d&#39;inattention de la part du dragon, vous fuyez en courant aussi vite que possible. Le dragon se mettant à votre poursuite et se rapprochant de plus en plus, vous sentez la fin arriver et c&#39;est alors que vous glissez sur une pierre, vous faisant alors tomber dans le ravin bordant le chemin.
+Tant bien que mal, vous vous en sortez sans blessures et vous entendez alors le dragon proférer ses dernières menaces :
 -Tu as de la chance que c&#39;est plus de mon âge de voler à la poursuite de voleur de ton espèce mais soit sûr que la prochaine fois que tu passeras, je me chargerai de toi...
+[[Suite-&gt;Portesecrete]]
 &lt;!--70% d&#39;échec--&gt;
-Vous tentez vorte chance face au dragon en espérant que ces années resté sans bouger l&#39;empêcheront de vous rattraper. Vous courez aussi vite que possible pour lui échapper mais le bruit lourd de ses pas se rapproche rapidement. Sachant que c&#39;est la fin pour vous, vous regrettez d&#39;avoir risqué votre vie pour une simple pièce et c&#39;est alors que la machoire du dragon se referme sur vous...
+Vous tentez votre chance face au dragon en espérant que ces années resté sans bouger l&#39;empêcheront de vous rattraper. Vous courez aussi vite que possible pour lui échapper mais le bruit lourd de ses pas se rapproche rapidement. Sachant que c&#39;est la fin pour vous, vous regrettez d&#39;avoir risqué votre vie pour une simple pièce et c&#39;est alors que la mâchoire du dragon se referme sur vous...
 [[badend]]
 	&lt;&lt;/if&gt;&gt;
+		&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+&lt;/span&gt;
 &lt;&lt;else&gt;&gt;
-[[repartir-&gt;Portesecrete]]
+Et c’est ainsi que vous laissez cette créature fantastique à la recherche de son trésor …
+[[Suite-&gt;Portesecrete]]
 &lt;&lt;/if&gt;&gt;
---&gt;
+&lt;&lt;else&gt;&gt;
+Le chien vous voyant arriver, file se cacher dans des buissons. N’apercevant personne dans les alentours, vous vous approchez de la moto, qui vrombisse. Las de marcher, vous envisagez de la prendre…
+&lt;span id=&quot;moto&quot;&gt;
+	&lt;&lt;link &quot;Enfourcher la moto&quot;&gt;&gt;
+		&lt;&lt;replace &quot;#moto&quot;&gt;&gt;
+Et c’est ainsi que vous décidez « d’emprunter&quot; le bolide à son mystérieux possesseur et que vous vous élancez à toute blinde sur la route. Le paysage défilant à toute vitesse, les cheveux au vent, vous pouvez sentir la puissance du bolide.  C’est alors que celui-ci semble cafouiller, éventuellement de mécontentement (après tout la moto a peut-être quelque chose de magique) et, après une embardé, prend la direction des arbres. N’arrivant pas à rattraper la trajectoire, vous recevez une branche dans le torse, qui vous fait tomber de la moto, tandis que celle-ci continue sa course. Après avoir récupéré tout en maudissant la moto, que vous entendez au loin, vous reprenez votre route avec une douleur dans la poitrine…
+[[Suite-&gt;Portesecrete]]
+		&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+	&lt;&lt;link &quot;Continuer à pied&quot;&gt;&gt;
+		&lt;&lt;replace &quot;#moto&quot;&gt;&gt;
+Vous méfiant de tout ce qui se rattache à ce mystérieux lieu, vous préférez ne pas prendre le risque de mécontenter l’énigmatique possesseur de la moto. Et c’est ainsi que, contre l’avis de vos semelles, vous repartez …
+[[Suite-&gt;Portesecrete]]
+		&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+&lt;/span&gt;
+&lt;&lt;/if&gt;&gt;
 </tw-passagedata>
 <tw-passagedata pid="13" name="1er_ingrédient" tags="" position="335,1296">  &lt;!-- La potion de liquéfaction doit être neutralisé en annulant son acidité et sa liquidité :
  Poussière de feu pour assécher la potion
