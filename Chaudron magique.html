@@ -98,7 +98,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<p id="init-lacking">Apologies! You are using an <strong>outdated</strong> browser which lacks required capabilities. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<p id="init-loading">Initializing. Please wait&hellip;<br /><progress></progress></p>
 	</div>
-	<div id="store-area" hidden><tw-storydata name="Chaudron magique" startnode="37" creator="Twine" creator-version="2.0.11" ifid="A1089D4E-9A0F-4011-953B-C64AFD1CEFEC" format="SugarCube 2 (local/offline)" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/*@import url('https://fonts.googleapis.com/css?family=Open+Sans');*/
+	<div id="store-area" hidden><tw-storydata name="Chaudron magique" startnode="36" creator="Twine" creator-version="2.0.11" ifid="A1089D4E-9A0F-4011-953B-C64AFD1CEFEC" format="SugarCube 2 (local/offline)" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/*@import url('https://fonts.googleapis.com/css?family=Open+Sans');*/
 @import url('https://fonts.googleapis.com/css?family=Amaranth');
 /*@import url('https://fonts.googleapis.com/css?family=Lato');*/
 
@@ -244,6 +244,7 @@ a.internalLink:hover, a.externalLink:hover {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 /**
@@ -316,6 +317,7 @@ macros["goto"]=macros["timedgoto"]={
 		}
 	}
 };
+
 
 
 
@@ -515,59 +517,83 @@ Devant l’incompréhension des symboles, vous préférez reposer la pièce plut
 	&lt;&lt;/link&gt;&gt;
 &lt;/span&gt;
 </tw-passagedata>
-<tw-passagedata pid="12" name="antre du dragon" tags="" position="3125,1006">&lt;!-- bruit moto
-50% que l&#39;effet du sort de métamorphose ne fasse plus effet set $dragon to  &quot;dragon&quot;--&gt;
+<tw-passagedata pid="12" name="antre du dragon" tags="" position="3127,1006">&lt;!-- bruit moto--&gt;
+&lt;&lt;set $variable to random(1,10)&gt;&gt;
+&lt;&lt;if $variable &gt; 5&gt;&gt;
+&lt;&lt;set $dragon to  &quot;dragon&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 Alors que vous sortez de la pénombre du sombre chemin, vous arrivez devant une sorte de grotte contre laquelle est appuyée une moto. Au pied de la roue arrière, vous pouvez voir qu&#39;un chien soulage sa vessie.
-&lt;&lt;if $dragon eq &quot;dragon&quot;&gt;&gt;
+&lt;&lt;if $dragon eq &quot;dragon&quot;&gt;&gt;&lt;!-- ######dragon=dragon##########--&gt;
 C&#39;est alors que la moto se met à vibrer et à se déformer pour prendre des dimensions gigantesques et laisser place à une créature semblable à un dragon. D&#39;un coup, il gobe le pauvre chien
 - Ah la sale bête ! Enfin je t&#39;ai eu, depuis le temps ! Ça t&#39;apprendra à venir tous les jours pour te soulager sur moi !
 Grouaahh que ça fait du bien de s&#39;étirer.
 
 BLABLABLA
 
-Reprendre la route
-
-&lt;&lt;if $pieceor eq true&gt;&gt;
+&lt;span id=&quot;depart&quot;&gt;
+	&lt;&lt;link &quot;Reprendre la route&quot;&gt;&gt;
+		&lt;&lt;replace &quot;#depart&quot;&gt;&gt;
+	&lt;&lt;if $pieceor eq true&gt;&gt;
 &lt;!-- bruit dragon qui sent qqch--&gt;
 - C&#39;est quoi cette odeur, mes souvenir sont lointains mais cette odeur m&#39;est fort agréable... N&#39;aurais tu pas de l&#39;or sur toi qui aurait appartenu à mon trésor?
 &lt;span id=&quot;voleur&quot;&gt;
-	&lt;&lt;link &quot;Mentir&quot;&gt;&gt;
+	&lt;&lt;link &quot;Mentir&quot;&gt;&gt;&lt;!-- ###############Mentir############--&gt;
 		&lt;&lt;replace &quot;#voleur&quot;&gt;&gt;
-15% de réussite 50% avec le livre 
+&lt;&lt;set $variable to random(1,10)&gt;&gt;
+		&lt;&lt;if $livrescout eq true&gt;&gt;&lt;!--#######Test echec fuite#######--&gt;
+			&lt;&lt;if $variable &gt; 5&gt;&gt;	
+&lt;&lt;set $variable to &quot;echec&quot;&gt;&gt;
+			&lt;&lt;/if&gt;&gt;
+		&lt;&lt;else&gt;&gt;
+			&lt;&lt;if $variable &gt; 2&gt;&gt;
+&lt;&lt;set $variable to &quot;echec&quot;&gt;&gt;
+			&lt;&lt;/if&gt;&gt;
+		&lt;&lt;/if&gt;&gt;
+		&lt;&lt;if $variable eq &quot;echec&quot;&gt;&gt;
+Alors que vous essayez, tant bien que mal d&#39;argumenter sur le fait que vous ne pouvez pas avoir la pièce, le dragon, agacé, vous gobe d&#39;un geste rapide pour son âge...
+[[Fin-&gt;badend]]
+		&lt;&lt;else&gt;&gt;
+Après un discours riche en arguments, le vieux dragon abdique et vous présente ses excuses en prenant pour faute son odorat âgé.
 [[Suite-&gt;Portesecrete]]
-[[badend]]
+		&lt;&lt;/if&gt;&gt;
 		&lt;&lt;/replace&gt;&gt;
 	&lt;&lt;/link&gt;&gt;
-	&lt;&lt;link &quot;Donner la pièce&quot;&gt;&gt;
+	&lt;&lt;link &quot;Donner la pièce&quot;&gt;&gt;&lt;!-- #######Donnerpièce######--&gt;
 		&lt;&lt;replace &quot;#voleur&quot;&gt;&gt;
 &lt;&lt;set $pieceor to false&gt;&gt;
+Bien que le dragon soit âgé, vous préférez ne pas prendre de risques et vous lui donnez la pièce et il vous laisse repartir sans vous dévorer. 
 [[Suite-&gt;Portesecrete]]
 		&lt;&lt;/replace&gt;&gt;
 	&lt;&lt;/link&gt;&gt;
-	&lt;&lt;link &quot;Fuir&quot;&gt;&gt;
+	&lt;&lt;link &quot;Fuir&quot;&gt;&gt;&lt;!-- ###############Fuir############--&gt;
 		&lt;&lt;replace &quot;#voleur&quot;&gt;&gt;
-	&lt;&lt;if $gateau eq true&gt;&gt;
+		&lt;&lt;if $gateau eq true&gt;&gt;
 Vous courez et, le dragon se mettant à votre poursuite, vous vous dites que votre vie ne valait peut-être pas une pièce d&#39;or en fin de compte. Alors que vous sentez que votre fin approche, vous n&#39;entendez plus la course lourde du dragon. Ne comprenant pas, vous vous retournez pour apercevoir que derrière vous se trouve un mouton qui broute paisiblement l&#39;herbe le long du chemin.
 [[Suite-&gt;Portesecrete]]
 &lt;!-- bruit mouton--&gt;
-	&lt;&lt;else&gt;&gt;
-&lt;!--30% de réussite--&gt;
+		&lt;&lt;else&gt;&gt;
+&lt;&lt;set $variable to random(1,10)&gt;&gt;
+			&lt;&lt;if $variable &lt; 4&gt;&gt;
 Profitant d&#39;un moment d&#39;inattention de la part du dragon, vous fuyez en courant aussi vite que possible. Le dragon se mettant à votre poursuite et se rapprochant de plus en plus, vous sentez la fin arriver et c&#39;est alors que vous glissez sur une pierre, vous faisant alors tomber dans le ravin bordant le chemin.
 Tant bien que mal, vous vous en sortez sans blessures et vous entendez alors le dragon proférer ses dernières menaces :
 -Tu as de la chance que c&#39;est plus de mon âge de voler à la poursuite de voleur de ton espèce mais soit sûr que la prochaine fois que tu passeras, je me chargerai de toi...
 [[Suite-&gt;Portesecrete]]
-&lt;!--70% d&#39;échec--&gt;
+			&lt;&lt;else&gt;&gt;
 Vous tentez votre chance face au dragon en espérant que ces années resté sans bouger l&#39;empêcheront de vous rattraper. Vous courez aussi vite que possible pour lui échapper mais le bruit lourd de ses pas se rapproche rapidement. Sachant que c&#39;est la fin pour vous, vous regrettez d&#39;avoir risqué votre vie pour une simple pièce et c&#39;est alors que la mâchoire du dragon se referme sur vous...
 [[badend]]
-	&lt;&lt;/if&gt;&gt;
+			&lt;&lt;/if&gt;&gt;
+		&lt;&lt;/if&gt;&gt;
 		&lt;&lt;/replace&gt;&gt;
 	&lt;&lt;/link&gt;&gt;
 &lt;/span&gt;
-&lt;&lt;else&gt;&gt;
+	&lt;&lt;else&gt;&gt;&lt;!-- ############Pas de pièce en poche##########--&gt;
 Et c’est ainsi que vous laissez cette créature fantastique à la recherche de son trésor …
 [[Suite-&gt;Portesecrete]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;else&gt;&gt;
+	&lt;&lt;/if&gt;&gt;
+			&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+&lt;/span&gt;
+&lt;&lt;else&gt;&gt;&lt;!-- #################dragon = moto#############--&gt;
 Le chien vous voyant arriver, file se cacher dans des buissons. N’apercevant personne dans les alentours, vous vous approchez de la moto, qui vrombisse. Las de marcher, vous envisagez de la prendre…
 &lt;span id=&quot;moto&quot;&gt;
 	&lt;&lt;link &quot;Enfourcher la moto&quot;&gt;&gt;
@@ -583,7 +609,9 @@ Vous méfiant de tout ce qui se rattache à ce mystérieux lieu, vous préférez
 		&lt;&lt;/replace&gt;&gt;
 	&lt;&lt;/link&gt;&gt;
 &lt;/span&gt;
+
 &lt;&lt;/if&gt;&gt;
+
 </tw-passagedata>
 <tw-passagedata pid="13" name="1er_ingrédient" tags="" position="335,1296">  &lt;!-- La potion de liquéfaction doit être neutralisé en annulant son acidité et sa liquidité :
  Poussière de feu pour assécher la potion
@@ -970,6 +998,7 @@ N&#39;ayant pas eu le réflexe de lancer un sort de protection, vous voyez le ch
 
 &lt;&lt;set $dragon to &quot;moto&quot;&gt;&gt;&lt;!--métamorphose ancienne du dragon par le sorcier--&gt;
 &lt;&lt;set $scoutperduvu to false&gt;&gt;&lt;!--le scout perdu a été rencontré?--&gt;
+&lt;&lt;set $livrescout to false&gt;&gt;
 
 &lt;&lt;set $scoutaide to false&gt;&gt;&lt;!--vous avez aidé le groupe de scout?--&gt;
 
@@ -989,16 +1018,15 @@ Il y a quelques semaines, durant vos habituelles argumentations vous avez eu ven
 Et c&#39;est ainsi que vous vous mettez en route, le sac sur le dos et le bâton à la main, afin de rencontrer ce mystérieux personnage à la réputation d&#39;enfant compulsif.
 
 [[Suite-&gt;Rivière]] </tw-passagedata>
-<tw-passagedata pid="26" name="Discussiondragon" tags="" position="3353,893">[[reprendre la route-&gt;Portesecrete]] </tw-passagedata>
-<tw-passagedata pid="27" name="cabane" tags="" position="3583,1266">&lt;!-- image de la cabane explosée ou non--&gt;
+<tw-passagedata pid="26" name="cabane" tags="" position="3583,1266">&lt;!-- image de la cabane explosée ou non--&gt;
 
 discour avec les nains de jardins
 
 discour de &quot;procès&quot;</tw-passagedata>
-<tw-passagedata pid="28" name="retourdiscret" tags="" position="2073,1446">N&#39;écoutant que votre courage, vous revenez sur vos pas, sans que les étranges créatures ne s&#39;en rende compte.
+<tw-passagedata pid="27" name="retourdiscret" tags="" position="2073,1446">N&#39;écoutant que votre courage, vous revenez sur vos pas, sans que les étranges créatures ne s&#39;en rende compte.
 [[Continuer-&gt;Groupe de scout]]
 </tw-passagedata>
-<tw-passagedata pid="29" name="retourfuite" tags="" position="2071,1595">Perdant tout courage, vous prenez vos jambes à votre cou et vous partez sans vous retourner. Une fois à bonne distance, vous reprenez votre souffle ...
+<tw-passagedata pid="28" name="retourfuite" tags="" position="2071,1595">Perdant tout courage, vous prenez vos jambes à votre cou et vous partez sans vous retourner. Une fois à bonne distance, vous reprenez votre souffle ...
 &lt;--!Dans votre fuite, vous avez perdu ...
 lampe (tombée du sac)	&lt;&lt;set $lampe to false&gt;&gt;
 sac (pris dans une branche) &lt;&lt;set $allumette to false&gt;&gt; &lt;&lt;set $lampe to false&gt;&gt;
@@ -1006,13 +1034,13 @@ Couteau (tombé de la poche) &lt;&lt;set $couteau to false&gt;&gt;
 --&gt;
 [[Poursuivre votre chemin-&gt;Groupe de scout]]
 </tw-passagedata>
-<tw-passagedata pid="30" name="Passer au travers de la glace" tags="" position="1486,1006">Alors que vous traversez cette rivière gelé, vous entendez des fisures se propager à chacun de vos pas. Alors que vous regrettez d&#39;avoir gardé autant de poids sur vous, la glace se brise sous vos pieds, vous retrouvant alors dans une eau gelée dont vous devez vite vous extirper avant de mourir gelé...
+<tw-passagedata pid="29" name="Passer au travers de la glace" tags="" position="1486,1006">Alors que vous traversez cette rivière gelé, vous entendez des fisures se propager à chacun de vos pas. Alors que vous regrettez d&#39;avoir gardé autant de poids sur vous, la glace se brise sous vos pieds, vous retrouvant alors dans une eau gelée dont vous devez vite vous extirper avant de mourir gelé...
 &lt;--! cliquer plusieurs fois pour avancer avec temps limité et fondu glacial (bad end)--&gt;
 [[badend_gelé]]
 Frigorifié, vous atteignez enfin l&#39;autre rive. Pour vous réchauffer, vous sortez la couverture de votre sac et vos vêtement séchant au soleil, vous vous demandez encore par quelle magie cette rivière peut être gelée.
 &lt;--!5secondes avec retour à image normale--&gt;Vos vêtements secs, et réchauffé, vous pouvez reprendre votre périple...
 [[Reprendre la route-&gt;bruit]] </tw-passagedata>
-<tw-passagedata pid="31" name="scoutperdu" tags="" position="30,833">&lt;!-- Lieux d&#39;apparition possibles du scout :
+<tw-passagedata pid="30" name="scoutperdu" tags="" position="30,833">&lt;!-- Lieux d&#39;apparition possibles du scout :
 - avant la rivière
 - après l&#39;avoir franchie
 - la clairière si pas d&#39;animaux ou fantômes (là où se situe la chevalière niveau secret, donc diminuerait encore plus la proba...)
@@ -1021,14 +1049,14 @@ Frigorifié, vous atteignez enfin l&#39;autre rive. Pour vous réchauffer, vous 
 - avant la cabane du sorcier (de manière générale)
 --&gt;
 
-Répondre à une question pour obtenir le livre
+Répondre à une question pour obtenir le livre &lt;&lt;set $livrescout to true&gt;&gt;
 &lt;!-- carte du chaudron retrouvée par le promeneur et utilisée dans le procès--&gt;
 
 &lt;!-- champignons --&gt;</tw-passagedata>
-<tw-passagedata pid="32" name="badend_gelé" tags="" position="1743,846">Lentement, vous sentez vos membres s&#39;engourdir jusqu&#39;au point de ne plus pouvoir bouger. Petit à petit, vos yeux se ferment et vous  partez à la dérive dans un sommeil sans fin.
+<tw-passagedata pid="31" name="badend_gelé" tags="" position="1743,846">Lentement, vous sentez vos membres s&#39;engourdir jusqu&#39;au point de ne plus pouvoir bouger. Petit à petit, vos yeux se ferment et vous  partez à la dérive dans un sommeil sans fin.
 [[badend]]
 </tw-passagedata>
-<tw-passagedata pid="33" name="Clairrière" tags="" position="1881,1385">&lt;&lt;if $livre eq true&gt;&gt;
+<tw-passagedata pid="32" name="Clairrière" tags="" position="1881,1385">&lt;&lt;if $livre eq true&gt;&gt;
 Alors que vous avancer dans le sentier, les bruits deviennent de plus en plus clair et vous devinez une conversation. Alors que vous alliez vous manifester, vour voyez des animaux parlant entre-eux. Absorbé par leur conversation, ils ne semblent pas vous avoir vu...
 [[Se manifester-&gt;Manifestation]]
 [[Repartir discrètement-&gt;retourdiscret]]
@@ -1044,22 +1072,22 @@ Empruntant le sentier, vous débouchez sur une paisible clairrière délimitée 
 [[Continuer-&gt;Groupe de scout]]
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="34" name="badend" tags="" position="4056,1775">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
-<tw-passagedata pid="35" name="Portesecrete" tags="" position="3416,1125">Alors que vous avancer paisiblement,
+<tw-passagedata pid="33" name="badend" tags="" position="4056,1775">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
+<tw-passagedata pid="34" name="Portesecrete" tags="" position="3416,1125">Alors que vous avancer paisiblement,
 mur composés de 11 étranges symboles composé d&#39;or (des chevaliers en armure)
 il doit y en manquer un car un trou
 Mettre la chevalière das le trou
 [[lieusecret]]
 [[cabane]]</tw-passagedata>
-<tw-passagedata pid="36" name="lieusecret" tags="" position="3565,1065">[[cabane]] </tw-passagedata>
-<tw-passagedata pid="37" name="menu" tags="" position="233,866">&lt;img id=&quot;game_title&quot; alt=&quot;Chaudron magique&quot; src=&quot;media/pictures/title.png&quot; /&gt;
+<tw-passagedata pid="35" name="lieusecret" tags="" position="3565,1065">[[cabane]] </tw-passagedata>
+<tw-passagedata pid="36" name="menu" tags="" position="233,866">&lt;img id=&quot;game_title&quot; alt=&quot;Chaudron magique&quot; src=&quot;media/pictures/title.png&quot; /&gt;
 
 Chaudron magique est un jeu blabla...
 
 
 [[Jouer-&gt;Intro]]
 [[Crédits]]</tw-passagedata>
-<tw-passagedata pid="38" name="Crédits" tags="" position="383,1017">Jeu-vidéo réalisé dans le cadre de l&#39;UV IC06 à l&#39;UTC par :
+<tw-passagedata pid="37" name="Crédits" tags="" position="383,1017">Jeu-vidéo réalisé dans le cadre de l&#39;UV IC06 à l&#39;UTC par :
 &lt;&lt;nobr&gt;&gt;
 &lt;ul&gt;
 &lt;li&gt;Fabien Boucaud&lt;/li&gt;
@@ -1072,7 +1100,7 @@ Ressources :
 Blabla
 
 [[Retour au menu-&gt;menu]]</tw-passagedata>
-<tw-passagedata pid="39" name="Intro" tags="" position="30,1229">&lt;&lt;nobr&gt;&gt;
+<tw-passagedata pid="38" name="Intro" tags="" position="30,1229">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;audio &quot;snoring&quot; loop play volume 0.5 fadein&gt;&gt;
 &lt;span id=&quot;intro_text&quot;&gt;
 Alors que doucement la forêt s&#39;éveille sous les doux et chauds rayons solaires de l&#39;aube, tout semble indiquer que la journée sera belle. La lumière matinale trouve son chemin jusqu&#39;à la fenêtre d&#39;une petite cabane où vous dormez d&#39;un sommeil manifestement agité. A mesure que l&#39;obscurité de la nuit est chassée de votre humble demeure vous vous arrachez
