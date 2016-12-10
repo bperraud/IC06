@@ -243,6 +243,7 @@ a.internalLink:hover, a.externalLink:hover {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 /**
@@ -315,6 +316,7 @@ macros["goto"]=macros["timedgoto"]={
 		}
 	}
 };
+
 
 
 
@@ -449,7 +451,7 @@ N&#39;ayant pas le temps pour dialoguer, vous laissez la jeunesse à leurs occup
 [[Décliner la proposition et s&#39;en aller-&gt;Groupe de scout]] </tw-passagedata>
 <tw-passagedata pid="7" name="Dicussion" tags="" position="2297,1729">Vous vous lancez donc dans un débat face au lapin qui ne semble pas à court d&#39;arguments. Le temps défillant, personne ne semble toutefois décidé à admettre le point de vue de l&#39;autre.
 [[badend]] </tw-passagedata>
-<tw-passagedata pid="8" name="Embranchement" tags="" position="2676,1266">Vous abandonner la jeunesse à la rêverie pour continuer votre chemin.
+<tw-passagedata pid="8" name="Embranchement" tags="" position="2675,1266">Vous abandonner la jeunesse à la rêverie pour continuer votre chemin.
 Arrivé à un embranchement, vous voyez deux chemins qui s&#39;offrent à vous :
 - un chemin sombre, où vous ne distinguez même pas les branches des arbres à la lisière
 - un chemin indiqué par un panneau affichant &quot;racourci&quot; mais qui vous semble glissant et escarpé
@@ -496,9 +498,23 @@ si bave de crapaud 20% de chance de réussite
  	&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="11" name="pièce or" tags="" position="2947,860">Eclairé, votre progression est facilitée et vous avancez plus serainenement malgré les bruits d&#39;animaux environnant. C&#39;est alors que vous voyez un objet brillant sur le sol. Après l&#39;avoir nétoyé de la terre qui le recouvrait, vous constatez qu&#39;il s&#39;agit d&#39;une pièce en or...
-[[Prendre la pièce-&gt;antre du dragon]]&lt;&lt;set $pieceor to true&gt;&gt;
-[[Reposer la pièce-&gt;antre du dragon]]</tw-passagedata>
+<tw-passagedata pid="11" name="pièce or" tags="" position="2947,860">Eclairé, votre progression est facilitée et vous avancez plus sereinement, malgré les bruits d&#39;animaux environnant. Et, heureusement pour vous, vous ne voyez pas les créatures qui vous scrutent.  Car aussi susceptibles qu’elles sont, elles vous mettraient en pièces si vous tentiez de les fuir par dégoût.  Admirant la triste végétation poussant en ces lieux, votre regard est attiré par un objet brillant sur le sol. Vous vous penchez donc pour ramasser ce précieux objet rond et doré et, après l&#39;avoir nettoyé de la terre qui le recouvrait, vous pouvez observer d’étranges motifs sur cette pièce d’or...
+&lt;span id=&quot;pieceor&quot;&gt;
+	&lt;&lt;link &quot;Prendre la pièce&quot;&gt;&gt;
+		&lt;&lt;replace &quot;#pieceor&quot;&gt;&gt;
+&lt;&lt;set $pieceor to true&gt;&gt;
+Ne cherchant pas plus loin à qui appartient cette pièce et ce que représentent les symboles, vous la mettez dans votre poche et vous reprenez votre route.
+[[Suite-&gt;antre du dragon]]
+		&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+	&lt;&lt;link &quot;reposer la pièce&quot;&gt;&gt;
+		&lt;&lt;replace &quot;#pieceor&quot;&gt;&gt;
+Devant l’incompréhension des symboles, vous préférez reposer la pièce plutôt que de risquer une quelconque malédiction, au vu de l’étrangeté de ces lieux…
+[[Suite-&gt;antre du dragon]]
+		&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+&lt;/span&gt;
+</tw-passagedata>
 <tw-passagedata pid="12" name="antre du dragon" tags="" position="3125,1006">&lt;!-- bruit moto
 50% que l&#39;effet du sort de métamorphose ne fasse plus effet set $dragon to  &quot;dragon&quot;--&gt;
 
