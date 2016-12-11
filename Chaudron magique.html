@@ -138,10 +138,14 @@ body {
 	border: 2px solid #212121;
 	box-shadow: 0 0 20px 6px #545454;
 
-	background-image: url(media/pictures/paperborder3.png), url(media/pictures/paperborder2.png), url(media/pictures/paperborder4.png), url(media/pictures/paperborder5.png), url(media/pictures/pattern.jpg);
+	/*background-image: url(media/pictures/paperborder3.png), url(media/pictures/paperborder2.png), url(media/pictures/paperborder4.png), url(media/pictures/paperborder5.png), url(media/pictures/pattern.jpg);
 	background-position: top, bottom, left, right, center;
 	background-size: 100% auto, 100% auto, auto 100%, auto 100%, auto;
-	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;
+	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;*/
+		background-image: url(media/pictures/paperborder3.png), url(media/pictures/paperborder2.png), url(media/pictures/pattern.jpg);
+	background-position: top, bottom, center;
+	background-size: 100% auto, 100% auto, auto;
+	background-repeat: no-repeat, no-repeat, repeat;
 
   /* Box width */
   width: 100%;
@@ -220,34 +224,18 @@ a.internalLink:hover, a.externalLink:hover {
 	transition: none;
 }
 
-
-
-/* Shrink the page when viewed on devices with a low screen width */
-@media screen and (max-width: 960px) {
-  .passage { font-size: 90%;}
-  #passages { width: 70%; }
+/* Images fixes du chaudron */
+.chaudron_container {
+	position: fixed;
+	border: 2px solid rgba(64, 64, 64, 0.8);
+	width: 20%;
+	height: 20%;
+  top: 10%;
+  right: 5%;
 }
-@media screen and (max-width: 840px) {
-  .passage {  font-size: 87.5%; }
-  #passages { width: 80%; }
-}
-@media screen and (max-width: 720px) {
-  .passage { font-size: 75%; }
-  #passages { width: 90%; }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
+img.chaudron {
+	width: 100%
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 /**
 * macro that displays a Passage automatically after another
@@ -617,11 +605,26 @@ Vous méfiant de tout ce qui se rattache à ce mystérieux lieu, vous préférez
 &lt;&lt;/if&gt;&gt;
 
 </tw-passagedata>
-<tw-passagedata pid="13" name="1er_ingrédient" tags="" position="335,1296">  &lt;!-- La potion de liquéfaction doit être neutralisé en annulant son acidité et sa liquidité :
+<tw-passagedata pid="13" name="1er_ingrédient" tags="" position="334,1296">&lt;&lt;nobr&gt;&gt;
+&lt;!-- La potion de liquéfaction doit être neutralisé en annulant son acidité et sa liquidité :
  Poussière de feu pour assécher la potion
  Glace pour solidifier la potion
  Champignon pour diminuer l&#39;acidité de la potion --&gt;
  &lt;&lt;set $alea to random(1,3)&gt;&gt;
+ &lt;&lt;audio &quot;1sttimer&quot; play&gt;&gt;
+ &lt;div class=&quot;chaudron_container&quot;&gt;
+ &lt;img class=&quot;chaudron&quot; src=&quot;media/pictures/illustrations/chaudron1.png&quot; alt=&quot;chaudron ok&quot; title=&quot;Tout va bien... pour le moment&quot;/&gt;
+ &lt;/div&gt;
+&lt;&lt;timed 30s&gt;&gt;
+&lt;&lt;replace &quot;.chaudron_container&quot;&gt;&gt;
+&lt;img class=&quot;chaudron&quot; src=&quot;media/pictures/illustrations/chaudron2.png&quot; alt=&quot;chaudron pas glop&quot; title=&quot;Ça commencer à chauffer...&quot;/&gt;
+&lt;&lt;/replace&gt;&gt;
+&lt;&lt;next 20s&gt;&gt;
+&lt;&lt;replace &quot;.chaudron_container&quot;&gt;&gt;
+ &lt;img class=&quot;chaudron&quot; src=&quot;media/pictures/illustrations/chaudron3.png&quot; alt=&quot;chaudron critique&quot; title=&quot;AU SECOURS !!!&quot;/&gt;
+&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+ &lt;&lt;/nobr&gt;&gt;
 	Vous reprenez place au-dessus du chaudron, lequel est plus agité et menaçant que jamais, et observez son contenu. Vous n&#39;avez encore jamais rien vu de tel: la potion semble avoir atteint un état de fluidité, de liquidité si totale, que l&#39;oeil humain peine à encore la percevoir comme liquide. Le contenu du chaudron relève presque plus d&#39;un nuage d&#39;orage sombre, habité d&#39;éclairs magiques occasionnels qui vous inquiètent au plus haut point. La substance est manifestement hautement volatile. Pour ne rien arranger, il vous semble que les relents acides de la potion sont particulièrement corrosifs, et vous sentez votre peau et vos poils commencer respectivement à vous démanger et à tomber au bout d&#39;à peine quelques instants passés penché sur le chaudron.
 	
 	Il semble donc que votre objectif soit de neutraliser cette fichue potion en annulant son acidité et en lui redonnant une consistance plus proche de la soupe épaisse que du liquide pur. Vous vous dirigez donc vers votre table de travail, le front cerné de plis soucieux, et essayez de farfouiller dans les ingrédients qu&#39;il vous reste. Trois d&#39;entre eux retiennent votre attention dans un premier temps, bien que vos connaissances alchimiques ne soient plus aussi bonnes que par le passé et que vous craignez de faire une terrible erreur. Mais on ne vit qu&#39;une fois !
@@ -630,13 +633,11 @@ Vous méfiant de tout ce qui se rattache à ce mystérieux lieu, vous préférez
 [[Ajouter un fragment de glace éternelle-&gt;glace]]
 [[Jeter négligemment quelques champignons-&gt;champignon]]&lt;/span&gt;
 
-&lt;&lt;timed 75s&gt;&gt;
+&lt;&lt;timed 60s&gt;&gt;
 	&lt;&lt;replace &quot;#1eringr&quot;&gt;&gt;
 	Vous êtes manifestement indécis, mais le temps ne vous attend pas et le chaudron s&#39;agite de plus en plus. Bientôt, il semble comme sur le point d&#39;exploser, bouillonnant avec des bruits de tonnerre, attendre plus longtemps pour agir n&#39;est vraiment plus raisonnable. Vous vous emparez du premier ingrédient qui vous passe sous la main:&lt;&lt;if $alea eq 1&gt;&gt; [[la poussière de feu !-&gt;poussièredefeu]]&lt;&lt;elseif $alea eq 2&gt;&gt; [[un fragment de glace éternelle !-&gt;glace]]&lt;&lt;elseif $alea eq 3&gt;&gt; [[une poignée de champignons !-&gt;champignon]]&lt;&lt;/if&gt;&gt;
 	&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
-</tw-passagedata>
+&lt;&lt;/timed&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="14" name="poussièredefeu" tags="" position="575,1251">&lt;&lt;set $poussièredefeu to true&gt;&gt;
 &lt;&lt;set $alea to random(1,3)&gt;&gt;
 &lt;!-- fera brûler  le bâton dans la rivière s&#39;il nest pas porté hors de l&#39;eau--&gt;
@@ -737,7 +738,7 @@ Finalement, ce sont quelques feuilles d&#39;orties a priori tout à fait banales
 [[Verser la bave de crapaud dans le chaudron-&gt;bave]]
 [[Tenter votre chance en introduisant un des os dans la mixture-&gt;os]]&lt;/span&gt;
 
-&lt;&lt;timed 45s
+&lt;&lt;timed 45s&gt;&gt;
 	&lt;&lt;replace &quot;#2eingr6&quot;&gt;&gt;
 		Alors que vous êtes plongé dans vos réflexions et vos calculs magiques, un formidable coup de tonnerre vous fait faire un bond. Un coup d&#39;oeil au chaudron vous informe de l&#39;extrême urgence de la situation, étant donné le fait que le nuage liquide noir a commencé à prendre de l&#39;ampleur et à s&#39;extraire de son récipient. L&#39;heure n&#39;est plus aux tergiversations, il faut agir. Vous tentez donc le coup avec le premier truc qui vous passe sous la main:&lt;&lt;if $alea eq 1&gt;&gt; [[la corne de licorne !-&gt;corne]]&lt;&lt;elseif $alea eq 2&gt;&gt; [[le bocal de bave de crapaud !-&gt;bave]]&lt;&lt;elseif $alea eq 3&gt;&gt; [[le tabac !-&gt;tabac]]&lt;&lt;/if&gt;&gt;
 	&lt;&lt;/replace&gt;&gt;
@@ -762,7 +763,7 @@ Prenant le bocal vitrifié de bave de crapaud, collectée au cours de ces derni�
 Et c&#39;est lentement que vos yeux se ferment, et que vous retournez vous nicher dans les bras de Morphée...
 
 [[Poursuivre l&#39;histoire-&gt;Phase2]] </tw-passagedata>
-<tw-passagedata pid="20" name="marmite" tags="" position="191,1150">&lt;&lt;set $livre to true&gt;&gt;
+<tw-passagedata pid="20" name="marmite" tags="" position="189,1150">&lt;&lt;set $livre to true&gt;&gt;
 &lt;&lt;audio &quot;boiling&quot; play volume 0.5 fadein&gt;&gt;
 
 Après vous être rapidement étiré (dans une cacophonie de craquements osseux, la vieillesse ne vous a pas épargné), vous vous dirigez le plus tranquillement du monde vers votre chaudron.
@@ -1009,6 +1010,10 @@ N&#39;ayant pas eu le réflexe de lancer un sort de protection, vous voyez le ch
 
 &lt;&lt;cacheaudio &quot;snoring&quot; &quot;media/audio/snoring.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;boiling&quot; &quot;media/audio/boiling.mp3&quot;&gt;&gt;
+
+&lt;!--Musiques--&gt;
+
+&lt;&lt;cacheaudio &quot;1sttimer&quot; &quot;media/audio/timer1.mp3&quot;&gt;&gt;
 
 [[lancer-&gt;menu]]</tw-passagedata>
 <tw-passagedata pid="25" name="Phase2" tags="" position="1181,1260">&lt;!-- Retour dans le passé =&gt; flash pour marquer une ellipse temporelle--&gt;
