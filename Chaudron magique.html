@@ -235,7 +235,8 @@ a.internalLink:hover, a.externalLink:hover {
 }
 img.chaudron {
 	width: 100%
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
+}
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 /**
 * macro that displays a Passage automatically after another
@@ -307,6 +308,7 @@ macros["goto"]=macros["timedgoto"]={
 		}
 	}
 };
+
 
 
 
@@ -1082,12 +1084,25 @@ Empruntant le sentier, vous débouchez sur une paisible clairrière délimitée 
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="33" name="badend" tags="" position="4056,1775">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
-<tw-passagedata pid="34" name="Portesecrete" tags="" position="3416,1125">Alors que vous avancer paisiblement,
-mur composés de 11 étranges symboles composé d&#39;or (des chevaliers en armure)
-il doit y en manquer un car un trou
-Mettre la chevalière das le trou
-[[lieusecret]]
-[[cabane]]</tw-passagedata>
+<tw-passagedata pid="34" name="Portesecrete" tags="" position="3416,1125">Alors que vous avancez sur ce paisible chemin, en comparaison du début, vous observez que sur votre gauche les arbres laissent place à un mur de plantes grimpantes. Longeant ce mur, un renfoncement apparait dans ce couvert végétal. Curieux, vous décidez de voir ce qui s’y cache derrière. Les fragiles plantes ne résistent pas bien longtemps et c’est ainsi que ce découvre une sorte de porte. Sur celle-ci, vous apercevez 11 étranges symboles composés d&#39;or et, en les examinant de plus près, il est possible de voir des chevaliers en armure et un emplacement vide entre le dixième et le onzième symbole.
+&lt;span id=&quot;porte&quot;&gt;
+&lt;&lt;if $tresor eq true&gt;&gt;
+&lt;&lt;link &quot;Mettre la chevalière dans l’emplacement&quot;&gt;&gt;
+&lt;&lt;replace &quot;#porte&quot;&gt;&gt;
+Vous insérez la chevalière, trouvée dans la clairière, dans cette porte qui, après avoir entendu un bruit sourd, se met à pivoter pour laisser place à un passage sombre et froid…
+[[Entrer-&gt;lieusecret]]
+[[Laisser le mystère à sa place et reprendre la route-&gt;cabane]]
+		&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;link &quot;Poursuivre&quot;&gt;&gt;
+&lt;&lt;replace &quot;#porte&quot;&gt;&gt;
+Lassé de ne pas comprendre la présence d’une telle porte dans un endroit aussi discret (bien que vous sentiez la présence d’un ancien mystère), vous partez …
+[[Suite-&gt;cabane]]
+		&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;/span&gt;</tw-passagedata>
 <tw-passagedata pid="35" name="lieusecret" tags="" position="3565,1065">[[cabane]] </tw-passagedata>
 <tw-passagedata pid="36" name="menu" tags="" position="233,866">&lt;img id=&quot;game_title&quot; alt=&quot;Chaudron magique&quot; src=&quot;media/pictures/title.png&quot; /&gt;
 
