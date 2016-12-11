@@ -245,6 +245,8 @@ a.internalLink:hover, a.externalLink:hover {
 
 
 
+
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 /**
@@ -317,6 +319,8 @@ macros["goto"]=macros["timedgoto"]={
 		}
 	}
 };
+
+
 
 
 
@@ -759,10 +763,9 @@ Et c&#39;est lentement que vos yeux se ferment, et que vous retournez vous niche
 
 [[Poursuivre l&#39;histoire-&gt;Phase2]] </tw-passagedata>
 <tw-passagedata pid="20" name="marmite" tags="" position="191,1150">&lt;&lt;set $livre to true&gt;&gt;
+&lt;&lt;audio &quot;boiling&quot; play volume 0.5 fadein&gt;&gt;
 
 Après vous être rapidement étiré (dans une cacophonie de craquements osseux, la vieillesse ne vous a pas épargné), vous vous dirigez le plus tranquillement du monde vers votre chaudron.
-
-Note : Bruit d&#39;ébullition
 
 Mais en vous penchant au-dessus de la décoction, vous vous rendez compte que c&#39;est le drame. Vous avez manifestement raté quelque chose pendant la préparation de la veille, car la potion a pris une couleur et une odeur inquiétantes, sans parler du fait qu&#39;elle bout dangereusement fort. Au cours de votre longue vie de magicien vous avez déjà connu de telles situations et vous savez que si vous ne faîtes rien pour arranger les choses tout peut vite dégénérer et passer hors de contrôle.
 
@@ -898,7 +901,7 @@ Surpris, les nains cessent un instant de parler, les yeux ronds d&#39;étonnemen
 
 &lt;/span&gt;</tw-passagedata>
 <tw-passagedata pid="21" name="placard" tags="" position="182,1385">&lt;&lt;set $gateau to true&gt;&gt;
-Note : Bruit d&#39;ébullition
+&lt;&lt;audio &quot;boiling&quot; play volume 0.5 fadein&gt;&gt;
 
 	N&#39;écoutant que l&#39;appel de votre ventre, vous partez chercher quelque chose à grignoter dans le garde-manger. Hélas, votre déception est grande lorsque vous n&#39;y découvrez qu&#39;un triste désert alimentaire, à l&#39;exception de ce qui semble être un muffin. Vous pestez à votre encontre, vous auriez dû penser à aller refaire vos provisions chez &quot;Les fins gourmets de la forêt&quot;. Avec un soupir d&#39;irritation vous vous emparez malgré tout du muffin et vous dirigez vers le chaudron.
 	En vous penchant au-dessus de ce dernier vous vous rendez finalement compte que son bouillonnement est plus fort qu&#39;il ne devrait l&#39;être, ce qui, associé à l&#39;odeur étonnament désagréable qui s&#39;en échappe et la couleur verdâtre de la potion, vous fait froncer les sourcils. Serait-il possible que vous ayez fait une erreur dans votre préparation de la veille ? Soucieux, vous portez votre muffin à vos lèvres. Mais alors que vous mordez dedans, un horrible goût de moisissure vous donne un haut-le-coeur.
@@ -1005,6 +1008,7 @@ N&#39;ayant pas eu le réflexe de lancer un sort de protection, vous voyez le ch
 &lt;!--Bruitages--&gt;
 
 &lt;&lt;cacheaudio &quot;snoring&quot; &quot;media/audio/snoring.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;boiling&quot; &quot;media/audio/boiling.mp3&quot;&gt;&gt;
 
 [[lancer-&gt;menu]]</tw-passagedata>
 <tw-passagedata pid="25" name="Phase2" tags="" position="1181,1260">&lt;!-- Retour dans le passé =&gt; flash pour marquer une ellipse temporelle--&gt;
@@ -1105,8 +1109,7 @@ Blabla
 &lt;span id=&quot;intro_text&quot;&gt;
 Alors que doucement la forêt s&#39;éveille sous les doux et chauds rayons solaires de l&#39;aube, tout semble indiquer que la journée sera belle. La lumière matinale trouve son chemin jusqu&#39;à la fenêtre d&#39;une petite cabane où vous dormez d&#39;un sommeil manifestement agité. A mesure que l&#39;obscurité de la nuit est chassée de votre humble demeure vous vous arrachez
 &lt;/span&gt;
-&lt;&lt;/nobr&gt;&gt;
-&lt;&lt;linkreplace &quot; aux bras de Morphée...&quot;&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;&lt;&lt;linkreplace &quot; aux bras de Morphée...&quot;&gt;&gt;
 	&lt;&lt;nobr&gt;&gt;
 	&lt;&lt;remove &quot;#intro_text&quot;&gt;&gt;
   	&lt;&lt;audio &quot;snoring&quot; stop&gt;&gt;
@@ -1134,24 +1137,19 @@ Alors que doucement la forêt s&#39;éveille sous les doux et chauds rayons sola
  	&lt;&lt;/script&gt;&gt;
 	&lt;&lt;timed 11s t8n&gt;&gt;
 	Le réveil est toujours comme une nouvelle naissance: il vous semble que vous ne connaissez plus rien ni ne savez plus rien faire.
-	&lt;span id=&quot;qui&quot;&gt;
-		&lt;&lt;link &quot;J&#39;suis qui déjà ?&quot;&gt;&gt;
-			&lt;&lt;replace &quot;#qui&quot;&gt;&gt;
-				Les dernières brumes du sommeil commençant à s&#39;évaporer, vous vous rappelez que vous êtes un magicien (et un bon ! ajoutez-vous alors que les mots vous reviennent) vivant reclus dans la forêt depuis qu&#39;une malencontreuse formule magique a semé la zizanie dans votre précédente commune de résidence, bien des années plus tôt, et que vos concitoyens en ont eu assez de ces remue-ménages dont vous avez le secret.
-		A ce souvenir vous ne pouvez réprimer un sourire de jubilation et un haussement d&#39;épaules. Vous êtes aussi bien ici à vrai dire, et la tranquilité est une composante importante de tout sortilège réussi. Vous hochez la tête, manifestement qu&#39;à moitié convaincu par vos propres arguments.
+	&lt;&lt;linkreplace &quot;J&#39;suis qui déjà ?&quot;&gt;&gt;
+	Les dernières brumes du sommeil commençant à s&#39;évaporer, vous vous rappelez que vous êtes un magicien (et un bon ! ajoutez-vous alors que les mots vous reviennent) vivant reclus dans la forêt depuis qu&#39;une malencontreuse formule magique a semé la zizanie dans votre précédente commune de résidence, bien des années plus tôt, et que vos concitoyens en ont eu assez de ces remue-ménages dont vous avez le secret.
+	À ce souvenir vous ne pouvez réprimer un sourire de jubilation et un haussement d&#39;épaules. Vous êtes aussi bien ici à vrai dire, et la tranquilité est une composante importante de tout sortilège réussi. Vous hochez la tête, manifestement qu&#39;à moitié convaincu par vos propres arguments.
 
-				Vous vous rendez compte qu&#39;un gargouillement se fait entendre de manière continue dans votre cabane et vous décidez d&#39;ouvrir vos yeux, tant bien que mal, pour en identifier l&#39;origine. C&#39;est votre chaudron. Il bouillonne apparemment tranquillement (enfin, il y a quand même une odeur bizarre) au-dessus d&#39;un feu que vous avez allumé la veille. Vous vous demandez où en est la cuisson de votre décoction. C&#39;est une potion extrêmement délicate à préparer à laquelle vous vous êtes attaqué, mais il vous semble que rien ne vous est impossible.
-				Alors que vous commencez à remuer sur votre couchette, votre ventre se rappelle à vous avec un gros gargouilli. La faim vous tenaille. Par quoi commencer ?
+	Vous vous rendez compte qu&#39;un gargouillement se fait entendre de manière continue dans votre cabane et vous décidez d&#39;ouvrir vos yeux, tant bien que mal, pour en identifier l&#39;origine. C&#39;est votre chaudron. Il bouillonne apparemment tranquillement (enfin, il y a quand même une odeur bizarre) au-dessus d&#39;un feu que vous avez allumé la veille. Vous vous demandez où en est la cuisson de votre décoction. C&#39;est une potion extrêmement délicate à préparer à laquelle vous vous êtes attaqué, mais il vous semble que rien ne vous est impossible.
+	Alors que vous commencez à remuer sur votre couchette, votre ventre se rappelle à vous avec un gros gargouilli. La faim vous tenaille. Par quoi commencer ?
 
-				[[Aller chercher quelque chose à grignoter-&gt;placard]]
-				[[Aller jeter un oeil à votre potion-&gt;marmite]]
-			&lt;&lt;/replace&gt;&gt;
-		&lt;&lt;/link&gt;&gt;
-	&lt;/span&gt;
+	[[Aller chercher quelque chose à grignoter-&gt;placard]]
+	[[Aller jeter un oeil à votre potion-&gt;marmite]]
+	&lt;&lt;/linkreplace&gt;&gt;
 	&lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;/linkreplace&gt;&gt;
-</tw-passagedata>
+&lt;&lt;/linkreplace&gt;&gt;</tw-passagedata>
 </tw-storydata>
 </div>
 	<script id="script-sugarcube" type="text/javascript">
