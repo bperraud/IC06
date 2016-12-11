@@ -475,31 +475,86 @@ Après avoir fouillé vos poches sans succès, n&#39;ayant plus de moyens d&#39;
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 </tw-passagedata>
-<tw-passagedata pid="10" name="raccourci" tags="" position="3013,1263">&lt;&lt;if $baton eq true&gt;&gt;
-Souhaitant gagner du temps, vous emprûntez le raccourcit et aidé de votre bâton vous avancez sans glisser et sans chuter dans le ravin.
+<tw-passagedata pid="10" name="raccourci" tags="" position="3013,1263">&lt;&lt;set $variable to random(1,10)&gt;&gt;
+&lt;&lt;if $baton eq true&gt;&gt;&lt; !-- ######################Avance avec bâton#################--&gt;
+Souhaitant gagner du temps, vous empruntez le raccourci et aidé de votre bâton vous avancez sans glisser ni chuter dans le ravin.
 [[Poursuivre-&gt;cabane]]
 &lt;&lt;else&gt;&gt;
 	&lt;&lt;if $couteau eq true&gt;&gt;
-N&#39;ayant plus de bâton, pour vous aider dans votre ascension, vous avez la possibilité d&#39;utiliser les arbres à disposition pour en fabriquer un tout nouveau.
-[[Fabriquer un bâton de marche-&gt;cabane]]
-[[Continuer sans bâton-&gt;cabane]]
+N&#39;ayant plus de bâton, pour vous aider dans votre ascension, vous avez la possibilité d&#39;utiliser les arbres à disposition, dont un magnifique chêne qui dispose d’une branche susceptible de faire un bon bâton de marche.
+&lt;span id=&quot;glisse&quot;&gt;
+&lt;&lt;link &quot;Fabriquer un bâton&quot;&gt;&gt;&lt; !-- ################Fabrique bâton#################--&gt;
+&lt;&lt;replace &quot;#glisse&quot;&gt;&gt;
+&lt;&lt;set $baton to true&gt;&gt;
+Après avoir fabriqué votre bâton à parti d’une solide branche de chêne, vous vous remettez en route et vous avancez sans glisser ni chuter dans le ravin.
+[[Suite-&gt;cabane]]
+		&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+&lt;&lt;link &quot;Continuer sans bâton&quot;&gt;&gt;&lt; !-- ###############Ne veut pas fabriquer baton#####--&gt;
+&lt;&lt;if $bave eq false&gt;&gt;
+&lt;&lt;if $variable &lt;5&gt;&gt;
+&lt;&lt;replace &quot;#glisse&quot;&gt;&gt;
+Vous sentant courageux, vous bravez le danger et vous vous remettez en route et vous avancez sans glisser ni chuter dans le ravin.
 
-&lt;!-- Note : 40% de chance de réussite
-sinon -&gt;chute
-si bave de crapaud 20% de chance de réussite
- --&gt;
+[[Suite-&gt;cabane]]
+		&lt;&lt;/replace&gt;&gt;
+			&lt;&lt;else&gt;&gt;
+&lt;&lt;replace &quot;#glisse&quot;&gt;&gt;
+Vous sentant courageux, vous bravez le danger mais bien mal vous en a pris car vous chutez dans le ravin après avoir glissé sur une pierre.
+[[Fin-&gt;badend]]
+		&lt;&lt;/replace&gt;&gt;
+			&lt;&lt;/if&gt;&gt;
+		&lt;&lt;else&gt;&gt;
+&lt;&lt;if $variable &lt;3&gt;&gt;
+&lt;&lt;replace &quot;#glisse&quot;&gt;&gt;
+Vous sentant courageux, vous bravez le danger et  vous vous remettez en route et vous avancez sans glisser ni chuter dans le ravin.
+[[Suite-&gt;cabane]]
+		&lt;&lt;/replace&gt;&gt;
+			&lt;&lt;else&gt;&gt;
+&lt;&lt;replace &quot;#glisse&quot;&gt;&gt;
+Vous sentant courageux, vous bravez le danger mais bien mal vous en a pris car vous chutez dans le ravin après avoir glissé sur une pierre.
+[[Fin-&gt;badend]]
+		&lt;&lt;/replace&gt;&gt;
+			&lt;&lt;/if&gt;&gt;
+		&lt;&lt;/if&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+&lt;/span&gt;
+	&lt;&lt;else&gt;&gt; &lt;!--##################pas possible de faire baton##################--&gt;
+&lt;span id=&quot;roule&quot;&gt;
+N’ayant pas de bâton à disposition et aucun outil pour en fabriquer un, malgré la présence d’un magnifique chêne qui dispose d’une branche susceptible de faire un bon bâton de marche, vous vous élancez dans ce chemin escarpé…
+	&lt;&lt;link Poursuivre&gt;&gt;
+&lt;&lt;if $bave eq false&gt;&gt;
+&lt;&lt;if $variable &lt;5&gt;&gt;
+&lt;&lt;replace &quot;#roule&quot;&gt;&gt;
+…et vous avancez sans glisser ni chuter dans le ravin.
 
+[[Suite-&gt;cabane]]
+		&lt;&lt;/replace&gt;&gt;
+			&lt;&lt;else&gt;&gt;
+&lt;&lt;replace &quot;#glisse&quot;&gt;&gt;
+… mais bien mal vous en a pris car vous chutez dans le ravin après avoir glissé sur une pierre.
+[[Fin-&gt;badend]]
+		&lt;&lt;/replace&gt;&gt;
+			&lt;&lt;/if&gt;&gt;
+		&lt;&lt;else&gt;&gt;
+&lt;&lt;if $variable &lt;3&gt;&gt;
+&lt;&lt;replace &quot;#roule&quot;&gt;&gt;
+…et vous avancez sans glisser ni chuter dans le ravin.
+[[Suite-&gt;cabane]]
+		&lt;&lt;/replace&gt;&gt;
+			&lt;&lt;else&gt;&gt;
+&lt;&lt;replace &quot;#roule&quot;&gt;&gt;
+Vous sentant courageux, vous bravez le danger mais bien mal vous en a pris car vous chutez dans le ravin après avoir glissé sur une pierre.
+[[Fin-&gt;badend]]
+		&lt;&lt;/replace&gt;&gt;
+			&lt;&lt;/if&gt;&gt;
+		&lt;&lt;/if&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+&lt;/span&gt;
 
-	&lt;&lt;else&gt;&gt;
-Sans bâton, vous décidez d&#39;arpenter le raccourcit
-
-&lt;!-- Note : 40% de chance de réussite
-sinon -&gt;chute
-si bave de crapaud 20% de chance de réussite
- --&gt;
- 	&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;</tw-passagedata>
+	&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+</tw-passagedata>
 <tw-passagedata pid="11" name="pièce or" tags="" position="2948,859">Eclairé, votre progression est facilitée et vous avancez plus sereinement, malgré les bruits d&#39;animaux environnant. Et, heureusement pour vous, vous ne voyez pas les créatures qui vous scrutent.  Car aussi susceptibles qu’elles sont, elles vous mettraient en pièces si vous tentiez de les fuir par dégoût.  Admirant la triste végétation poussant en ces lieux, votre regard est attiré par un objet brillant sur le sol. Vous vous penchez donc pour ramasser ce précieux objet rond et doré et, après l&#39;avoir nettoyé de la terre qui le recouvrait, vous pouvez observer d’étranges motifs sur cette pièce d’or...
 &lt;span id=&quot;pieceor&quot;&gt;
 	&lt;&lt;link &quot;Prendre la pièce&quot;&gt;&gt;
@@ -909,7 +964,7 @@ Surpris, les nains cessent un instant de parler, les yeux ronds d&#39;étonnemen
 &lt;&lt;/link&gt;&gt;
 
 &lt;/span&gt;</tw-passagedata>
-<tw-passagedata pid="21" name="placard" tags="" position="182,1385">&lt;&lt;set $gateau to true&gt;&gt;
+<tw-passagedata pid="21" name="placard" tags="" position="182,1384">&lt;&lt;set $gateau to true&gt;&gt;
 &lt;&lt;audio &quot;boiling&quot; play volume 0.5 fadein&gt;&gt;
 
 	N&#39;écoutant que l&#39;appel de votre ventre, vous partez chercher quelque chose à grignoter dans le garde-manger. Hélas, votre déception est grande lorsque vous n&#39;y découvrez qu&#39;un triste désert alimentaire, à l&#39;exception de ce qui semble être un muffin. Vous pestez à votre encontre, vous auriez dû penser à aller refaire vos provisions chez &quot;Les fins gourmets de la forêt&quot;. Avec un soupir d&#39;irritation vous vous emparez malgré tout du muffin et vous dirigez vers le chaudron.
@@ -1090,7 +1145,7 @@ Empruntant le sentier, vous débouchez sur une paisible clairrière délimitée 
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="33" name="badend" tags="" position="4056,1775">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
-<tw-passagedata pid="34" name="Portesecrete" tags="" position="3416,1125">Alors que vous avancez sur ce paisible chemin, en comparaison du début, vous observez que sur votre gauche les arbres laissent place à un mur de plantes grimpantes. Longeant ce mur, un renfoncement apparait dans ce couvert végétal. Curieux, vous décidez de voir ce qui s’y cache derrière. Les fragiles plantes ne résistent pas bien longtemps et c’est ainsi que ce découvre une sorte de porte. Sur celle-ci, vous apercevez 11 étranges symboles composés d&#39;or et, en les examinant de plus près, il est possible de voir des chevaliers en armure et un emplacement vide entre le dixième et le onzième symbole.
+<tw-passagedata pid="34" name="Portesecrete" tags="" position="3417,1125">Alors que vous avancez sur ce paisible chemin, en comparaison du début, vous observez que sur votre gauche les arbres laissent place à un mur de plantes grimpantes. Longeant ce mur, un renfoncement apparait dans ce couvert végétal. Curieux, vous décidez de voir ce qui s’y cache derrière. Les fragiles plantes ne résistent pas bien longtemps et c’est ainsi que ce découvre une sorte de porte. Sur celle-ci, vous apercevez 11 étranges symboles composés d&#39;or et, en les examinant de plus près, il est possible de voir des chevaliers en armure et un emplacement vide entre le dixième et le onzième symbole.
 &lt;span id=&quot;porte&quot;&gt;
 &lt;&lt;if $tresor eq true&gt;&gt;
 &lt;&lt;link &quot;Mettre la chevalière dans l’emplacement&quot;&gt;&gt;
