@@ -59,13 +59,13 @@ Passer au travers de la glace : intéraction avec image pour se sortir de l'eau 
 Porter le sac : RAS
 porter le bâton : RAS
 bruit : bruit à incorporer
-Clairière : images (animaux pas/ fantômes/ rien) et texte en accord avec image + ortho
-Retour discret : ortho
+Clairière : images (animaux pas/ fantômes/ rien) et texte en accord avec image
+Retour discret : RAS
 Retour fuite : lancé dés
 Manifestation : RAS
-Discussion : image lapin + ortho
-Groupe scouts : image et ortho
-Embranchement : image + ortho
+Discussion : image lapin
+Groupe scouts : image et texte de discussion à meubler
+Embranchement : image
 Chemin Sombre : RAS
 Piece or : RAS
 antre dragon : images (dragon/moto) et blabla de rencontre

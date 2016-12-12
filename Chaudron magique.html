@@ -394,17 +394,17 @@ Vous décidez alors de porter vôtre bâton hors de l&#39;eau. Une fois de l&#39
 [[Suite-&gt;bruit]]
 </tw-passagedata>
 <tw-passagedata pid="5" name="Groupe de scout" tags="" position="2370,1270">
-Sur votre chemin, vous rencontrez un groupe de jeunes scouts affairés à étudier la nature. L&#39;un ramasse des champignons, une autre des papillons, le troisième ramasse des feuilles et les examine avec une loupe et le dernier, perdu dans ses pensés, regarde les nuages...
-Ah la jeunesse, cela vous rappelle la votre où vous partiez avec votre grand-frère en forêt et où  vous imaginiez divers scénarios pour vous amuser : combat d&#39;épés, fabrication d&#39;arcs, construction de forteresse, opération commando,... A votre vu, ils se détournent de leur tâche pour vous saluer.
-&lt;&lt;if $champignon eq true&gt;&gt; Une drôle de lueur émane de leurs yeux et leurs gestes semblent mous.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $scouteperduvu eq true&gt;&gt; Il doit surement s&#39;agir du groupe auquel appartient le scout vu précédemment.&lt;&lt;/if&gt;&gt;
+Sur votre chemin, vous rencontrez un groupe de jeunes scouts affairés à étudier la nature. L&#39;un ramasse des champignons, une autre des papillons, le troisième ramasse des feuilles et les examine avec une loupe et le dernier, perdu dans ses pensées, regarde les nuages...
+Ah la jeunesse, cela vous rappelle la vôtre où vous partiez avec votre grand-frère en forêt et où  vous imaginiez divers scénarios pour vous amuser : combat d&#39;épées, fabrication d&#39;arcs, construction de forteresse, opération commando,... A votre vu, ils se détournent de leur tâche pour vous saluer.
+&lt;&lt;if $champignon eq true&gt;&gt; Une drôle de lueur émane de leurs yeux et leurs gestes semblent mous. &lt;&lt;/if&gt;&gt;
+&lt;&lt;if $scouteperduvu eq true&gt;&gt; Il doit surement s&#39;agir du groupe auquel appartient le scout vu précédemment. &lt;&lt;/if&gt;&gt;
 
 &lt;span id=&quot;scouts&quot;&gt;
 	&lt;&lt;link &quot;Les saluer&quot;&gt;&gt;
 		&lt;&lt;replace &quot;#scouts&quot;&gt;&gt;
 &lt;&lt;if $champignon eq true&gt;&gt;
 &lt;!-- texte multicolor--&gt;
-- Bonjour l&#39;ami, dis moi tu dois être perdu non?
+- Bonjour l&#39;ami, dis-moi tu dois être perdu non?
 - Encore un éléphant qui se promène dans le bois ?! Qui aurait dit qu&#39;il y en avait dans le coin...
 
 	&lt;span id=&quot;delire&quot;&gt;
@@ -418,7 +418,7 @@ Ne les comprenant pas, vous décidez de reprendre la route et ne pas perdre de t
 &lt;&lt;else&gt;&gt;
 - Eh bonjour ! C&#39;est rare de rencontrer des gens par ici. Ca fait des semaines que nous examinons cette forêt et mis à part quelques animaux, nous ne voyons rien d&#39;intéressant.
 - Encore un citadin qui se perd dans le bois
-- Dites moi,je galère un peu à attraper cette pomme, vous ne pourrez pas m&#39;aider à l&#39;attraper ?
+- Dites-moi, je galère un peu à attraper cette pomme, vous ne pourrez pas m&#39;aider à l&#39;attraper ?
 &lt;!-- ou alors attraper papillon qui bouge à l&#39;écran(GIF)--&gt;
 	&lt;span id=&quot;help&quot;&gt;
 		&lt;&lt;link &quot;Aider&quot;&gt;&gt;
@@ -436,7 +436,7 @@ Devant vous remettre en route, vous laissez le groupe reprendre ses activités..
 &lt;&lt;if $scoutperduvu eq true&gt;&gt;
 	&lt;&lt;link &quot;Mentionner le scout perdu&quot;&gt;&gt;
 		&lt;&lt;replace &quot;#perdu&quot;&gt;&gt;
-- roh toujours la tête en l&#39;air celui-là heureusement qu&#39;on lui a mis une pancarte
+- Rho toujours la tête en l&#39;air celui-là heureusement qu&#39;on lui a mis une pancarte
 - C&#39;est qu&#39;il nous mettra en retard avec ses bêtises et dire qu&#39;on doit retourner le chercher
 -En tout cas merci pour l&#39;indication et bonne route &lt;&lt;set $scoutaide to true&gt;&gt;
 [[Prendre congé-&gt;Embranchement]]
@@ -459,7 +459,7 @@ Devant vous remettre en route, vous laissez le groupe reprendre ses activités..
 &lt;&lt;if $scoutperduvu eq true&gt;&gt;
 	&lt;&lt;link &quot;Mentionner le scout perdu&quot;&gt;&gt;
 		&lt;&lt;replace &quot;#perdu&quot;&gt;&gt;
-- roh toujours la tête en l&#39;air celui-là heureusement qu&#39;on lui a mis une pancarte
+- Rho toujours la tête en l&#39;air celui-là heureusement qu&#39;on lui a mis une pancarte
 - C&#39;est qu&#39;il nous mettra en retard avec ses bêtises et dire qu&#39;on doit retourner le chercher
 -En tout cas merci pour l&#39;indication et bonne route &lt;&lt;set $scoutaide to true&gt;&gt;
 [[Prendre congé-&gt;Embranchement]]
@@ -479,17 +479,18 @@ N&#39;ayant pas le temps pour dialoguer, vous laissez la jeunesse à leurs occup
 [[Suite-&gt;Embranchement]]
 		&lt;&lt;/replace&gt;&gt;
 	&lt;&lt;/link&gt;&gt;
-&lt;/span&gt;</tw-passagedata>
+&lt;/span&gt;
+</tw-passagedata>
 <tw-passagedata pid="6" name="Manifestation" tags="" position="2081,1810">Interloqués de voir des animaux parlants, vous vous manifestez auprès d&#39;eux. Après plusieurs minutes de conversation au travers différents débats, vous allez reprendre la route vers la cabane du sorcier lorsqu&#39;un lapin vous propose d&#39;argumenter à propos de l&#39;existence et l’absurdité des sentiments avec un animal intelligent ...
 [[Relever le défit-&gt;Dicussion]]
 [[Décliner la proposition et s&#39;en aller-&gt;Groupe de scout]] </tw-passagedata>
-<tw-passagedata pid="7" name="Dicussion" tags="" position="2297,1729">Vous vous lancez donc dans un débat face au lapin qui ne semble pas à court d&#39;arguments. Le temps défillant, personne ne semble toutefois décidé à admettre le point de vue de l&#39;autre.
+<tw-passagedata pid="7" name="Dicussion" tags="" position="2297,1729">Vous vous lancez donc dans un débat face au lapin qui ne semble pas à court d&#39;arguments. Le temps défilant, personne ne semble toutefois décidé à admettre le point de vue de l&#39;autre.
 [[badend]] </tw-passagedata>
-<tw-passagedata pid="8" name="Embranchement" tags="" position="2675,1266">Vous abandonner la jeunesse à la rêverie pour continuer votre chemin.
+<tw-passagedata pid="8" name="Embranchement" tags="" position="2675,1266">Vous abandonnez la jeunesse à la rêverie pour continuer votre chemin.
 Arrivé à un embranchement, vous voyez deux chemins qui s&#39;offrent à vous :
 - un chemin sombre, où vous ne distinguez même pas les branches des arbres à la lisière
-- un chemin indiqué par un panneau affichant &quot;racourci&quot; mais qui vous semble glissant et escarpé
-[[aller vers le chemin sombre-&gt;chemin sombre]]
+- un chemin indiqué par un panneau affichant &quot;raccourci&quot; mais qui vous semble glissant et escarpé...
+[[Aller vers le chemin sombre-&gt;chemin sombre]]
 [[Tenter le raccourci-&gt;raccourci]]</tw-passagedata>
 <tw-passagedata pid="9" name="chemin sombre" tags="" position="2778,1011">Vous avancez alors en direction du chemin sombre où la visibilité est faible à cause de la densité des arbres environnants.
 &lt;&lt;set $variable to random(1,10)&gt;&gt;
@@ -1132,7 +1133,7 @@ Et c&#39;est ainsi que vous vous mettez en route, le sac sur le dos et le bâton
 discour avec les nains de jardins
 
 discour de &quot;procès&quot;</tw-passagedata>
-<tw-passagedata pid="27" name="retourdiscret" tags="" position="2073,1446">N&#39;écoutant que votre courage, vous revenez sur vos pas, sans que les étranges créatures ne s&#39;en rende compte.
+<tw-passagedata pid="27" name="retourdiscret" tags="" position="2074,1446">N&#39;écoutant que votre courage, vous revenez sur vos pas, sans que les étranges créatures ne s&#39;en rendent compte.
 [[Continuer-&gt;Groupe de scout]]
 </tw-passagedata>
 <tw-passagedata pid="28" name="retourfuite" tags="" position="2071,1595">Perdant tout courage, vous prenez vos jambes à votre cou et vous partez sans vous retourner. Une fois à bonne distance, vous reprenez votre souffle ...
@@ -1169,18 +1170,18 @@ Répondre à une question pour obtenir le livre &lt;&lt;set $livrescout to true&
 
 &lt;!-- champignons --&gt;</tw-passagedata>
 <tw-passagedata pid="31" name="Clairrière" tags="" position="1881,1385">&lt;&lt;if $livre eq true&gt;&gt;
-Alors que vous avancer dans le sentier, les bruits deviennent de plus en plus clair et vous devinez une conversation. Alors que vous alliez vous manifester, vour voyez des animaux parlant entre-eux. Absorbé par leur conversation, ils ne semblent pas vous avoir vu...
+Alors que vous avancez dans le sentier, les bruits deviennent de plus en plus clairs et vous devinez une conversation. Alors que vous alliez vous manifester, vous voyez des animaux parlant entre-eux. Absorbé par leur conversation, ils ne semblent pas vous avoir vu...
 [[Se manifester-&gt;Manifestation]]
 [[Repartir discrètement-&gt;retourdiscret]]
 [[Fuir-&gt;retourfuite]]
 &lt;&lt;else&gt;&gt;
 	&lt;&lt;if $os eq true&gt;&gt;
-Alors que vous avancer dans le sentier, les bruits restent incompréhensibles et semble provenir d&#39;outre-tombe. C&#39;est alors que, du coin de l&#39;oeil, vous apercevez des animaux à l&#39;aspect fantomatique...
+Alors que vous avancez dans le sentier, les bruits restent incompréhensibles et semble provenir d&#39;outre-tombe. C&#39;est alors que, du coin de l&#39;œil, vous apercevez des animaux à l&#39;aspect fantomatique...
 [[Repartir discrètement-&gt;retourdiscret]]
 [[Fuir-&gt;retourfuite]]
 	&lt;&lt;else&gt;&gt;
 &lt;&lt;set $tresor to true&gt;&gt;
-Empruntant le sentier, vous débouchez sur une paisible clairrière délimitée par une haute et épaisse haie. Après l&#39;avoir contemplée, alors que vous repartiez, vous apercevez un objet brillant dans l&#39;herbe. Vous découvrez alors une ancienne chevalière en or de très belle facture, portant comme sceau un chevalier. Content de cette trouvaille, vous repartez sur vos pas pour reprendre votre route...
+Empruntant le sentier, vous débouchez sur une paisible clairière  délimitée par une haute et épaisse haie. Après l&#39;avoir contemplée, alors que vous repartiez, vous apercevez un objet brillant dans l&#39;herbe. Vous découvrez alors une ancienne chevalière en or de très belle facture, portant comme sceau un chevalier. Content de cette trouvaille, vous repartez sur vos pas pour reprendre votre route...
 [[Continuer-&gt;Groupe de scout]]
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata>
