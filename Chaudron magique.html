@@ -98,7 +98,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<p id="init-lacking">Apologies! You are using an <strong>outdated</strong> browser which lacks required capabilities. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<p id="init-loading">Initializing. Please wait&hellip;<br /><progress></progress></p>
 	</div>
-	<div id="store-area" hidden><tw-storydata name="Chaudron magique" startnode="36" creator="Twine" creator-version="2.0.11" ifid="A1089D4E-9A0F-4011-953B-C64AFD1CEFEC" format="SugarCube 2 (local/offline)" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/*@import url('https://fonts.googleapis.com/css?family=Open+Sans');*/
+	<div id="store-area" hidden><tw-storydata name="Chaudron magique" startnode="35" creator="Twine" creator-version="2.0.11" ifid="A1089D4E-9A0F-4011-953B-C64AFD1CEFEC" format="SugarCube 2 (local/offline)" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/*@import url('https://fonts.googleapis.com/css?family=Open+Sans');*/
 @import url('https://fonts.googleapis.com/css?family=Amaranth');
 /*@import url('https://fonts.googleapis.com/css?family=Lato');*/
 
@@ -236,6 +236,7 @@ a.internalLink:hover, a.externalLink:hover {
 img.chaudron {
 	width: 100%
 }
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 /**
@@ -317,12 +318,43 @@ macros["goto"]=macros["timedgoto"]={
 
 
 
-</script><tw-passagedata pid="1" name="Rivière" tags="" position="1340,1261">&lt;&lt;if $glace eq true&gt;&gt;
-Alors que le temps est fort agréable, vous arrivez devant une rivière gelée. Ne voyant pas de pont à l&#39;horizon, vous juger que l&#39;épaisseur de la glace n&#39;est pas très importante au vu des fissures présentes dans celle ci. Après un court instant de réfléxion, elle a l&#39;air assez épaisse pour passer sans sac à dos et éventuellement assez si vous ne déposez que votre bâton.
-[[Abandonner votre sac à dos-&gt;bruit]]&lt;!--&lt;&lt;set $allumette to false&gt;&gt;&lt;&lt;set $lampe to false&gt;&gt;&lt;!-- 100% de réussite--&gt;
-[[Abandonner votre bâton-&gt;bruit]]&lt;!--&lt;&lt;set $baton to false&gt;&gt;70% de réussite--&gt;
-[[Tenter-&gt;bruit]] &lt;!--40% de réussite--&gt;
-[[Passer au travers de la glace]]
+
+</script><tw-passagedata pid="1" name="Rivière" tags="" position="1340,1261">&lt;&lt;set $var to random(1,10)&gt;&gt;
+&lt;&lt;if $glace eq true&gt;&gt;
+Alors que le temps est fort agréable, vous arrivez devant une rivière gelée. Ne voyant pas de pont à l&#39;horizon, vous juger que l&#39;épaisseur de la glace n&#39;est pas très importante au vu des fissures présentes dans celle-ci. Après un court instant de réflexion, elle a l&#39;air assez épaisse pour passer sans sac à dos et éventuellement assez si vous ne déposez que votre bâton.
+&lt;span id=&quot;glace&quot;&gt;
+	&lt;&lt;link &quot;Abandonner votre sac à dos&quot;
+		&lt;&lt;replace &quot;#glace&quot;&gt;&gt;
+&lt;&lt;set $allumette to false&gt;&gt;
+&lt;&lt;set $lampe to false&gt;&gt;
+Ne voulant pas prendre de risques inutiles, vous retirez votre sac à dos avant de traverser délicatement la glace. Bien que les bruits de fissures, se propageant sous vos pieds, vous ont donné des sueurs froides, vous atteignez sain et sauf l&#39;autre rive.
+[[Suite-&gt;bruit]]
+		&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+	&lt;&lt;link &quot;Abandonner votre bâton&quot;&gt;&gt;
+		&lt;&lt;replace &quot;#glace&quot;&gt;&gt;
+&lt;&lt;set $baton to false&gt;&gt;
+	&lt;&lt;if $var &lt; 8&gt;&gt;
+Ne voulant pas vous séparer de vos affaires, vous laisser tout de même votre bâton avant de traverser (de toute façon votre couteau vous permettra d&#39;en refaire un). Bien que les bruits de fissures, se propageant sous vos pieds, vous ont donné des sueurs froides, vous atteignez sain et sauf l&#39;autre rive.
+[[Suite-&gt;bruit]]
+	&lt;&lt;else&gt;&gt;
+Ne voulant pas vous séparer de vos affaires, vous laisser tout de même votre bâton avant de traverser (de toute façon votre couteau vous permettra d&#39;en refaire un)...
+[[Suite-&gt;Passer au travers de la glace]]
+	&lt;&lt;/if&gt;&gt;
+		&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+	&lt;&lt;link &quot;Tenter&quot;&gt;&gt;
+		&lt;&lt;replace &quot;#glace&quot;&gt;&gt;
+	&lt;&lt;if $var &lt; 5&gt;&gt;
+Ne voulant pas vous séparer de vos affaires, vous commencez la traversée. Bien que les bruits de fissures, se propageant sous vos pieds, vous ont donné des sueurs froides, vous atteignez sain et sauf l&#39;autre rive.
+[[Suite-&gt;bruit]]
+	&lt;&lt;else&gt;&gt;
+Ne voulant pas vous séparer de vos affaires, vous commencez la traversée...
+[[Suite-&gt;Passer au travers de la glace]]
+	&lt;&lt;/if&gt;&gt;
+		&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+&lt;/span&gt;
 &lt;&lt;else&gt;&gt;
 Comme indiqué par les villageois, vous arrivez au niveau d&#39;une rivière à traverser, mais le pont manque à l&#39;appel. Voyant le fond, vous estimez que la profondeur ne doit pas dépasser la hauteur de vos épaules. Ne pouvant porter qu&#39;un seul objet hors de l&#39;eau, vous vous tâter sur l&#39;objet à préserver de l&#39;eau...
 [[Le bâton-&gt;porter le bâton]]
@@ -1113,8 +1145,13 @@ Couteau (tombé de la poche) &lt;&lt;set $couteau to false&gt;&gt;
 </tw-passagedata>
 <tw-passagedata pid="29" name="Passer au travers de la glace" tags="" position="1486,1006">Alors que vous traversez cette rivière gelé, vous entendez des fisures se propager à chacun de vos pas. Alors que vous regrettez d&#39;avoir gardé autant de poids sur vous, la glace se brise sous vos pieds, vous retrouvant alors dans une eau gelée dont vous devez vite vous extirper avant de mourir gelé...
 &lt;--! cliquer plusieurs fois pour avancer avec temps limité et fondu glacial (bad end)--&gt;
-[[badend_gelé]]
-Frigorifié, vous atteignez enfin l&#39;autre rive. Pour vous réchauffer, vous sortez la couverture de votre sac et vos vêtement séchant au soleil, vous vous demandez encore par quelle magie cette rivière peut être gelée.
+
+-Lentement, vous sentez vos membres s&#39;engourdir jusqu&#39;au point de ne plus pouvoir bouger. Petit à petit, vos yeux se ferment et vous  partez à la dérive dans un sommeil sans fin.
+[[badend]]
+
+
+
+-Frigorifié, vous atteignez enfin l&#39;autre rive. Pour vous réchauffer, vous sortez la couverture de votre sac et vos vêtement séchant au soleil, vous vous demandez encore par quelle magie cette rivière peut être gelée.
 &lt;--!5secondes avec retour à image normale--&gt;Vos vêtements secs, et réchauffé, vous pouvez reprendre votre périple...
 [[Reprendre la route-&gt;bruit]] </tw-passagedata>
 <tw-passagedata pid="30" name="scoutperdu" tags="" position="30,833">&lt;!-- Lieux d&#39;apparition possibles du scout :
@@ -1130,10 +1167,7 @@ Répondre à une question pour obtenir le livre &lt;&lt;set $livrescout to true&
 &lt;!-- carte du chaudron retrouvée par le promeneur et utilisée dans le procès--&gt;
 
 &lt;!-- champignons --&gt;</tw-passagedata>
-<tw-passagedata pid="31" name="badend_gelé" tags="" position="1743,846">Lentement, vous sentez vos membres s&#39;engourdir jusqu&#39;au point de ne plus pouvoir bouger. Petit à petit, vos yeux se ferment et vous  partez à la dérive dans un sommeil sans fin.
-[[badend]]
-</tw-passagedata>
-<tw-passagedata pid="32" name="Clairrière" tags="" position="1881,1385">&lt;&lt;if $livre eq true&gt;&gt;
+<tw-passagedata pid="31" name="Clairrière" tags="" position="1881,1385">&lt;&lt;if $livre eq true&gt;&gt;
 Alors que vous avancer dans le sentier, les bruits deviennent de plus en plus clair et vous devinez une conversation. Alors que vous alliez vous manifester, vour voyez des animaux parlant entre-eux. Absorbé par leur conversation, ils ne semblent pas vous avoir vu...
 [[Se manifester-&gt;Manifestation]]
 [[Repartir discrètement-&gt;retourdiscret]]
@@ -1149,8 +1183,8 @@ Empruntant le sentier, vous débouchez sur une paisible clairrière délimitée 
 [[Continuer-&gt;Groupe de scout]]
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="33" name="badend" tags="" position="4056,1775">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
-<tw-passagedata pid="34" name="Portesecrete" tags="" position="3417,1125">Alors que vous avancez sur ce paisible chemin, en comparaison du début, vous observez que sur votre gauche les arbres laissent place à un mur de plantes grimpantes. Longeant ce mur, un renfoncement apparait dans ce couvert végétal. Curieux, vous décidez de voir ce qui s’y cache derrière. Les fragiles plantes ne résistent pas bien longtemps et c’est ainsi que ce découvre une sorte de porte. Sur celle-ci, vous apercevez 11 étranges symboles composés d&#39;or et, en les examinant de plus près, il est possible de voir des chevaliers en armure et un emplacement vide entre le dixième et le onzième symbole.
+<tw-passagedata pid="32" name="badend" tags="" position="4056,1775">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
+<tw-passagedata pid="33" name="Portesecrete" tags="" position="3417,1125">Alors que vous avancez sur ce paisible chemin, en comparaison du début, vous observez que sur votre gauche les arbres laissent place à un mur de plantes grimpantes. Longeant ce mur, un renfoncement apparait dans ce couvert végétal. Curieux, vous décidez de voir ce qui s’y cache derrière. Les fragiles plantes ne résistent pas bien longtemps et c’est ainsi que ce découvre une sorte de porte. Sur celle-ci, vous apercevez 11 étranges symboles composés d&#39;or et, en les examinant de plus près, il est possible de voir des chevaliers en armure et un emplacement vide entre le dixième et le onzième symbole.
 &lt;span id=&quot;porte&quot;&gt;
 &lt;&lt;if $tresor eq true&gt;&gt;
 &lt;&lt;link &quot;Mettre la chevalière dans l’emplacement&quot;&gt;&gt;
@@ -1169,15 +1203,15 @@ Lassé de ne pas comprendre la présence d’une telle porte dans un endroit aus
 	&lt;&lt;/link&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;/span&gt;</tw-passagedata>
-<tw-passagedata pid="35" name="lieusecret" tags="" position="3565,1065">[[cabane]] </tw-passagedata>
-<tw-passagedata pid="36" name="menu" tags="" position="233,866">&lt;img id=&quot;game_title&quot; alt=&quot;Chaudron magique&quot; src=&quot;media/pictures/title.png&quot; /&gt;
+<tw-passagedata pid="34" name="lieusecret" tags="" position="3565,1065">[[cabane]] </tw-passagedata>
+<tw-passagedata pid="35" name="menu" tags="" position="233,866">&lt;img id=&quot;game_title&quot; alt=&quot;Chaudron magique&quot; src=&quot;media/pictures/title.png&quot; /&gt;
 
 Chaudron magique est un jeu blabla...
 
 
 [[Jouer-&gt;Intro]]
 [[Crédits]]</tw-passagedata>
-<tw-passagedata pid="37" name="Crédits" tags="" position="383,1017">Jeu-vidéo réalisé dans le cadre de l&#39;UV IC06 à l&#39;UTC par :
+<tw-passagedata pid="36" name="Crédits" tags="" position="383,1017">Jeu-vidéo réalisé dans le cadre de l&#39;UV IC06 à l&#39;UTC par :
 &lt;&lt;nobr&gt;&gt;
 &lt;ul&gt;
 &lt;li&gt;Fabien Boucaud&lt;/li&gt;
@@ -1190,7 +1224,7 @@ Ressources :
 Blabla
 
 [[Retour au menu-&gt;menu]]</tw-passagedata>
-<tw-passagedata pid="38" name="Intro" tags="" position="30,1229">&lt;&lt;nobr&gt;&gt;
+<tw-passagedata pid="37" name="Intro" tags="" position="30,1229">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;audio &quot;snoring&quot; loop play volume 0.5 fadein&gt;&gt;
 &lt;span id=&quot;intro_text&quot;&gt;
 Alors que doucement la forêt s&#39;éveille sous les doux et chauds rayons solaires de l&#39;aube, tout semble indiquer que la journée sera belle. La lumière matinale trouve son chemin jusqu&#39;à la fenêtre d&#39;une petite cabane où vous dormez d&#39;un sommeil manifestement agité. A mesure que l&#39;obscurité de la nuit est chassée de votre humble demeure vous vous arrachez

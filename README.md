@@ -47,8 +47,6 @@ repository (~~je ne sais pas encore comment faire en local...~~ impossible : <ht
 - quand on arrive sur la page, on dispose inconsciemment de x s pour que chaudron arrive à l'état "bout", puis y s à l'état "bouillonne", etc.
 - le joueur sait qu'il doit se presser si le visuel évolue alors qu'il est retard sur le texte !
 - la musique peut donc être composée de manière fixe et évoluer graduellement pour accentuer la sensation de stress
--lancé de dé : 
-	* chemin sombre
-	* antre dragon
-	* raccourci
+
 - insertion d'une image dans "groupe scout" selon récit (pomme) où il faudra cliquer dessus
+- intéraction image (gelée) et clique nécessaire à ne pas mourrir gelé ("passer au travers de la glace)
