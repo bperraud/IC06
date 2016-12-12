@@ -50,3 +50,30 @@ repository (~~je ne sais pas encore comment faire en local...~~ impossible : <ht
 
 - insertion d'une image dans "groupe scout" selon récit (pomme) où il faudra cliquer dessus
 - intéraction image (gelée) et clique nécessaire à ne pas mourrir gelé ("passer au travers de la glace)
+
+Reste à faire Phase 2 :
+
+Phase 2 : orthographe et flash back (image)
+Rivière : images (gelée et non)
+Passer au travers de la glace : intéraction avec image pour se sortir de l'eau (ou bad end)
+Porter le sac : RAS
+porter le bâton : orthographe
+bruit : bruit à incorporer et orthographe
+Clairière : images (animaux pas/ fantômes/ rien) et texte en accord avec image + ortho
+Retour discret : ortho
+Retour fuite : lancé dés
+Manifestation : RAS
+Discussion : image lapin + ortho
+Groupe scouts : image et ortho
+Embranchement : image + ortho
+Chemin Sombre : RAS
+Piece or : RAS
+antre dragon : images (dragon/moto) et blabla de rencontre
+porte secrete : image?
+lieu secret : niveau bonus à réaliser
+raccourci : RAS
+Cabane : image nains de jardin + texte à réaliser
+Procès : ?
+
+Badend : relier à qqch
+Scout perdu : l'implanter dans le scénario
