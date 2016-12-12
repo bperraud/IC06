@@ -237,6 +237,7 @@ img.chaudron {
 	width: 100%
 }
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 /**
@@ -319,6 +320,7 @@ macros["goto"]=macros["timedgoto"]={
 
 
 
+
 </script><tw-passagedata pid="1" name="Rivière" tags="" position="1340,1261">&lt;&lt;set $var to random(1,10)&gt;&gt;
 &lt;&lt;if $glace eq true&gt;&gt;
 Alors que le temps est fort agréable, vous arrivez devant une rivière gelée. Ne voyant pas de pont à l&#39;horizon, vous juger que l&#39;épaisseur de la glace n&#39;est pas très importante au vu des fissures présentes dans celle-ci. Après un court instant de réflexion, elle a l&#39;air assez épaisse pour passer sans sac à dos et éventuellement assez si vous ne déposez que votre bâton.
@@ -371,8 +373,8 @@ Vous traversez alors la rivière, le sac au-dessus de votre tête, et vous conti
 [[suite-&gt;bruit]]</tw-passagedata>
 <tw-passagedata pid="3" name="bruit" tags="" position="1750,1266">&lt;&lt;if $livre eq false&gt;&gt;
 	&lt;&lt;if $os eq false&gt;&gt;
-Alors que vous vagabonez dans vos idées, vous apercevez un petit sentier sur votre droite menant certainement à la clairière mentionnée par les habitants...
-[[Aller voir la clairrière-&gt;Clairrière]]
+Alors que vous vagabondez dans vos idées, vous apercevez un petit sentier sur votre droite menant certainement à la clairière mentionnée par les habitants...
+[[Aller voir la clairière-&gt;Clairrière]]
 [[Continuer sur le sentier-&gt;Groupe de scout]]
 	&lt;&lt;else&gt;&gt;
 &lt;!--Bruit--&gt;
@@ -386,11 +388,10 @@ Le bruit provient d&#39;un chemin discret sur votre droite. Vous rappelant les d
 [[Aller en direction du bruit-&gt;Clairrière]]
 [[Continuer sur le sentier-&gt;Groupe de scout]]
 &lt;&lt;/if&gt;&gt;
-
 </tw-passagedata>
 <tw-passagedata pid="4" name="porter le bâton" tags="" position="1508,1560">&lt;&lt;set $allumette to false&gt;&gt;
-Vous décider alors de porter vôtre bâton hors de l&#39;eau. Une fois de l&#39;autre côté de la rive, vous vous retrouvez humide, comme les amulettes que vous avez oublié dans votre sac. Une fois séché au soleil, par ce temps agréable, vous reprenez la route.
-[[suite-&gt;bruit]]
+Vous décidez alors de porter vôtre bâton hors de l&#39;eau. Une fois de l&#39;autre côté de la rive, vous vous retrouvez humide, comme les amulettes que vous avez oublié dans votre sac. Une fois séché au soleil, par ce temps agréable, vous reprenez la route.
+[[Suite-&gt;bruit]]
 </tw-passagedata>
 <tw-passagedata pid="5" name="Groupe de scout" tags="" position="2370,1270">
 Sur votre chemin, vous rencontrez un groupe de jeunes scouts affairés à étudier la nature. L&#39;un ramasse des champignons, une autre des papillons, le troisième ramasse des feuilles et les examine avec une loupe et le dernier, perdu dans ses pensés, regarde les nuages...
@@ -1118,15 +1119,14 @@ N&#39;ayant pas eu le réflexe de lancer un sort de protection, vous voyez le ch
 [[lancer-&gt;menu]]</tw-passagedata>
 <tw-passagedata pid="25" name="Phase2" tags="" position="1181,1260">&lt;!-- Retour dans le passé =&gt; flash pour marquer une ellipse temporelle--&gt;
 
-Après avoir passé de nombreuses années à étudier les différentes facettes du droit, le diplôme en poche, Jean Charle de la Haute a décidé de visiter du pays. Il se retrouve ainsi à vaguer de ville en village et de village en ville, et à discutter avec diverses personnes, intellectuelles ou non, afin d&#39;argumenter sur tout sujet.
+Après avoir passé de nombreuses années à étudier les différentes facettes du droit, le diplôme en poche, Jean Charles de la Haute a décidé de visiter du pays. Il se retrouve ainsi à vaguer de ville en village et de village en ville, et à discuter avec diverses personnes, intellectuelles ou non, afin d&#39;argumenter sur tout sujet.
 
-Il y a quelques semaines, durant vos habituelles argumentations vous avez eu vent d&#39;un sorcier. De par son comportement inconsciant et des accidents qui ont découlés de ses expériences, il a été exilé par les habitants. Intéressé par l&#39;optique de parler avec une personne aussi inhabituelle, vous demandez le chemin de sa nouvelle demeure aux habitants, qui vous répondent tout en essayant de vous résonner.
-
-
+Il y a quelques semaines, durant vos habituelles argumentations vous avez eu vent d&#39;un sorcier. De par son comportement inconscient et des accidents qui ont découlés de ses expériences, il a été exilé par les habitants. Intéressé par l&#39;optique de parler avec une personne aussi inhabituelle, vous demandez le chemin de sa nouvelle demeure aux habitants, qui vous répondent tout en essayant de vous résonner.
 
 Et c&#39;est ainsi que vous vous mettez en route, le sac sur le dos et le bâton à la main, afin de rencontrer ce mystérieux personnage à la réputation d&#39;enfant compulsif.
 
-[[Suite-&gt;Rivière]] </tw-passagedata>
+[[Suite-&gt;Rivière]]
+</tw-passagedata>
 <tw-passagedata pid="26" name="cabane" tags="" position="3583,1266">&lt;!-- image de la cabane explosée ou non--&gt;
 
 discour avec les nains de jardins
@@ -1143,7 +1143,7 @@ Couteau (tombé de la poche) &lt;&lt;set $couteau to false&gt;&gt;
 --&gt;
 [[Poursuivre votre chemin-&gt;Groupe de scout]]
 </tw-passagedata>
-<tw-passagedata pid="29" name="Passer au travers de la glace" tags="" position="1486,1006">Alors que vous traversez cette rivière gelé, vous entendez des fisures se propager à chacun de vos pas. Alors que vous regrettez d&#39;avoir gardé autant de poids sur vous, la glace se brise sous vos pieds, vous retrouvant alors dans une eau gelée dont vous devez vite vous extirper avant de mourir gelé...
+<tw-passagedata pid="29" name="Passer au travers de la glace" tags="" position="1486,1006">Alors que vous traversez cette rivière gelée, vous entendez des fissures se propager à chacun de vos pas. Alors que vous regrettez d&#39;avoir gardé autant de poids sur vous, la glace se brise sous vos pieds, vous retrouvant alors dans une eau gelée dont vous devez vite vous extirper avant de mourir gelé...
 &lt;--! cliquer plusieurs fois pour avancer avec temps limité et fondu glacial (bad end)--&gt;
 
 -Lentement, vous sentez vos membres s&#39;engourdir jusqu&#39;au point de ne plus pouvoir bouger. Petit à petit, vos yeux se ferment et vous  partez à la dérive dans un sommeil sans fin.
@@ -1151,9 +1151,10 @@ Couteau (tombé de la poche) &lt;&lt;set $couteau to false&gt;&gt;
 
 
 
--Frigorifié, vous atteignez enfin l&#39;autre rive. Pour vous réchauffer, vous sortez la couverture de votre sac et vos vêtement séchant au soleil, vous vous demandez encore par quelle magie cette rivière peut être gelée.
+-Frigorifié, vous atteignez enfin l&#39;autre rive. Pour vous réchauffer, vous sortez la couverture de votre sac et vos vêtements séchant au soleil, vous vous demandez encore par quelle magie cette rivière peut être gelée.
 &lt;--!5secondes avec retour à image normale--&gt;Vos vêtements secs, et réchauffé, vous pouvez reprendre votre périple...
-[[Reprendre la route-&gt;bruit]] </tw-passagedata>
+[[Reprendre la route-&gt;bruit]]
+</tw-passagedata>
 <tw-passagedata pid="30" name="scoutperdu" tags="" position="30,833">&lt;!-- Lieux d&#39;apparition possibles du scout :
 - avant la rivière
 - après l&#39;avoir franchie

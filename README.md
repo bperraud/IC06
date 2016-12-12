@@ -53,12 +53,12 @@ repository (~~je ne sais pas encore comment faire en local...~~ impossible : <ht
 
 Reste à faire Phase 2 :
 
-Phase 2 : orthographe et flash back (image)
+Phase 2 : flash back (image)
 Rivière : images (gelée et non)
 Passer au travers de la glace : intéraction avec image pour se sortir de l'eau (ou bad end)
 Porter le sac : RAS
-porter le bâton : orthographe
-bruit : bruit à incorporer et orthographe
+porter le bâton : RAS
+bruit : bruit à incorporer
 Clairière : images (animaux pas/ fantômes/ rien) et texte en accord avec image + ortho
 Retour discret : ortho
 Retour fuite : lancé dés
