@@ -1189,19 +1189,68 @@ Alors que vous traversez cette rivière gelée, vous entendez des fissures se pr
 &lt;&lt;/nobr&gt;&gt;
 
 &lt;span id=&quot;lutter&quot;&gt;&lt;/span&gt;</tw-passagedata>
-<tw-passagedata pid="30" name="scoutperdu" tags="" position="30,833">&lt;!-- Lieux d&#39;apparition possibles du scout :
+<tw-passagedata pid="30" name="scoutperdu" tags="" position="29,833">&lt;!-- Lieux d&#39;apparition possibles du scout :
 - avant la rivière
 - après l&#39;avoir franchie
 - la clairière si pas d&#39;animaux ou fantômes (là où se situe la chevalière niveau secret, donc diminuerait encore plus la proba...)
 - l&#39;embranchement
 - après le raccourci
 - avant la cabane du sorcier (de manière générale)
---&gt;
+carte du chaudron retrouvée par le promeneur et utilisée dans le procès--&gt;
+&lt;&lt;set $scoutperduvu to true&gt;&gt;
+&lt;&lt;set $variable to random(1,2)&gt;&gt;
+Alors que vous marchez, vous apercevez un scout en train de lire un bouquin. Dans son monde, il porte un écriteau autour de son cou indiquant qu’il est perdu (heureusement que ses compagnons sont prévoyants). 
+&lt;span id=&quot;interagir&quot;&gt;
+	&lt;&lt;link &quot;Arracher le scout à sa lecture&quot;&gt;&gt;
+		&lt;&lt;replace &quot;#interagir&quot;&gt;&gt;
+En vous rapprochant, il lève enfin son nez de son livre et vous interpelle…
+-	Bonjour mon cher, alors on se promène ? J’étais en train de lire une bonne réflexion portée sur le droit et les devoirs du citoyen… Enfin je parle de ça a vous mais je suppose que vous n’y connaissez rien. 
+&lt;&lt;if $variable is 1&gt;&gt;
+Par exemple, pouvez-vous me dire qui faut-il contacter en premier pour récupérer un appartement dont le locataire n&#39;occupe pas les lieux et ne paie plus son loyer depuis plus de 12 mois ?
+Répondre :
+	&lt;span id=&quot;repondre1&quot;&gt;&lt;!—################Question 1######--&gt;
+		&lt;&lt;link &quot;Un huissier&quot;&gt;&gt; &lt;!—#######Bonne réponse######--&gt;
+			&lt;&lt;replace &quot;#repondre1&quot;&gt;&gt;
+&lt;&lt;set $livrescout to true&gt;
+-	Effectivement, vous avez vu juste, il faut d’abord faire constater que le logement est inoccupé … bon vous êtes plus à même de comprendre le livre que moi après tout… tenez. Je vous souhaite une bonne route, quant à moi je vais essayer de retrouver mon groupe…
+			&lt;&lt;/replace&gt;&gt;
+		&lt;&lt;/link&gt;&gt;
+		&lt;&lt;link &quot;Un serrurier&quot;&gt;&gt;&lt;!—#######Mauvaise réponse######--&gt;
+			&lt;&lt;replace &quot;#repondre1&quot;&gt;&gt;
+-	Et beh mon vieux… je savais bien que vous n’y connaissiez rien en droit. Bonne continuation en tout cas …
+			&lt;&lt;/replace&gt;&gt;
+		&lt;&lt;/link&gt;&gt;
+	&lt;/span&gt;
+&lt;&lt;else&gt;&gt;
+&lt;!—###############Question 2######--&gt;
+Par exemple, pouvez-vous me dire quelle est la personne à contacter si une voiture vous empêche de circuler normalement sur la route ?
+Répondre :
+	&lt;span id=&quot;repondre2&quot;&gt;
+		&lt;&lt;link &quot;La police&quot;&gt;&gt; &lt;!—#######Bonne réponse######--&gt;
+			&lt;&lt;replace &quot;#repondre2&quot;&gt;&gt;
+&lt;&lt;set $livrescout to true&gt;
+-	Effectivement, vous avez vu juste… bon vous êtes plus à même de comprendre le livre que moi après tout… tenez. Je vous souhaite une bonne route, quant à moi je vais essayer de retrouver mon groupe…
+			&lt;&lt;/replace&gt;&gt;
+		&lt;&lt;/link&gt;&gt;
+		&lt;&lt;link &quot;Le ministre de la justice&quot;&gt;&gt;&lt;!—#######Mauvaise réponse######--&gt;
+			&lt;&lt;replace &quot;#repondre2&quot;&gt;&gt;
+-	Et beh mon vieux… je savais bien que vous n’y connaissiez rien en droit. Bonne continuation en tout cas …
+			&lt;&lt;/replace&gt;&gt;
+		&lt;&lt;/link&gt;&gt;
+	&lt;/span&gt;
+&lt;&lt;/if&gt;&gt;
+[[Suite]]
+		&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+&lt;&lt;link &quot;Le laisser dans son monde&quot;&gt;&gt;
+		&lt;&lt;replace &quot;#interagir&quot;&gt;&gt;
+Le scout vous paraissant tellement intéressé par sa lecture, vous décidez de ne pas le déranger…
+[[Suite]]
+		&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+&lt;/span&gt;
 
-Répondre à une question pour obtenir le livre &lt;&lt;set $livrescout to true&gt;&gt;
-&lt;!-- carte du chaudron retrouvée par le promeneur et utilisée dans le procès--&gt;
-
-&lt;!-- champignons --&gt;</tw-passagedata>
+</tw-passagedata>
 <tw-passagedata pid="31" name="Clairrière" tags="" position="1881,1385">&lt;&lt;if $livre eq true&gt;&gt;
 Alors que vous avancez dans le sentier, les bruits deviennent de plus en plus clairs et vous devinez une conversation. Alors que vous alliez vous manifester, vous voyez des animaux parlant entre-eux. Absorbé par leur conversation, ils ne semblent pas vous avoir vu...
 [[Se manifester-&gt;Manifestation]]
@@ -1305,6 +1354,7 @@ Alors que doucement la forêt s&#39;éveille sous les doux et chauds rayons sola
 	&lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;/linkreplace&gt;&gt;</tw-passagedata>
+<tw-passagedata pid="38" name="Suite" tags="" position="152,708">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
 </tw-storydata>
 </div>
 	<script id="script-sugarcube" type="text/javascript">
