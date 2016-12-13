@@ -29,9 +29,9 @@ repository (~~je ne sais pas encore comment faire en local...~~ impossible : <ht
 ## Todos et notes
 
 - "Finaliser" la mise en place des _timers_ de la phase 1, cf. ci-dessous
-- Corriger le saut de ligne dans le passage du réveil
-- Corriger le bug visuel de la texture qui "bave"
-- Ajouter le mécanisme de jet aléatoire pour le choix forcé d'un ingrédient
+- Appliquer un filtre "sepia" sur les illustrations pour qu'elle soient sur le même ton que la couleur du parchemin.
+- Changement du fond grisâtre.
+- Corriger le script de la rivière
 
 ## Question du timer
 
@@ -51,29 +51,36 @@ repository (~~je ne sais pas encore comment faire en local...~~ impossible : <ht
 - insertion d'une image dans "groupe scout" selon récit (pomme) où il faudra cliquer dessus
 - intéraction image (gelée) et clique nécessaire à ne pas mourrir gelé ("passer au travers de la glace)
 
+### 1ers feedbacks
+
+- c'est dommage de se presser, plaisir de lecture
+- image qui détourne l'attention parce qu'elle change ->> prendre en compte ce délai pour le timer ?
+- musique qui dérange la lecture, après difficile à statuer du fait de l'ambiance sonore (pas de mise en condition efficace)
+- Faire tester Agathe et Félix, Agathe sur le raccourci en premier, Félix sur le long en premier.
+
 Reste à faire Phase 2 :
 
-Phase 2 : flash back (image)
-Rivière : images (gelée et non)
-Passer au travers de la glace : intéraction avec image pour se sortir de l'eau (ou bad end)
-Porter le sac : RAS
-porter le bâton : RAS
-bruit : bruit à incorporer
-Clairière : images (animaux pas/ fantômes/ rien) et texte en accord avec image
-Retour discret : RAS
-Retour fuite : lancé dés
-Manifestation : RAS
-Discussion : image lapin
-Groupe scouts : image et texte de discussion à meubler
-Embranchement : image
-Chemin Sombre : RAS
-Piece or : RAS
-antre dragon : images (dragon/moto) et blabla de rencontre
-porte secrete : image?
-lieu secret : niveau bonus à réaliser
-raccourci : RAS
-Cabane : image nains de jardin + texte à réaliser
-Procès : ?
+- Phase 2 : flash back (image)
+- Rivière : images (gelée et non)
+- Passer au travers de la glace : intéraction avec image pour se sortir de l'eau (ou bad end)
+- Porter le sac : RAS
+- porter le bâton : RAS
+- bruit : bruit à incorporer
+- Clairière : images (animaux pas/ fantômes/ rien) et texte en accord avec image
+- Retour discret : RAS
+- Retour fuite : lancé dés
+- Manifestation : RAS
+- Discussion : image lapin
+- Groupe scouts : image et texte de discussion à meubler
+- Embranchement : image
+- Chemin Sombre : RAS
+- Piece or : RAS
+- antre dragon : images (dragon/moto) et blabla de rencontre
+- porte secrete : image?
+- lieu secret : niveau bonus à réaliser
+- raccourci : RAS
+- Cabane : image nains de jardin + texte à réaliser
+- Procès : ?
 
-Badend : relier à qqch
-Scout perdu : l'implanter dans le scénario
+- Badend : relier à qqch
+- Scout perdu : l'implanter dans le scénario

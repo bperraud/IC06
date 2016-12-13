@@ -159,7 +159,7 @@ body {
   margin-bottom: 5%;
   padding: 0px;
 
-	font-size: 24px;
+	font-size: 20px;
 }
 
 #passages img.illustration {
@@ -182,6 +182,8 @@ body {
   text-align:justify;
 
 	position: relative;
+	
+	line-height: 1.5;
 }
 
 /* No sidebar */
@@ -238,7 +240,19 @@ img.chaudron {
 }
 
 
+
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
+
+
+
+/* Pour forcer le saut vers un passage particulier
+Dans une balise twine script :
+$("body #passages").on("click", "area[data-passage]", function () {
+	state.display(this.getAttribute("data-passage"));
+});
+*/
+
 
 /**
 * macro that displays a Passage automatically after another
@@ -310,17 +324,6 @@ macros["goto"]=macros["timedgoto"]={
 		}
 	}
 };
-
-
-
-
-
-
-
-
-
-
-
 </script><tw-passagedata pid="1" name="Rivière" tags="" position="1340,1261">&lt;&lt;set $var to random(1,10)&gt;&gt;
 &lt;&lt;if $glace eq true&gt;&gt;
 Alors que le temps est fort agréable, vous arrivez devant une rivière gelée. Ne voyant pas de pont à l&#39;horizon, vous juger que l&#39;épaisseur de la glace n&#39;est pas très importante au vu des fissures présentes dans celle-ci. Après un court instant de réflexion, elle a l&#39;air assez épaisse pour passer sans sac à dos et éventuellement assez si vous ne déposez que votre bâton.
@@ -712,16 +715,13 @@ Vous méfiant de tout ce qui se rattache à ce mystérieux lieu, vous préférez
  Poussière de feu pour assécher la potion
  Glace pour solidifier la potion
  Champignon pour diminuer l&#39;acidité de la potion --&gt;
+ &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
  &lt;&lt;set $alea to random(1,3)&gt;&gt;
- &lt;&lt;audio &quot;1sttimer&quot; play&gt;&gt;
+ &lt;&lt;audio &quot;1sttimer&quot; time 15 play&gt;&gt;
  &lt;div class=&quot;chaudron_container&quot;&gt;
- &lt;img class=&quot;chaudron&quot; src=&quot;media/pictures/illustrations/chaudron1.png&quot; alt=&quot;chaudron ok&quot; title=&quot;Tout va bien... pour le moment&quot;/&gt;
+ &lt;img class=&quot;chaudron&quot; src=&quot;media/pictures/illustrations/chaudron2.png&quot; alt=&quot;chaudron ok&quot; title=&quot;Ça commencer à chauffer...&quot;/&gt;
  &lt;/div&gt;
 &lt;&lt;timed 30s&gt;&gt;
-&lt;&lt;replace &quot;.chaudron_container&quot;&gt;&gt;
-&lt;img class=&quot;chaudron&quot; src=&quot;media/pictures/illustrations/chaudron2.png&quot; alt=&quot;chaudron pas glop&quot; title=&quot;Ça commencer à chauffer...&quot;/&gt;
-&lt;&lt;/replace&gt;&gt;
-&lt;&lt;next 20s&gt;&gt;
 &lt;&lt;replace &quot;.chaudron_container&quot;&gt;&gt;
  &lt;img class=&quot;chaudron&quot; src=&quot;media/pictures/illustrations/chaudron3.png&quot; alt=&quot;chaudron critique&quot; title=&quot;AU SECOURS !!!&quot;/&gt;
 &lt;&lt;/replace&gt;&gt;
@@ -735,7 +735,7 @@ Vous méfiant de tout ce qui se rattache à ce mystérieux lieu, vous préférez
 [[Ajouter un fragment de glace éternelle-&gt;glace]]
 [[Jeter négligemment quelques champignons-&gt;champignon]]&lt;/span&gt;
 
-&lt;&lt;timed 60s&gt;&gt;
+&lt;&lt;timed 45s&gt;&gt;
 	&lt;&lt;replace &quot;#1eringr&quot;&gt;&gt;
 	Vous êtes manifestement indécis, mais le temps ne vous attend pas et le chaudron s&#39;agite de plus en plus. Bientôt, il semble comme sur le point d&#39;exploser, bouillonnant avec des bruits de tonnerre, attendre plus longtemps pour agir n&#39;est vraiment plus raisonnable. Vous vous emparez du premier ingrédient qui vous passe sous la main:&lt;&lt;if $alea eq 1&gt;&gt; [[la poussière de feu !-&gt;poussièredefeu]]&lt;&lt;elseif $alea eq 2&gt;&gt; [[un fragment de glace éternelle !-&gt;glace]]&lt;&lt;elseif $alea eq 3&gt;&gt; [[une poignée de champignons !-&gt;champignon]]&lt;&lt;/if&gt;&gt;
 	&lt;&lt;/replace&gt;&gt;
@@ -867,7 +867,9 @@ Et c&#39;est lentement que vos yeux se ferment, et que vous retournez vous niche
 [[Poursuivre l&#39;histoire-&gt;Phase2]] </tw-passagedata>
 <tw-passagedata pid="20" name="marmite" tags="" position="189,1150">&lt;&lt;set $livre to true&gt;&gt;
 &lt;&lt;audio &quot;boiling&quot; play volume 0.5 fadein&gt;&gt;
-
+&lt;div class=&quot;chaudron_container&quot;&gt;
+ &lt;img class=&quot;chaudron&quot; src=&quot;media/pictures/illustrations/chaudron1.png&quot; alt=&quot;chaudron ok&quot; title=&quot;Tout va bien... pour le moment&quot;/&gt;
+&lt;/div&gt;
 Après vous être rapidement étiré (dans une cacophonie de craquements osseux, la vieillesse ne vous a pas épargné), vous vous dirigez le plus tranquillement du monde vers votre chaudron.
 
 Mais en vous penchant au-dessus de la décoction, vous vous rendez compte que c&#39;est le drame. Vous avez manifestement raté quelque chose pendant la préparation de la veille, car la potion a pris une couleur et une odeur inquiétantes, sans parler du fait qu&#39;elle bout dangereusement fort. Au cours de votre longue vie de magicien vous avez déjà connu de telles situations et vous savez que si vous ne faîtes rien pour arranger les choses tout peut vite dégénérer et passer hors de contrôle.
@@ -1003,9 +1005,12 @@ Surpris, les nains cessent un instant de parler, les yeux ronds d&#39;étonnemen
 &lt;&lt;/link&gt;&gt;
 
 &lt;/span&gt;</tw-passagedata>
-<tw-passagedata pid="21" name="placard" tags="" position="182,1384">&lt;&lt;set $gateau to true&gt;&gt;
-&lt;&lt;audio &quot;boiling&quot; play volume 0.5 fadein&gt;&gt;
-
+<tw-passagedata pid="21" name="placard" tags="" position="182,1384">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set $gateau to true&gt;&gt;
+&lt;div class=&quot;chaudron_container&quot;&gt;
+ &lt;img class=&quot;chaudron&quot; src=&quot;media/pictures/illustrations/chaudron1.png&quot; alt=&quot;chaudron ok&quot; title=&quot;Tout va bien... pour le moment&quot;/&gt;
+&lt;/div&gt;
+&lt;&lt;/nobr&gt;&gt;
 	N&#39;écoutant que l&#39;appel de votre ventre, vous partez chercher quelque chose à grignoter dans le garde-manger. Hélas, votre déception est grande lorsque vous n&#39;y découvrez qu&#39;un triste désert alimentaire, à l&#39;exception de ce qui semble être un muffin. Vous pestez à votre encontre, vous auriez dû penser à aller refaire vos provisions chez &quot;Les fins gourmets de la forêt&quot;. Avec un soupir d&#39;irritation vous vous emparez malgré tout du muffin et vous dirigez vers le chaudron.
 	En vous penchant au-dessus de ce dernier vous vous rendez finalement compte que son bouillonnement est plus fort qu&#39;il ne devrait l&#39;être, ce qui, associé à l&#39;odeur étonnament désagréable qui s&#39;en échappe et la couleur verdâtre de la potion, vous fait froncer les sourcils. Serait-il possible que vous ayez fait une erreur dans votre préparation de la veille ? Soucieux, vous portez votre muffin à vos lèvres. Mais alors que vous mordez dedans, un horrible goût de moisissure vous donne un haut-le-coeur.
 	Dans un geste rageur vous jetez violemment le gâteau par terre.
@@ -1018,6 +1023,7 @@ Surpris, les nains cessent un instant de parler, les yeux ronds d&#39;étonnemen
 					...Laquelle est dangereusement ébranlée par le choc avec le muffin, et vous avez l&#39;espace d&#39;un instant une vision d&#39;horreur de la lourde bibliothèque s&#39;effondrant sur le sol. Elle finit toutefois par se stabiliser tandis que le muffin, fort d&#39;un nouveau rebond, part plus vite encore à travers la pièce. Atterré par la propension tout à fait magique de ce muffin à défier les lois de la nature en gagnant en énergie cinétique à chaque heurt, &lt;span id=&quot;r2&quot;&gt;&lt;&lt;link &quot;vous assistez impuissant au parcours rebondissant du muffin...&quot;&gt;&gt;&lt;/span&gt;&lt;&lt;replace &quot;#r2&quot;&gt;&gt;vous assistez impuissant au parcours rebondissant du muffin...&lt;&lt;/replace&gt;&gt;
 
 						&lt;&lt;append &quot;#rebonds&quot;&gt;&gt;
+						&lt;&lt;audio &quot;boiling&quot; play volume 0.5 fadein&gt;&gt;
 							... Qui va à toute vitesse d&#39;une poutre au plancher, puis du plancher à la poignée de votre porte d&#39;entrée, puis de la poignée à un des pieds de votre table qui émet un craquement inquiétant, etc. Vous vous abritez quant à vous sous votre chapeau de magicien, terrifié à l&#39;idée d&#39;être touché par le projectile. Mais par chance (ou peut-être par terrible malchance ? Seul l&#39;avenir le dira...) le muffin termine finalement sa folle envolée par un magistral &quot;PLOUF!&quot; dans le chaudron.
 							Alors que vous commencez à pousser un soupir de soulagement, la marmite, elle, ne semble pas avoir apprécié l&#39;offrande périmée et se met à trembler de manière menaçante sur son support, les bouillonnements se faisant de plus en plus fort.
 							Vous voilà donc confronté le ventre vide à la nécessité de stabiliser la potion avant que les choses ne dégénèrent encore davantage...
@@ -1144,18 +1150,32 @@ Couteau (tombé de la poche) &lt;&lt;set $couteau to false&gt;&gt;
 --&gt;
 [[Poursuivre votre chemin-&gt;Groupe de scout]]
 </tw-passagedata>
-<tw-passagedata pid="29" name="Passer au travers de la glace" tags="" position="1486,1006">Alors que vous traversez cette rivière gelée, vous entendez des fissures se propager à chacun de vos pas. Alors que vous regrettez d&#39;avoir gardé autant de poids sur vous, la glace se brise sous vos pieds, vous retrouvant alors dans une eau gelée dont vous devez vite vous extirper avant de mourir gelé...
-&lt;--! cliquer plusieurs fois pour avancer avec temps limité et fondu glacial (bad end)--&gt;
+<tw-passagedata pid="29" name="Passer au travers de la glace" tags="" position="1486,1006">&lt;&lt;silently&gt;&gt;
+&lt;&lt;set $nb_click to 0&gt;&gt;
+&lt;&lt;/silently&gt;&gt;
+Alors que vous traversez cette rivière gelée, vous entendez des fissures se propager à chacun de vos pas. Alors que vous regrettez d&#39;avoir gardé autant de poids sur vous, la glace se brise sous vos pieds, vous retrouvant alors dans une eau gelée dont vous devez vite &lt;&lt;nobr&gt;&gt;
+&lt;&lt;link &quot;vous extirper avant de mourir gelé...&quot;&gt;&gt;
+	&lt;&lt;append &quot;#lutter&quot;&gt;&gt;
+		&lt;&lt;link &quot;Luttez !!!&quot;&gt;&gt;
+			&lt;&lt;set $nb_click to $nb_click + 1&gt;&gt;
+		&lt;&lt;/link&gt;&gt;
+	&lt;&lt;/append&gt;&gt;
+	&lt;&lt;timed 3s t8n&gt;&gt;
+	&lt;&lt;replace &quot;#lutter&quot;&gt;&gt;Luttez !!!&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;if $nb_click &gt;= 5&gt;&gt;
+	Frigorifié, vous atteignez enfin l&#39;autre rive. Pour vous réchauffer, vous sortez la couverture de votre sac et vos vêtements séchant au soleil, vous vous demandez encore par quelle magie cette rivière peut être gelée.
+	&lt;!-- retour image normale --&gt;
+	Vos vêtements secs, et réchauffé, vous pouvez reprendre votre périple...
+	[[Reprendre la route-&gt;bruit]]
+	&lt;&lt;else&gt;&gt;
+	Lentement, vous sentez vos membres s&#39;engourdir jusqu&#39;au point de ne plus pouvoir bouger. Petit à petit, vos yeux se ferment et vous  partez à la dérive dans un sommeil sans fin.
+	[[badend]]
+	&lt;&lt;/if&gt;&gt;
+	&lt;&lt;/timed&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
 
--Lentement, vous sentez vos membres s&#39;engourdir jusqu&#39;au point de ne plus pouvoir bouger. Petit à petit, vos yeux se ferment et vous  partez à la dérive dans un sommeil sans fin.
-[[badend]]
-
-
-
--Frigorifié, vous atteignez enfin l&#39;autre rive. Pour vous réchauffer, vous sortez la couverture de votre sac et vos vêtements séchant au soleil, vous vous demandez encore par quelle magie cette rivière peut être gelée.
-&lt;--!5secondes avec retour à image normale--&gt;Vos vêtements secs, et réchauffé, vous pouvez reprendre votre périple...
-[[Reprendre la route-&gt;bruit]]
-</tw-passagedata>
+&lt;span id=&quot;lutter&quot;&gt;&lt;/span&gt;</tw-passagedata>
 <tw-passagedata pid="30" name="scoutperdu" tags="" position="30,833">&lt;!-- Lieux d&#39;apparition possibles du scout :
 - avant la rivière
 - après l&#39;avoir franchie
