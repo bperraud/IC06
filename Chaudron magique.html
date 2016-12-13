@@ -1145,12 +1145,23 @@ discour de &quot;procès&quot;</tw-passagedata>
 [[Continuer-&gt;Groupe de scout]]
 </tw-passagedata>
 <tw-passagedata pid="28" name="retourfuite" tags="" position="2071,1595">Perdant tout courage, vous prenez vos jambes à votre cou et vous partez sans vous retourner. Une fois à bonne distance, vous reprenez votre souffle ...
-&lt;--!Dans votre fuite, vous avez perdu ...
-lampe (tombée du sac)	&lt;&lt;set $lampe to false&gt;&gt;
-sac (pris dans une branche) &lt;&lt;set $allumette to false&gt;&gt; &lt;&lt;set $lampe to false&gt;&gt;
-Couteau (tombé de la poche) &lt;&lt;set $couteau to false&gt;&gt;
---&gt;
-[[Poursuivre votre chemin-&gt;Groupe de scout]]
+&lt;&lt;set $variable to random(1,10)&gt;&gt;
+&lt;&lt;if $variable &gt;5&gt;&gt;
+&lt;&lt;set $lampe to false&gt;&gt;
+Vous vous rendez-compte que lors de votre fuite, voter lampe-torche a pris la poudre d&#39;escampette…
+[[Suite-&gt;Groupe de scout]]
+&lt;&lt;else&gt;&gt;
+	&lt;&lt;if $variable &gt;3&gt;&gt;
+&lt;&lt;set $couteau to false&gt;&gt;
+Fouillant vos poches, vous constatez la perte de votre couteau. C’est donc avec une certaine tristesse, due à la perte de cet objet hérité de votre grand-père, que vous reprenez la route…
+[[Suite-&gt;Groupe de scout]]
+	&lt;&lt;else&gt;&gt;
+&lt;&lt;set $allumette to false&gt;&gt;
+&lt;&lt;set $lampe to false&gt;&gt;
+Retournant sur la route, vous vous sentez léger… trop léger… et en effet, durant votre fuite, votre sac s’était accroché à une branche. Vous voilà donc avec uniquement un couteau et votre bâton pour continuer le périple…
+[[Suite-&gt;Groupe de scout]]
+	&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 </tw-passagedata>
 <tw-passagedata pid="29" name="Passer au travers de la glace" tags="" position="1486,1006">&lt;&lt;silently&gt;&gt;
 &lt;&lt;set $nb_click to 0&gt;&gt;

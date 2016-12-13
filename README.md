@@ -68,7 +68,7 @@ Reste à faire Phase 2 :
 - bruit : bruit à incorporer
 - Clairière : images (animaux pas/ fantômes/ rien) et texte en accord avec image
 - Retour discret : RAS
-- Retour fuite : lancé dés
+- Retour fuite : RAS
 - Manifestation : RAS
 - Discussion : image lapin
 - Groupe scouts : image et texte de discussion à meubler
