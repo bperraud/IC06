@@ -1,4 +1,4 @@
-﻿# IC06
+# IC06
 
 ## Procédure de modification du projet
 
@@ -56,8 +56,19 @@ repository (~~je ne sais pas encore comment faire en local...~~ impossible : <ht
 - c'est dommage de se presser, plaisir de lecture
 - image qui détourne l'attention parce qu'elle change ->> prendre en compte ce délai pour le timer ?
 - musique qui dérange la lecture, après difficile à statuer du fait de l'ambiance sonore (pas de mise en condition efficace)
-- Faire tester Agathe et Félix, Agathe sur le raccourci en premier, Félix sur le long en premier.
 
+### Feedback Agathe
+
+- quelques fautes d'ortho à corriger :-)
+- apparition du texte en dessous de l'image au réveil doit être plus fluide sinon bancal
+- nécessité d'avoir un background musical dès le début sinon les bruitages tombent comme un cheveu dans la soupe
+- concernant le timer :
+    - musique qui met dans l'ambiance mais qui ne stresse pas nécessairement
+    - si en pleine lecture, on ne voit pas que l'image change ->> ajouter davantage de frames à défaut d'animer ?
+    - plus approprié de balancer le timer en fonction du niveau de scroll, à voir si on peut le faire facilement
+    - sinon, faire en deux temps, où l'on indique dans le premier temps après X s. au joueur qu'il est indécis mais que le chaudron n'attend pas
+    - de manière générale, une stratégie serait de mettre l'accent sur le texte-même pour que le joueur comprenne que la situation est stressante...
+    
 Reste à faire Phase 2 :
 
 - Phase 2 : flash back (image)
