@@ -243,6 +243,7 @@ img.chaudron {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 
@@ -326,11 +327,12 @@ macros["goto"]=macros["timedgoto"]={
 	}
 };
 
+
 </script><tw-passagedata pid="1" name="Rivière" tags="" position="1340,1261">&lt;&lt;set $var to random(1,10)&gt;&gt;
 &lt;&lt;if $glace eq true&gt;&gt;
 Alors que le temps est fort agréable, vous arrivez devant une rivière gelée. Ne voyant pas de pont à l&#39;horizon, vous juger que l&#39;épaisseur de la glace n&#39;est pas très importante au vu des fissures présentes dans celle-ci. Après un court instant de réflexion, elle a l&#39;air assez épaisse pour passer sans sac à dos et éventuellement assez si vous ne déposez que votre bâton.
 &lt;span id=&quot;glace&quot;&gt;
-	&lt;&lt;link &quot;Abandonner votre sac à dos&quot;
+	&lt;&lt;link &quot;Abandonner votre sac à dos&quot;&gt;&gt;
 		&lt;&lt;replace &quot;#glace&quot;&gt;&gt;
 &lt;&lt;set $allumette to false&gt;&gt;
 &lt;&lt;set $lampe to false&gt;&gt;
@@ -1240,8 +1242,8 @@ Répondre :
 	&lt;/span&gt;
 &lt;&lt;/if&gt;&gt;
 [[Suite]]
-		&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+			&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
 &lt;&lt;link &quot;Le laisser dans son monde&quot;&gt;&gt;
 		&lt;&lt;replace &quot;#interagir&quot;&gt;&gt;
 Le scout vous paraissant tellement intéressé par sa lecture, vous décidez de ne pas le déranger…
