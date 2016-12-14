@@ -1182,32 +1182,39 @@ Retournant sur la route, vous vous sentez léger… trop léger… et en effet, 
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 </tw-passagedata>
-<tw-passagedata pid="29" name="Passer au travers de la glace" tags="" position="1486,1006">&lt;&lt;silently&gt;&gt;
+<tw-passagedata pid="29" name="Passer au travers de la glace" tags="" position="1479,1018">&lt;&lt;silently&gt;&gt;
 &lt;&lt;set $nb_click to 0&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
-Alors que vous traversez cette rivière gelée, vous entendez des fissures se propager à chacun de vos pas. Alors que vous regrettez d&#39;avoir gardé autant de poids sur vous, la glace se brise sous vos pieds, vous retrouvant alors dans une eau gelée dont vous devez vite &lt;&lt;nobr&gt;&gt;
-&lt;&lt;link &quot;vous extirper avant de mourir gelé...&quot;&gt;&gt;
-	&lt;&lt;append &quot;#lutter&quot;&gt;&gt;
+&lt;&lt;nobr&gt;&gt;
+Alors que vous traversez cette rivière gelée, vous entendez des fissures se propager à chacun de vos pas. Alors que vous regrettez d&#39;avoir gardé autant de poids sur vous, la glace se brise sous vos pieds, vous retrouvant alors dans une eau gelée dont vous devez vite
+&lt;&lt;linkappend &quot;vous extirper avant de mourir gelé...&quot;&gt;&gt;
+	&lt;&lt;append &quot;#riviere_lutte&quot;&gt;&gt;
 		&lt;&lt;link &quot;Luttez !!!&quot;&gt;&gt;
 			&lt;&lt;set $nb_click to $nb_click + 1&gt;&gt;
-		&lt;&lt;/link&gt;&gt;
-	&lt;&lt;/append&gt;&gt;
-	&lt;&lt;timed 3s t8n&gt;&gt;
-	&lt;&lt;replace &quot;#lutter&quot;&gt;&gt;Luttez !!!&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;if $nb_click &gt;= 5&gt;&gt;
+			&lt;&lt;if $nb_click &gt;= 5&gt;&gt;
+	&lt;&lt;append &quot;#riviere_result&quot;&gt;&gt;
 	Frigorifié, vous atteignez enfin l&#39;autre rive. Pour vous réchauffer, vous sortez la couverture de votre sac et vos vêtements séchant au soleil, vous vous demandez encore par quelle magie cette rivière peut être gelée.
 	&lt;!-- retour image normale --&gt;
 	Vos vêtements secs, et réchauffé, vous pouvez reprendre votre périple...
 	[[Reprendre la route-&gt;bruit]]
-	&lt;&lt;else&gt;&gt;
+	&lt;&lt;/append&gt;&gt;
+	&lt;&lt;remove &quot;#riviere_lutte&quot;&gt;&gt;
+			&lt;&lt;/if&gt;&gt;
+		&lt;&lt;/link&gt;&gt;
+	&lt;&lt;/append&gt;&gt;
+	&lt;&lt;timed 3s t8n&gt;&gt;
+	&lt;&lt;if $nb_click &lt; 5&gt;&gt;
+	&lt;&lt;remove &quot;#riviere_lutte&quot;&gt;&gt;
+	&lt;&lt;append &quot;#riviere_result&quot;&gt;&gt;
 	Lentement, vous sentez vos membres s&#39;engourdir jusqu&#39;au point de ne plus pouvoir bouger. Petit à petit, vos yeux se ferment et vous  partez à la dérive dans un sommeil sans fin.
 	[[badend]]
+	&lt;&lt;/append&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
 	&lt;&lt;/timed&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+&lt;&lt;/linkappend&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
-
-&lt;span id=&quot;lutter&quot;&gt;&lt;/span&gt;</tw-passagedata>
+&lt;span id=&quot;riviere_lutte&quot;&gt;&lt;/span&gt;
+&lt;span id=&quot;riviere_result&quot;&gt;&lt;/span&gt;</tw-passagedata>
 <tw-passagedata pid="30" name="scoutperdu" tags="" position="29,833">&lt;!-- Lieux d&#39;apparition possibles du scout :
 - avant la rivière
 - après l&#39;avoir franchie
