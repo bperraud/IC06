@@ -243,6 +243,8 @@ img.chaudron {
 }
 
 
+
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 
@@ -341,6 +343,8 @@ window.blurElement = function (element, size) {
         '-o-transition':'all 0.5s ease-out'
 	});
 }
+
+
 
 
 </script><tw-passagedata pid="1" name="Rivière" tags="" position="1340,1261">&lt;&lt;set $var to random(1,10)&gt;&gt;
@@ -504,7 +508,7 @@ N&#39;ayant pas le temps pour dialoguer, vous laissez la jeunesse à leurs occup
 	&lt;&lt;/link&gt;&gt;
 &lt;/span&gt;
 </tw-passagedata>
-<tw-passagedata pid="6" name="Manifestation" tags="" position="2081,1810">Interloqués de voir des animaux parlants, vous vous manifestez auprès d&#39;eux. Après plusieurs minutes de conversation au travers différents débats, vous allez reprendre la route vers la cabane du sorcier lorsqu&#39;un lapin vous propose d&#39;argumenter à propos de l&#39;existence et l’absurdité des sentiments avec un animal intelligent ...
+<tw-passagedata pid="6" name="Manifestation" tags="" position="2080,1811">Interloqués de voir des animaux parlants, vous vous manifestez auprès d&#39;eux. Après plusieurs minutes de conversation au travers différents débats, vous allez reprendre la route vers la cabane du sorcier lorsqu&#39;un lapin vous propose d&#39;argumenter à propos de l&#39;existence et l’absurdité des sentiments avec un animal intelligent ...
 [[Relever le défit-&gt;Dicussion]]
 [[Décliner la proposition et s&#39;en aller-&gt;Groupe de scout]] </tw-passagedata>
 <tw-passagedata pid="7" name="Dicussion" tags="" position="2297,1729">Vous vous lancez donc dans un débat face au lapin qui ne semble pas à court d&#39;arguments. Le temps défilant, personne ne semble toutefois décidé à admettre le point de vue de l&#39;autre.
@@ -538,21 +542,21 @@ Après avoir fouillé vos poches sans succès, n&#39;ayant plus de moyens d&#39;
 &lt;&lt;/if&gt;&gt;
 </tw-passagedata>
 <tw-passagedata pid="10" name="raccourci" tags="" position="3013,1263">&lt;&lt;set $variable to random(1,10)&gt;&gt;
-&lt;&lt;if $baton eq true&gt;&gt;&lt; !-- ######################Avance avec bâton#################--&gt;
+&lt;&lt;if $baton eq true&gt;&gt;&lt;!-- ##########Avance avec bâton######--&gt;
 Souhaitant gagner du temps, vous empruntez le raccourci et aidé de votre bâton vous avancez sans glisser ni chuter dans le ravin.
 [[Poursuivre-&gt;jardincabane]]
 &lt;&lt;else&gt;&gt;
 	&lt;&lt;if $couteau eq true&gt;&gt;
 N&#39;ayant plus de bâton, pour vous aider dans votre ascension, vous avez la possibilité d&#39;utiliser les arbres à disposition, dont un magnifique chêne qui dispose d’une branche susceptible de faire un bon bâton de marche.
 &lt;span id=&quot;glisse&quot;&gt;
-&lt;&lt;link &quot;Fabriquer un bâton&quot;&gt;&gt;&lt; !-- ################Fabrique bâton#################--&gt;
+&lt;&lt;link &quot;Fabriquer un bâton&quot;&gt;&gt;&lt;!-- ######Fabrique bâton#####--&gt;
 &lt;&lt;replace &quot;#glisse&quot;&gt;&gt;
 &lt;&lt;set $baton to true&gt;&gt;
 Après avoir fabriqué votre bâton à parti d’une solide branche de chêne, vous vous remettez en route et vous avancez sans glisser ni chuter dans le ravin.
 [[Suite-&gt;jardincabane]]
 		&lt;&lt;/replace&gt;&gt;
 	&lt;&lt;/link&gt;&gt;
-&lt;&lt;link &quot;Continuer sans bâton&quot;&gt;&gt;&lt; !-- ###############Ne veut pas fabriquer baton#####--&gt;
+&lt;&lt;link &quot;Continuer sans bâton&quot;&gt;&gt;&lt;!-- ######Ne veut pas fabriquer baton###--&gt;
 &lt;&lt;if $bave eq false&gt;&gt;
 &lt;&lt;if $variable &lt;5&gt;&gt;
 &lt;&lt;replace &quot;#glisse&quot;&gt;&gt;
@@ -634,7 +638,7 @@ Devant l’incompréhension des symboles, vous préférez reposer la pièce plut
 	&lt;&lt;/link&gt;&gt;
 &lt;/span&gt;
 </tw-passagedata>
-<tw-passagedata pid="12" name="antre du dragon" tags="" position="3127,1006">&lt;!-- bruit moto--&gt;
+<tw-passagedata pid="12" name="antre du dragon" tags="" position="3126,1006">&lt;!-- bruit moto--&gt;
 &lt;&lt;set $variable to random(1,10)&gt;&gt;
 &lt;&lt;if $variable &gt; 5&gt;&gt;
 &lt;&lt;set $dragon to  &quot;dragon&quot;&gt;&gt;
@@ -715,7 +719,7 @@ Le chien vous voyant arriver, file se cacher dans des buissons. N’apercevant p
 &lt;span id=&quot;moto&quot;&gt;
 	&lt;&lt;link &quot;Enfourcher la moto&quot;&gt;&gt;
 		&lt;&lt;replace &quot;#moto&quot;&gt;&gt;
-Et c’est ainsi que vous décidez « d’emprunter&quot; le bolide à son mystérieux possesseur et que vous vous élancez à toute blinde sur la route. Le paysage défilant à toute vitesse, les cheveux au vent, vous pouvez sentir la puissance du bolide.  C’est alors que celui-ci semble cafouiller, éventuellement de mécontentement (après tout la moto a peut-être quelque chose de magique) et, après une embardé, prend la direction des arbres. N’arrivant pas à rattraper la trajectoire, vous recevez une branche dans le torse, qui vous fait tomber de la moto, tandis que celle-ci continue sa course. Après avoir récupéré tout en maudissant la moto, que vous entendez au loin, vous reprenez votre route avec une douleur dans la poitrine…
+Et c’est ainsi que vous décidez &quot;d’emprunter&quot; le bolide à son mystérieux possesseur et que vous vous élancez à toute blinde sur la route. Le paysage défilant à toute vitesse, les cheveux au vent, vous pouvez sentir la puissance du bolide.  C’est alors que celui-ci semble cafouiller, éventuellement de mécontentement (après tout la moto a peut-être quelque chose de magique) et, après une embardé, prend la direction des arbres. N’arrivant pas à rattraper la trajectoire, vous recevez une branche dans le torse, qui vous fait tomber de la moto, tandis que celle-ci continue sa course. Après avoir récupéré tout en maudissant la moto, que vous entendez au loin, vous reprenez votre route avec une douleur dans la poitrine…
 [[Suite-&gt;Portesecrete]]
 		&lt;&lt;/replace&gt;&gt;
 	&lt;&lt;/link&gt;&gt;
