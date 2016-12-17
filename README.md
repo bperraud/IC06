@@ -69,7 +69,7 @@ repository (~~je ne sais pas encore comment faire en local...~~ impossible : <ht
     - sinon, faire en deux temps, où l'on indique dans le premier temps après X s. au joueur qu'il est indécis mais que le chaudron n'attend pas
     - de manière générale, une stratégie serait de mettre l'accent sur le texte-même pour que le joueur comprenne que la situation est stressante...
     
-Reste à faire Phase 2 :
+## Reste à faire Phase 2
 
 - Phase 2 : flash back (image)
 - Rivière : images (gelée et non)
@@ -95,3 +95,7 @@ Reste à faire Phase 2 :
 
 - Badend : relier à qqch
 - Scout perdu : l'implanter dans le scénario
+
+## Notes techniques
+
+- Passage des variables Twine/JS : <http://docs.textadventures.co.uk/ifanswers/ifanswers.com/471/how-do-i-pass-variables-between-twine-and-javascript.html>

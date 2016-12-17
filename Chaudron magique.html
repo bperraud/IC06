@@ -168,7 +168,7 @@ body {
 	display: block;
   margin-left: auto;
   margin-right: auto;
-	border: 2px solid rgba(64, 64, 64, 0.8);
+	border: 2px solid #212121;
   max-width: 100%;
 }
 
@@ -229,27 +229,18 @@ a.internalLink:hover, a.externalLink:hover {
 }
 
 /* Images fixes du chaudron */
-.chaudron_container {
+#chaudron_container {
 	position: fixed;
-	border: 2px solid rgba(64, 64, 64, 0.8);
 	width: 20%;
   top: 10%;
   right: 5%;
 	line-height: 0;
 }
 img.chaudron {
-	width: 100%
+	border: 2px solid #212121;
+	width: 100%;
+	position: absolute;
 }
-
-
-
-
-
-
-
-
-
-
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 
@@ -347,9 +338,7 @@ window.blurElement = function (element, size) {
         '-moz-transition':'all 0.5s ease-out',
         '-o-transition':'all 0.5s ease-out'
 	});
-}
-
-</script><tw-passagedata pid="1" name="Rivière" tags="" position="1340,1261">&lt;&lt;set $var to random(1,10)&gt;&gt;
+}</script><tw-passagedata pid="1" name="Rivière" tags="" position="1340,1261">&lt;&lt;set $var to random(1,10)&gt;&gt;
 &lt;&lt;if $glace eq true&gt;&gt;
 Alors que le temps est fort agréable, vous arrivez devant une rivière gelée. Ne voyant pas de pont à l&#39;horizon, vous juger que l&#39;épaisseur de la glace n&#39;est pas très importante au vu des fissures présentes dans celle-ci. Après un court instant de réflexion, elle a l&#39;air assez épaisse pour passer sans sac à dos et éventuellement assez si vous ne déposez que votre bâton.
 &lt;span id=&quot;glace&quot;&gt;
@@ -735,38 +724,62 @@ Vous méfiant de tout ce qui se rattache à ce mystérieux lieu, vous préférez
 &lt;&lt;/if&gt;&gt;
 
 </tw-passagedata>
-<tw-passagedata pid="13" name="1er_ingrédient" tags="" position="334,1296">&lt;&lt;nobr&gt;&gt;
-&lt;!-- La potion de liquéfaction doit être neutralisé en annulant son acidité et sa liquidité :
+<tw-passagedata pid="13" name="1er_ingrédient" tags="" position="334,1296">&lt;!-- La potion de liquéfaction doit être neutralisé en annulant son acidité et sa liquidité :
  Poussière de feu pour assécher la potion
  Glace pour solidifier la potion
  Champignon pour diminuer l&#39;acidité de la potion --&gt;
- &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
- &lt;&lt;set $alea to random(1,3)&gt;&gt;
- &lt;&lt;audio &quot;1sttimer&quot; time 15 play&gt;&gt;
- &lt;div class=&quot;chaudron_container&quot;&gt;
- &lt;img class=&quot;chaudron&quot; src=&quot;media/pictures/illustrations/chaudron2.png&quot; alt=&quot;chaudron ok&quot; title=&quot;Ça commencer à chauffer...&quot;/&gt;
- &lt;/div&gt;
-&lt;&lt;timed 30s&gt;&gt;
-&lt;&lt;replace &quot;.chaudron_container&quot;&gt;&gt;
- &lt;img class=&quot;chaudron&quot; src=&quot;media/pictures/illustrations/chaudron3.png&quot; alt=&quot;chaudron critique&quot; title=&quot;AU SECOURS !!!&quot;/&gt;
-&lt;&lt;/replace&gt;&gt;
+&lt;&lt;nobr&gt;&gt;
+&lt;div id=&quot;chaudron_container&quot;&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 6&quot; data-zi=&quot;6&quot; src=&quot;media/pictures/illustrations/chaudron2_test.png&quot; alt=&quot;chaudron ok&quot; title=&quot;Ça commencer à chauffer...&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 5&quot; data-zi=&quot;5&quot; src=&quot;media/pictures/illustrations/chaudron2_1_test.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 4&quot; data-zi=&quot;4&quot; src=&quot;media/pictures/illustrations/chaudron2_2_test.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 3&quot; data-zi=&quot;3&quot; src=&quot;media/pictures/illustrations/chaudron2_3_test.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 2&quot; data-zi=&quot;2&quot; src=&quot;media/pictures/illustrations/chaudron2_4_test.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 1&quot; data-zi=&quot;1&quot; src=&quot;media/pictures/illustrations/chaudron3_test.png&quot; alt=&quot;chaudron critique&quot; title=&quot;AU SECOURS !!!&quot;/&gt;
+&lt;/div&gt;
+&lt;&lt;/nobr&gt;&gt;
+&lt;&lt;silently&gt;&gt;
+&lt;&lt;set $image_index to 6&gt;&gt;
+&lt;&lt;set $alea to random(1,3)&gt;&gt;
+&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+&lt;&lt;audio &quot;1sttimer&quot; time 15 play&gt;&gt;
+
+    &lt;&lt;repeat 8s&gt;&gt;
+		&lt;&lt;script&gt;&gt;
+		var $image_index = state.active.variables.image_index;
+		$(&#39;img.chaudron[data-zi=&#39;+$image_index+&#39;]&#39;).animate({opacity: 0});
+		&lt;&lt;/script&gt;&gt;
+        &lt;&lt;if $image_index = 0&gt;&gt;
+			&lt;&lt;stop&gt;&gt;
+        &lt;&lt;/if&gt;&gt;
+		&lt;&lt;set $image_index to $image_index - 1&gt;&gt;
+    &lt;&lt;/repeat&gt;&gt;
+
+&lt;&lt;timed 40s&gt;&gt;
+  &lt;&lt;replace &quot;#first-ing-desc-text&quot;&gt;&gt;
+  Plus le temps d&#39;observer le chaudron, il faut vous &#39;&#39;DEPÊCHER&#39;&#39; de choisir !!
+  &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
- &lt;&lt;/nobr&gt;&gt;
+&lt;&lt;/silently&gt;&gt;
+&lt;span id=&quot;first-ing-desc-text&quot;&gt;
 	Vous reprenez place au-dessus du chaudron, lequel est plus agité et menaçant que jamais, et vous observez son contenu. Vous n&#39;avez encore jamais rien vu de tel: la potion semble avoir atteint un état de fluidité si totale, que l&#39;oeil humain peine à encore la percevoir comme liquide. Le contenu du chaudron ressemble désormais presque plus à un nuage d&#39;orage sombre, habité d&#39;éclairs magiques occasionnels, qu&#39;à une potion. La substance est manifestement hautement volatile. Même corrosive, vous apercevez-vous en sentant votre peau commencer à vous démanger au bout d&#39;à peine quelques instants passés penché sur le chaudron.
 	
 	Après une seconde de réflexion, vous décidez donc que l&#39;urgence est d&#39;abord d&#39;annuler l&#39;acidité de la potion et de lui redonner une consistance plus ragoûtante. Vous farfouillez parmi les ingrédients vous restant sur votre table de travail. Trois d&#39;entre eux retiennent d&#39;abord votre attention, bien que vos connaissances alchimiques ne soient plus aussi bonnes que par le passé et que vous craignez de faire une terrible erreur. Mais on ne vit qu&#39;une fois !
+&lt;/span&gt;
 
 &lt;span id=&quot;1eringr&quot;&gt;[[Ajouter de la poussière de feu-&gt;poussièredefeu]]
 [[Ajouter un fragment de glace éternelle-&gt;glace]]
 [[Jeter négligemment quelques champignons-&gt;champignon]]&lt;/span&gt;
 
 &lt;&lt;timed 45s&gt;&gt;
+	&lt;&lt;remove &quot;#first-ing-desc-text&quot;&gt;&gt;
 	&lt;&lt;replace &quot;#1eringr&quot;&gt;&gt;
 	Vous êtes manifestement indécis, mais le temps ne vous attend pas et le chaudron s&#39;agite de plus en plus. Bientôt, il semble comme sur le point d&#39;exploser, bouillonnant avec des bruits de tonnerre, attendre plus longtemps pour agir n&#39;est vraiment plus raisonnable. Vous vous emparez du premier ingrédient qui vous passe sous la main:&lt;&lt;if $alea eq 1&gt;&gt; [[la poussière de feu !-&gt;poussièredefeu]]&lt;&lt;elseif $alea eq 2&gt;&gt; [[un fragment de glace éternelle !-&gt;glace]]&lt;&lt;elseif $alea eq 3&gt;&gt; [[une poignée de champignons !-&gt;champignon]]&lt;&lt;/if&gt;&gt;
 	&lt;&lt;/replace&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="14" name="poussièredefeu" tags="" position="575,1251">&lt;&lt;set $poussièredefeu to true&gt;&gt;
 &lt;&lt;set $alea to random(1,3)&gt;&gt;
+&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 &lt;!-- fera brûler  le bâton dans la rivière s&#39;il nest pas porté hors de l&#39;eau--&gt;
 &lt;!-- Il reste encore l&#39;effet acide à réduire. --&gt;
 
@@ -802,6 +815,7 @@ Finalement, ce sont quelques feuilles d&#39;orties a priori tout à fait banales
 &lt;&lt;/if&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="15" name="glace" tags="" position="577,1047">&lt;&lt;set $glace to true&gt;&gt;
 &lt;&lt;set $alea to random(1,3)&gt;&gt;
+&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 &lt;!-- fera geler la rivière--&gt;
 &lt;!-- Il reste encore l&#39;effet acide à réduire. --&gt;
 
@@ -838,6 +852,7 @@ Finalement, ce sont quelques feuilles d&#39;orties a priori tout à fait banales
 &lt;&lt;/if&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="16" name="champignon" tags="" position="575,1443">&lt;&lt;set $champignon to true&gt;&gt;
 &lt;&lt;set $alea to random(1,3)&gt;&gt;
+&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 &lt;!-- champignons hallucinogènes qui agiront sur le groupe de scouts--&gt;
 &lt;!-- L&#39;effet acide étant annulé, il faut estomper l&#39;effet liquide --&gt;
 
@@ -893,7 +908,7 @@ Et c&#39;est lentement que vos yeux se ferment, et que vous retournez vous niche
 <tw-passagedata pid="20" name="marmite" tags="" position="189,1150">&lt;&lt;set $livre to true&gt;&gt;
 &lt;&lt;audio &quot;boiling&quot; play volume 0.5 fadein&gt;&gt;
 &lt;div class=&quot;chaudron_container&quot;&gt;
- &lt;img class=&quot;chaudron&quot; src=&quot;media/pictures/illustrations/chaudron1.png&quot; alt=&quot;chaudron ok&quot; title=&quot;Tout va bien... pour le moment&quot;/&gt;
+ &lt;img class=&quot;chaudron&quot; src=&quot;media/pictures/illustrations/chaudron1_test.png&quot; alt=&quot;chaudron ok&quot; title=&quot;Tout va bien... pour le moment&quot;/&gt;
 &lt;/div&gt;
 Après vous être rapidement étiré (dans une cacophonie de craquements osseux, la vieillesse ne vous a pas épargné), vous vous dirigez le plus tranquillement du monde vers votre chaudron.
 
@@ -1033,7 +1048,7 @@ Surpris, les nains cessent un instant de parler, les yeux ronds d&#39;étonnemen
 <tw-passagedata pid="21" name="placard" tags="" position="182,1384">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set $gateau to true&gt;&gt;
 &lt;div class=&quot;chaudron_container&quot;&gt;
- &lt;img class=&quot;chaudron&quot; src=&quot;media/pictures/illustrations/chaudron1.png&quot; alt=&quot;chaudron ok&quot; title=&quot;Tout va bien... pour le moment&quot;/&gt;
+ &lt;img class=&quot;chaudron&quot; src=&quot;media/pictures/illustrations/chaudron1_test.png&quot; alt=&quot;chaudron ok&quot; title=&quot;Tout va bien... pour le moment&quot;/&gt;
 &lt;/div&gt;
 &lt;&lt;/nobr&gt;&gt;
 	N&#39;écoutant que l&#39;appel de votre ventre, vous partez chercher quelque chose à grignoter dans le garde-manger. Hélas, votre déception est grande lorsque vous n&#39;y découvrez qu&#39;un triste désert alimentaire, à l&#39;exception de ce qui semble être un muffin. Vous pestez à votre encontre, vous auriez dû penser à aller refaire vos provisions chez &quot;Les fins gourmets de la forêt&quot;. Avec un soupir d&#39;irritation vous vous emparez malgré tout du muffin et vous dirigez vers le chaudron.
@@ -1363,37 +1378,11 @@ Alors que doucement la forêt s&#39;éveille sous les doux et chauds rayons sola
 	&lt;&lt;append &quot;#passages&quot;&gt;&gt;
   	&lt;div class=&quot;black_overlay&quot;&gt;&lt;/div&gt;
 	&lt;&lt;/append&gt;&gt;
- 	&lt;img class=&quot;illustration&quot; alt=&quot;reveil&quot; src=&quot;media/pictures/illustrations/reveil.png&quot;/&gt;
+ 	&lt;img class=&quot;illustration&quot; alt=&quot;reveil&quot; src=&quot;media/pictures/illustrations/reveil_test.png&quot;/&gt;
  	&lt;&lt;/nobr&gt;&gt;
- 	&lt;&lt;script&gt;&gt;
-  $(&quot;.passage[data-passage=&#39;Intro&#39;]&quot;).css({
- 	 &quot;background-color&quot;: &quot;transparent&quot;,
-	 &quot;color&quot;: &quot;black&quot;,
-	 &quot;filter&quot;: &quot;blur(5px)&quot;
-  });
-  
-  setTimeout(function() {
-	  var $this = $(&quot;.black_overlay&quot;);
-	  $this
-	  .animate({opacity: 0.5}, 1000)
-	  .animate({opacity: 1}, 1000)
-	  .delay(2000)
-	  .animate({opacity: 0.3}, 1000)
-	  .animate({opacity: 1}, 1000)
-	  .delay(2000)
-	  .animate({opacity: 0}, 1000, &quot;swing&quot;, function() {
-		  $(this).remove();
-	  });
-  }, 1000);
- 	&lt;&lt;/script&gt;&gt;
-	&lt;&lt;timed 11s t8n&gt;&gt;
-	&lt;&lt;script&gt;&gt;
-	  setTimeout(function() {
-		blurElement(&quot;.passage[data-passage=&#39;Intro&#39;]&quot;, 0);
-  }, 1000);
-	&lt;&lt;/script&gt;&gt;
+	&lt;span id=&quot;waking-up-text&quot; style=&quot;opacity: 0&quot;&gt;
 	Le réveil est toujours comme une nouvelle naissance: il vous semble que vous ne connaissez plus rien ni ne savez plus rien faire.
-	&lt;&lt;linkreplace &quot;J&#39;suis qui déjà ?&quot;&gt;&gt;
+	&lt;&lt;linkreplace &quot;J&#39;suis qui déjà ?&quot; t8n&gt;&gt;
 	Les dernières brumes du sommeil commençant à s&#39;évaporer, vous vous rappelez que vous êtes un magicien (et un bon ! ajoutez-vous alors que les mots vous reviennent) vivant reclus dans la forêt depuis qu&#39;une malencontreuse formule magique a semé la zizanie dans votre précédente commune de résidence, bien des années plus tôt, et que vos concitoyens en ont eu assez de ces remue-ménages dont vous avez le secret.
 	À ce souvenir vous ne pouvez réprimer un sourire de jubilation et un haussement d&#39;épaules. Vous êtes aussi bien ici à vrai dire, et la tranquilité est une composante importante de tout sortilège réussi. Vous hochez la tête, manifestement qu&#39;à moitié convaincu par vos propres arguments.
 
@@ -1403,8 +1392,39 @@ Alors que doucement la forêt s&#39;éveille sous les doux et chauds rayons sola
 	[[Aller chercher quelque chose à grignoter-&gt;placard]]
 	[[Aller jeter un oeil à votre potion-&gt;marmite]]
 	&lt;&lt;/linkreplace&gt;&gt;
-	&lt;&lt;/timed&gt;&gt;
-
+	&lt;/span&gt;
+	&lt;&lt;silently&gt;&gt;
+	  &lt;&lt;script&gt;&gt;
+	  $(&quot;.passage[data-passage=&#39;Intro&#39;]&quot;).css({
+		 &quot;background-color&quot;: &quot;transparent&quot;,
+		 &quot;color&quot;: &quot;black&quot;,
+		 &quot;filter&quot;: &quot;blur(5px)&quot;
+	  });
+	  setTimeout(function() {
+		  var $this = $(&quot;.black_overlay&quot;);
+		  $this
+		  .animate({opacity: 0.5}, 1000)
+		  .animate({opacity: 1}, 1000)
+		  .delay(2000)
+		  .animate({opacity: 0.3}, 1000)
+		  .animate({opacity: 1}, 1000)
+		  .delay(2000)
+		  .animate({opacity: 0}, 1000, &quot;swing&quot;, function() {
+			  $(this).remove();
+		  });
+	  }, 1000);
+	  &lt;&lt;/script&gt;&gt;
+	  
+	  &lt;&lt;timed 11s t8n&gt;&gt;
+	  &lt;&lt;script&gt;&gt;
+		setTimeout(function() {
+		  $(&#39;#waking-up-text&#39;).animate({opacity: 1});
+		  blurElement(&quot;.passage[data-passage=&#39;Intro&#39;]&quot;, 0);
+		}, 1000);
+	  &lt;&lt;/script&gt;&gt;
+	  &lt;&lt;/timed&gt;&gt;
+	&lt;&lt;/silently&gt;&gt;
+	
 &lt;&lt;/linkreplace&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="38" name="Suite" tags="" position="152,708">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
 </tw-storydata>
