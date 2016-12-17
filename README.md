@@ -1,4 +1,4 @@
-# IC06
+﻿# IC06
 
 ## Procédure de modification du projet
 
@@ -88,7 +88,7 @@ Reste à faire Phase 2 :
 - Piece or : RAS
 - antre dragon : images (dragon/moto) et blabla de rencontre
 - porte secrete : image?
-- lieu secret : niveau bonus à réaliser
+- lieu secret : niveau bonus à modifier (ou laisser "en chantier")
 - raccourci : RAS
 - Cabane : image nains de jardin + texte à réaliser
 - Procès : ?
