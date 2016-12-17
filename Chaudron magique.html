@@ -549,7 +549,7 @@ Après avoir fouillé vos poches sans succès, n&#39;ayant plus de moyens d&#39;
 <tw-passagedata pid="10" name="raccourci" tags="" position="3013,1263">&lt;&lt;set $variable to random(1,10)&gt;&gt;
 &lt;&lt;if $baton eq true&gt;&gt;&lt; !-- ######################Avance avec bâton#################--&gt;
 Souhaitant gagner du temps, vous empruntez le raccourci et aidé de votre bâton vous avancez sans glisser ni chuter dans le ravin.
-[[Poursuivre-&gt;cabane]]
+[[Poursuivre-&gt;jardincabane]]
 &lt;&lt;else&gt;&gt;
 	&lt;&lt;if $couteau eq true&gt;&gt;
 N&#39;ayant plus de bâton, pour vous aider dans votre ascension, vous avez la possibilité d&#39;utiliser les arbres à disposition, dont un magnifique chêne qui dispose d’une branche susceptible de faire un bon bâton de marche.
@@ -558,7 +558,7 @@ N&#39;ayant plus de bâton, pour vous aider dans votre ascension, vous avez la p
 &lt;&lt;replace &quot;#glisse&quot;&gt;&gt;
 &lt;&lt;set $baton to true&gt;&gt;
 Après avoir fabriqué votre bâton à parti d’une solide branche de chêne, vous vous remettez en route et vous avancez sans glisser ni chuter dans le ravin.
-[[Suite-&gt;cabane]]
+[[Suite-&gt;jardincabane]]
 		&lt;&lt;/replace&gt;&gt;
 	&lt;&lt;/link&gt;&gt;
 &lt;&lt;link &quot;Continuer sans bâton&quot;&gt;&gt;&lt; !-- ###############Ne veut pas fabriquer baton#####--&gt;
@@ -567,7 +567,7 @@ Après avoir fabriqué votre bâton à parti d’une solide branche de chêne, v
 &lt;&lt;replace &quot;#glisse&quot;&gt;&gt;
 Vous sentant courageux, vous bravez le danger et vous vous remettez en route et vous avancez sans glisser ni chuter dans le ravin.
 
-[[Suite-&gt;cabane]]
+[[Suite-&gt;jardincabane]]
 		&lt;&lt;/replace&gt;&gt;
 			&lt;&lt;else&gt;&gt;
 &lt;&lt;replace &quot;#glisse&quot;&gt;&gt;
@@ -579,7 +579,7 @@ Vous sentant courageux, vous bravez le danger mais bien mal vous en a pris car v
 &lt;&lt;if $variable &lt;3&gt;&gt;
 &lt;&lt;replace &quot;#glisse&quot;&gt;&gt;
 Vous sentant courageux, vous bravez le danger et  vous vous remettez en route et vous avancez sans glisser ni chuter dans le ravin.
-[[Suite-&gt;cabane]]
+[[Suite-&gt;jardincabane]]
 		&lt;&lt;/replace&gt;&gt;
 			&lt;&lt;else&gt;&gt;
 &lt;&lt;replace &quot;#glisse&quot;&gt;&gt;
@@ -599,7 +599,7 @@ N’ayant pas de bâton à disposition et aucun outil pour en fabriquer un, malg
 &lt;&lt;replace &quot;#roule&quot;&gt;&gt;
 …et vous avancez sans glisser ni chuter dans le ravin.
 
-[[Suite-&gt;cabane]]
+[[Suite-&gt;jardincabane]]
 		&lt;&lt;/replace&gt;&gt;
 			&lt;&lt;else&gt;&gt;
 &lt;&lt;replace &quot;#glisse&quot;&gt;&gt;
@@ -611,7 +611,7 @@ N’ayant pas de bâton à disposition et aucun outil pour en fabriquer un, malg
 &lt;&lt;if $variable &lt;3&gt;&gt;
 &lt;&lt;replace &quot;#roule&quot;&gt;&gt;
 …et vous avancez sans glisser ni chuter dans le ravin.
-[[Suite-&gt;cabane]]
+[[Suite-&gt;jardincabane]]
 		&lt;&lt;/replace&gt;&gt;
 			&lt;&lt;else&gt;&gt;
 &lt;&lt;replace &quot;#roule&quot;&gt;&gt;
@@ -1143,7 +1143,7 @@ N&#39;ayant pas eu le réflexe de lancer un sort de protection, vous voyez le ch
 &lt;&lt;set $livrescout to false&gt;&gt;
 
 &lt;&lt;set $scoutaide to false&gt;&gt;&lt;!--vous avez aidé le groupe de scout?--&gt;
-&lt;&lt;set $aidernains to fasle&gt;&gt;
+&lt;&lt;set $aidernains to false&gt;&gt;
 &lt;&lt;set $cabaneexplose to false&gt;&gt;
 
 &lt;!--Bruitages--&gt;
@@ -1178,11 +1178,58 @@ Et c&#39;est ainsi que vous vous mettez en route, le sac sur le dos et le bâton
 
 [[Suite-&gt;Rivière]]
 </tw-passagedata>
-<tw-passagedata pid="26" name="cabane" tags="" position="3583,1266">&lt;!-- image de la cabane explosée ou non--&gt;
+<tw-passagedata pid="26" name="jardincabane" tags="" position="3583,1266">&lt;!-- image de la cabane explosée ou non--&gt;
 
-discour avec les nains de jardins
+Votre périple arrivant à son terme, vous débouchez sur une prairie, où il fait bon vivre…
+Soudains vous entendez des paroles alors qu’il n’y a personne à votre vue, mis à part des nains de jardins... A votre grande surprise, les paroles viennent d’eux …
+&lt;&lt;if $orties eq true&gt;&gt;
+-Oh ras le bol de ses expériences … qu’est-ce que ça gratte…
+- Ouais déjà qu’on était tranquille avant, il a fallu qu’il nous anime et qu’il nous jette un sort…
+- S’en est trop, on va le chercher les gars
+-Et c’est qui lui ?
+Vous remarquant alors, les nains vous dévisage intensément avant d’enchaîner…
+-Ça doit être le jeune diplômé dont a fait référence le maître lorsqu’il a regardé le miroir
+-Oh mais ça tombe bien s’il y a quelqu’un qui fait du droit avec nous, pour nos revendications…
+&lt;&lt;else&gt;&gt;
+-Eh vous !!! Oui vous le grand nigaud, que fichez-vous là, vous ne savez pas qu’il s’agit d’une propriété privé ? … Oh excusez-moi vous devez être le jeune diplômé qui souhaite rencontrer le maître ? Non ne vous inquiétez pas on a entendu parlez le maître de vous, car il sait tout…
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $cabaneexplose eq true&gt;&gt;
+Une pierre tombant d’un mur en ruine stoppe la conversation…
+-Oh ne vous inquiétez pas c’est tout récent, à force d’expérimenter des trucs, ça a fait sauter sa maison mais il va bien, il s’en sort toujours …&lt;&lt;/if&gt;&gt;
+-Dites-nous, pourriez-vous nous représenter car on souhaite soumettre nos revendications à notre maître qui ne cesse avec ses expériences déplaisantes…
+&lt;span id=&quot;reponse&quot;&gt;
+	&lt;&lt;link &quot;Accepter de soutenir les nains&quot;&gt;&gt;
+		&lt;&lt;replace &quot;#reponse&quot;&gt;&gt;
+&lt;&lt;set $aidernains to true&gt;&gt;
+-	Ah merci c’est sympa
+-	Enfin on va pouvoir faire quelque chose…
+&lt;&lt;if $cabaneexplose eq true&gt;&gt;
+Accompagné des nains, vous longez les restes d’une maison en ruine pour vous diriger vers une silhouette assise sur une pierre…
+[[Suite-&gt;cabaneexplose]]
+&lt;&lt;else&gt;&gt;
+Accompagné des nains, vous vous dirigez devant la porte de la cabane…
+[[Toquer à la porte-&gt;cabane]]
+&lt;&lt;/if&gt;&gt;
+		&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+	&lt;&lt;link &quot;Décliner&quot;&gt;&gt;
+&lt;&lt;replace &quot;#reponse&quot;&gt;&gt;
+-	Ok d’acc tant pis, j’espère que vous porterez votre choix longtemps sur la conscience…
+-	Ah ça quand il faut aider il n’y a personne !!!
+-	Tous des égoïstes…
+-	Allez les gars, on se débrouillera, comme toujours…
 
-discour de &quot;procès&quot;</tw-passagedata>
+&lt;&lt;if $cabaneexplose eq true&gt;&gt;
+Les nains s’éloignant, vous longez les restes d’une maison en ruine pour vous diriger vers une silhouette assise sur une pierre…
+[[Suite-&gt;cabaneexplose]]
+&lt;&lt;else&gt;&gt;
+Les nains s’éloignant, vous vous dirigez devant la porte de la cabane…
+[[Toquer à la porte-&gt;cabane]]
+&lt;&lt;/if&gt;&gt;
+		&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+&lt;/span&gt;
+</tw-passagedata>
 <tw-passagedata pid="27" name="retourdiscret" tags="" position="2074,1446">N&#39;écoutant que votre courage, vous revenez sur vos pas, sans que les étranges créatures ne s&#39;en rendent compte.
 [[Continuer-&gt;Groupe de scout]]
 </tw-passagedata>
@@ -1205,7 +1252,7 @@ Retournant sur la route, vous vous sentez léger… trop léger… et en effet, 
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 </tw-passagedata>
-<tw-passagedata pid="29" name="Passer au travers de la glace" tags="" position="1479,1018">&lt;&lt;silently&gt;&gt;
+<tw-passagedata pid="29" name="Passer au travers de la glace" tags="" position="1479,1017">&lt;&lt;silently&gt;&gt;
 &lt;&lt;set $nb_click to 0&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 &lt;&lt;nobr&gt;&gt;
@@ -1324,20 +1371,20 @@ Empruntant le sentier, vous débouchez sur une paisible clairière  délimitée 
 &lt;&lt;replace &quot;#porte&quot;&gt;&gt;
 Vous insérez la chevalière, trouvée dans la clairière, dans cette porte qui, après avoir entendu un bruit sourd, se met à pivoter pour laisser place à un passage sombre et froid…
 [[Entrer-&gt;lieusecret]]
-[[Laisser le mystère à sa place et reprendre la route-&gt;cabane]]
+[[Laisser le mystère à sa place et reprendre la route-&gt;jardincabane]]
 		&lt;&lt;/replace&gt;&gt;
 	&lt;&lt;/link&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;link &quot;Poursuivre&quot;&gt;&gt;
 &lt;&lt;replace &quot;#porte&quot;&gt;&gt;
 Lassé de ne pas comprendre la présence d’une telle porte dans un endroit aussi discret (bien que vous sentiez la présence d’un ancien mystère), vous partez …
-[[Suite-&gt;cabane]]
+[[Suite-&gt;jardincabane]]
 		&lt;&lt;/replace&gt;&gt;
 	&lt;&lt;/link&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;/span&gt;</tw-passagedata>
 <tw-passagedata pid="34" name="lieusecret" tags="" position="3565,1065">Vous entrez donc dans ce tunnel où il ne fait pas froid. Au fur et à mesure de votre progression les torches accrochées au mur s&#39;allument. Alors que vous tournez dans ce couloir, vous débouchez sur un panneau où il est inscrit &quot;EN TRAVEAUX DANGER !!!&quot;. Apparemment, les ouvriers devant construire cet endroit n&#39;ont pas terminé leur tâche car le couloir s&#39;arrête ici. Déçu, vous n&#39;avez plus qu&#39;à repartir...
-[[Retourner sur vos pas-&gt;cabane]] </tw-passagedata>
+[[Retourner sur vos pas-&gt;jardincabane]] </tw-passagedata>
 <tw-passagedata pid="35" name="menu" tags="" position="233,866">&lt;img id=&quot;game_title&quot; alt=&quot;Chaudron magique&quot; src=&quot;media/pictures/title.png&quot; /&gt;
 
 Chaudron magique est un jeu blabla...
@@ -1414,6 +1461,8 @@ Alors que doucement la forêt s&#39;éveille sous les doux et chauds rayons sola
 
 &lt;&lt;/linkreplace&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="38" name="Suite" tags="" position="152,708">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
+<tw-passagedata pid="39" name="cabaneexplose" tags="" position="3790,1263">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
+<tw-passagedata pid="40" name="cabane" tags="" position="3787,1077">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
 </tw-storydata>
 </div>
 	<script id="script-sugarcube" type="text/javascript">
