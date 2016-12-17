@@ -251,6 +251,7 @@ img.chaudron {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 
@@ -349,6 +350,7 @@ window.blurElement = function (element, size) {
         '-o-transition':'all 0.5s ease-out'
 	});
 }
+
 
 
 </script><tw-passagedata pid="1" name="Rivière" tags="" position="1340,1261">&lt;&lt;set $var to random(1,10)&gt;&gt;
@@ -1087,6 +1089,7 @@ A contre-coeur, vous ajoutez la corne de licorne, qui vous avait coûté un bras
 &lt;!-- si tempo écoulé--&gt;
 &lt;&lt;timed 12s&gt;&gt;
 &lt;&lt;replace &quot;#sortillege&quot;&gt;&gt;
+&lt;&lt;set $cabaneexplose to true&gt;&gt;
 N&#39;ayant pas eu le réflexe de lancer un sort de protection, vous voyez le chaudron exploser...
 
 &lt;!--explosion et image noire--&gt;
@@ -1094,7 +1097,7 @@ N&#39;ayant pas eu le réflexe de lancer un sort de protection, vous voyez le ch
 [[Poursuivre l&#39;histoire-&gt;Phase2]] 
 &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="24" name="StoryInit" tags="" position="20,996">&lt;!--ingrédients--&gt;
+<tw-passagedata pid="24" name="StoryInit" tags="" position="19,996">&lt;!--ingrédients--&gt;
 &lt;&lt;set $livre to false&gt;&gt;&lt;!--apparition annimaux savants dans la clairière--&gt;
 
 &lt;&lt;set $gateau to false&gt;&gt;&lt;!--transformation dragon en mouton--&gt;
@@ -1140,6 +1143,8 @@ N&#39;ayant pas eu le réflexe de lancer un sort de protection, vous voyez le ch
 &lt;&lt;set $livrescout to false&gt;&gt;
 
 &lt;&lt;set $scoutaide to false&gt;&gt;&lt;!--vous avez aidé le groupe de scout?--&gt;
+&lt;&lt;set $aidernains to fasle&gt;&gt;
+&lt;&lt;set $cabaneexplose to false&gt;&gt;
 
 &lt;!--Bruitages--&gt;
 
