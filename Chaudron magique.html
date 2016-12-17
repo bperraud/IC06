@@ -755,10 +755,10 @@ Vous méfiant de tout ce qui se rattache à ce mystérieux lieu, vous préférez
 		var $image_index = state.active.variables.image_index;
 		$(&#39;img.chaudron[data-zi=&#39;+$image_index+&#39;]&#39;).animate({opacity: 0});
 		&lt;&lt;/script&gt;&gt;
-        &lt;&lt;if $image_index = 0&gt;&gt;
+		&lt;&lt;set $image_index to $image_index - 1&gt;&gt;
+		&lt;&lt;if $image_index = 1&gt;&gt;
 			&lt;&lt;stop&gt;&gt;
         &lt;&lt;/if&gt;&gt;
-		&lt;&lt;set $image_index to $image_index - 1&gt;&gt;
     &lt;&lt;/repeat&gt;&gt;
 
 &lt;&lt;timed 40s&gt;&gt;
