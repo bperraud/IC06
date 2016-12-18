@@ -249,6 +249,7 @@ img.chaudron {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 
@@ -333,7 +334,7 @@ macros["goto"]=macros["timedgoto"]={
 };
 
 
-window.blurElement = function (element, size) {
+window.blurElement = function (element, size, sduration) {
 	var filterVal = 'blur(' + size + 'px)';
 		$(element).css({
         'filter':filterVal,
@@ -341,12 +342,13 @@ window.blurElement = function (element, size) {
         'mozFilter':filterVal,
         'oFilter':filterVal,
         'msFilter':filterVal,
-        'transition':'all 0.5s ease-out',
-        '-webkit-transition':'all 0.5s ease-out',
-        '-moz-transition':'all 0.5s ease-out',
-        '-o-transition':'all 0.5s ease-out'
+        'transition':'all ' + sduration + 's ease-out',
+        '-webkit-transition':'all ' + sduration + 's ease-out',
+        '-moz-transition':'all ' + sduration + 's ease-out',
+        '-o-transition':'all ' + sduration + 's ease-out'
 	});
 }
+
 
 
 
@@ -775,12 +777,13 @@ Vous méfiant de tout ce qui se rattache à ce mystérieux lieu, vous préférez
 		$(&#39;img.chaudron[data-zi=&#39;+$image_index+&#39;]&#39;).animate({opacity: 0});
 		&lt;&lt;/script&gt;&gt;
 		&lt;&lt;set $image_index to $image_index - 1&gt;&gt;
-		&lt;&lt;if $image_index = 1&gt;&gt;
+		&lt;&lt;if $image_index eq 1&gt;&gt;
 			&lt;&lt;stop&gt;&gt;
         &lt;&lt;/if&gt;&gt;
     &lt;&lt;/repeat&gt;&gt;
 
 &lt;&lt;timed 40s&gt;&gt;
+  &lt;&lt;audio &quot;thunder&quot; volume 1 fadeoverto 5 0&gt;&gt;
   &lt;&lt;replace &quot;#first-ing-desc-text&quot;&gt;&gt;
   Plus le temps d&#39;observer le chaudron, il faut vous &#39;&#39;DEPÊCHER&#39;&#39; de choisir !!
   &lt;&lt;/replace&gt;&gt;
@@ -1187,10 +1190,13 @@ N&#39;ayant pas eu le réflexe de lancer un sort de protection, vous voyez le ch
 
 &lt;&lt;cacheaudio &quot;snoring&quot; &quot;media/audio/snoring.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;boiling&quot; &quot;media/audio/boiling.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;thunder&quot; &quot;media/audio/thunder.mp3&quot;&gt;&gt;
 
 &lt;!--Musiques--&gt;
 
 &lt;&lt;cacheaudio &quot;1sttimer&quot; &quot;media/audio/timer1.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;awaking&quot; &quot;media/audio/awaking.mp3&quot;&gt;&gt;
+&lt;&lt;waitforaudio&gt;&gt;
 
 &lt;!-- Pour un débug facile --&gt;
 &lt;&lt;script&gt;&gt;
@@ -1443,6 +1449,7 @@ Blabla
 
 [[Retour au menu-&gt;menu]]</tw-passagedata>
 <tw-passagedata pid="36" name="Intro" tags="" position="31,1229">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;audio &quot;awaking&quot; loop play volume 0.8&gt;&gt;
 &lt;&lt;audio &quot;snoring&quot; loop play volume 0.5 fadein&gt;&gt;
 &lt;span id=&quot;intro_text&quot;&gt;
 Alors que doucement la forêt s&#39;éveille sous les doux et chauds rayons solaires de l&#39;aube, tout semble indiquer que la journée sera belle. La lumière matinale trouve son chemin jusqu&#39;à la fenêtre d&#39;une petite cabane où vous dormez d&#39;un sommeil manifestement agité. A mesure que l&#39;obscurité de la nuit est chassée de votre humble demeure vous vous arrachez
@@ -1491,11 +1498,12 @@ Alors que doucement la forêt s&#39;éveille sous les doux et chauds rayons sola
 	  }, 1000);
 	  &lt;&lt;/script&gt;&gt;
 	  
-	  &lt;&lt;timed 11s t8n&gt;&gt;
+	  &lt;&lt;timed 10.5s t8n&gt;&gt;
 	  &lt;&lt;script&gt;&gt;
 		setTimeout(function() {
-		  $(&#39;#waking-up-text&#39;).animate({opacity: 1});
-		  blurElement(&quot;.passage[data-passage=&#39;Intro&#39;]&quot;, 0);
+		  $(&#39;#waking-up-text&#39;).animate({opacity: 1}, 400, &quot;swing&quot;, function () {
+		  	blurElement(&quot;#passage-intro&quot;, 0, 1);
+		  });
 		}, 1000);
 	  &lt;&lt;/script&gt;&gt;
 	  &lt;&lt;/timed&gt;&gt;
