@@ -1310,7 +1310,7 @@ Alors que vous traversez cette rivière gelée, vous entendez des fissures se pr
 &lt;&lt;/nobr&gt;&gt;
 &lt;span id=&quot;riviere_lutte&quot;&gt;&lt;/span&gt;
 &lt;span id=&quot;riviere_result&quot;&gt;&lt;/span&gt;</tw-passagedata>
-<tw-passagedata pid="30" name="scoutperdu" tags="" position="29,833">&lt;!-- Lieux d&#39;apparition possibles du scout :
+<tw-passagedata pid="30" name="scoutperdu" tags="" position="30,833">&lt;!-- Lieux d&#39;apparition possibles du scout :
 - avant la rivière
 - après l&#39;avoir franchie
 - la clairière si pas d&#39;animaux ou fantômes (là où se situe la chevalière niveau secret, donc diminuerait encore plus la proba...)
@@ -1388,7 +1388,7 @@ Empruntant le sentier, vous débouchez sur une paisible clairière  délimitée 
 [[Continuer-&gt;Groupe de scout]]
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="32" name="badend" tags="" position="4056,1775">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
+<tw-passagedata pid="32" name="badend" tags="" position="4314,1380">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
 <tw-passagedata pid="33" name="Portesecrete" tags="" position="3417,1125">Alors que vous avancez sur ce paisible chemin, en comparaison du début, vous observez que sur votre gauche les arbres laissent place à un mur de plantes grimpantes. Longeant ce mur, un renfoncement apparait dans ce couvert végétal. Curieux, vous décidez de voir ce qui s’y cache derrière. Les fragiles plantes ne résistent pas bien longtemps et c’est ainsi que ce découvre une sorte de porte. Sur celle-ci, vous apercevez 11 étranges symboles composés d&#39;or et, en les examinant de plus près, il est possible de voir des chevaliers en armure et un emplacement vide entre le dixième et le onzième symbole.
 &lt;span id=&quot;porte&quot;&gt;
 &lt;&lt;if $tresor eq true&gt;&gt;
@@ -1584,8 +1584,16 @@ Alors même que les nains allaient commencer à balancer une flopée de jurons, 
 &lt;/span&gt;
 &lt;&lt;/if&gt;&gt;
 </tw-passagedata>
-<tw-passagedata pid="41" name="argumentation" tags="" position="4080,1194">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
-<tw-passagedata pid="42" name="jugement" tags="" position="4082,965">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
+<tw-passagedata pid="41" name="argumentation" tags="" position="4080,1193">Arrivant alors à votre but premier de discuter avec cet étrange personnage, vous vous installez confortablement pour débuter votre échange...
+
+[[Fin-&gt;fin]]</tw-passagedata>
+<tw-passagedata pid="42" name="jugement" tags="" position="4082,965">C&#39;est alors que le sorcier jette un sort et que tous les individus impliqués dans ses actions sont présents :
+
+Les nains &lt;&lt;if $os eq true&gt;&gt;, des fantômes d&#39;animaux&lt;&lt;/if&gt;&gt;&lt;&lt;if $dragon eq &quot;dragon&quot;&gt;&gt;, un dragon&lt;&lt;/if&gt;&gt;&lt;&lt;if $livre eq true&gt;&gt;, des animaux qui discutent entre eux&lt;&lt;/if&gt;&gt;&lt;&lt;if $gateau eq true&gt;&gt;, un mouton&lt;&lt;/if&gt;&gt;&lt;&lt;if $champignon eq true&gt;&gt;, le groupe de scouts&lt;&lt;/if&gt;&gt;&lt;&lt;if $scoutaide  eq true&gt;&gt;, le groupe de scouts&lt;&lt;/if&gt;&gt;&lt;&lt;if $corne eq true&gt;&gt; et un rhinocéros... Regardant sa corne, le sorcier comprend alors qu&#39;il s&#39;est fait berner et que la corne incorporée précédemment ne provenait pas d&#39;une licorne&lt;&lt;/if&gt;&gt;.
+
+
+[[Fin-&gt;fin]]</tw-passagedata>
+<tw-passagedata pid="43" name="fin" tags="" position="4323,1074">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
 </tw-storydata>
 </div>
 	<script id="script-sugarcube" type="text/javascript">
