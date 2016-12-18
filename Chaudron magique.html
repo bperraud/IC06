@@ -98,7 +98,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<p id="init-lacking">Apologies! You are using an <strong>outdated</strong> browser which lacks required capabilities. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<p id="init-loading">Initializing. Please wait&hellip;<br /><progress></progress></p>
 	</div>
-	<div id="store-area" hidden><tw-storydata name="Chaudron magique" startnode="35" creator="Twine" creator-version="2.0.11" ifid="A1089D4E-9A0F-4011-953B-C64AFD1CEFEC" format="SugarCube 2 (local/offline)" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/*@import url('https://fonts.googleapis.com/css?family=Open+Sans');*/
+	<div id="store-area" hidden><tw-storydata name="Chaudron magique" startnode="34" creator="Twine" creator-version="2.0.11" ifid="A1089D4E-9A0F-4011-953B-C64AFD1CEFEC" format="SugarCube 2 (local/offline)" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/*@import url('https://fonts.googleapis.com/css?family=Open+Sans');*/
 @import url('https://fonts.googleapis.com/css?family=Amaranth');
 /*@import url('https://fonts.googleapis.com/css?family=Lato');*/
 
@@ -516,7 +516,8 @@ N&#39;ayant pas le temps pour dialoguer, vous laissez la jeunesse à leurs occup
 [[Relever le défit-&gt;Dicussion]]
 [[Décliner la proposition et s&#39;en aller-&gt;Groupe de scout]] </tw-passagedata>
 <tw-passagedata pid="7" name="Dicussion" tags="" position="2297,1729">Vous vous lancez donc dans un débat face au lapin qui ne semble pas à court d&#39;arguments. Le temps défilant, personne ne semble toutefois décidé à admettre le point de vue de l&#39;autre.
-[[badend]] </tw-passagedata>
+&lt;&lt;set $badend to true&gt;&gt;
+[[Fin-&gt;fin]] </tw-passagedata>
 <tw-passagedata pid="8" name="Embranchement" tags="" position="2675,1266">Vous abandonnez la jeunesse à la rêverie pour continuer votre chemin.
 Arrivé à un embranchement, vous voyez deux chemins qui s&#39;offrent à vous :
 - un chemin sombre, où vous ne distinguez même pas les branches des arbres à la lisière
@@ -571,7 +572,8 @@ Vous sentant courageux, vous bravez le danger et vous vous remettez en route et 
 			&lt;&lt;else&gt;&gt;
 &lt;&lt;replace &quot;#glisse&quot;&gt;&gt;
 Vous sentant courageux, vous bravez le danger mais bien mal vous en a pris car vous chutez dans le ravin après avoir glissé sur une pierre.
-[[Fin-&gt;badend]]
+&lt;&lt;set $badend to true&gt;&gt;
+[[Fin-&gt;fin]]
 		&lt;&lt;/replace&gt;&gt;
 			&lt;&lt;/if&gt;&gt;
 		&lt;&lt;else&gt;&gt;
@@ -583,7 +585,8 @@ Vous sentant courageux, vous bravez le danger et  vous vous remettez en route et
 			&lt;&lt;else&gt;&gt;
 &lt;&lt;replace &quot;#glisse&quot;&gt;&gt;
 Vous sentant courageux, vous bravez le danger mais bien mal vous en a pris car vous chutez dans le ravin après avoir glissé sur une pierre.
-[[Fin-&gt;badend]]
+&lt;&lt;set $badend to true&gt;&gt;
+[[Fin-&gt;fin]]
 		&lt;&lt;/replace&gt;&gt;
 			&lt;&lt;/if&gt;&gt;
 		&lt;&lt;/if&gt;&gt;
@@ -603,7 +606,8 @@ N’ayant pas de bâton à disposition et aucun outil pour en fabriquer un, malg
 			&lt;&lt;else&gt;&gt;
 &lt;&lt;replace &quot;#glisse&quot;&gt;&gt;
 … mais bien mal vous en a pris car vous chutez dans le ravin après avoir glissé sur une pierre.
-[[Fin-&gt;badend]]
+&lt;&lt;set $badend to true&gt;&gt;
+[[Fin-&gt;fin]]
 		&lt;&lt;/replace&gt;&gt;
 			&lt;&lt;/if&gt;&gt;
 		&lt;&lt;else&gt;&gt;
@@ -615,7 +619,8 @@ N’ayant pas de bâton à disposition et aucun outil pour en fabriquer un, malg
 			&lt;&lt;else&gt;&gt;
 &lt;&lt;replace &quot;#roule&quot;&gt;&gt;
 Vous sentant courageux, vous bravez le danger mais bien mal vous en a pris car vous chutez dans le ravin après avoir glissé sur une pierre.
-[[Fin-&gt;badend]]
+&lt;&lt;set $badend to true&gt;&gt;
+[[Fin-&gt;fin]]
 		&lt;&lt;/replace&gt;&gt;
 			&lt;&lt;/if&gt;&gt;
 		&lt;&lt;/if&gt;&gt;
@@ -676,7 +681,8 @@ BLABLABLA
 		&lt;&lt;/if&gt;&gt;
 		&lt;&lt;if $variable eq &quot;echec&quot;&gt;&gt;
 Alors que vous essayez, tant bien que mal d&#39;argumenter sur le fait que vous ne pouvez pas avoir la pièce, le dragon, agacé, vous gobe d&#39;un geste rapide pour son âge...
-[[Fin-&gt;badend]]
+&lt;&lt;set $badend to true&gt;&gt;
+[[Fin-&gt;fin]]
 		&lt;&lt;else&gt;&gt;
 Après un discours riche en arguments, le vieux dragon abdique et vous présente ses excuses en prenant pour faute son odorat âgé.
 [[Suite-&gt;Portesecrete]]
@@ -705,7 +711,8 @@ Tant bien que mal, vous vous en sortez sans blessures et vous entendez alors le 
 [[Suite-&gt;Portesecrete]]
 			&lt;&lt;else&gt;&gt;
 Vous tentez votre chance face au dragon en espérant que ces années resté sans bouger l&#39;empêcheront de vous rattraper. Vous courez aussi vite que possible pour lui échapper mais le bruit lourd de ses pas se rapproche rapidement. Sachant que c&#39;est la fin pour vous, vous regrettez d&#39;avoir risqué votre vie pour une simple pièce et c&#39;est alors que la mâchoire du dragon se referme sur vous...
-[[badend]]
+&lt;&lt;set $badend to true&gt;&gt;
+[[Fin-&gt;fin]]
 			&lt;&lt;/if&gt;&gt;
 		&lt;&lt;/if&gt;&gt;
 		&lt;&lt;/replace&gt;&gt;
@@ -1170,6 +1177,7 @@ N&#39;ayant pas eu le réflexe de lancer un sort de protection, vous voyez le ch
 &lt;&lt;set $scoutaide to false&gt;&gt;&lt;!--vous avez aidé le groupe de scout?--&gt;
 &lt;&lt;set $aidernains to false&gt;&gt;
 &lt;&lt;set $cabaneexplose to false&gt;&gt;
+&lt;&lt;set $badend to false&gt;&gt;
 
 &lt;!--Bruitages--&gt;
 
@@ -1302,7 +1310,8 @@ Alors que vous traversez cette rivière gelée, vous entendez des fissures se pr
 	&lt;&lt;remove &quot;#riviere_lutte&quot;&gt;&gt;
 	&lt;&lt;append &quot;#riviere_result&quot;&gt;&gt;
 	Lentement, vous sentez vos membres s&#39;engourdir jusqu&#39;au point de ne plus pouvoir bouger. Petit à petit, vos yeux se ferment et vous  partez à la dérive dans un sommeil sans fin.
-	[[badend]]
+	&lt;&lt;set $badend to true&gt;&gt;
+	[[Fin-&gt;fin]]
 	&lt;&lt;/append&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
 	&lt;&lt;/timed&gt;&gt;
@@ -1388,8 +1397,7 @@ Empruntant le sentier, vous débouchez sur une paisible clairière  délimitée 
 [[Continuer-&gt;Groupe de scout]]
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="32" name="badend" tags="" position="4314,1380">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
-<tw-passagedata pid="33" name="Portesecrete" tags="" position="3417,1125">Alors que vous avancez sur ce paisible chemin, en comparaison du début, vous observez que sur votre gauche les arbres laissent place à un mur de plantes grimpantes. Longeant ce mur, un renfoncement apparait dans ce couvert végétal. Curieux, vous décidez de voir ce qui s’y cache derrière. Les fragiles plantes ne résistent pas bien longtemps et c’est ainsi que ce découvre une sorte de porte. Sur celle-ci, vous apercevez 11 étranges symboles composés d&#39;or et, en les examinant de plus près, il est possible de voir des chevaliers en armure et un emplacement vide entre le dixième et le onzième symbole.
+<tw-passagedata pid="32" name="Portesecrete" tags="" position="3417,1125">Alors que vous avancez sur ce paisible chemin, en comparaison du début, vous observez que sur votre gauche les arbres laissent place à un mur de plantes grimpantes. Longeant ce mur, un renfoncement apparait dans ce couvert végétal. Curieux, vous décidez de voir ce qui s’y cache derrière. Les fragiles plantes ne résistent pas bien longtemps et c’est ainsi que ce découvre une sorte de porte. Sur celle-ci, vous apercevez 11 étranges symboles composés d&#39;or et, en les examinant de plus près, il est possible de voir des chevaliers en armure et un emplacement vide entre le dixième et le onzième symbole.
 &lt;span id=&quot;porte&quot;&gt;
 &lt;&lt;if $tresor eq true&gt;&gt;
 &lt;&lt;link &quot;Mettre la chevalière dans l’emplacement&quot;&gt;&gt;
@@ -1408,16 +1416,16 @@ Lassé de ne pas comprendre la présence d’une telle porte dans un endroit aus
 	&lt;&lt;/link&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;/span&gt;</tw-passagedata>
-<tw-passagedata pid="34" name="lieusecret" tags="" position="3565,1065">Vous entrez donc dans ce tunnel où il ne fait pas froid. Au fur et à mesure de votre progression les torches accrochées au mur s&#39;allument. Alors que vous tournez dans ce couloir, vous débouchez sur un panneau où il est inscrit &quot;EN TRAVEAUX DANGER !!!&quot;. Apparemment, les ouvriers devant construire cet endroit n&#39;ont pas terminé leur tâche car le couloir s&#39;arrête ici. Déçu, vous n&#39;avez plus qu&#39;à repartir...
+<tw-passagedata pid="33" name="lieusecret" tags="" position="3565,1065">Vous entrez donc dans ce tunnel où il ne fait pas froid. Au fur et à mesure de votre progression les torches accrochées au mur s&#39;allument. Alors que vous tournez dans ce couloir, vous débouchez sur un panneau où il est inscrit &quot;EN TRAVEAUX DANGER !!!&quot;. Apparemment, les ouvriers devant construire cet endroit n&#39;ont pas terminé leur tâche car le couloir s&#39;arrête ici. Déçu, vous n&#39;avez plus qu&#39;à repartir...
 [[Retourner sur vos pas-&gt;jardincabane]] </tw-passagedata>
-<tw-passagedata pid="35" name="menu" tags="" position="233,866">&lt;img id=&quot;game_title&quot; alt=&quot;Chaudron magique&quot; src=&quot;media/pictures/title.png&quot; /&gt;
+<tw-passagedata pid="34" name="menu" tags="" position="233,866">&lt;img id=&quot;game_title&quot; alt=&quot;Chaudron magique&quot; src=&quot;media/pictures/title.png&quot; /&gt;
 
 Chaudron magique est un jeu blabla...
 
 
 [[Jouer-&gt;Intro]]
 [[Crédits]]</tw-passagedata>
-<tw-passagedata pid="36" name="Crédits" tags="" position="383,1017">Jeu-vidéo réalisé dans le cadre de l&#39;UV IC06 à l&#39;UTC par :
+<tw-passagedata pid="35" name="Crédits" tags="" position="383,1017">Jeu-vidéo réalisé dans le cadre de l&#39;UV IC06 à l&#39;UTC par :
 &lt;&lt;nobr&gt;&gt;
 &lt;ul&gt;
 &lt;li&gt;Fabien Boucaud&lt;/li&gt;
@@ -1430,7 +1438,7 @@ Ressources :
 Blabla
 
 [[Retour au menu-&gt;menu]]</tw-passagedata>
-<tw-passagedata pid="37" name="Intro" tags="" position="31,1229">&lt;&lt;nobr&gt;&gt;
+<tw-passagedata pid="36" name="Intro" tags="" position="31,1229">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;audio &quot;snoring&quot; loop play volume 0.5 fadein&gt;&gt;
 &lt;span id=&quot;intro_text&quot;&gt;
 Alors que doucement la forêt s&#39;éveille sous les doux et chauds rayons solaires de l&#39;aube, tout semble indiquer que la journée sera belle. La lumière matinale trouve son chemin jusqu&#39;à la fenêtre d&#39;une petite cabane où vous dormez d&#39;un sommeil manifestement agité. A mesure que l&#39;obscurité de la nuit est chassée de votre humble demeure vous vous arrachez
@@ -1490,8 +1498,8 @@ Alors que doucement la forêt s&#39;éveille sous les doux et chauds rayons sola
 	&lt;&lt;/silently&gt;&gt;
 	
 &lt;&lt;/linkreplace&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="38" name="Suite" tags="" position="152,708">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
-<tw-passagedata pid="39" name="cabaneexplose" tags="" position="3791,1261">######## En cours de travaux #########
+<tw-passagedata pid="37" name="Suite" tags="" position="152,708">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
+<tw-passagedata pid="38" name="cabaneexplose" tags="" position="3791,1261">######## En cours de travaux #########
 
 Avant même que vous ne vous présentiez, l&#39;individu se redresse et se tourne vers vous...
 &lt;&lt;if $aidernains eq true&gt;&gt;&lt;!-- ####présence de nains########--&gt;
@@ -1537,7 +1545,7 @@ Alors même que les nains allaient commencer à balancer une flopée de jurons, 
 	&lt;&lt;/link&gt;&gt;
 &lt;/span&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="40" name="cabane" tags="" position="3787,1077">######## En cours de travaux #########
+<tw-passagedata pid="39" name="cabane" tags="" position="3787,1077">######## En cours de travaux #########
 
 Avant même que vous commenciez à approcher votre main de la porte, la porte pivote sur elle-même, sans un bruit, pour laisser place à un individu...
 &lt;&lt;if $aidernains eq true&gt;&gt;&lt;!-- ####présence de nains########--&gt;
@@ -1584,16 +1592,20 @@ Alors même que les nains allaient commencer à balancer une flopée de jurons, 
 &lt;/span&gt;
 &lt;&lt;/if&gt;&gt;
 </tw-passagedata>
-<tw-passagedata pid="41" name="argumentation" tags="" position="4080,1193">Arrivant alors à votre but premier de discuter avec cet étrange personnage, vous vous installez confortablement pour débuter votre échange...
+<tw-passagedata pid="40" name="argumentation" tags="" position="4080,1193">Arrivant alors à votre but premier de discuter avec cet étrange personnage, vous vous installez confortablement pour débuter votre échange...
 
 [[Fin-&gt;fin]]</tw-passagedata>
-<tw-passagedata pid="42" name="jugement" tags="" position="4082,965">C&#39;est alors que le sorcier jette un sort et que tous les individus impliqués dans ses actions sont présents :
+<tw-passagedata pid="41" name="jugement" tags="" position="4082,965">C&#39;est alors que le sorcier jette un sort et que tous les individus impliqués dans ses actions sont présents :
 
 Les nains &lt;&lt;if $os eq true&gt;&gt;, des fantômes d&#39;animaux&lt;&lt;/if&gt;&gt;&lt;&lt;if $dragon eq &quot;dragon&quot;&gt;&gt;, un dragon&lt;&lt;/if&gt;&gt;&lt;&lt;if $livre eq true&gt;&gt;, des animaux qui discutent entre eux&lt;&lt;/if&gt;&gt;&lt;&lt;if $gateau eq true&gt;&gt;, un mouton&lt;&lt;/if&gt;&gt;&lt;&lt;if $champignon eq true&gt;&gt;, le groupe de scouts&lt;&lt;/if&gt;&gt;&lt;&lt;if $scoutaide  eq true&gt;&gt;, le groupe de scouts&lt;&lt;/if&gt;&gt;&lt;&lt;if $corne eq true&gt;&gt; et un rhinocéros... Regardant sa corne, le sorcier comprend alors qu&#39;il s&#39;est fait berner et que la corne incorporée précédemment ne provenait pas d&#39;une licorne&lt;&lt;/if&gt;&gt;.
 
 
 [[Fin-&gt;fin]]</tw-passagedata>
-<tw-passagedata pid="43" name="fin" tags="" position="4323,1074">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
+<tw-passagedata pid="42" name="fin" tags="" position="4323,1074">&lt;&lt;if $badend eq false&gt;&gt; Félicitation, vous avez terminé le jeu, en espérant qu’il vous a plu, vous pouvez recommencer l’histoire qui comporte XXXX chemins possibles.
+&lt;&lt;else&gt;&gt;Malheureusement pour vous, vous n’avez pas réussi à finir le jeu. Vous pouvez recommencer l’histoire qui comporte XXXX chemins possibles.
+&lt;&lt;/if&gt;&gt;
+[[Retourner au menu-&gt;menu]] 
+</tw-passagedata>
 </tw-storydata>
 </div>
 	<script id="script-sugarcube" type="text/javascript">
