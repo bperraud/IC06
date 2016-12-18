@@ -245,6 +245,8 @@ img.chaudron {
 
 
 
+
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 
@@ -343,6 +345,8 @@ window.blurElement = function (element, size) {
         '-o-transition':'all 0.5s ease-out'
 	});
 }
+
+
 
 
 
@@ -1206,7 +1210,7 @@ Soudains vous entendez des paroles alors qu’il n’y a personne à votre vue, 
 &lt;&lt;if $orties eq true&gt;&gt;
 -Oh ras le bol de ses expériences … qu’est-ce que ça gratte…
 - Ouais déjà qu’on était tranquille avant, il a fallu qu’il nous anime et qu’il nous jette un sort…
-- S’en est trop, on va le chercher les gars
+- C’en est trop, on va le chercher les gars
 -Et c’est qui lui ?
 Vous remarquant alors, les nains vous dévisage intensément avant d’enchaîner…
 -Ça doit être le jeune diplômé dont a fait référence le maître lorsqu’il a regardé le miroir
@@ -1487,8 +1491,101 @@ Alors que doucement la forêt s&#39;éveille sous les doux et chauds rayons sola
 	
 &lt;&lt;/linkreplace&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="38" name="Suite" tags="" position="152,708">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
-<tw-passagedata pid="39" name="cabaneexplose" tags="" position="3790,1263">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
-<tw-passagedata pid="40" name="cabane" tags="" position="3787,1077">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
+<tw-passagedata pid="39" name="cabaneexplose" tags="" position="3791,1261">######## En cours de travaux #########
+
+Avant même que vous ne vous présentiez, l&#39;individu se redresse et se tourne vers vous...
+&lt;&lt;if $aidernains eq true&gt;&gt;&lt;!-- ####présence de nains########--&gt;
+- Bonjour l&#39;ami... je vous attendais... 
+Remarquant les nains, il s’adresse à eux :
+- Tiens salut les nains alors ça va ?
+- …
+Se redressant, il ajoute :
+- Ah quels compagnons agréables que les nains. Je suppose que votre périple fût intéressant car il se trouve que j’ai une potion qui a dégénérée mais je crois que quelque chose ne s&#39;est pas bien passé, vous savez avec l&#39;âge…
+&lt;span id=&quot;repondre&quot;&gt;
+	&lt;&lt;link &quot;Lui exprimer votre point de vue&quot;&gt;&gt;
+		&lt;&lt;replace &quot;#repondre&quot;&gt;&gt;
+- Oulla mon ami restez calme. Après tout c’est vous qui vouliez me voir, je ne vous ai pas invité. 
+- Nous en avons marre de vos expériences vieux crouton…
+Alors même que les nains allaient commencer à balancer une flopée de jurons, le sorcier leur jette un sort, les rendant muets…
+	&lt;span id=&quot;agir&quot;&gt;
+		&lt;&lt;link &quot;Soutenir les nains&quot;&gt;&gt;
+			&lt;&lt;replace &quot;#agir&quot;&gt;&gt;
+- Oh c’est bon, je n’ai pas le droit de m’amuser ? C’est moi qui leur ai donné vie donc je peux en faire ce que je veux … Attendez, vous me jugez ?? Donc votre venue était uniquement dans le but de me juger sur mes faits et non pas argumenter ?
+[[Argumenter-&gt;argumentation]]
+[[Juger-&gt;jugement]]
+			&lt;&lt;/replace&gt;&gt;
+		&lt;&lt;/link&gt;&gt;
+		&lt;&lt;link &quot;Continuer comme si de rien n&#39;était&quot;&gt;&gt;
+			&lt;&lt;replace &quot;#agir&quot;&gt;&gt;
+- Aaaah le silence… ils peuvent être pénible parfois…. Alors que me vaut votre venue ? La présence des nains m’indique qu’ils vous ont racontés leur mécontentement mais je suppose que votre intérêt premier concerne l’argumentation… 
+[[Argumenter-&gt;argumentation]]
+[[Juger-&gt;jugement]]
+			&lt;&lt;/replace&gt;&gt;
+		&lt;&lt;/link&gt;&gt;
+	&lt;/span&gt;
+		&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+&lt;/span&gt;
+&lt;&lt;else&gt;&gt; &lt;!-- ###########pas de nains#######################--&gt;
+- Bonjour l&#39;ami... je vous attendais... Je suppose que votre périple fût intéressant car il se trouve que j’ai une potion qui a dégénérée mais je crois que quelque chose ne s&#39;est pas bien passé, vous savez avec l&#39;âge…
+&lt;span id=&quot;repondre&quot;&gt;
+	&lt;&lt;link &quot;Lui exprimer votre point de vue&quot;&gt;&gt;
+		&lt;&lt;replace &quot;#repondre&quot;&gt;&gt;
+- Oulla mon ami restez calme. Après tout c’est vous qui vouliez me voir, je ne vous ai pas invité.  Alors que me vaut votre venue ? Vous voulez me jugez sur mes actions ? Si je suis ici c’est que les villageois l’ont voté donc je ne vois pas ce que vous pourrez redire là-dessus… je suppose plutôt que votre intérêt premier concerne l’argumentation face à une personne aussi sage que moi … 
+[[Argumenter-&gt;argumentation]]
+		&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+&lt;/span&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata>
+<tw-passagedata pid="40" name="cabane" tags="" position="3787,1077">######## En cours de travaux #########
+
+Avant même que vous commenciez à approcher votre main de la porte, la porte pivote sur elle-même, sans un bruit, pour laisser place à un individu...
+&lt;&lt;if $aidernains eq true&gt;&gt;&lt;!-- ####présence de nains########--&gt;
+- Bonjour l&#39;ami... je vous attendais... 
+Remarquant les nains, il s’adresse à eux :
+- Tiens salut les nains alors ça va ?
+- …
+Se redressant, il ajoute :
+- Ah quels compagnons agréables que les nains. Je suppose que votre périple fût intéressant car il se trouve que j’ai une potion qui a dégénérée mais comme d’hab j’ai géré…
+&lt;span id=&quot;repondre&quot;&gt;
+	&lt;&lt;link &quot;Lui exprimer votre point de vue&quot;&gt;&gt;
+		&lt;&lt;replace &quot;#repondre&quot;&gt;&gt;
+- Oulla mon ami restez calme. Après tout c’est vous qui vouliez me voir, je ne vous ai pas invité. 
+- Nous en avons marre de vos expériences vieux crouton…
+Alors même que les nains allaient commencer à balancer une flopée de jurons, le sorcier leur jette un sort, les rendant muets…
+	&lt;span id=&quot;agir&quot;&gt;
+		&lt;&lt;link &quot;Soutenir les nains&quot;&gt;&gt;
+			&lt;&lt;replace &quot;#agir&quot;&gt;&gt;
+- Oh c’est bon, je n’ai pas le droit de m’amuser ? C’est moi qui leur ai donné vie donc je peux en faire ce que je veux … Attendez, vous me jugez ?? Donc votre venue était uniquement dans le but de me juger sur mes faits et non pas argumenter ?
+[[Argumenter-&gt;argumentation]]
+[[Juger-&gt;jugement]]
+			&lt;&lt;/replace&gt;&gt;
+		&lt;&lt;/link&gt;&gt;
+		&lt;&lt;link &quot;Continuer comme si de rien n&#39;était&quot;&gt;&gt;
+			&lt;&lt;replace &quot;#agir&quot;&gt;&gt;
+- Aaaah le silence… ils peuvent être pénible parfois…. Alors que me vaut votre venue ? La présence des nains m’indique qu’ils vous ont racontés leur mécontentement mais je suppose que votre intérêt premier concerne l’argumentation… 
+[[Argumenter-&gt;argumentation]]
+[[Juger-&gt;jugement]]
+			&lt;&lt;/replace&gt;&gt;
+		&lt;&lt;/link&gt;&gt;
+	&lt;/span&gt;
+		&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+&lt;/span&gt;
+&lt;&lt;else&gt;&gt; &lt;!-- ###########pas de nains#######################--&gt;
+- Bonjour l&#39;ami... je vous attendais... Je suppose que votre périple fût intéressant car il se trouve que j’ai une potion qui a dégénérée mais comme d’hab j’ai géré…
+&lt;span id=&quot;repondre&quot;&gt;
+	&lt;&lt;link &quot;Lui exprimer votre point de vue&quot;&gt;&gt;
+		&lt;&lt;replace &quot;#repondre&quot;&gt;&gt;
+- Oulla mon ami restez calme. Après tout c’est vous qui vouliez me voir, je ne vous ai pas invité.  Alors que me vaut votre venue ? Vous voulez me jugez sur mes actions ? Si je suis ici c’est que les villageois l’ont voté donc je ne vois pas ce que vous pourrez redire là-dessus… je suppose plutôt que votre intérêt premier concerne l’argumentation face à une personne aussi sage que moi … 
+[[Argumenter-&gt;argumentation]]
+		&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+&lt;/span&gt;
+&lt;&lt;/if&gt;&gt;
+</tw-passagedata>
+<tw-passagedata pid="41" name="argumentation" tags="" position="4080,1194">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
+<tw-passagedata pid="42" name="jugement" tags="" position="4082,965">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
 </tw-storydata>
 </div>
 	<script id="script-sugarcube" type="text/javascript">
