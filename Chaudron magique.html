@@ -194,10 +194,10 @@ body {
 }
 
 /* Links */
-a.internalLink, a.externalLink {
+a.link-internal, a.link-external {
   color: royalblue;
 }
-a.internalLink:hover, a.externalLink:hover {
+a.link-internal:hover, a.link-external:hover {
   color: deepskyblue;
   text-decoration: none;
 }
@@ -219,14 +219,12 @@ a.internalLink:hover, a.externalLink:hover {
 }
 
 /* Passage d'intro avec écran noir */
-.passage[data-passage="Intro"] {
+#passage-intro {
 	background-color: black;
 	color: white;
 }
 
-.no_transition .passage {
-	transition: none;
-}
+
 
 /* Images fixes du chaudron */
 #chaudron_container {
@@ -241,6 +239,7 @@ img.chaudron {
 	width: 100%;
 	position: absolute;
 }
+
 
 
 
@@ -348,6 +347,7 @@ window.blurElement = function (element, size, sduration) {
         '-o-transition':'all ' + sduration + 's ease-out'
 	});
 }
+
 
 
 
@@ -1212,7 +1212,19 @@ $(&#39;body&#39;).append($button);
 
 [[lancer-&gt;menu]]</tw-passagedata>
 <tw-passagedata pid="25" name="Phase2" tags="" position="1181,1260">&lt;!-- Retour dans le passé =&gt; flash pour marquer une ellipse temporelle--&gt;
+&lt;div class=&quot;black_overlay&quot;&gt;&lt;/div&gt;
+&lt;span style=&quot;position: absolute; z-index:10; color: white&quot; id=&quot;phase2-intro&quot;&gt;Dans ==une galaxie== euh non, espace-temps &lt;&lt;linkappend &quot;pas si lointain...&quot;&gt;&gt;
+&lt;&lt;script&gt;&gt;
+$(&#39;.black_overlay&#39;).animate({opacity: 0}, 1000, &quot;swing&quot;, function() {
+	$(&#39;#phase2-intro&#39;).css({color: &quot;black&quot;});
+	$(this).remove();
+	$(&#39;#phase2-text&#39;).fadeIn(1000);
+});
+&lt;&lt;/script&gt;&gt;
+&lt;&lt;/linkappend&gt;&gt;
+&lt;/span&gt;
 
+&lt;span style=&quot;display: none&quot; id=&quot;phase2-text&quot;&gt;
 Après avoir passé de nombreuses années à étudier les différentes facettes du droit, le diplôme en poche, Jean Charles de la Haute a décidé de visiter du pays. Il se retrouve ainsi à vaguer de ville en village et de village en ville, et à discuter avec diverses personnes, intellectuelles ou non, afin d&#39;argumenter sur tout sujet.
 
 Il y a quelques semaines, durant vos habituelles argumentations vous avez eu vent d&#39;un sorcier. De par son comportement inconscient et des accidents qui ont découlés de ses expériences, il a été exilé par les habitants. Intéressé par l&#39;optique de parler avec une personne aussi inhabituelle, vous demandez le chemin de sa nouvelle demeure aux habitants, qui vous répondent tout en essayant de vous résonner.
@@ -1220,7 +1232,7 @@ Il y a quelques semaines, durant vos habituelles argumentations vous avez eu ven
 Et c&#39;est ainsi que vous vous mettez en route, le sac sur le dos et le bâton à la main, afin de rencontrer ce mystérieux personnage à la réputation d&#39;enfant compulsif.
 
 [[Suite-&gt;Rivière]]
-</tw-passagedata>
+&lt;/span&gt;</tw-passagedata>
 <tw-passagedata pid="26" name="jardincabane" tags="" position="3583,1266">&lt;!-- image de la cabane explosée ou non--&gt;
 
 Votre périple arrivant à son terme, vous débouchez sur une prairie, où il fait bon vivre…
@@ -1430,24 +1442,32 @@ Lassé de ne pas comprendre la présence d’une telle porte dans un endroit aus
 [[Retourner sur vos pas-&gt;jardincabane]] </tw-passagedata>
 <tw-passagedata pid="34" name="menu" tags="" position="233,866">&lt;img id=&quot;game_title&quot; alt=&quot;Chaudron magique&quot; src=&quot;media/pictures/title.png&quot; /&gt;
 
-Chaudron magique est un jeu blabla...
+Chaudron magique est un jeu narratif à embranchements qui vous confronte à la maladresse de Zek le sorcier. Oserez-vous l&#39;aider à maîtriser sa terrible décoction, ou serez-vous condamné(e) à en subir les effets des plus... //magiques// ?
 
+Qui sait, à la fin de votre périple aurez-vous peut-être la chance de le raisonner...
 
 [[Jouer-&gt;Intro]]
 [[Crédits]]</tw-passagedata>
-<tw-passagedata pid="35" name="Crédits" tags="" position="383,1017">Jeu-vidéo réalisé dans le cadre de l&#39;UV IC06 à l&#39;UTC par :
-&lt;&lt;nobr&gt;&gt;
+<tw-passagedata pid="35" name="Crédits" tags="" position="383,1017">!Crédits
+
+Jeu vidéo réalisé dans le cadre de l&#39;UV IC06 à l&#39;UTC au semestre d&#39;automne 2016 par les étudiants :
 &lt;ul&gt;
 &lt;li&gt;Fabien Boucaud&lt;/li&gt;
 &lt;li&gt;Maxime Nivelle&lt;/li&gt;
 &lt;li&gt;Baptiste Perraud&lt;/li&gt;
 &lt;/ul&gt;
-&lt;&lt;/nobr&gt;&gt;
-
-Ressources :
-Blabla
-
-[[Retour au menu-&gt;menu]]</tw-passagedata>
+!!Ressources
+&lt;ul&gt;
+&lt;li&gt;les musiques ont toutes été composées par l&#39;équipe dans le cadre du projet ;&lt;/li&gt;
+&lt;li&gt;de même pour les illustrations ;&lt;/li&gt;
+&lt;li&gt;le fond utilisé est tiré d&#39;un pack gratuit de fonds d&#39;écran disponible &lt;a href=&quot;http://stuffpoint.com/nature/image/462712/magical-forest-wallpaper/&quot;&gt;ici&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+!!!Bruitages
+&lt;ul&gt;
+&lt;li&gt;Ronflements : http://soundbible.com/1634-Snoring.html &lt;/li&gt;
+&lt;li&gt;Orage : http://soundbible.com/2016-Thunder-Strike-2.html &lt;/li&gt;
+&lt;/ul&gt;
+[[Retourner au menu-&gt;menu]]</tw-passagedata>
 <tw-passagedata pid="36" name="Intro" tags="" position="31,1229">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;audio &quot;awaking&quot; loop play volume 0.8&gt;&gt;
 &lt;&lt;audio &quot;snoring&quot; loop play volume 0.5 fadein&gt;&gt;
