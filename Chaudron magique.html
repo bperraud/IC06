@@ -775,7 +775,7 @@ Vous méfiant de tout ce qui se rattache à ce mystérieux lieu, vous préférez
     &lt;&lt;repeat 8s&gt;&gt;
 		&lt;&lt;script&gt;&gt;
 		var $image_index = state.active.variables.image_index;
-		$(&#39;img.chaudron[data-zi=&#39;+$image_index+&#39;]&#39;).animate({opacity: 0});
+		$(&#39;img.chaudron[data-zi=&#39;+$image_index+&#39;]&#39;).animate({opacity: 0}, 1000);
 		&lt;&lt;/script&gt;&gt;
 		&lt;&lt;set $image_index to $image_index - 1&gt;&gt;
 		&lt;&lt;if $image_index eq 1&gt;&gt;
@@ -1077,7 +1077,8 @@ Surpris, les nains cessent un instant de parler, les yeux ronds d&#39;étonnemen
 <tw-passagedata pid="21" name="placard" tags="" position="182,1384">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set $gateau to true&gt;&gt;
 &lt;div id=&quot;chaudron_container&quot;&gt;
- &lt;img class=&quot;chaudron&quot; src=&quot;media/pictures/illustrations/chaudron1_test.png&quot; alt=&quot;chaudron ok&quot; title=&quot;Tout va bien... pour le moment&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 2&quot; data-zi=&quot;2&quot; src=&quot;media/pictures/illustrations/chaudron1_test.png&quot; alt=&quot;chaudron ok&quot; title=&quot;Tout va bien... pour le moment&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 1&quot; data-zi=&quot;1&quot; src=&quot;media/pictures/illustrations/chaudron2_test.png&quot; alt=&quot;chaudron ok&quot; title=&quot;Ça commencer à chauffer...&quot;/&gt;
 &lt;/div&gt;
 &lt;&lt;/nobr&gt;&gt;
 	N&#39;écoutant que l&#39;appel de votre ventre, vous partez chercher quelque chose à grignoter dans le garde-manger. Hélas, votre déception est grande lorsque vous n&#39;y découvrez qu&#39;un triste désert alimentaire, à l&#39;exception de ce qui semble être un muffin. Vous pestez à votre encontre, vous auriez dû penser à aller refaire vos provisions chez &quot;Les fins gourmets de la forêt&quot;. Avec un soupir d&#39;irritation vous vous emparez malgré tout du muffin et vous dirigez vers le chaudron.
@@ -1093,6 +1094,9 @@ Surpris, les nains cessent un instant de parler, les yeux ronds d&#39;étonnemen
 
 						&lt;&lt;append &quot;#rebonds&quot;&gt;&gt;
 						&lt;&lt;audio &quot;boiling&quot; play volume 0.5 fadein&gt;&gt;
+						&lt;&lt;script&gt;&gt;
+						$(&#39;img.chaudron[data-zi=2]&#39;).animate({opacity: 0}, 1000);
+						&lt;&lt;/script&gt;&gt;
 							... Qui va à toute vitesse d&#39;une poutre au plancher, puis du plancher à la poignée de votre porte d&#39;entrée, puis de la poignée à un des pieds de votre table qui émet un craquement inquiétant, etc. Vous vous abritez quant à vous sous votre chapeau de magicien, terrifié à l&#39;idée d&#39;être touché par le projectile. Mais par chance (ou peut-être par terrible malchance ? Seul l&#39;avenir le dira...) le muffin termine finalement sa folle envolée par un magistral &quot;PLOUF!&quot; dans le chaudron.
 							Alors que vous commencez à pousser un soupir de soulagement, la marmite, elle, ne semble pas avoir apprécié l&#39;offrande périmée et se met à trembler de manière menaçante sur son support, les bouillonnements se faisant de plus en plus fort.
 							Vous voilà donc confronté le ventre vide à la nécessité de stabiliser la potion avant que les choses ne dégénèrent encore davantage...
