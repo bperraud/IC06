@@ -170,6 +170,7 @@ body {
   margin-right: auto;
 	border: 2px solid #212121;
   max-width: 100%;
+	max-height: 400px;
 }
 
 .passage {
@@ -365,6 +366,7 @@ window.blurElement = function (element, size, sduration) {
 &lt;&lt;set $var to random(1,10)&gt;&gt;
 &lt;&lt;/silently&gt;&gt;\
 &lt;&lt;if $glace eq true&gt;&gt;
+&lt;img class=&quot;illustration&quot; alt=&quot;rivière&quot; src=&quot;media/pictures/illustrations/riviere.png&quot;/&gt;
 Alors que le temps est fort agréable, vous arrivez devant une rivière gelée. Ne voyant pas de pont à l&#39;horizon, vous juger que l&#39;épaisseur de la glace n&#39;est pas très importante au vu des fissures présentes dans celle-ci. Après un court instant de réflexion, elle a l&#39;air assez épaisse pour passer sans sac à dos et éventuellement assez si vous ne déposez que votre bâton.
 &lt;span id=&quot;glace&quot;&gt;
 	&lt;&lt;link &quot;Abandonner votre sac à dos&quot;&gt;&gt;
@@ -400,6 +402,7 @@ Ne voulant pas vous séparer de vos affaires, vous commencez la traversée...
 	&lt;&lt;/link&gt;&gt;
 &lt;/span&gt;
 &lt;&lt;else&gt;&gt;
+&lt;img class=&quot;illustration&quot; alt=&quot;rivière&quot; src=&quot;media/pictures/illustrations/riviere.png&quot;/&gt;
 Comme indiqué par les villageois, vous arrivez au niveau d&#39;une rivière à traverser, mais le pont manque à l&#39;appel. Voyant le fond, vous estimez que la profondeur ne doit pas dépasser la hauteur de vos épaules. Ne pouvant porter qu&#39;un seul objet hors de l&#39;eau, vous vous tâter sur l&#39;objet à préserver de l&#39;eau...
 [[Le bâton-&gt;porter le bâton]]
 [[Le sac-&gt;porter le sac]]
@@ -416,18 +419,18 @@ Vous traversez alors la rivière, le sac au-dessus de votre tête, et vous conti
 <tw-passagedata pid="3" name="bruit" tags="" position="1750,1266">&lt;&lt;if $livre eq false&gt;&gt;
 	&lt;&lt;if $os eq false&gt;&gt;
 Alors que vous vagabondez dans vos idées, vous apercevez un petit sentier sur votre droite menant certainement à la clairière mentionnée par les habitants...
-[[Aller voir la clairière-&gt;Clairrière]]
+[[Aller voir la clairière-&gt;Clairière]]
 [[Continuer sur le sentier-&gt;Groupe de scout]]
 	&lt;&lt;else&gt;&gt;
 &lt;!--Bruit--&gt;
 Le bruit provient d&#39;un chemin discret sur votre droite. Vous rappelant les dires des habitants, il s&#39;agit certainement de la clairière...
-[[Aller en direction du bruit-&gt;Clairrière]]
+[[Aller en direction du bruit-&gt;Clairière]]
 [[Continuer sur le sentier-&gt;Groupe de scout]]
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;!--Bruit--&gt;
 Le bruit provient d&#39;un chemin discret sur votre droite. Vous rappelant les dires des habitants, il s&#39;agit certainement de la clairière...
-[[Aller en direction du bruit-&gt;Clairrière]]
+[[Aller en direction du bruit-&gt;Clairière]]
 [[Continuer sur le sentier-&gt;Groupe de scout]]
 &lt;&lt;/if&gt;&gt;
 </tw-passagedata>
@@ -435,12 +438,11 @@ Le bruit provient d&#39;un chemin discret sur votre droite. Vous rappelant les d
 Vous décidez alors de porter vôtre bâton hors de l&#39;eau. Une fois de l&#39;autre côté de la rive, vous vous retrouvez humide, comme les amulettes que vous avez oublié dans votre sac. Une fois séché au soleil, par ce temps agréable, vous reprenez la route.
 [[Suite-&gt;bruit]]
 </tw-passagedata>
-<tw-passagedata pid="5" name="Groupe de scout" tags="" position="2370,1270">
+<tw-passagedata pid="5" name="Groupe de scout" tags="" position="2370,1270">&lt;img class=&quot;illustration&quot; alt=&quot;scouts&quot; src=&quot;media/pictures/illustrations/scouts.png&quot;/&gt;
 Sur votre chemin, vous rencontrez un groupe de jeunes scouts affairés à étudier la nature. L&#39;un ramasse des champignons, une autre des papillons, le troisième ramasse des feuilles et les examine avec une loupe et le dernier, perdu dans ses pensées, regarde les nuages...
-Ah la jeunesse, cela vous rappelle la vôtre où vous partiez avec votre grand-frère en forêt et où  vous imaginiez divers scénarios pour vous amuser : combat d&#39;épées, fabrication d&#39;arcs, construction de forteresse, opération commando,... A votre vu, ils se détournent de leur tâche pour vous saluer.
-&lt;&lt;if $champignon eq true&gt;&gt; Une drôle de lueur émane de leurs yeux et leurs gestes semblent mous. &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $scouteperduvu eq true&gt;&gt; Il doit surement s&#39;agir du groupe auquel appartient le scout vu précédemment. &lt;&lt;/if&gt;&gt;
-
+Ah la jeunesse, cela vous rappelle la vôtre où vous partiez avec votre grand-frère en forêt et où  vous imaginiez divers scénarios pour vous amuser : combat d&#39;épées, fabrication d&#39;arcs, construction de forteresse, opération commando... À votre vue, ils se détournent de leur tâche pour vous saluer.\
+&lt;&lt;nobr&gt;&gt;&lt;&lt;if $champignon eq true&gt;&gt; Une drôle de lueur émane de leurs yeux et leurs gestes semblent mous.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $scouteperduvu eq true&gt;&gt; Il doit sûrement s&#39;agir du groupe auquel appartient le scout vu précédemment.&lt;&lt;/if&gt;&gt;&lt;&lt;/nobr&gt;&gt;\
 &lt;span id=&quot;scouts&quot;&gt;
 	&lt;&lt;link &quot;Les saluer&quot;&gt;&gt;
 		&lt;&lt;replace &quot;#scouts&quot;&gt;&gt;
@@ -521,21 +523,23 @@ N&#39;ayant pas le temps pour dialoguer, vous laissez la jeunesse à leurs occup
 [[Suite-&gt;Embranchement]]
 		&lt;&lt;/replace&gt;&gt;
 	&lt;&lt;/link&gt;&gt;
-&lt;/span&gt;
-</tw-passagedata>
+&lt;/span&gt;</tw-passagedata>
 <tw-passagedata pid="6" name="Manifestation" tags="" position="2080,1811">Interloqués de voir des animaux parlants, vous vous manifestez auprès d&#39;eux. Après plusieurs minutes de conversation au travers différents débats, vous allez reprendre la route vers la cabane du sorcier lorsqu&#39;un lapin vous propose d&#39;argumenter à propos de l&#39;existence et l’absurdité des sentiments avec un animal intelligent ...
-[[Relever le défit-&gt;Dicussion]]
+[[Relever le défi-&gt;Dicussion]]
 [[Décliner la proposition et s&#39;en aller-&gt;Groupe de scout]] </tw-passagedata>
-<tw-passagedata pid="7" name="Dicussion" tags="" position="2297,1729">Vous vous lancez donc dans un débat face au lapin qui ne semble pas à court d&#39;arguments. Le temps défilant, personne ne semble toutefois décidé à admettre le point de vue de l&#39;autre.
+<tw-passagedata pid="7" name="Dicussion" tags="" position="2297,1729">&lt;img class=&quot;illustration&quot; alt=&quot;lapin savant&quot; src=&quot;media/pictures/illustrations/lapin.png&quot;/&gt;
+Vous vous lancez donc dans un débat face au lapin qui ne semble pas à court d&#39;arguments. Le temps défilant, personne ne semble toutefois décidé à admettre le point de vue de l&#39;autre.
 &lt;&lt;set $badend to true&gt;&gt;
 [[Fin-&gt;fin]] </tw-passagedata>
-<tw-passagedata pid="8" name="Embranchement" tags="" position="2675,1266">Vous abandonnez la jeunesse à la rêverie pour continuer votre chemin.
+<tw-passagedata pid="8" name="Embranchement" tags="" position="2675,1266">&lt;img class=&quot;illustration&quot; alt=&quot;embranchement&quot; src=&quot;media/pictures/illustrations/embranchement.png&quot;/&gt;
+Vous abandonnez la jeunesse à la rêverie pour continuer votre chemin.
 Arrivé à un embranchement, vous voyez deux chemins qui s&#39;offrent à vous :
 - un chemin sombre, où vous ne distinguez même pas les branches des arbres à la lisière
 - un chemin indiqué par un panneau affichant &quot;raccourci&quot; mais qui vous semble glissant et escarpé...
 [[Aller vers le chemin sombre-&gt;chemin sombre]]
 [[Tenter le raccourci-&gt;raccourci]]</tw-passagedata>
 <tw-passagedata pid="9" name="chemin sombre" tags="" position="2778,1011">Vous avancez alors en direction du chemin sombre où la visibilité est faible à cause de la densité des arbres environnants.
+&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set $variable to random(1,10)&gt;&gt;
 &lt;&lt;if $allumette eq true&gt;&gt;
 	&lt;&lt;if $variable &lt;6&gt;&gt;
@@ -556,7 +560,7 @@ Après avoir fouillé vos poches sans succès, n&#39;ayant plus de moyens d&#39;
 [[Continuer dans la pénombre-&gt;antre du dragon]]
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-</tw-passagedata>
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="10" name="raccourci" tags="" position="3013,1263">&lt;&lt;set $variable to random(1,10)&gt;&gt;
 &lt;&lt;if $baton eq true&gt;&gt;&lt;!-- ##########Avance avec bâton######--&gt;
 Souhaitant gagner du temps, vous empruntez le raccourci et aidé de votre bâton vous avancez sans glisser ni chuter dans le ravin.
@@ -658,13 +662,16 @@ Devant l’incompréhension des symboles, vous préférez reposer la pièce plut
 	&lt;&lt;/link&gt;&gt;
 &lt;/span&gt;
 </tw-passagedata>
-<tw-passagedata pid="12" name="antre du dragon" tags="" position="3126,1006">&lt;!-- bruit moto--&gt;
+<tw-passagedata pid="12" name="antre du dragon" tags="" position="3126,1006">&lt;&lt;silently&gt;&gt;
+&lt;!-- bruit moto--&gt;
 &lt;&lt;set $variable to random(1,10)&gt;&gt;
 &lt;&lt;if $variable &gt; 5&gt;&gt;
 &lt;&lt;set $dragon to  &quot;dragon&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
+&lt;&lt;/silently&gt;&gt;\
 Alors que vous sortez de la pénombre du sombre chemin, vous arrivez devant une sorte de grotte contre laquelle est appuyée une moto. Au pied de la roue arrière, vous pouvez voir qu&#39;un chien soulage sa vessie.
 &lt;&lt;if $dragon eq &quot;dragon&quot;&gt;&gt;&lt;!-- ######dragon=dragon##########--&gt;
+&lt;img class=&quot;illustration&quot; alt=&quot;dragon&quot; src=&quot;media/pictures/illustrations/dragon.png&quot;/&gt;
 C&#39;est alors que la moto se met à vibrer et à se déformer pour prendre des dimensions gigantesques et laisser place à une créature semblable à un dragon. D&#39;un coup, il gobe le pauvre chien
 - Ah la sale bête ! Enfin je t&#39;ai eu, depuis le temps ! Ça t&#39;apprendra à venir tous les jours pour te soulager sur moi !
 Grouaahh que ça fait du bien de s&#39;étirer.
@@ -1367,8 +1374,12 @@ Et c&#39;est ainsi que vous vous mettez en route, le sac sur le dos et le bâton
 
 [[Suite-&gt;Rivière]]
 &lt;/span&gt;</tw-passagedata>
-<tw-passagedata pid="26" name="jardincabane" tags="" position="3583,1266">&lt;!-- image de la cabane explosée ou non--&gt;
-
+<tw-passagedata pid="26" name="jardincabane" tags="" position="3583,1266">&lt;!-- image de la cabane explosée ou non--&gt;\
+&lt;&lt;if $cabaneexplose eq true&gt;&gt;
+&lt;img class=&quot;illustration&quot; alt=&quot;cabane explosée&quot; src=&quot;media/pictures/illustrations/cabane_explosee.png&quot;/&gt;
+&lt;&lt;else&gt;&gt;
+&lt;img class=&quot;illustration&quot; alt=&quot;cabane&quot; src=&quot;media/pictures/illustrations/cabane.png&quot;/&gt;
+&lt;&lt;/if&gt;&gt;
 Votre périple arrivant à son terme, vous débouchez sur une prairie, où il fait bon vivre…
 Soudains vous entendez des paroles alors qu’il n’y a personne à votre vue, mis à part des nains de jardins... A votre grande surprise, les paroles viennent d’eux …
 &lt;&lt;if $orties eq true&gt;&gt;
@@ -1384,7 +1395,7 @@ Vous remarquant alors, les nains vous dévisage intensément avant d’enchaîne
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $cabaneexplose eq true&gt;&gt;
 Une pierre tombant d’un mur en ruine stoppe la conversation…
--Oh ne vous inquiétez pas c’est tout récent, à force d’expérimenter des trucs, ça a fait sauter sa maison mais il va bien, il s’en sort toujours …&lt;&lt;/if&gt;&gt;
+-Oh ne vous inquiétez pas c’est tout récent, à force d’expérimenter des trucs, ça a fait sauter sa maison mais il va bien, il s’en sort toujours …&lt;&lt;/if&gt;&gt;\
 -Dites-nous, pourriez-vous nous représenter car on souhaite soumettre nos revendications à notre maître qui ne cesse avec ses expériences déplaisantes…
 &lt;span id=&quot;reponse&quot;&gt;
 	&lt;&lt;link &quot;Accepter de soutenir les nains&quot;&gt;&gt;
@@ -1475,7 +1486,8 @@ Alors que vous traversez cette rivière gelée, vous entendez des fissures se pr
 &lt;&lt;/nobr&gt;&gt;
 &lt;span id=&quot;riviere_lutte&quot;&gt;&lt;/span&gt;
 &lt;span id=&quot;riviere_result&quot;&gt;&lt;/span&gt;</tw-passagedata>
-<tw-passagedata pid="30" name="scoutperdu" tags="" position="30,833">&lt;!-- Lieux d&#39;apparition possibles du scout :
+<tw-passagedata pid="30" name="scoutperdu" tags="" position="30,833">&lt;img class=&quot;illustration&quot; alt=&quot;scout perdu&quot; src=&quot;media/pictures/illustrations/scout.png&quot;/&gt;
+&lt;!-- Lieux d&#39;apparition possibles du scout :
 - avant la rivière
 - après l&#39;avoir franchie
 - la clairière si pas d&#39;animaux ou fantômes (là où se situe la chevalière niveau secret, donc diminuerait encore plus la proba...)
@@ -1537,7 +1549,7 @@ Le scout vous paraissant tellement intéressé par sa lecture, vous décidez de 
 &lt;/span&gt;
 
 </tw-passagedata>
-<tw-passagedata pid="31" name="Clairrière" tags="" position="1881,1385">&lt;&lt;if $livre eq true&gt;&gt;
+<tw-passagedata pid="31" name="Clairière" tags="" position="1881,1385">&lt;&lt;if $livre eq true&gt;&gt;
 Alors que vous avancez dans le sentier, les bruits deviennent de plus en plus clairs et vous devinez une conversation. Alors que vous alliez vous manifester, vous voyez des animaux parlant entre-eux. Absorbé par leur conversation, ils ne semblent pas vous avoir vu...
 [[Se manifester-&gt;Manifestation]]
 [[Repartir discrètement-&gt;retourdiscret]]
