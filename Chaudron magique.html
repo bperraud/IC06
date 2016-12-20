@@ -252,6 +252,7 @@ img.chaudron {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 
@@ -350,6 +351,7 @@ window.blurElement = function (element, size, sduration) {
         '-o-transition':'all ' + sduration + 's ease-out'
 	});
 }
+
 
 
 
@@ -1770,20 +1772,120 @@ Alors même que les nains allaient commencer à balancer une flopée de jurons, 
 &lt;/span&gt;
 &lt;&lt;/if&gt;&gt;
 </tw-passagedata>
-<tw-passagedata pid="40" name="argumentation" tags="" position="4080,1193">Arrivant alors à votre but premier de discuter avec cet étrange personnage, vous vous installez confortablement pour débuter votre échange...
+<tw-passagedata pid="40" name="argumentation" tags="" position="4076,1344">Arrivant alors à votre but premier de discuter avec cet étrange personnage, vous vous installez confortablement pour débuter votre échange, qui promet d&#39;être riche, quoique sans doute mouvementé...
+
+-- Incomplet --
 
 [[Fin-&gt;fin]]</tw-passagedata>
-<tw-passagedata pid="41" name="jugement" tags="" position="4082,965">C&#39;est alors que le sorcier jette un sort et que tous les individus impliqués dans ses actions sont présents :
+<tw-passagedata pid="41" name="jugement" tags="" position="4046,657">&lt;&lt;set $variable to random(1,5)&gt;&gt;
+
+C&#39;est alors que le sorcier jette un sort et que tous les individus impliqués dans ses actions se matérialisent devant vous :
 
 Les nains &lt;&lt;if $os eq true&gt;&gt;, des fantômes d&#39;animaux&lt;&lt;/if&gt;&gt;&lt;&lt;if $dragon eq &quot;dragon&quot;&gt;&gt;, un dragon&lt;&lt;/if&gt;&gt;&lt;&lt;if $livre eq true&gt;&gt;, des animaux qui discutent entre eux&lt;&lt;/if&gt;&gt;&lt;&lt;if $gateau eq true&gt;&gt;, un mouton&lt;&lt;/if&gt;&gt;&lt;&lt;if $champignon eq true&gt;&gt;, le groupe de scouts&lt;&lt;/if&gt;&gt;&lt;&lt;if $scoutaide  eq true&gt;&gt;, le groupe de scouts&lt;&lt;/if&gt;&gt;&lt;&lt;if $corne eq true&gt;&gt; et un rhinocéros... Regardant sa corne, le sorcier comprend alors qu&#39;il s&#39;est fait berner et que la corne incorporée précédemment ne provenait pas d&#39;une licorne&lt;&lt;/if&gt;&gt;.
 
+Maintenant que toute cette étonnante ménagerie se présente dans son intégralité sous vos yeux, vous ne pouvez vous empêcher de vous demander si tout ceci est bien réel et si vous n&#39;êtes pas en train de rêver depuis le début de toute cette histoire... Vous pouvez vous &lt;span id=&quot;pincement&quot;&gt;&lt;&lt;link &quot;pincer&quot;&gt;&gt;&lt;&lt;if $variable eq 2&gt;&gt;&lt;&lt;set $dream to true&gt;&gt;&lt;&lt;goto &quot;fin&quot;&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;replace &quot;#pincement&quot;&gt;&gt;pincer (Aïe !!)&lt;&lt;/replace&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/span&gt;, juste histoire d&#39;être sûr.
 
-[[Fin-&gt;fin]]</tw-passagedata>
-<tw-passagedata pid="42" name="fin" tags="" position="4323,1074">&lt;&lt;if $badend eq false&gt;&gt; Félicitation, vous avez terminé le jeu, en espérant qu’il vous a plu. Vous pouvez recommencer l’histoire qui comporte 18 combinaisons d&#39;ingrédients différentes, modifiant l&#39;environnement  du promeneur...
-&lt;&lt;else&gt;&gt;Malheureusement pour vous, vous n’avez pas réussi à finir le jeu. Vous pouvez recommencer l’histoire qui comporte 18 combinaisons d&#39;ingrédients différentes, modifiant l&#39;environnement  du promeneur...
+-Eh bien ! s&#39;exclama le vieux magicien, je ne m&#39;attendais pas à voir autant de monde rappliquer ! Enfin je veux dire, les nains, je m&#39;en doutais, mais... pas le reste.
+
+L&#39;air fort contrarié, chacun des intéressés y va alors de ses réclamations et de ses injures, dans un brouhaha difficile à décrypter.
+
+- Cette fois, fichu vieillard, vous ne pourrez pas ignorer nos réclamations ! s&#39;écrient les nains de jardin en sortant leur longue liste d&#39;exigences.
+&lt;&lt;if $os eq true&gt;&gt;- ... Bouuuuuuuuuuuuuh ??!!!! s&#39;exclament quant à eux les animaux fantômes, quelque peu surpris d&#39;apparaître ainsi à un endroit inconnu.
+Ils ne tardent cependant pas à reprendre leurs esprits (hohoho, un comble pour des fantômes) et à s&#39;appliquer à essayer d&#39;effrayer les individus présents, quitte à se prendre les pattes dans leurs draps blancs, occasionnellement.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $dragon eq &quot;dragon&quot;&gt;&gt;- Qu&#39;est-ce que... ? Ne serait-ce pas ce vulgaire et ***** de sorcier qui m&#39;avait métamorphosé en monture dédiée à son bon plaisir ?! Retenez-moi, ou je vous jure que je le carbonise sur le champ ! s&#39;insurgeait quant à lui le dragon, avant de se laisser distraire. Oh ! Quels mignons mais bruyants petits personnages barbus...&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $livre eq true&gt;&gt;- Hmm, quelle fascinante chose que la magie, n&#39;est-ce pas ?
+- Je n&#39;aurais pas mieux dit cher ami animal, répondit un lapin à un cerf. Une chose fantastique que j&#39;ai envie d&#39;apprendre au plus vite ! Il me semble que les individus de mon espèce sont souvent impliqués dans les tours, il est temps pour moi de montrer que nous pouvons également devenir de brillants magiciens !&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $gateau eq true&gt;&gt;- Bêêêêêê, fit le mouton à l&#39;air draconin avant de se mettre à brouter.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $champignon eq true&gt;&gt;- WOUAW Qu&#39;est-ce que c&#39;est que cette horde de démons ?! s&#39;exclamèrent en coeur les scouts hallucinés, avant de prendre leurs jambes à leur cou...&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $scoutaide  eq true&gt;&gt;- SCOUTS A LA RESCOUSSE ! s&#39;exclamèrent en coeur les scouts auxquels vous aviez donné un coup de main bienvenu.&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $corne eq true&gt;&gt;Quant au rhinocéros, il ne fit pas grand&#39;chose, visiblement très surpris et loin d&#39;être une lumière. Il battait de la queue nerveusement.&lt;&lt;/if&gt;&gt;
+
+Satisfait de voir tous ces nouveaux venus aussi loquaces, vous restez un instant à écouter cette cacophonie le sourire aux lèvres. Puis vous réalisez que ça va être à vous d&#39;organiser la mise en justice de magicien.
+
+- Un peu de calme s&#39;il vous plaît !! vous écriez-vous, non sans froncer les sourcils (ce n&#39;est guère dans votre nature de hausser la voix et vous trouvez cela tout à fait désagréable).
+Une fois un semblant de silence revenu, vous reprenez, en vous adressant au sorcier:
+- Voici mes témoins ! Je propose de les laisser s&#39;exprimer quant à vos méfaits. Nous verrons bien ce que vous aurez à répondre !
+- Hmpffff ! répondit simplement le magicien, croisant les bras avec un air de défi.
+
+Qui appeler à s&#39;exprimer ?
+&lt;&lt;if $dragon eq &quot;dragon&quot;&gt;&gt;[[Le dragon ! C&#39;est sûr qu&#39;il clouera le bec au magicien, il en impose.-&gt;finDragon]]&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if $livre eq true&gt;&gt;[[Ces animaux intelligents semblent extrêmement réfléchis, ils arriveront sans doute à lui faire entendre raison.-&gt;finAnimauxIntel]]&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if $gateau eq true&gt;&gt;[[Le mouton ?!?... Il a un quelque chose d&#39;attendrissant, peut-être...-&gt;finMouton]]&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if $scoutaide  eq true&gt;&gt;[[Ces scouts pleins de joie de vivre pourraient peut-être lui montrer, dans la bonne humeur, qu&#39;il faut qu&#39;il soit plus prudent à l&#39;avenir.-&gt;finScouts]]&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if $corne eq true&gt;&gt;[[Le rhinocéros semble vous regarder d&#39;un air à la fois ennuyé et menaçant et vous ne voyez pas bien ce qu&#39;il pourrait faire pour vous mais, après tout, dans l&#39;absolu: pourquoi pas ?-&gt;finRhino]]&lt;&lt;/if&gt;&gt;</tw-passagedata>
+<tw-passagedata pid="42" name="fin" tags="" position="4681,1087">&lt;&lt;if $badend eq true&gt;&gt; Malheureusement pour vous, vous n’avez pas réussi à finir le jeu. Vous pouvez recommencer l’histoire qui comporte 18 combinaisons d&#39;ingrédients différentes, modifiant l&#39;environnement  du promeneur...
+
+&lt;&lt;elseif $dream eq true&gt;&gt; Vous vous éveillez brusquement dans la chambre de l&#39;auberge Au Sanglier Chaud que vous aviez louée la veille au sein du petit village de Spass-Riain-Issy. Durant à peine une seconde quelques images de votre rêve vous reviennent à l&#39;esprit, puis son souvenir vous échappe, définitivement. Cela vous agace et vous passez de longues minutes à essayer de vous rappeler ce dont il s&#39;agissait. Mais l&#39;échec répété a raison de vous et vous finissez par abandonner la partie. Vous vous levez et quittez votre chambre pour aller prendre un petit-déjeûner et vous préparer à reprendre vos pérégrinations de promeneur éclairé.
+
+Au loin dans la forêt, à votre insu, une explosion retentit...
+
+
+
+
+Félicitations, vous avez terminé le jeu (quoique d&#39;une façon très particulière) !!! Il ne s&#39;agissait que de la version bêta mais nous espérons qu’il vous a plu ! Vous pouvez recommencer l’histoire qui comporte de nombreuses autres issues et aventures possibles selon vos choix. N&#39;hésitez pas à nous faire un retour.
+
+&lt;&lt;else&gt;&gt; Félicitations, vous avez terminé le jeu !!! Il ne s&#39;agissait que de la version bêta mais nous espérons qu’il vous a plu ! Vous pouvez recommencer l’histoire qui comporte de nombreuses autres issues et aventures possibles selon vos choix. N&#39;hésitez pas à nous faire un retour.
+
 &lt;&lt;/if&gt;&gt;
-[[Retourner au menu-&gt;menu]] 
-</tw-passagedata>
+
+[[Retourner au menu-&gt;menu]]</tw-passagedata>
+<tw-passagedata pid="43" name="finDragon" tags="" position="4669,416">Comme vous avez bien compris que discuter avec le dragon peut s&#39;avérer être dangereux à qui n&#39;est pas prudent, vous vous approchez de l&#39;imposante créature et lui criez:
+
+-Ô Noble Dragon ! Voudrez-vous bien expliquer à ce Magicien ce que vous pensez de sa magie ?!
+
+Visiblement flattée, la bête découvre des dents aiguisées comme des rasoirs, sa bouche se déformant en un inquiétant rictus réptilien qu&#39;il devait imaginer ressemblant à un sourire.
+
+-Avec plaisir ! rugit-il en s&#39;approchant du Sorcier occupé à se curer les dents, visiblement peu inquiété par la créature ancestrale. Magicien ! Il y a longtemps tu m&#39;as jeté un sort, métamorphosé en une vulgaire monture inanimée que tu pouvais utiliser à ta guise, je n&#39;étais plus rien et mon trésor a été volé ! Tu dois répondre de tes actes et je propose de te... DEVORER !!!!
+
+Le dragon étend alors brusquement son long cou écailleux, à la surprise générale, toutes dents dehors, en direction du vieillard barbu. Tout le monde est choqué, terrifié, et c&#39;est la débandade: chacun part en criant, sûr qu&#39;il est le prochain à passer à la casserolle. Tout le monde sauf le magicien, qui n&#39;en est pas à sa première rencontre avec ce genre de canaille, et vous-même, qui avez prêté serment devant l&#39;ordre des promeneurs de ne jamais courir (il faut partir à point). Vous assistez alors à une scène incroyable: le magicien, d&#39;un mouvement des bras et d&#39;une formule bien énoncée, métamorphose le dragon furieux en un docile petit lézard qui disparaît de votre vue dans l&#39;herbe. Tout s&#39;est passé en l&#39;espace d&#39;un souffle.
+
+Les fuyards reviennent peu à peu près de vous, après avoir constaté que le danger était écarté, mais plus personne ne semble très motivé par l&#39;idée de demander des comptes au magicien. La démonstration de force était très claire. Celui-ci, s&#39;en rendant bien compte, retourne vers son domicile en ricanant.
+
+- A une prochaine fois, les ploucs !
+
+Dépité, vous décidez de faire de même que vos compagnons, qui commencent déjà à se disperser, gênés, et vous vous mettez en route pour d&#39;autres contrées, et d&#39;autres aventures...
+
+[[The End-&gt;fin]]</tw-passagedata>
+<tw-passagedata pid="44" name="finAnimauxIntel" tags="" position="4176,883">Double-cliquez sur ce passage pour le modifier.Les animaux intelligents sont un peu surpris que vous les ayez choisis mais n&#39;en sont pas moins ravis. Ils entament une conversation animée avec le magicien, non sans l&#39;avoir d&#39;abord remercié pour l&#39;intelligence qui les anime désormais. Vous réalisez alors que vous avez sans nul doute fait une terrible erreur.
+
+Et en effet, la conversation se poursuit, et se poursuit, et le magicien accepte de prendre le lapin pour apprenti, et le cerf fait une blague sur les cerf-volants, et vous ne trouvez jamais d&#39;ouverture pour les interrompre...
+
+Certains prétendent que cette conversation se poursuit encore aujourd&#39;hui et qu&#39;on peut en entendre les éclats en collant son oreille au tronc d&#39;un arbre de forêt.
+
+[[The End-&gt;fin]]</tw-passagedata>
+<tw-passagedata pid="45" name="finMouton" tags="" position="4380,846">Vous envoyez le mouton ailé. Il bêle. Le sorcier rigole. Tout le monde, et vous le premier, pense que vous êtes idiot. Chacun rentre chez soi.
+
+[[The End-&gt;fin]]</tw-passagedata>
+<tw-passagedata pid="46" name="finScouts" tags="" position="4568,740">Les scouts vous font un petit clin d&#39;oeil complice. Ils vous en doivent une après le coup de main que vous leur avez filé plus tôt.
+
+- On s&#39;en occupe !
+
+Vous les regarder s&#39;en aller tout souriant près du magicien, comme s&#39;ils allaient essayer de lui vendre des cookies. A son oeil rieur, vous pouvez constater que le concerné ne se sent guère menacé.
+
+Et pourtant, d&#39;un seul coup, les petits anges se transforment en démon. Tout arrive si vite que votre vision devient floue, vous ne comprenez pas ce qui se passe. Puis il ne reste plus que les scouts, toujours aussi souriants, assis sur un magicien ligoté et bayonné.
+
+-Nous l&#39;avons jugé coupable de magie exercée inconsciemment et nous l&#39;avons fait prisonnier !
+
+Autour de vous, c&#39;est la fête.
+
+Vous souriez en réponse aux heureuses têtes blondes.
+
+[[The End-&gt;fin]]</tw-passagedata>
+<tw-passagedata pid="47" name="finRhino" tags="" position="4543,588">Pas bien sûr de comment vous allez pouvoir faire comprendre au rhinocéros ce que vous attendez de lui (mais qu&#39;y a-t-il à attendre de lui, vous demandez-vous alors en secouant la tête devant votre propre choix tout à fait incongru), vous vous avancez prudemment de lui. Il reste toutefois immobile, se contentant de vous suivre du regard, ce qui vous rassure un peu.
+
+Une fois arrivé à son côté. Vous restez un moment interdit, à l&#39;instar de tous les autres spectateurs présents, qui vous regardent l&#39;air dépité. Vous haussez les épaules puis pointez le magicien du doigt et faîtes un petit signe de tête d&#39;encouragement au rhino. Celui-ci continue à vous regarder sans faire mine de bouger. Vous froncez les sourcils et refaîtes un mouvemement de tête insistant. Toujours pas de réaction.
+
+Puisque vous ne pouvez pas simplement renoncer, vous prenez une longue inspiration puis, sans hésiter mais en fermant très fort les yeux, vous assénez une grande claque à l&#39;arrière-train du rhinocéros. Cette fois, la réaction ne se fait pas attendre, bien que ce ne soit pas du tout celle à laquelle vous vous attendiez. Vous sentez une soudaine chaleur près de vous et entrouvrez un oeil. Vous êtes face à un rhinocéros luminescent dont la corne est devenue multicolore et brillante. Définitivement, il y a quelque chose de magique avec ce rhinocéros. Cela dit c&#39;est plutôt joli.
+
+Toutefois, les choses ne s&#39;arrêtent pas là: voilà que le rhinocéros se met maintenant à grandir. En un instant, il fait deux fois sa taille précédente, et cela continue jusqu&#39;à ce qu&#39;il soit aussi haut que la cîme des arbres. Vous vous éloignez en vitesse de la créature, qui ne semble pas pour autant plus motivée à bouger. Un regard autour de vous vous rassure au moins quant au fait que vous n&#39;êtes pas le seul surpris.
+
+- Bon... dit soudain le magicien, après un long moment de silence médusé. Je crois que là je commence à voir pourquoi il faut faire attention avec la magie...
+
+[[The End-&gt;fin]]</tw-passagedata>
 </tw-storydata>
 </div>
 	<script id="script-sugarcube" type="text/javascript">
