@@ -254,6 +254,7 @@ img.chaudron {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 
@@ -352,6 +353,7 @@ window.blurElement = function (element, size, sduration) {
         '-o-transition':'all ' + sduration + 's ease-out'
 	});
 }
+
 
 
 
@@ -855,6 +857,8 @@ Vous méfiant de tout ce qui se rattache à ce mystérieux lieu, vous préférez
 
 &lt;&lt;timed 40s&gt;&gt;
   &lt;&lt;audio &quot;thunder&quot; volume 1 fadeoverto 5 0&gt;&gt;
+  &lt;&lt;remove &quot;#2eingr3_0&quot;&gt;&gt;
+  &lt;&lt;remove &quot;#2eingr4_0&quot;&gt;&gt;
   &lt;&lt;replace &quot;#2eingr0&quot;&gt;&gt;
   Plus le temps d&#39;observer le chaudron, il faut vous &#39;&#39;DEPÊCHER&#39;&#39; de choisir !!
   &lt;&lt;/replace&gt;&gt;
@@ -865,7 +869,9 @@ Vous méfiant de tout ce qui se rattache à ce mystérieux lieu, vous préférez
 	Cela se présente mal, mais vous avez encore manifestement la possibilité de tenter quelque chose. Vous vous mettez alors à fouiller parmi le reste de vos ingrédients à la recherche de quelque chose qui pourrait vous aider à stabiliser la potion.
 &lt;/span&gt;
 &lt;&lt;if $livre eq true&gt;&gt;
+&lt;span id=&quot;2eingr3_0&quot;&gt;
 	Finalement, ce sont votre précieux tabac, quelques feuilles d&#39;orties a priori tout à fait banales, et un flacon de bave de crapaud qui retiennent votre attention pour une nouvelle tentative de calmer le jeu. Les grondements du chaudron sont de plus en plus forts et la mixture, parsemée de lueurs manifestement magiques et inquiétantes, menace de se renverser à tout instant.
+&lt;/span&gt;
 	
 &lt;span id=&quot;2eingr3&quot;&gt;[[Renoncer à votre tabac-&gt;tabac]]
 [[Vous débarasser des feuilles d&#39;orties-&gt;orties]]
@@ -878,7 +884,9 @@ Vous méfiant de tout ce qui se rattache à ce mystérieux lieu, vous préférez
 &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
+&lt;span id=&quot;2eingr4_0&quot;&gt;
 Finalement, ce sont quelques feuilles d&#39;orties a priori tout à fait banales, un flacon de bave de crapaud et une maigre collection d&#39;ossements (qui maintenant que vous les remarquez vous font froid dans le dos) qui retiennent votre attention pour une nouvelle tentative de calmer le jeu. Les grondements du chaudron sont de plus en plus forts et la mixture, parsemée de lueurs manifestement magiques et inquiétantes, menace de se renverser à tout instant.
+&lt;/span&gt;
 	
 &lt;span id=&quot;2eingr4&quot;&gt;[[Vous débarasser des feuilles d&#39;orties-&gt;orties]]
 [[Verser la bave de crapaud dans le chaudron-&gt;bave]]
@@ -923,6 +931,8 @@ Finalement, ce sont quelques feuilles d&#39;orties a priori tout à fait banales
 
 &lt;&lt;timed 40s&gt;&gt;
   &lt;&lt;audio &quot;thunder&quot; volume 1 fadeoverto 5 0&gt;&gt;
+  &lt;&lt;remove &quot;#2eingr1_0&quot;&gt;&gt;
+  &lt;&lt;remove &quot;#2eingr2_0&quot;&gt;&gt;
   &lt;&lt;replace &quot;#2eingr0&quot;&gt;&gt;
   Plus le temps d&#39;observer le chaudron, il faut vous &#39;&#39;DEPÊCHER&#39;&#39; de choisir !!
   &lt;&lt;/replace&gt;&gt;
@@ -935,7 +945,9 @@ Finalement, ce sont quelques feuilles d&#39;orties a priori tout à fait banales
 	Vous vous mettez alors à fouiller parmi le reste de vos ingrédients à la recherche de quelque chose qui pourrait vous aider à stabiliser la potion.
 &lt;/span&gt;
 &lt;&lt;if $livre eq true&gt;&gt;
+&lt;span id=&quot;2eingr1_0&quot;&gt;
 	Finalement, ce sont votre précieux tabac, quelques feuilles d&#39;orties a priori tout à fait banales, et un flacon de bave de crapaud qui retiennent votre attention pour une nouvelle tentative de calmer le jeu. Les grondements du chaudron sont de plus en plus forts et la mixture, parsemée de lueurs manifestement magiques et inquiétantes, menace de se renverser à tout instant.
+&lt;/span&gt;
 	
 &lt;span id=&quot;2eingr1&quot;&gt;[[Renoncer à votre tabac-&gt;tabac]]
 [[Vous débarasser des feuilles d&#39;orties-&gt;orties]]
@@ -948,7 +960,9 @@ Finalement, ce sont quelques feuilles d&#39;orties a priori tout à fait banales
 &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
+&lt;span id=&quot;2eingr2_0&quot;&gt;
 	Finalement, ce sont quelques feuilles d&#39;orties a priori tout à fait banales, un flacon de bave de crapaud et une maigre collection d&#39;ossements (qui maintenant que vous les remarquez vous font froid dans le dos) qui retiennent votre attention pour une nouvelle tentative de calmer le jeu. Les grondements du chaudron sont de plus en plus forts et la mixture, parsemée de lueurs manifestement magiques et inquiétantes, menace de se renverser à tout instant.
+&lt;/span&gt;
 	
 &lt;span id=&quot;2eingr2&quot;&gt;[[Vous débarasser des feuilles d&#39;orties-&gt;orties]]
 [[Verser la bave de crapaud dans le chaudron-&gt;bave]]
@@ -994,6 +1008,8 @@ Finalement, ce sont quelques feuilles d&#39;orties a priori tout à fait banales
 
 &lt;&lt;timed 40s&gt;&gt;
   &lt;&lt;audio &quot;thunder&quot; volume 1 fadeoverto 5 0&gt;&gt;
+  &lt;&lt;remove &quot;#2eingr5_0&quot;&gt;&gt;
+  &lt;&lt;remove &quot;#2eingr6_0&quot;&gt;&gt;
   &lt;&lt;replace &quot;#2eingr0&quot;&gt;&gt;
   Plus le temps d&#39;observer le chaudron, il faut vous &#39;&#39;DEPÊCHER&#39;&#39; de choisir !!
   &lt;&lt;/replace&gt;&gt;
@@ -1005,8 +1021,10 @@ Finalement, ce sont quelques feuilles d&#39;orties a priori tout à fait banales
 	Cela se présente mal, mais vous avez encore manifestement la possibilité de tenter quelque chose. Vous vous mettez alors à fouiller parmi le reste de vos ingrédients à la recherche de quelque chose qui pourrait vous aider à stabiliser la potion.
 &lt;/span&gt;
 &lt;&lt;if $livre eq true&gt;&gt;
+&lt;span id=&quot;2eingr5_0&quot;&gt;
 	Finalement, ce sont votre précieux tabac, une corne de licorne aux propriétés magiques réputées extraordinaires en toutes circonstances, et un flacon de bave de crapaud qui retiennent votre attention pour une nouvelle tentative de calmer le jeu. Les grondements du chaudron sont de plus en plus forts et la mixture, devenue petit phénomène météorologique magique, menace de laisser éclater sa puissance à tout instant.
-	
+&lt;/span&gt;
+
 &lt;span id=&quot;2eingr5&quot;&gt;[[Renoncer à votre tabac-&gt;tabac]]
 [[Sacrifier votre précieuse corne de licorne-&gt;corne]]
 [[Verser la bave de crapaud dans le chaudron-&gt;bave]]&lt;/span&gt;
@@ -1018,8 +1036,10 @@ Finalement, ce sont quelques feuilles d&#39;orties a priori tout à fait banales
 &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
+&lt;span id=&quot;2eingr6_0&quot;&gt;
 	Finalement, ce sont une corne de licorne aux propriétés magiques réputées extraordinaires en toutes circonstances, un flacon de bave de crapaud, et une maigre collection d&#39;ossements (qui maintenant que vous les remarquez vous font froid dans le dos) qui retiennent votre attention pour une nouvelle tentative de calmer le jeu. Les grondements du chaudron sont de plus en plus forts et la mixture, devenue petit phénomène météorologique magique, menace de laisser éclater sa puissance à tout instant.
-	
+&lt;/span&gt;
+
 &lt;span id=&quot;2eingr6&quot;&gt;[[Sacrifier votre précieuse corne de licorne-&gt;corne]]
 [[Verser la bave de crapaud dans le chaudron-&gt;bave]]
 [[Tenter votre chance en introduisant un des os dans la mixture-&gt;os]]&lt;/span&gt;
