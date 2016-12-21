@@ -537,7 +537,7 @@ N&#39;ayant pas le temps pour dialoguer, vous laissez la jeunesse à leurs occup
 [[Décliner la proposition et s&#39;en aller-&gt;Groupe de scout]] </tw-passagedata>
 <tw-passagedata pid="7" name="Dicussion" tags="" position="2297,1729">&lt;img class=&quot;illustration&quot; alt=&quot;lapin savant&quot; src=&quot;media/pictures/illustrations/lapin.png&quot;/&gt;
 Vous vous lancez donc dans un débat face au lapin qui ne semble pas à court d&#39;arguments. Le temps défilant, personne ne semble toutefois décidé à admettre le point de vue de l&#39;autre.
-&lt;&lt;set $badend to true&gt;&gt;
+&lt;&lt;set $badend to true&gt;&gt;&lt;&lt;set $bad to &quot;discussion&quot;&gt;&gt;
 [[Fin-&gt;fin]] </tw-passagedata>
 <tw-passagedata pid="8" name="Embranchement" tags="" position="2675,1266">&lt;img class=&quot;illustration&quot; alt=&quot;embranchement&quot; src=&quot;media/pictures/illustrations/embranchement.png&quot;/&gt;
 Vous abandonnez la jeunesse à la rêverie pour continuer votre chemin.
@@ -569,7 +569,7 @@ Après avoir fouillé vos poches sans succès, n&#39;ayant plus de moyens d&#39;
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="10" name="raccourci" tags="" position="3013,1263">&lt;&lt;set $variable to random(1,10)&gt;&gt;
+<tw-passagedata pid="10" name="raccourci" tags="" position="3011,1263">&lt;&lt;set $variable to random(1,10)&gt;&gt;
 &lt;&lt;if $baton eq true&gt;&gt;&lt;!-- ##########Avance avec bâton######--&gt;
 Souhaitant gagner du temps, vous empruntez le raccourci et aidé de votre bâton vous avancez sans glisser ni chuter dans le ravin.
 [[Poursuivre-&gt;jardincabane]]
@@ -595,7 +595,7 @@ Vous sentant courageux, vous bravez le danger et vous vous remettez en route et 
 			&lt;&lt;else&gt;&gt;
 &lt;&lt;replace &quot;#glisse&quot;&gt;&gt;
 Vous sentant courageux, vous bravez le danger mais bien mal vous en a pris car vous chutez dans le ravin après avoir glissé sur une pierre.
-&lt;&lt;set $badend to true&gt;&gt;
+&lt;&lt;set $badend to true&gt;&gt;&lt;&lt;set $bad to &quot;ravin&quot;&gt;&gt;
 [[Fin-&gt;fin]]
 		&lt;&lt;/replace&gt;&gt;
 			&lt;&lt;/if&gt;&gt;
@@ -608,7 +608,7 @@ Vous sentant courageux, vous bravez le danger et  vous vous remettez en route et
 			&lt;&lt;else&gt;&gt;
 &lt;&lt;replace &quot;#glisse&quot;&gt;&gt;
 Vous sentant courageux, vous bravez le danger mais bien mal vous en a pris car vous chutez dans le ravin après avoir glissé sur une pierre.
-&lt;&lt;set $badend to true&gt;&gt;
+&lt;&lt;set $badend to true&gt;&gt;&lt;&lt;set $bad to &quot;ravin&quot;&gt;&gt;
 [[Fin-&gt;fin]]
 		&lt;&lt;/replace&gt;&gt;
 			&lt;&lt;/if&gt;&gt;
@@ -629,7 +629,7 @@ N’ayant pas de bâton à disposition et aucun outil pour en fabriquer un, malg
 			&lt;&lt;else&gt;&gt;
 &lt;&lt;replace &quot;#glisse&quot;&gt;&gt;
 … mais bien mal vous en a pris car vous chutez dans le ravin après avoir glissé sur une pierre.
-&lt;&lt;set $badend to true&gt;&gt;
+&lt;&lt;set $badend to true&gt;&gt;&lt;&lt;set $bad to &quot;ravin&quot;&gt;&gt;
 [[Fin-&gt;fin]]
 		&lt;&lt;/replace&gt;&gt;
 			&lt;&lt;/if&gt;&gt;
@@ -642,7 +642,7 @@ N’ayant pas de bâton à disposition et aucun outil pour en fabriquer un, malg
 			&lt;&lt;else&gt;&gt;
 &lt;&lt;replace &quot;#roule&quot;&gt;&gt;
 Vous sentant courageux, vous bravez le danger mais bien mal vous en a pris car vous chutez dans le ravin après avoir glissé sur une pierre.
-&lt;&lt;set $badend to true&gt;&gt;
+&lt;&lt;set $badend to true&gt;&gt;&lt;&lt;set $bad to &quot;ravin&quot;&gt;&gt;
 [[Fin-&gt;fin]]
 		&lt;&lt;/replace&gt;&gt;
 			&lt;&lt;/if&gt;&gt;
@@ -707,7 +707,7 @@ BLABLABLA
 		&lt;&lt;/if&gt;&gt;
 		&lt;&lt;if $variable eq &quot;echec&quot;&gt;&gt;
 Alors que vous essayez, tant bien que mal d&#39;argumenter sur le fait que vous ne pouvez pas avoir la pièce, le dragon, agacé, vous gobe d&#39;un geste rapide pour son âge...
-&lt;&lt;set $badend to true&gt;&gt;
+&lt;&lt;set $badend to true&gt;&gt;&lt;&lt;set $bad to &quot;mange&quot;&gt;&gt;
 [[Fin-&gt;fin]]
 		&lt;&lt;else&gt;&gt;
 Après un discours riche en arguments, le vieux dragon abdique et vous présente ses excuses en prenant pour faute son odorat âgé.
@@ -738,7 +738,7 @@ Tant bien que mal, vous vous en sortez sans blessures et vous entendez alors le 
 [[Suite-&gt;Portesecrete]]
 			&lt;&lt;else&gt;&gt;
 Vous tentez votre chance face au dragon en espérant que ces années resté sans bouger l&#39;empêcheront de vous rattraper. Vous courez aussi vite que possible pour lui échapper mais le bruit lourd de ses pas se rapproche rapidement. Sachant que c&#39;est la fin pour vous, vous regrettez d&#39;avoir risqué votre vie pour une simple pièce et c&#39;est alors que la mâchoire du dragon se referme sur vous...
-&lt;&lt;set $badend to true&gt;&gt;
+&lt;&lt;set $badend to true&gt;&gt;&lt;&lt;set $bad to &quot;mange&quot;&gt;&gt;
 [[Fin-&gt;fin]]
 			&lt;&lt;/if&gt;&gt;
 		&lt;&lt;/if&gt;&gt;
@@ -1348,6 +1348,7 @@ N&#39;ayant pas eu le réflexe de lancer un sort de protection, vous voyez le ch
 &lt;&lt;set $aidernains to false&gt;&gt;
 &lt;&lt;set $cabaneexplose to false&gt;&gt;
 &lt;&lt;set $badend to false&gt;&gt;
+&lt;&lt;set $bad to &quot;ras&quot;&gt;&gt; &lt;!--succès--&gt;
 
 &lt;!--Bruitages--&gt;
 
@@ -1504,7 +1505,7 @@ Alors que vous traversez cette rivière gelée, vous entendez des fissures se pr
 	&lt;&lt;remove &quot;#riviere_lutte&quot;&gt;&gt;
 	&lt;&lt;append &quot;#riviere_result&quot;&gt;&gt;
 	Lentement, vous sentez vos membres s&#39;engourdir jusqu&#39;au point de ne plus pouvoir bouger. Petit à petit, vos yeux se ferment et vous  partez à la dérive dans un sommeil sans fin.
-	&lt;&lt;set $badend to true&gt;&gt;
+	&lt;&lt;set $badend to true&gt;&gt;&lt;&lt;set $bad to &quot;riviere&quot;&gt;&gt;
 	[[Fin-&gt;fin]]
 	&lt;&lt;/append&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
