@@ -1344,7 +1344,6 @@ N&#39;ayant pas eu le réflexe de lancer un sort de protection, vous voyez le ch
 
 &lt;!--Etats--&gt;
 
-
 &lt;&lt;set $dragon to &quot;moto&quot;&gt;&gt;&lt;!--métamorphose ancienne du dragon par le sorcier--&gt;
 &lt;&lt;set $scoutperduvu to false&gt;&gt;&lt;!--le scout perdu a été rencontré?--&gt;
 &lt;&lt;set $livrescout to false&gt;&gt;
@@ -1353,7 +1352,14 @@ N&#39;ayant pas eu le réflexe de lancer un sort de protection, vous voyez le ch
 &lt;&lt;set $aidernains to false&gt;&gt;
 &lt;&lt;set $cabaneexplose to false&gt;&gt;
 &lt;&lt;set $badend to false&gt;&gt;
-&lt;&lt;set $bad to &quot;ras&quot;&gt;&gt; &lt;!--succès--&gt;
+
+&lt;!--succès--&gt;
+
+&lt;&lt;set $bad to &quot;ras&quot;&gt;&gt;
+&lt;&lt;set $mouille to false&gt;&gt;
+&lt;&lt;set $baratineur to false&gt;&gt;
+&lt;&lt;set $speleologue to false&gt;&gt;
+&lt;&lt;set $jambon to false&gt;&gt;
 
 &lt;!--Bruitages--&gt;
 
@@ -1628,6 +1634,7 @@ Chaudron magique est un jeu narratif à embranchements qui vous confronte à la 
 Qui sait, à la fin de votre périple aurez-vous peut-être la chance de le raisonner...
 
 [[Jouer-&gt;Intro]]
+[[Succès-&gt;succes]]
 [[Crédits]]</tw-passagedata>
 <tw-passagedata pid="35" name="Crédits" tags="" position="383,1017">!Crédits
 
@@ -1848,7 +1855,7 @@ Qui appeler à s&#39;exprimer ?
 &lt;&lt;if $scoutaide  eq true&gt;&gt;[[Ces scouts pleins de joie de vivre pourraient peut-être lui montrer, dans la bonne humeur, qu&#39;il faut qu&#39;il soit plus prudent à l&#39;avenir.-&gt;finScouts]]&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $corne eq true&gt;&gt;[[Le rhinocéros semble vous regarder d&#39;un air à la fois ennuyé et menaçant et vous ne voyez pas bien ce qu&#39;il pourrait faire pour vous mais, après tout, dans l&#39;absolu: pourquoi pas ?-&gt;finRhino]]&lt;&lt;/if&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="42" name="fin" tags="" position="5007,1063">&lt;&lt;if $badend eq true&gt;&gt; Félicitation, vous avez débloqué le succès &lt;&lt;if $bad eq &quot;riviere&quot;&gt;&gt; &quot;Mouillé&quot;, pour être resté dans la glace plutôt que de chercher à survivre, correspondant à la fin prématurée n°1/4&lt;&lt;/if&gt;&gt;&lt;&lt;if $bad eq &quot;discussion&quot;&gt;&gt; &quot;Orateur&quot;, pour avoir voulu clouer le bec au lapin plutôt que de poursuivre votre route, correspondant à la fin prématurée n°2/4&lt;&lt;/if&gt;&gt;&lt;&lt;if $bad eq &quot;ravin&quot;&gt;&gt; &quot;Spéléologue&quot;, pour avoir surestimé votre chance face au raccourci escarpé, correspondant à la fin prématurée n°3/4&lt;&lt;/if&gt;&gt;&lt;&lt;if $bad eq &quot;mange&quot;&gt;&gt; &quot;Jambon&quot;, pour avoir sous-estimé les réflexes du vieux dragon, correspondant à la fin prématurée n°4/4&lt;&lt;/if&gt;&gt;. Malheureusement pour vous, vous n’avez pas réussi à finir le jeu. Vous pouvez recommencer l’histoire qui comporte 18 combinaisons d&#39;ingrédients différentes, modifiant l&#39;environnement  du promeneur...
+<tw-passagedata pid="42" name="fin" tags="" position="5007,1063">&lt;&lt;if $badend eq true&gt;&gt; Félicitation, vous avez débloqué le succès &lt;&lt;if $bad eq &quot;riviere&quot;&gt;&gt;&lt;&lt;set $mouille to true&gt;&gt; &quot;Mouillé&quot;, pour être resté dans la glace plutôt que de chercher à survivre, correspondant à la fin prématurée n°1/4&lt;&lt;/if&gt;&gt;&lt;&lt;if $bad eq &quot;discussion&quot;&gt;&gt;&lt;&lt;set $baratineur to true&gt;&gt; &quot;Baratineur &quot;, pour avoir voulu clouer le bec au lapin plutôt que de poursuivre votre route, correspondant à la fin prématurée n°2/4&lt;&lt;/if&gt;&gt;&lt;&lt;if $bad eq &quot;ravin&quot;&gt;&gt;&lt;&lt;set $speleologue to true&gt;&gt; &quot;Spéléologue&quot;, pour avoir surestimé votre chance face au raccourci escarpé, correspondant à la fin prématurée n°3/4&lt;&lt;/if&gt;&gt;&lt;&lt;if $bad eq &quot;mange&quot;&gt;&gt;&lt;&lt;set $jambon to true&gt;&gt; &quot;Jambon&quot;, pour avoir sous-estimé les réflexes du vieux dragon, correspondant à la fin prématurée n°4/4&lt;&lt;/if&gt;&gt;. Malheureusement pour vous, vous n’avez pas réussi à finir le jeu. Vous pouvez recommencer l’histoire qui comporte 18 combinaisons d&#39;ingrédients différentes, modifiant l&#39;environnement  du promeneur...
 
 &lt;&lt;elseif $dream eq true&gt;&gt; Vous vous éveillez brusquement dans la chambre de l&#39;auberge Au Sanglier Chaud que vous aviez louée la veille au sein du petit village de Spass-Riain-Issy. Durant à peine une seconde quelques images de votre rêve vous reviennent à l&#39;esprit, puis son souvenir vous échappe, définitivement. Cela vous agace et vous passez de longues minutes à essayer de vous rappeler ce dont il s&#39;agissait. Mais l&#39;échec répété a raison de vous et vous finissez par abandonner la partie. Vous vous levez et quittez votre chambre pour aller prendre un petit-déjeûner et vous préparer à reprendre vos pérégrinations de promeneur éclairé.
 
@@ -1917,6 +1924,7 @@ Toutefois, les choses ne s&#39;arrêtent pas là: voilà que le rhinocéros se m
 - Bon... dit soudain le magicien, après un long moment de silence médusé. Je crois que là je commence à voir pourquoi il faut faire attention avec la magie...
 
 [[The End-&gt;fin]]</tw-passagedata>
+<tw-passagedata pid="48" name="succes" tags="" position="440,792">Double-cliquez sur ce passage pour le modifier.</tw-passagedata>
 </tw-storydata>
 </div>
 	<script id="script-sugarcube" type="text/javascript">
