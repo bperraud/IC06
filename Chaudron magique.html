@@ -259,6 +259,7 @@ img.chaudron {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 
@@ -357,6 +358,7 @@ window.blurElement = function (element, size, sduration) {
         '-o-transition':'all ' + sduration + 's ease-out'
 	});
 }
+
 
 
 
@@ -543,8 +545,8 @@ N&#39;ayant pas le temps pour dialoguer, vous laissez la jeunesse à leurs occup
 [[Décliner la proposition et s&#39;en aller-&gt;Groupe de scout]] </tw-passagedata>
 <tw-passagedata pid="7" name="Dicussion" tags="" position="2297,1729">&lt;img class=&quot;illustration&quot; alt=&quot;lapin savant&quot; src=&quot;media/pictures/illustrations/lapin.png&quot;/&gt;
 Vous vous lancez donc dans un débat face au lapin qui ne semble pas à court d&#39;arguments. Le temps défilant, personne ne semble toutefois décidé à admettre le point de vue de l&#39;autre.
-&lt;&lt;set $badend to true&gt;&gt;&lt;&lt;set $bad to &quot;discussion&quot;&gt;&gt;
-[[Fin-&gt;fin]] </tw-passagedata>
+&lt;&lt;set $bad_end to &quot;discussion&quot;&gt;&gt;
+[[Fin-&gt;fin]]</tw-passagedata>
 <tw-passagedata pid="8" name="Embranchement" tags="" position="2675,1266">&lt;img class=&quot;illustration&quot; alt=&quot;embranchement&quot; src=&quot;media/pictures/illustrations/embranchement.png&quot;/&gt;
 Vous abandonnez la jeunesse à la rêverie pour continuer votre chemin.
 Arrivé à un embranchement, vous voyez deux chemins qui s&#39;offrent à vous :
@@ -578,7 +580,7 @@ Après avoir fabriqué votre bâton à parti d’une solide branche de chêne, v
 	&lt;&lt;/link&gt;&gt;
 &lt;&lt;link &quot;Continuer sans bâton&quot;&gt;&gt;&lt;!-- ######Ne veut pas fabriquer baton###--&gt;
 &lt;&lt;if $bave eq false&gt;&gt;
-&lt;&lt;if $variable &lt;5&gt;&gt;
+&lt;&lt;if $variable &lt; 5&gt;&gt;
 &lt;&lt;replace &quot;#glisse&quot;&gt;&gt;
 Vous sentant courageux, vous bravez le danger et vous vous remettez en route et vous avancez sans glisser ni chuter dans le ravin.
 
@@ -587,7 +589,7 @@ Vous sentant courageux, vous bravez le danger et vous vous remettez en route et 
 			&lt;&lt;else&gt;&gt;
 &lt;&lt;replace &quot;#glisse&quot;&gt;&gt;
 Vous sentant courageux, vous bravez le danger mais bien mal vous en a pris car vous chutez dans le ravin après avoir glissé sur une pierre.
-&lt;&lt;set $badend to true&gt;&gt;&lt;&lt;set $bad to &quot;ravin&quot;&gt;&gt;
+	&lt;&lt;set $bad_end to &quot;ravin&quot;&gt;&gt;
 [[Fin-&gt;fin]]
 		&lt;&lt;/replace&gt;&gt;
 			&lt;&lt;/if&gt;&gt;
@@ -600,7 +602,7 @@ Vous sentant courageux, vous bravez le danger et  vous vous remettez en route et
 			&lt;&lt;else&gt;&gt;
 &lt;&lt;replace &quot;#glisse&quot;&gt;&gt;
 Vous sentant courageux, vous bravez le danger mais bien mal vous en a pris car vous chutez dans le ravin après avoir glissé sur une pierre recouverte d&#39;une substance gluante.
-&lt;&lt;set $badend to true&gt;&gt;&lt;&lt;set $bad to &quot;ravin&quot;&gt;&gt;
+	&lt;&lt;set $bad_end to &quot;ravin&quot;&gt;&gt;
 [[Fin-&gt;fin]]
 		&lt;&lt;/replace&gt;&gt;
 			&lt;&lt;/if&gt;&gt;
@@ -621,7 +623,7 @@ N’ayant pas de bâton à disposition et aucun outil pour en fabriquer un, malg
 			&lt;&lt;else&gt;&gt;
 &lt;&lt;replace &quot;#roule&quot;&gt;&gt;
 … mais bien mal vous en a pris car vous chutez dans le ravin après avoir glissé sur une pierre.
-&lt;&lt;set $badend to true&gt;&gt;&lt;&lt;set $bad to &quot;ravin&quot;&gt;&gt;
+	&lt;&lt;set $bad_end to &quot;ravin&quot;&gt;&gt;
 [[Fin-&gt;fin]]
 		&lt;&lt;/replace&gt;&gt;
 			&lt;&lt;/if&gt;&gt;
@@ -634,7 +636,7 @@ N’ayant pas de bâton à disposition et aucun outil pour en fabriquer un, malg
 			&lt;&lt;else&gt;&gt;
 &lt;&lt;replace &quot;#roule&quot;&gt;&gt;
 Vous sentant courageux, vous bravez le danger mais bien mal vous en a pris car vous chutez dans le ravin après avoir glissé sur une pierre recouverte d&#39;une substance gluante.
-&lt;&lt;set $badend to true&gt;&gt;&lt;&lt;set $bad to &quot;ravin&quot;&gt;&gt;
+	&lt;&lt;set $bad_end to &quot;ravin&quot;&gt;&gt;
 [[Fin-&gt;fin]]
 		&lt;&lt;/replace&gt;&gt;
 			&lt;&lt;/if&gt;&gt;
@@ -699,7 +701,7 @@ BLABLABLA
 		&lt;&lt;/if&gt;&gt;
 		&lt;&lt;if $variable eq &quot;echec&quot;&gt;&gt;
 Alors que vous essayez, tant bien que mal d&#39;argumenter sur le fait que vous ne pouvez pas avoir la pièce, le dragon, agacé, vous gobe d&#39;un geste rapide pour son âge...
-&lt;&lt;set $badend to true&gt;&gt;&lt;&lt;set $bad to &quot;mange&quot;&gt;&gt;
+&lt;&lt;set $bad_end to &quot;mange&quot;&gt;&gt;
 [[Fin-&gt;fin]]
 		&lt;&lt;else&gt;&gt;
 Après un discours riche en arguments, le vieux dragon abdique et vous présente ses excuses en prenant pour faute son odorat âgé.
@@ -730,7 +732,7 @@ Tant bien que mal, vous vous en sortez sans blessures et vous entendez alors le 
 [[Suite-&gt;Portesecrete]]
 			&lt;&lt;else&gt;&gt;
 Vous tentez votre chance face au dragon en espérant que ces années resté sans bouger l&#39;empêcheront de vous rattraper. Vous courez aussi vite que possible pour lui échapper mais le bruit lourd de ses pas se rapproche rapidement. Sachant que c&#39;est la fin pour vous, vous regrettez d&#39;avoir risqué votre vie pour une simple pièce et c&#39;est alors que la mâchoire du dragon se referme sur vous...
-&lt;&lt;set $badend to true&gt;&gt;&lt;&lt;set $bad to &quot;mange&quot;&gt;&gt;
+&lt;&lt;set $bad_end to &quot;mange&quot;&gt;&gt;
 [[Fin-&gt;fin]]
 			&lt;&lt;/if&gt;&gt;
 		&lt;&lt;/if&gt;&gt;
@@ -761,9 +763,7 @@ Vous méfiant de tout ce qui se rattache à ce mystérieux lieu, vous préférez
 	&lt;&lt;/link&gt;&gt;
 &lt;/span&gt;
 
-&lt;&lt;/if&gt;&gt;
-
-</tw-passagedata>
+&lt;&lt;/if&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="13" name="1er_ingrédient" tags="" position="334,1296">&lt;&lt;nobr&gt;&gt;
 &lt;!-- La potion de liquéfaction doit être neutralisé en annulant son acidité et sa liquidité :
  Poussière de feu pour assécher la potion
@@ -1291,62 +1291,117 @@ N&#39;ayant pas eu le réflexe de lancer un sort de protection, vous voyez le ch
 [[Poursuivre l&#39;histoire-&gt;Phase2]] 
 &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="24" name="StoryInit" tags="" position="19,996">&lt;!--ingrédients--&gt;
-&lt;&lt;set $livre to false&gt;&gt;&lt;!--apparition annimaux savants dans la clairière--&gt;
+<tw-passagedata pid="24" name="StoryInit" tags="" position="9,996">&lt;!--ingrédients--&gt;
 
-&lt;&lt;set $gateau to false&gt;&gt;&lt;!--transformation dragon en mouton--&gt;
+&lt;!--apparition annimaux savants dans la clairière--&gt;
+&lt;&lt;set $livre to false&gt;&gt;
 
-&lt;&lt;set $glace to false&gt;&gt;&lt;!--la rivière devient gelée--&gt;
+&lt;!--transformation dragon en mouton--&gt;
+&lt;&lt;set $gateau to false&gt;&gt;
 
-&lt;&lt;set $poussièredefeu to false&gt;&gt;&lt;!--brûle le bâton s&#39;il est plongé dans la rivière--&gt;
+&lt;!--la rivière devient gelée--&gt;
+&lt;&lt;set $glace to false&gt;&gt;
 
-&lt;&lt;set $champignon to false&gt;&gt;&lt;!--agit sur le groupe de scout--&gt;
+&lt;!--brûle le bâton s&#39;il est plongé dans la rivière--&gt;
+&lt;&lt;set $poussièredefeu to false&gt;&gt;
 
-&lt;&lt;set $corne to false&gt;&gt;&lt;!--apparition d&#39;un rhinocéros dans le &quot;procés&quot;--&gt;
+&lt;!--agit sur le groupe de scout--&gt;
+&lt;&lt;set $champignon to false&gt;&gt;
 
-&lt;&lt;set $tabac to false&gt;&gt;&lt;!--fait tousser les nains de jardins--&gt;
+&lt;!--apparition d&#39;un rhinocéros dans le &quot;procès&quot;--&gt;
+&lt;&lt;set $corne to false&gt;&gt;
 
-&lt;&lt;set $bave to false&gt;&gt;&lt;!--augmente le risque de chute dans le raccourci--&gt;
+&lt;!--fait tousser les nains de jardins--&gt;
+&lt;&lt;set $tabac to false&gt;&gt;
 
-&lt;&lt;set $orties to false&gt;&gt;&lt;!--fait gratter les nains de jardin--&gt;
+&lt;!--augmente le risque de chute dans le raccourci--&gt;
+&lt;&lt;set $bave to false&gt;&gt;
 
-&lt;&lt;set $os to false&gt;&gt;&lt;!--apparition de fantômes d&#39;animaux dans la clairière--&gt;
+&lt;!--fait gratter les nains de jardin--&gt;
+&lt;&lt;set $orties to false&gt;&gt;
+
+&lt;!--apparition de fantômes d&#39;animaux dans la clairière--&gt;
+&lt;&lt;set $os to false&gt;&gt;
 
 
 &lt;!--objets--&gt;
 
+&lt;!--pièce d&#39;or possiblement détecter avant l&#39;antre du dragon--&gt;
+&lt;&lt;set $pieceor to false&gt;&gt;
 
-&lt;&lt;set $pieceor to false&gt;&gt;&lt;!--pièce d&#39;or possiblement détecter avant l&#39;antre du dragon--&gt;
+&lt;!--découverte d&#39;une bague dans la clairière (sans animaux ni fantômes)--&gt;
+&lt;&lt;set $tresor to false&gt;&gt;
 
-&lt;&lt;set $tresor to false&gt;&gt;&lt;!--découverte d&#39;une bague dans la clairière (sans animaux ni fantômes)--&gt;
+&lt;!--peuvent être perdus (rivière gelée/fuite) ou humides (rivière)--&gt;
+&lt;&lt;set $allumette to true&gt;&gt;
 
-&lt;&lt;set $allumette to true&gt;&gt; &lt;!--peuvent être perdus (rivière gelée/fuite) ou humides (rivière)--&gt;
+&lt;!--peut être perdue (rivière gelée/fuite) ou humide (rivière)--&gt;
+&lt;&lt;set $lampe to true&gt;&gt;
 
-&lt;&lt;set $lampe to true&gt;&gt;&lt;!--peut être perdue (rivière gelée/fuite) ou humides (rivière)--&gt;
+&lt;!--peut être brûlé/perdu mais refait avec le couteau--&gt;
+&lt;&lt;set $baton to true&gt;&gt;
 
-&lt;&lt;set $baton to true&gt;&gt;&lt;!--peut être brûlé/perdu mais refait avec le couteau--&gt;
+&lt;!--peut être perdu--&gt;
+&lt;&lt;set $couteau to true&gt;&gt;
 
-&lt;&lt;set $couteau to true&gt;&gt;&lt;!--peut être perdu--&gt;
 
+&lt;!--États--&gt;
 
-&lt;!--Etats--&gt;
-
-&lt;&lt;set $dragon to &quot;moto&quot;&gt;&gt;&lt;!--métamorphose ancienne du dragon par le sorcier--&gt;
-&lt;&lt;set $scoutperduvu to false&gt;&gt;&lt;!--le scout perdu a été rencontré?--&gt;
+&lt;!--métamorphose ancienne du dragon par le sorcier--&gt;
+&lt;&lt;set $dragon to &quot;moto&quot;&gt;&gt;
+&lt;!--le scout perdu a été rencontré?--&gt;
+&lt;&lt;set $scoutperduvu to false&gt;&gt;
 &lt;&lt;set $livrescout to false&gt;&gt;
 
-&lt;&lt;set $scoutaide to false&gt;&gt;&lt;!--vous avez aidé le groupe de scout?--&gt;
+&lt;!--vous avez aidé le groupe de scout?--&gt;
+&lt;&lt;set $scoutaide to false&gt;&gt;
 &lt;&lt;set $aidernains to false&gt;&gt;
 &lt;&lt;set $cabaneexplose to false&gt;&gt;
-&lt;&lt;set $badend to false&gt;&gt;
+
 
 &lt;!--succès--&gt;
+&lt;&lt;set $bad_end to false&gt;&gt;
+&lt;&lt;set $succes to []&gt;&gt;
+&lt;&lt;set $succes_map to [
+	{
+		id: &quot;mouille&quot;,
+		name: &quot;Mouillé&quot;,
+		desc: &quot;être resté dans la glace plutôt que de chercher à survivre&quot;,
+		img: false
+	},
+	{
+		id: &quot;baratineur&quot;,
+		name: &quot;Baratineur&quot;,
+		desc: &quot;avoir voulu clouer le bec au lapin plutôt que de poursuivre votre route&quot;,
+		img: false
+	},
+	{
+		id: &quot;speleologue&quot;,
+		name: &quot;Spéléologue&quot;,
+		desc: &quot;avoir surestimé votre chance face au raccourci escarpé&quot;,
+		img: false
+	},
+	{
+		id: &quot;jambon&quot;,
+		name: &quot;Jambon&quot;,
+		desc: &quot;avoir sous-estimé les réflexes du vieux dragon&quot;,
+		img: false
+	},
+	{
+		id: &quot;dream&quot;,
+		name: &quot;Rêveur&quot;,
+		desc: &quot;avoir une imagination (trop ?) débordante&quot;,
+		img: false
+	},
+	{
+		id: &quot;default&quot;,
+		name: &quot;SuperStar&quot;,
+		desc: &quot;avoir réussi à rencontrer Zek sans encombre (ou presque)&quot;,
+		img: false
+	}
+]
+&gt;&gt;
 
-&lt;&lt;set $bad to &quot;ras&quot;&gt;&gt;
-&lt;&lt;set $mouille to false&gt;&gt;
-&lt;&lt;set $baratineur to false&gt;&gt;
-&lt;&lt;set $speleologue to false&gt;&gt;
-&lt;&lt;set $jambon to false&gt;&gt;
 
 &lt;!--Bruitages--&gt;
 
@@ -1375,12 +1430,14 @@ $(&#39;body&#39;).append($button);
 &lt;&lt;/script&gt;&gt;
 
 [[lancer-&gt;menu]]</tw-passagedata>
-<tw-passagedata pid="25" name="Phase2" tags="" position="1184,1263">&lt;&lt;silently&gt;&gt;
+<tw-passagedata pid="25" name="Phase2" tags="" position="1184,1262">&lt;&lt;silently&gt;&gt;
 &lt;&lt;audio &quot;:playing&quot; stop&gt;&gt;
 &lt;!-- Retour dans le passé =&gt; flash pour marquer une ellipse temporelle--&gt;
 &lt;&lt;/silently&gt;&gt;
 &lt;div class=&quot;black_overlay&quot;&gt;&lt;/div&gt;
-&lt;span style=&quot;position: absolute; z-index:10; color: white&quot; id=&quot;phase2-intro&quot;&gt;Dans ==une galaxie== euh non, espace-temps &lt;&lt;linkappend &quot;pas si lointain...&quot;&gt;&gt;
+&lt;&lt;nobr&gt;&gt;
+&lt;span style=&quot;position: relative; z-index:10; color: white&quot; id=&quot;phase2-intro&quot;&gt;
+Dans ==une galaxie== euh non, espace-temps &lt;&lt;linkappend &quot;pas si lointain...&quot;&gt;&gt;
 &lt;&lt;script&gt;&gt;
 $(&#39;.black_overlay&#39;).animate({opacity: 0}, 1000, &quot;swing&quot;, function() {
 	$(&#39;#phase2-intro&#39;).css({color: &quot;black&quot;});
@@ -1390,6 +1447,7 @@ $(&#39;.black_overlay&#39;).animate({opacity: 0}, 1000, &quot;swing&quot;, funct
 &lt;&lt;/script&gt;&gt;
 &lt;&lt;/linkappend&gt;&gt;
 &lt;/span&gt;
+&lt;&lt;/nobr&gt;&gt;\
 
 &lt;span style=&quot;display: none&quot; id=&quot;phase2-text&quot;&gt;
 Après avoir passé de nombreuses années à étudier les différentes facettes du droit, le diplôme en poche, Jean Charles de la Haute a décidé de visiter du pays. Il se retrouve ainsi à vaguer de ville en village et de village en ville, et à discuter avec diverses personnes, intellectuelles ou non, afin d&#39;argumenter sur tout sujet.
@@ -1505,7 +1563,7 @@ Alors que vous traversez cette rivière gelée, vous entendez des fissures se pr
 	&lt;&lt;remove &quot;#riviere_lutte&quot;&gt;&gt;
 	&lt;&lt;append &quot;#riviere_result&quot;&gt;&gt;
 	Lentement, vous sentez vos membres s&#39;engourdir jusqu&#39;au point de ne plus pouvoir bouger. Petit à petit, vos yeux se ferment et vous  partez à la dérive dans un sommeil sans fin.
-	&lt;&lt;set $badend to true&gt;&gt;&lt;&lt;set $bad to &quot;riviere&quot;&gt;&gt;
+	&lt;&lt;set $bad_end to &quot;riviere&quot;&gt;&gt;
 	[[Fin-&gt;fin]]
 	&lt;&lt;/append&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
@@ -1574,9 +1632,7 @@ Le scout vous paraissant tellement intéressé par sa lecture, vous décidez de 
 [[Suite]]
 		&lt;&lt;/replace&gt;&gt;
 	&lt;&lt;/link&gt;&gt;
-&lt;/span&gt;
-
-</tw-passagedata>
+&lt;/span&gt;</tw-passagedata>
 <tw-passagedata pid="31" name="Clairière" tags="" position="1881,1385">&lt;&lt;if $livre eq true&gt;&gt;
 Alors que vous avancez dans le sentier, les bruits deviennent de plus en plus clairs et vous devinez une conversation. Alors que vous alliez vous manifester, vous voyez des animaux parlant entre-eux.Etant troublé que des animaux puissent être instruits, vous rigolez silencieusement en les imaginant dans une classe en train d’étudier un livre. Absorbé par leur conversation, ils ne semblent pas vous avoir vu...
 [[Se manifester-&gt;Manifestation]]
@@ -1614,13 +1670,13 @@ Lassé de ne pas comprendre la présence d’une telle porte dans un endroit aus
 &lt;/span&gt;</tw-passagedata>
 <tw-passagedata pid="33" name="lieusecret" tags="" position="3565,1065">Vous entrez donc dans ce tunnel où il ne fait pas froid. Au fur et à mesure de votre progression les torches accrochées au mur s&#39;allument. Alors que vous tournez dans ce couloir, vous débouchez sur un panneau où il est inscrit &quot;EN TRAVAUX DANGER !!!&quot;. Apparemment, les ouvriers devant construire cet endroit n&#39;ont pas terminé leur tâche car le couloir s&#39;arrête ici. Déçu, vous n&#39;avez plus qu&#39;à repartir...
 [[Retourner sur vos pas-&gt;jardincabane]] </tw-passagedata>
-<tw-passagedata pid="34" name="menu" tags="" position="233,866">&lt;img id=&quot;game_title&quot; alt=&quot;Chaudron magique&quot; src=&quot;media/pictures/title.png&quot; /&gt;
+<tw-passagedata pid="34" name="menu" tags="" position="234,866">&lt;img id=&quot;game_title&quot; alt=&quot;Chaudron magique&quot; src=&quot;media/pictures/title.png&quot; /&gt;
 
 Chaudron magique est un jeu narratif à embranchements qui vous confronte à la maladresse de Zek le sorcier. Oserez-vous l&#39;aider à maîtriser sa terrible décoction, ou serez-vous condamné(e) à en subir les effets des plus... //magiques// ?
 
 Qui sait, à la fin de votre périple aurez-vous peut-être la chance de le raisonner...
 
-[[Jouer-&gt;Intro]]
+[[Jouer-&gt;VarsReset]]
 [[Succès-&gt;succes]]
 [[Crédits]]</tw-passagedata>
 <tw-passagedata pid="35" name="Crédits" tags="" position="383,1017">!Crédits
@@ -1799,9 +1855,8 @@ Alors même que les nains allaient commencer à balancer une flopée de jurons, 
 &lt;/span&gt;
 &lt;&lt;/if&gt;&gt;
 </tw-passagedata>
-<tw-passagedata pid="40" name="argumentation" tags="" position="4076,1344">Arrivant alors à votre but premier d’échanger avec cet étrange personnage, vous vous installez confortablement pour débuter votre échange, qui promet d&#39;être riche, quoique sans doute mouvementé. Vous commencez donc à discuter à propos de la sorcellerie. D’abord, argumentant chacun votre tour, pour défendre votre point de vue sur l’utilisation de sortilèges à tout bout de champ, votre discussion diverge rapidement pour traiter de sujets de plus en plus vastes. Le temps défilant alors, la conversation se poursuit jour et nuit et nuit et jour… A ce jour, personne ne sait de qui, du sorcier ou du promeneur, a réussi à clouer le bec de l’autre.
-[[The End-&gt;fin]]
-</tw-passagedata>
+<tw-passagedata pid="40" name="argumentation" tags="" position="4076,1344">Arrivant alors à votre but premier d’échanger avec cet étrange personnage, vous vous installez confortablement pour débuter votre échange, qui promet d&#39;être riche, quoique sans doute mouvementé. Vous commencez donc à discuter à propos de la sorcellerie. D’abord, argumentant chacun votre tour, pour défendre votre point de vue sur l’utilisation de sortilèges à tout bout de champ, votre discussion diverge rapidement pour traiter de sujets de plus en plus vastes. Le temps défilant alors, la conversation se poursuit jour et nuit et nuit et jour… À ce jour, personne ne sait de qui, du sorcier ou du promeneur, a réussi à clouer le bec de l’autre.
+[[The End-&gt;fin]]</tw-passagedata>
 <tw-passagedata pid="41" name="jugement" tags="" position="4046,657">&lt;&lt;set $variable to random(1,5)&gt;&gt;
 
 C&#39;est alors que le sorcier jette un sort et que tous les individus impliqués dans ses actions se matérialisent devant vous :
@@ -1842,20 +1897,37 @@ Qui appeler à s&#39;exprimer ?
 &lt;&lt;if $scoutaide  eq true&gt;&gt;[[Ces scouts pleins de joie de vivre pourraient peut-être lui montrer, dans la bonne humeur, qu&#39;il faut qu&#39;il soit plus prudent à l&#39;avenir.-&gt;finScouts]]&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $corne eq true&gt;&gt;[[Le rhinocéros semble vous regarder d&#39;un air à la fois ennuyé et menaçant et vous ne voyez pas bien ce qu&#39;il pourrait faire pour vous mais, après tout, dans l&#39;absolu: pourquoi pas ?-&gt;finRhino]]&lt;&lt;/if&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="42" name="fin" tags="" position="5007,1063">&lt;&lt;if $badend eq true&gt;&gt; Félicitation, vous avez débloqué le succès &lt;&lt;if $bad eq &quot;riviere&quot;&gt;&gt;&lt;&lt;set $mouille to true&gt;&gt; &quot;Mouillé&quot;, pour être resté dans la glace plutôt que de chercher à survivre, correspondant à la fin prématurée n°1/4&lt;&lt;/if&gt;&gt;&lt;&lt;if $bad eq &quot;discussion&quot;&gt;&gt;&lt;&lt;set $baratineur to true&gt;&gt; &quot;Baratineur &quot;, pour avoir voulu clouer le bec au lapin plutôt que de poursuivre votre route, correspondant à la fin prématurée n°2/4&lt;&lt;/if&gt;&gt;&lt;&lt;if $bad eq &quot;ravin&quot;&gt;&gt;&lt;&lt;set $speleologue to true&gt;&gt; &quot;Spéléologue&quot;, pour avoir surestimé votre chance face au raccourci escarpé, correspondant à la fin prématurée n°3/4&lt;&lt;/if&gt;&gt;&lt;&lt;if $bad eq &quot;mange&quot;&gt;&gt;&lt;&lt;set $jambon to true&gt;&gt; &quot;Jambon&quot;, pour avoir sous-estimé les réflexes du vieux dragon, correspondant à la fin prématurée n°4/4&lt;&lt;/if&gt;&gt;. Malheureusement pour vous, vous n’avez pas réussi à finir le jeu. Vous pouvez recommencer l’histoire qui comporte 18 combinaisons d&#39;ingrédients différentes, modifiant l&#39;environnement  du promeneur...
+<tw-passagedata pid="42" name="fin" tags="" position="5007,1063">&lt;&lt;if $bad_end != false&gt;&gt;
+Félicitations, vous avez débloqué le succès\
+&lt;&lt;switch $bad_end&gt;&gt;
+&lt;&lt;case &quot;riviere&quot;&gt;&gt;
+&lt;&lt;set $succes.push(&quot;mouille&quot;)&gt;&gt;
+&quot;&#39;&#39;Mouillé&#39;&#39;&quot;, pour être resté dans la glace plutôt que de chercher à survivre, correspondant à la fin prématurée n°1 sur 4.
+&lt;&lt;case &quot;discussion&quot;&gt;&gt;
+&lt;&lt;set $succes.push(&quot;baratineur&quot;)&gt;&gt;
+&quot;&#39;&#39;Baratineur&#39;&#39;&quot;, pour avoir voulu clouer le bec au lapin plutôt que de poursuivre votre route, correspondant à la fin prématurée n°2 sur 4.
+&lt;&lt;case &quot;ravin&quot;&gt;&gt;
+&lt;&lt;set $succes.push(&quot;speleologue&quot;)&gt;&gt;
+&quot;&#39;&#39;Spéléologue&#39;&#39;&quot;, pour avoir surestimé votre chance face au raccourci escarpé, correspondant à la fin prématurée n°3 sur 4.
+&lt;&lt;case &quot;mange&quot;&gt;&gt;
+&lt;&lt;set $succes.push(&quot;jambon&quot;)&gt;&gt;
+&quot;&#39;&#39;Jambon&#39;&#39;&quot;, pour avoir sous-estimé les réflexes du vieux dragon, correspondant à la fin prématurée n°4 sur 4.
+&lt;&lt;/switch&gt;&gt;
 
-&lt;&lt;elseif $dream eq true&gt;&gt; Vous vous éveillez brusquement dans la chambre de l&#39;auberge Au Sanglier Chaud que vous aviez louée la veille au sein du petit village de Spass-Riain-Issy. Durant à peine une seconde quelques images de votre rêve vous reviennent à l&#39;esprit, puis son souvenir vous échappe, définitivement. Cela vous agace et vous passez de longues minutes à essayer de vous rappeler ce dont il s&#39;agissait. Mais l&#39;échec répété a raison de vous et vous finissez par abandonner la partie. Vous vous levez et quittez votre chambre pour aller prendre un petit-déjeûner et vous préparer à reprendre vos pérégrinations de promeneur éclairé.
+Malheureusement pour vous, vous n’avez pas réussi à finir le jeu. Vous pouvez recommencer l’histoire qui comporte 18 combinaisons d&#39;ingrédients différentes, modifiant alors l&#39;environnement du promeneur...
+
+&lt;&lt;elseif $dream eq true&gt;&gt;
+&lt;&lt;set $succes.push(&quot;dream&quot;)&gt;&gt;
+Vous vous éveillez brusquement dans la chambre de l&#39;auberge //Au Sanglier Chaud// que vous aviez louée la veille au sein du petit village de Spass-Riain-Issy. Durant à peine une seconde quelques images de votre rêve vous reviennent à l&#39;esprit, puis son souvenir vous échappe, définitivement. Cela vous agace et vous passez de longues minutes à essayer de vous rappeler ce dont il s&#39;agissait. Mais l&#39;échec répété a raison de vous et vous finissez par abandonner la partie. Vous vous levez et quittez votre chambre pour aller prendre un petit-déjeûner et vous préparer à reprendre vos pérégrinations de promeneur éclairé.
 
 Au loin dans la forêt, à votre insu, une explosion retentit...
 
-
-
-
 Félicitations, vous avez terminé le jeu (quoique d&#39;une façon très particulière) !!! Il ne s&#39;agissait que de la version bêta mais nous espérons qu’il vous a plu ! Vous pouvez recommencer l’histoire qui comporte de nombreuses autres issues et aventures possibles selon vos choix. N&#39;hésitez pas à nous faire un retour.
 
-&lt;&lt;else&gt;&gt; Félicitations, vous avez terminé le jeu !!! Il ne s&#39;agissait que de la version bêta mais nous espérons qu’il vous a plu ! Vous pouvez recommencer l’histoire qui comporte de nombreuses autres issues et aventures possibles selon vos choix. N&#39;hésitez pas à nous faire un retour.
-
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;set $succes.push(&quot;default&quot;)&gt;&gt;
+Félicitations, vous avez terminé le jeu !!! Il ne s&#39;agissait que de la version bêta mais nous espérons qu’il vous a plu ! Vous pouvez recommencer l’histoire qui comporte de nombreuses autres issues et aventures possibles selon vos choix. N&#39;hésitez pas à nous faire un retour.
+&lt;&lt;/if&gt;&gt;\
 
 [[Retourner au menu-&gt;menu]]</tw-passagedata>
 <tw-passagedata pid="43" name="finDragon" tags="" position="4669,415">Comme vous avez bien compris que discuter avec le dragon peut s&#39;avérer être dangereux à qui n&#39;est pas prudent, vous vous approchez de l&#39;imposante créature et lui criez:
@@ -1864,13 +1936,13 @@ Félicitations, vous avez terminé le jeu (quoique d&#39;une façon très partic
 
 Visiblement flattée, la bête découvre des dents aiguisées comme des rasoirs, sa bouche se déformant en un inquiétant rictus réptilien qu&#39;il devait imaginer ressemblant à un sourire.
 
--Avec plaisir ! rugit-il en s&#39;approchant du Sorcier occupé à se curer les dents, visiblement peu inquiété par la créature ancestrale. Magicien ! Il y a longtemps tu m&#39;as jeté un sort, métamorphosé en une vulgaire monture inanimée que tu pouvais utiliser à ta guise, je n&#39;étais plus rien et mon trésor a été volé ! Tu dois répondre de tes actes et je propose de te... DEVORER !!!!
+-Avec plaisir ! rugit-il en s&#39;approchant du Sorcier occupé à se curer les dents, visiblement peu inquiété par la créature ancestrale. Magicien ! Il y a longtemps tu m&#39;as jeté un sort, métamorphosé en une vulgaire monture inanimée que tu pouvais utiliser à ta guise, je n&#39;étais plus rien et mon trésor a été volé ! Tu dois répondre de tes actes et je propose de te... DÉVORER !!!!
 
 Le dragon étend alors brusquement son long cou écailleux, à la surprise générale, toutes dents dehors, en direction du vieillard barbu. Tout le monde est choqué, terrifié, et c&#39;est la débandade: chacun part en criant, sûr qu&#39;il est le prochain à passer à la casserolle. Tout le monde sauf le magicien, qui n&#39;en est pas à sa première rencontre avec ce genre de canaille, et vous-même, qui avez prêté serment devant l&#39;ordre des promeneurs de ne jamais courir (il faut partir à point). Vous assistez alors à une scène incroyable: le magicien, d&#39;un mouvement des bras et d&#39;une formule bien énoncée, métamorphose le dragon furieux en un docile petit lézard qui disparaît de votre vue dans l&#39;herbe. Tout s&#39;est passé en l&#39;espace d&#39;un souffle.
 
 Les fuyards reviennent peu à peu près de vous, après avoir constaté que le danger était écarté, mais plus personne ne semble très motivé par l&#39;idée de demander des comptes au magicien. La démonstration de force était très claire. Celui-ci, s&#39;en rendant bien compte, retourne vers son domicile en ricanant.
 
-- A une prochaine fois, les ploucs !
+- À une prochaine fois, les ploucs !
 
 Dépité, vous décidez de faire de même que vos compagnons, qui commencent déjà à se disperser, gênés, et vous vous mettez en route pour d&#39;autres contrées, et d&#39;autres aventures...
 
@@ -1906,19 +1978,62 @@ Une fois arrivé à son côté. Vous restez un moment interdit, à l&#39;instar 
 
 Puisque vous ne pouvez pas simplement renoncer, vous prenez une longue inspiration puis, sans hésiter mais en fermant très fort les yeux, vous assénez une grande claque à l&#39;arrière-train du rhinocéros. Cette fois, la réaction ne se fait pas attendre, bien que ce ne soit pas du tout celle à laquelle vous vous attendiez. Vous sentez une soudaine chaleur près de vous et entrouvrez un oeil. Vous êtes face à un rhinocéros luminescent dont la corne est devenue multicolore et brillante. Définitivement, il y a quelque chose de magique avec ce rhinocéros. Cela dit c&#39;est plutôt joli.
 
-Toutefois, les choses ne s&#39;arrêtent pas là: voilà que le rhinocéros se met maintenant à grandir. En un instant, il fait deux fois sa taille précédente, et cela continue jusqu&#39;à ce qu&#39;il soit aussi haut que la cîme des arbres. Vous vous éloignez en vitesse de la créature, qui ne semble pas pour autant plus motivée à bouger. Un regard autour de vous vous rassure au moins quant au fait que vous n&#39;êtes pas le seul surpris.
+Toutefois, les choses ne s&#39;arrêtent pas là : voilà que le rhinocéros se met maintenant à grandir. En un instant, il fait deux fois sa taille précédente, et cela continue jusqu&#39;à ce qu&#39;il soit aussi haut que la cîme des arbres. Vous vous éloignez en vitesse de la créature, qui ne semble pas pour autant plus motivée à bouger. Un regard autour de vous vous rassure au moins quant au fait que vous n&#39;êtes pas le seul surpris.
 
 - Bon... dit soudain le magicien, après un long moment de silence médusé. Je crois que là je commence à voir pourquoi il faut faire attention avec la magie...
 
 [[The End-&gt;fin]]</tw-passagedata>
-<tw-passagedata pid="48" name="succes" tags="" position="440,792">Succès déverrouillés :
--&lt;&lt;if $mouille eq true&gt;&gt; Mouillé : être resté dans la glace plutôt que de chercher à survivre&lt;&lt;else&gt;&gt;??&lt;&lt;/if&gt;&gt;
--&lt;&lt;if $baratineur eq true &gt;&gt; Baratineur : avoir voulu clouer le bec au lapin plutôt que de poursuivre votre route&lt;&lt;else&gt;&gt;??&lt;&lt;/if&gt;&gt;
--&lt;&lt;if $speleologue eq true &gt;&gt; Spéléologue : avoir surestimé votre chance face au raccourci escarpé&lt;&lt;else&gt;&gt;??&lt;&lt;/if&gt;&gt;
--&lt;&lt;if $jambon eq true &gt;&gt; Jambon : avoir sous-estimé les réflexes du vieux dragon&lt;&lt;else&gt;&gt;??&lt;&lt;/if&gt;&gt;
+<tw-passagedata pid="48" name="succes" tags="" position="438,791">!Succès déverrouillés
+&lt;ul&gt;
+&lt;&lt;for _i=0; _i&lt;$succes_map.length; _i++&gt;&gt;
+&lt;&lt;if $succes.includes($succes_map[_i][&quot;id&quot;])&gt;&gt;\
+&lt;li&gt;&#39;&#39;&lt;&lt;print $succes_map[_i][&quot;name&quot;]&gt;&gt;&#39;&#39; : \
+&lt;&lt;print $succes_map[_i][&quot;desc&quot;]&gt;&gt;&lt;/li&gt;\
+&lt;&lt;else&gt;&gt;\
+&lt;li style=&quot;color: grey&quot;&gt;&#39;&#39;&lt;&lt;print $succes_map[_i][&quot;name&quot;]&gt;&gt;&#39;&#39; : Vous n&#39;avez pas encore débloqué ce succès !&lt;/li&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/for&gt;&gt;
+&lt;/ul&gt;
+[[Retour au menu-&gt;menu]]</tw-passagedata>
+<tw-passagedata pid="49" name="VarsReset" tags="" position="150,1021">&lt;!--ingrédients--&gt;
 
-[[Retour au menu-&gt;menu]] 
-</tw-passagedata>
+&lt;&lt;set $livre to false&gt;&gt;
+&lt;&lt;set $gateau to false
+
+&lt;&lt;set $glace to false&gt;&gt;
+&lt;&lt;set $poussièredefeu to false&gt;&gt;
+&lt;&lt;set $champignon to false&gt;&gt;
+
+&lt;&lt;set $corne to false&gt;&gt;
+&lt;&lt;set $tabac to false&gt;&gt;
+&lt;&lt;set $bave to false&gt;&gt;
+&lt;&lt;set $orties to false&gt;&gt;
+&lt;&lt;set $os to false&gt;&gt;
+
+
+&lt;!--objets--&gt;
+
+&lt;&lt;set $pieceor to false&gt;&gt;
+&lt;&lt;set $tresor to false&gt;&gt;
+
+&lt;&lt;set $allumette to true&gt;&gt;
+&lt;&lt;set $lampe to true&gt;&gt;
+&lt;&lt;set $baton to true&gt;&gt;
+&lt;&lt;set $couteau to true&gt;&gt;
+
+
+&lt;!--États--&gt;
+
+&lt;&lt;set $dragon to &quot;moto&quot;&gt;&gt;
+&lt;&lt;set $scoutperduvu to false&gt;&gt;
+&lt;&lt;set $livrescout to false&gt;&gt;
+
+&lt;&lt;set $scoutaide to false&gt;&gt;
+&lt;&lt;set $aidernains to false&gt;&gt;
+&lt;&lt;set $cabaneexplose to false&gt;&gt;
+
+
+&lt;&lt;goto [[Intro]]&gt;&gt;</tw-passagedata>
 </tw-storydata>
 </div>
 	<script id="script-sugarcube" type="text/javascript">
