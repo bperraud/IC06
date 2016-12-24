@@ -553,25 +553,12 @@ Arrivé à un embranchement, vous voyez deux chemins qui s&#39;offrent à vous :
 [[Aller vers le chemin sombre-&gt;chemin sombre]]
 [[Tenter le raccourci-&gt;raccourci]]</tw-passagedata>
 <tw-passagedata pid="9" name="chemin sombre" tags="" position="2778,1011">Vous avancez alors en direction du chemin sombre où la visibilité est faible à cause de la densité des arbres environnants.
-&lt;&lt;set $variable to random(1,10)&gt;&gt;
-&lt;&lt;if $allumette eq true&gt;&gt;
-	&lt;&lt;if $variable &lt;6&gt;&gt;
-[[Allumer une allumette pour éclairer le chemin-&gt;pièce or]]
-	&lt;&lt;else&gt;&gt;
-[[Allumer une allumette pour éclairer le chemin-&gt;antre du dragon]]
-	&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $lampe eq true&gt;&gt;
-	&lt;&lt;if $variable &lt;10&gt;&gt;
-[[Sortir la lampe de poche pour éclairer le chemin-&gt;pièce or]]
-	&lt;&lt;else&gt;&gt;
-[[Sortir la lampe de poche pour éclairer le chemin-&gt;antre du dragon]]
-	&lt;&lt;/if&gt;&gt;
-&lt;&lt;else&gt;&gt;
-	&lt;&lt;if $allumette eq false&gt;&gt;
-Après avoir fouillé vos poches sans succès, n&#39;ayant plus de moyens d&#39;éclairer la route, vous vous enfoncez dans l&#39;obscurité.
-	&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $variable to random(1,10)&gt;&gt;&lt;&lt;if $allumette eq true&gt;&gt;&lt;&lt;if $variable &lt;6&gt;&gt;
+[[Allumer une allumette pour éclairer le chemin-&gt;pièce or]]&lt;&lt;else&gt;&gt;
+[[Allumer une allumette pour éclairer le chemin-&gt;antre du dragon]]&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $lampe eq true&gt;&gt;&lt;&lt;if $variable &lt;10&gt;&gt;
+[[Sortir la lampe de poche pour éclairer le chemin-&gt;pièce or]]&lt;&lt;else&gt;&gt;
+[[Sortir la lampe de poche pour éclairer le chemin-&gt;antre du dragon]]&lt;&lt;/if&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;if $allumette eq false&gt;&gt;
+Après avoir fouillé vos poches sans succès, n&#39;ayant plus de moyens d&#39;éclairer la route, vous vous enfoncez dans l&#39;obscurité.&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 [[Continuer et rester dans la pénombre-&gt;antre du dragon]]
 </tw-passagedata>
 <tw-passagedata pid="10" name="raccourci" tags="" position="3011,1264">&lt;&lt;set $variable to random(1,10)&gt;&gt;
