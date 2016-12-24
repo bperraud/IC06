@@ -430,7 +430,7 @@ Vous traversez alors la rivière, le sac au-dessus de votre tête et le bâton �
 Vous traversez alors la rivière, le sac au-dessus de votre tête, et vous continuez tranquillement votre route après avoir séché vos vêtement au soleil.
 &lt;&lt;/if&gt;&gt;
 [[suite-&gt;bruit]]</tw-passagedata>
-<tw-passagedata pid="3" name="bruit" tags="" position="1750,1266">&lt;&lt;if $livre eq false&gt;&gt;
+<tw-passagedata pid="3" name="bruit" tags="" position="1750,1267">&lt;&lt;if $livre eq false&gt;&gt;
 	&lt;&lt;if $os eq false&gt;&gt;
 Alors que vous vagabondez dans vos idées, vous apercevez un petit sentier sur votre droite menant certainement à la clairière mentionnée par les habitants...
 [[Aller voir la clairière-&gt;Clairière]]
@@ -1471,10 +1471,10 @@ Les nains s’éloignant, vous vous dirigez devant la porte de la cabane…
 &lt;&lt;/link&gt;&gt;
 &lt;/span&gt;
 </tw-passagedata>
-<tw-passagedata pid="27" name="retourdiscret" tags="" position="2074,1446">N&#39;écoutant que votre courage mais craignant la rencontre d’un squelette, votre plus grande phobie,  vous revenez sur vos pas, sans que les étranges créatures ne s&#39;en rendent compte.
+<tw-passagedata pid="27" name="retourdiscret" tags="" position="2074,1446">N&#39;écoutant que votre courage &lt;&lt;if $os eq true&gt;&gt;mais craignant la rencontre d’un squelette, votre plus grande phobie,  &lt;&lt;/if&gt;&gt;vous revenez sur vos pas, sans que les étranges créatures ne s&#39;en rendent compte.
 [[Continuer-&gt;Groupe de scout]]
 </tw-passagedata>
-<tw-passagedata pid="28" name="retourfuite" tags="" position="2071,1595">Perdant tout courage avec la crainte de rencontrer un squelette, votre plus grande phobie,  vous prenez vos jambes à votre cou et vous partez sans vous retourner. Une fois à bonne distance, vous reprenez votre souffle ...
+<tw-passagedata pid="28" name="retourfuite" tags="" position="2070,1595">Perdant tout courage &lt;&lt;if $os eq true&gt;&gt;avec la crainte de rencontrer un squelette, votre plus grande phobie,  &lt;&lt;/if&gt;&gt;vous prenez vos jambes à votre cou et vous partez sans vous retourner. Une fois à bonne distance, vous reprenez votre souffle ...
 &lt;&lt;set $variable to random(1,10)&gt;&gt;
 &lt;&lt;if $variable &gt;5&gt;&gt;
 &lt;&lt;set $lampe to false&gt;&gt;
