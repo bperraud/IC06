@@ -258,6 +258,7 @@ img.chaudron {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 
@@ -356,6 +357,7 @@ window.blurElement = function (element, size, sduration) {
         '-o-transition':'all ' + sduration + 's ease-out'
 	});
 }
+
 
 
 
@@ -572,7 +574,7 @@ Après avoir fouillé vos poches sans succès, n&#39;ayant plus de moyens d&#39;
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;[[Continuer et rester dans la pénombre-&gt;antre du dragon]]
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="10" name="raccourci" tags="" position="3011,1263">&lt;&lt;set $variable to random(1,10)&gt;&gt;
+<tw-passagedata pid="10" name="raccourci" tags="" position="3011,1264">&lt;&lt;set $variable to random(1,10)&gt;&gt;
 &lt;&lt;if $baton eq true&gt;&gt;&lt;!-- ##########Avance avec bâton######--&gt;
 Souhaitant gagner du temps, vous empruntez le raccourci et aidé de votre bâton vous avancez sans glisser ni chuter dans le ravin.
 [[Poursuivre-&gt;jardincabane]]
@@ -630,7 +632,7 @@ N’ayant pas de bâton à disposition et aucun outil pour en fabriquer un, malg
 [[Suite-&gt;jardincabane]]
 		&lt;&lt;/replace&gt;&gt;
 			&lt;&lt;else&gt;&gt;
-&lt;&lt;replace &quot;#glisse&quot;&gt;&gt;
+&lt;&lt;replace &quot;#roule&quot;&gt;&gt;
 … mais bien mal vous en a pris car vous chutez dans le ravin après avoir glissé sur une pierre.
 &lt;&lt;set $badend to true&gt;&gt;&lt;&lt;set $bad to &quot;ravin&quot;&gt;&gt;
 [[Fin-&gt;fin]]
