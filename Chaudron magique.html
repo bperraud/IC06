@@ -357,28 +357,7 @@ window.blurElement = function (element, size, sduration) {
         '-moz-transition':'all ' + sduration + 's ease-out',
         '-o-transition':'all ' + sduration + 's ease-out'
 	});
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</script><tw-passagedata pid="1" name="Rivière" tags="" position="1340,1261">&lt;&lt;silently&gt;&gt;
+}</script><tw-passagedata pid="1" name="Rivière" tags="" position="1340,1261">&lt;&lt;silently&gt;&gt;
 &lt;&lt;set $var to random(1,10)&gt;&gt;
 &lt;&lt;/silently&gt;&gt;\
 &lt;&lt;if $glace eq true&gt;&gt;
@@ -1540,17 +1519,39 @@ Retournant sur la route, vous vous sentez léger… trop léger… et en effet, 
 </tw-passagedata>
 <tw-passagedata pid="29" name="Passer au travers de la glace" tags="" position="1479,1017">&lt;&lt;silently&gt;&gt;
 &lt;&lt;set $nb_click to 0&gt;&gt;
+&lt;&lt;script&gt;&gt;
+$(&quot;#passages&quot;).css({
+  &#39;filter&#39;: &#39;saturate(0%)&#39;,
+  &#39;webkitFilter&#39;: &#39;saturate(0%)&#39;,
+  &#39;mozFilter&#39;: &#39;saturate(0%)&#39;,
+  &#39;oFilter&#39;: &#39;saturate(0%)&#39;,
+  &#39;msFilter&#39;: &#39;saturate(0%)&#39;,
+  &#39;transition&#39;: &#39;all .1s ease-out&#39;,
+  &#39;-webkit-transition&#39;: &#39;all .1s ease-out&#39;,
+  &#39;-moz-transition&#39;: &#39;all .1s ease-out&#39;,
+  &#39;-o-transition&#39;: &#39;all .1s ease-out&#39;
+});
+&lt;&lt;/script&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
-&lt;&lt;nobr&gt;&gt;
+&lt;&lt;nobr&gt;&gt;\
 Alors que vous traversez cette rivière gelée, vous entendez des fissures se propager à chacun de vos pas. Alors que vous regrettez d&#39;avoir gardé autant de poids sur vous, la glace se brise sous vos pieds, vous retrouvant alors dans une eau gelée dont vous devez vite
 &lt;&lt;linkappend &quot;vous extirper avant de mourir gelé...&quot;&gt;&gt;
 	&lt;&lt;append &quot;#riviere_lutte&quot;&gt;&gt;
 		&lt;&lt;link &quot;Luttez !!!&quot;&gt;&gt;
 			&lt;&lt;set $nb_click to $nb_click + 1&gt;&gt;
+			&lt;&lt;script&gt;&gt;
+			var nb_click = state.active.variables.nb_click;
+			$(&quot;#passages&quot;).css({
+			&#39;filter&#39;: &#39;saturate(&#39;+nb_click*20+&#39;%)&#39;,
+			&#39;webkitFilter&#39;: &#39;saturate(&#39;+nb_click*20+&#39;%)&#39;,
+			&#39;mozFilter&#39;: &#39;saturate(&#39;+nb_click*20+&#39;%)&#39;,
+			&#39;oFilter&#39;: &#39;saturate(&#39;+nb_click*20+&#39;%)&#39;,
+			&#39;msFilter&#39;: &#39;saturate(&#39;+nb_click*20+&#39;%)&#39;
+			});
+			&lt;&lt;/script&gt;&gt;
 			&lt;&lt;if $nb_click &gt;= 5&gt;&gt;
 	&lt;&lt;append &quot;#riviere_result&quot;&gt;&gt;
 	Frigorifié, vous atteignez enfin l&#39;autre rive. Pour vous réchauffer, vous sortez la couverture de votre sac et vos vêtements séchant au soleil, vous vous demandez encore par quelle magie cette rivière peut être gelée.
-	&lt;!-- retour image normale --&gt;
 	Vos vêtements secs, et réchauffé, vous pouvez reprendre votre périple...
 	[[Reprendre la route-&gt;bruit]]
 	&lt;&lt;/append&gt;&gt;
@@ -1562,9 +1563,19 @@ Alors que vous traversez cette rivière gelée, vous entendez des fissures se pr
 	&lt;&lt;if $nb_click &lt; 5&gt;&gt;
 	&lt;&lt;remove &quot;#riviere_lutte&quot;&gt;&gt;
 	&lt;&lt;append &quot;#riviere_result&quot;&gt;&gt;
-	Lentement, vous sentez vos membres s&#39;engourdir jusqu&#39;au point de ne plus pouvoir bouger. Petit à petit, vos yeux se ferment et vous  partez à la dérive dans un sommeil sans fin.
-	&lt;&lt;set $bad_end to &quot;riviere&quot;&gt;&gt;
-	[[Fin-&gt;fin]]
+	Lentement, vous sentez vos membres s&#39;engourdir jusqu&#39;au point de ne plus pouvoir bouger. Petit à petit, vos yeux se ferment et vous partez à la dérive dans
+	&lt;&lt;link [[un sommeil sans fin.-&gt;fin]]&gt;&gt;
+		&lt;&lt;set $bad_end to &quot;riviere&quot;&gt;&gt;
+		&lt;&lt;script&gt;&gt;
+			$(&quot;#passages&quot;).css({
+			&#39;filter&#39;: &#39;saturate(100%)&#39;,
+			&#39;webkitFilter&#39;: &#39;saturate(100%)&#39;,
+			&#39;mozFilter&#39;: &#39;saturate(100%)&#39;,
+			&#39;oFilter&#39;: &#39;saturate(100%)&#39;,
+			&#39;msFilter&#39;: &#39;saturate(100%)&#39;
+			});
+		&lt;&lt;/script&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
 	&lt;&lt;/append&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
 	&lt;&lt;/timed&gt;&gt;
