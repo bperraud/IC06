@@ -241,8 +241,12 @@ img.chaudron {
 	position: absolute;
 }
 
+/* Badges */
 
-
+img.badge {
+	width: 50px;
+	vertical-align: middle;
+}
 
 
 
@@ -357,7 +361,8 @@ window.blurElement = function (element, size, sduration) {
         '-moz-transition':'all ' + sduration + 's ease-out',
         '-o-transition':'all ' + sduration + 's ease-out'
 	});
-}</script><tw-passagedata pid="1" name="Rivière" tags="" position="1340,1261">&lt;&lt;silently&gt;&gt;
+}
+</script><tw-passagedata pid="1" name="Rivière" tags="" position="1340,1261">&lt;&lt;silently&gt;&gt;
 &lt;&lt;set $var to random(1,10)&gt;&gt;
 &lt;&lt;/silently&gt;&gt;\
 &lt;&lt;if $glace eq true&gt;&gt;
@@ -1995,13 +2000,17 @@ Toutefois, les choses ne s&#39;arrêtent pas là : voilà que le rhinocéros se 
 
 [[The End-&gt;fin]]</tw-passagedata>
 <tw-passagedata pid="48" name="succes" tags="" position="438,791">!Succès déverrouillés
-&lt;ul&gt;
+&lt;ul style=&quot;list-style-type: none&quot;&gt;
 &lt;&lt;for _i=0; _i&lt;$succes_map.length; _i++&gt;&gt;
 &lt;&lt;if $succes.includes($succes_map[_i][&quot;id&quot;])&gt;&gt;\
-&lt;li&gt;&#39;&#39;&lt;&lt;print $succes_map[_i][&quot;name&quot;]&gt;&gt;&#39;&#39; : \
+&lt;li&gt;\
+&lt;&lt;print &quot;&lt;img class=&#39;badge&#39; src=&#39;media/pictures/badges/&quot; + $succes_map[_i][&#39;id&#39;] + &quot;_true.png&#39; alt=&#39;badge&#39;/&gt;&quot;&gt;&gt; \
+&#39;&#39;&lt;&lt;print $succes_map[_i][&quot;name&quot;]&gt;&gt;&#39;&#39; : \
 &lt;&lt;print $succes_map[_i][&quot;desc&quot;]&gt;&gt;&lt;/li&gt;\
 &lt;&lt;else&gt;&gt;\
-&lt;li style=&quot;color: grey&quot;&gt;&#39;&#39;&lt;&lt;print $succes_map[_i][&quot;name&quot;]&gt;&gt;&#39;&#39; : Vous n&#39;avez pas encore débloqué ce succès !&lt;/li&gt;\
+&lt;li style=&quot;color: grey&quot;&gt;\
+&lt;&lt;print &quot;&lt;img class=&#39;badge&#39; src=&#39;media/pictures/badges/&quot; + $succes_map[_i][&#39;id&#39;] + &quot;.png&#39; alt=&#39;badge&#39;/&gt;&quot;&gt;&gt; \
+&#39;&#39;&lt;&lt;print $succes_map[_i][&quot;name&quot;]&gt;&gt;&#39;&#39; : Vous n&#39;avez pas encore débloqué ce succès !&lt;/li&gt;\
 &lt;&lt;/if&gt;&gt;\
 &lt;&lt;/for&gt;&gt;
 &lt;/ul&gt;
