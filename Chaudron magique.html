@@ -1347,8 +1347,9 @@ N&#39;ayant pas eu le réflexe de lancer un sort de protection, vous voyez le ch
 &lt;&lt;set $cabaneexplose to false&gt;&gt;
 
 
-&lt;!--succès--&gt;
+&lt;!--Succès--&gt;
 &lt;&lt;set $bad_end to false&gt;&gt;
+&lt;&lt;set $bad_ends to []&gt;&gt;
 &lt;&lt;set $succes to []&gt;&gt;
 &lt;&lt;set $succes_map to [
 	{
@@ -1696,9 +1697,19 @@ Chaudron magique est un jeu narratif à embranchements qui vous confronte à la 
 
 Qui sait, à la fin de votre périple aurez-vous peut-être la chance de le raisonner...
 
+&lt;div style=&quot;text-align: center&quot;&gt;\
 [[Jouer-&gt;VarsReset]]
-[[Succès-&gt;succes]]
-[[Crédits]]</tw-passagedata>
+&lt;&lt;link &quot;Repartir de zéro&quot;&gt;&gt;\
+&lt;&lt;script&gt;&gt;
+var r = confirm(&quot;Êtes-vous sûr(e) de vouloir continuer ?&quot;);
+if (r == true) {
+	Engine.restart();
+}
+&lt;&lt;/script&gt;&gt;\
+&lt;&lt;/link&gt;&gt;
+[[Voir les succès débloqués-&gt;succes]]
+[[Crédits]]\
+&lt;/div&gt;</tw-passagedata>
 <tw-passagedata pid="35" name="Crédits" tags="" position="383,1017">!Crédits
 
 Jeu vidéo réalisé dans le cadre de l&#39;UV IC06 à l&#39;UTC au semestre d&#39;automne 2016 par les étudiants :
@@ -1914,22 +1925,31 @@ Qui appeler à s&#39;exprimer ?
 &lt;&lt;if $scoutaide  eq true&gt;&gt;[[Ces scouts pleins de joie de vivre pourraient peut-être lui montrer, dans la bonne humeur, qu&#39;il faut qu&#39;il soit plus prudent à l&#39;avenir.-&gt;finScouts]]&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $corne eq true&gt;&gt;[[Le rhinocéros semble vous regarder d&#39;un air à la fois ennuyé et menaçant et vous ne voyez pas bien ce qu&#39;il pourrait faire pour vous mais, après tout, dans l&#39;absolu: pourquoi pas ?-&gt;finRhino]]&lt;&lt;/if&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="42" name="fin" tags="" position="5007,1063">&lt;&lt;if $bad_end != false&gt;&gt;
-Félicitations, vous avez débloqué le succès\
-&lt;&lt;switch $bad_end&gt;&gt;
-&lt;&lt;case &quot;riviere&quot;&gt;&gt;
-&lt;&lt;set $succes.push(&quot;mouille&quot;)&gt;&gt;
-&quot;&#39;&#39;Mouillé&#39;&#39;&quot;, pour être resté dans la glace plutôt que de chercher à survivre, correspondant à la fin prématurée n°1 sur 4.
-&lt;&lt;case &quot;discussion&quot;&gt;&gt;
-&lt;&lt;set $succes.push(&quot;baratineur&quot;)&gt;&gt;
-&quot;&#39;&#39;Baratineur&#39;&#39;&quot;, pour avoir voulu clouer le bec au lapin plutôt que de poursuivre votre route, correspondant à la fin prématurée n°2 sur 4.
-&lt;&lt;case &quot;ravin&quot;&gt;&gt;
-&lt;&lt;set $succes.push(&quot;speleologue&quot;)&gt;&gt;
-&quot;&#39;&#39;Spéléologue&#39;&#39;&quot;, pour avoir surestimé votre chance face au raccourci escarpé, correspondant à la fin prématurée n°3 sur 4.
-&lt;&lt;case &quot;mange&quot;&gt;&gt;
-&lt;&lt;set $succes.push(&quot;jambon&quot;)&gt;&gt;
-&quot;&#39;&#39;Jambon&#39;&#39;&quot;, pour avoir sous-estimé les réflexes du vieux dragon, correspondant à la fin prématurée n°4 sur 4.
-&lt;&lt;/switch&gt;&gt;
+<tw-passagedata pid="42" name="fin" tags="" position="5007,1063">&lt;&lt;if $bad_end != false&gt;&gt;\
+&lt;&lt;nobr&gt;&gt;
+	&lt;&lt;if !$bad_ends.includes($bad_end)&gt;&gt;
+		&lt;&lt;set $bad_ends.push($bad_end)&gt;&gt;
+
+		&lt;&lt;switch $bad_end&gt;&gt;
+		&lt;&lt;case &quot;riviere&quot;&gt;&gt;
+		&lt;&lt;set $succes.push(&quot;mouille&quot;)&gt;&gt;
+		Félicitations, vous avez débloqué le succès
+		&quot;&#39;&#39;Mouillé&#39;&#39;&quot;, pour être resté dans la glace plutôt que de chercher à survivre, correspondant à la fin prématurée n°1 sur 4.
+		&lt;&lt;case &quot;discussion&quot;&gt;&gt;
+		&lt;&lt;set $succes.push(&quot;baratineur&quot;)&gt;&gt;
+		Félicitations, vous avez débloqué le succès
+		&quot;&#39;&#39;Baratineur&#39;&#39;&quot;, pour avoir voulu clouer le bec au lapin plutôt que de poursuivre votre route, correspondant à la fin prématurée n°2 sur 4.
+		&lt;&lt;case &quot;ravin&quot;&gt;&gt;
+		&lt;&lt;set $succes.push(&quot;speleologue&quot;)&gt;&gt;
+		Félicitations, vous avez débloqué le succès
+		&quot;&#39;&#39;Spéléologue&#39;&#39;&quot;, pour avoir surestimé votre chance face au raccourci escarpé, correspondant à la fin prématurée n°3 sur 4.
+		&lt;&lt;case &quot;mange&quot;&gt;&gt;
+		&lt;&lt;set $succes.push(&quot;jambon&quot;)&gt;&gt;
+		Félicitations, vous avez débloqué le succès
+		&quot;&#39;&#39;Jambon&#39;&#39;&quot;, pour avoir sous-estimé les réflexes du vieux dragon, correspondant à la fin prématurée n°4 sur 4.
+		&lt;&lt;/switch&gt;&gt;
+	&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
 
 Malheureusement pour vous, vous n’avez pas réussi à finir le jeu. Vous pouvez recommencer l’histoire qui comporte 18 combinaisons d&#39;ingrédients différentes, modifiant alors l&#39;environnement du promeneur...
 
@@ -2052,6 +2072,10 @@ Toutefois, les choses ne s&#39;arrêtent pas là : voilà que le rhinocéros se 
 &lt;&lt;set $scoutaide to false&gt;&gt;
 &lt;&lt;set $aidernains to false&gt;&gt;
 &lt;&lt;set $cabaneexplose to false&gt;&gt;
+
+&lt;!--Succès--&gt;
+
+&lt;&lt;set $bad_end to false&gt;&gt;
 
 &lt;&lt;goto &quot;Intro&quot;&gt;&gt;</tw-passagedata>
 </tw-storydata>
