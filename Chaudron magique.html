@@ -266,6 +266,7 @@ img.badge {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 
@@ -366,6 +367,7 @@ window.blurElement = function (element, size, sduration) {
 }
 
 
+
 </script><tw-passagedata pid="1" name="Rivière" tags="" position="1340,1261">&lt;&lt;silently&gt;&gt;
 &lt;&lt;set $var to random(1,10)&gt;&gt;
 &lt;&lt;/silently&gt;&gt;\
@@ -410,9 +412,7 @@ Ne voulant pas vous séparer de vos affaires, vous commencez la traversée...
 Comme indiqué par les villageois, vous arrivez au niveau d&#39;une rivière à traverser, mais le pont manque à l&#39;appel. Voyant le fond, vous estimez que la profondeur ne doit pas dépasser la hauteur de vos épaules. Ne pouvant porter qu&#39;un seul objet hors de l&#39;eau, vous vous tâter sur l&#39;objet à préserver de l&#39;eau...
 [[Le bâton-&gt;porter le bâton]]
 [[Le sac-&gt;porter le sac]]
-&lt;&lt;/if&gt;&gt;
-
-</tw-passagedata>
+&lt;&lt;/if&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="2" name="porter le sac" tags="" position="1516,1393">&lt;&lt;if $poussièredefeu eq true&gt;&gt;
 &lt;&lt;set $baton to false&gt;&gt;
 Vous traversez alors la rivière, le sac au-dessus de votre tête et le bâton à votre ceinture. Une odeur arrivant à votre nez, vous remarquez que votre bâton de marche prend feu alors qu&#39;il est dans l&#39;eau. Interloqué, vous vous en séparez avant qu&#39;il ne vous brûle. Une fois de l&#39;autre côté, vous séchez rapidement vos vêtements par ce temps agréable, en réfléchissant à ce qui s&#39;est produit, avant de reprendre la route.
@@ -1723,6 +1723,7 @@ Jeu vidéo réalisé dans le cadre de l&#39;UV IC06 à l&#39;UTC au semestre d&#
 &lt;&lt;audio &quot;awaking&quot; loop play volume 0.8&gt;&gt;
 &lt;&lt;audio &quot;snoring&quot; loop play volume 0.5 fadein&gt;&gt;
 &lt;span id=&quot;intro_text&quot;&gt;
+
 Alors que doucement la forêt s&#39;éveille sous les doux et chauds rayons solaires de l&#39;aube, tout semble indiquer que la journée sera belle. La lumière matinale trouve son chemin jusqu&#39;à la fenêtre d&#39;une petite cabane où vous dormez d&#39;un sommeil manifestement agité. À mesure que l&#39;obscurité de la nuit est chassée de votre humble demeure vous vous arrachez
 &lt;/span&gt;
 &lt;&lt;/nobr&gt;&gt;&lt;&lt;linkreplace &quot; aux bras de Morphée...&quot;&gt;&gt;
@@ -1735,7 +1736,7 @@ Alors que doucement la forêt s&#39;éveille sous les doux et chauds rayons sola
  	&lt;img class=&quot;illustration&quot; alt=&quot;reveil&quot; src=&quot;media/pictures/illustrations/reveil_test.png&quot;/&gt;
  	&lt;&lt;/nobr&gt;&gt;
 	&lt;span id=&quot;waking-up-text&quot; style=&quot;opacity: 0&quot;&gt;
-	Le réveil est toujours comme une nouvelle naissance: il vous semble que vous ne connaissez plus rien ni ne savez plus rien faire.
+	Le réveil est toujours comme une nouvelle naissance : il vous semble que vous ne connaissez plus rien ni ne savez plus rien faire.
 	&lt;&lt;linkreplace &quot;J&#39;suis qui déjà ?&quot; t8n&gt;&gt;
 	Les dernières brumes du sommeil commençant à s&#39;évaporer, vous vous rappelez que vous êtes un magicien (&quot;et un bon !&quot; ajoutez-vous alors que les mots vous reviennent) vivant reclus dans la forêt depuis qu&#39;une malencontreuse formule magique a semé la zizanie dans votre précédente commune de résidence, bien des années plus tôt, et que vos concitoyens en ont eu assez de ces remue-ménages dont vous avez le secret.
 	À ce souvenir vous ne pouvez réprimer un sourire de jubilation et un haussement d&#39;épaules. Vous êtes aussi bien ici à vrai dire, et la tranquilité est une composante importante de tout sortilège réussi. Vous hochez la tête, manifestement qu&#39;à moitié convaincu par vos propres arguments.
@@ -2018,7 +2019,7 @@ Toutefois, les choses ne s&#39;arrêtent pas là : voilà que le rhinocéros se 
 <tw-passagedata pid="49" name="VarsReset" tags="" position="150,1021">&lt;!--ingrédients--&gt;
 
 &lt;&lt;set $livre to false&gt;&gt;
-&lt;&lt;set $gateau to false
+&lt;&lt;set $gateau to false&gt;&gt;
 
 &lt;&lt;set $glace to false&gt;&gt;
 &lt;&lt;set $poussièredefeu to false&gt;&gt;
@@ -2052,8 +2053,7 @@ Toutefois, les choses ne s&#39;arrêtent pas là : voilà que le rhinocéros se 
 &lt;&lt;set $aidernains to false&gt;&gt;
 &lt;&lt;set $cabaneexplose to false&gt;&gt;
 
-
-&lt;&lt;goto [[Intro]]&gt;&gt;</tw-passagedata>
+&lt;&lt;goto &quot;Intro&quot;&gt;&gt;</tw-passagedata>
 </tw-storydata>
 </div>
 	<script id="script-sugarcube" type="text/javascript">
