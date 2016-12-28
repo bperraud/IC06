@@ -267,6 +267,7 @@ img.badge {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 
@@ -368,11 +369,12 @@ window.blurElement = function (element, size, sduration) {
 
 
 
+
 </script><tw-passagedata pid="1" name="Rivière" tags="" position="1340,1261">&lt;&lt;silently&gt;&gt;
 &lt;&lt;set $var to random(1,10)&gt;&gt;
 &lt;&lt;/silently&gt;&gt;\
 &lt;&lt;if $glace eq true&gt;&gt;
-&lt;img class=&quot;illustration&quot; alt=&quot;rivière&quot; src=&quot;media/pictures/illustrations/riviere.png&quot;/&gt;
+&lt;img class=&quot;illustration&quot; alt=&quot;rivière gelée&quot; src=&quot;media/pictures/illustrations/riviere_gelee.png&quot;/&gt;
 Alors que le temps est fort agréable, vous arrivez devant une rivière gelée. Ne voyant pas de pont à l&#39;horizon, vous juger que l&#39;épaisseur de la glace n&#39;est pas très importante au vu des fissures présentes dans celle-ci. Après un court instant de réflexion, elle a l&#39;air assez épaisse pour passer sans sac à dos et éventuellement assez si vous ne déposez que votre bâton.
 &lt;span id=&quot;glace&quot;&gt;
 	&lt;&lt;link &quot;Abandonner votre sac à dos&quot;&gt;&gt;
@@ -708,6 +710,7 @@ Bien que le dragon soit âgé, vous préférez ne pas prendre de risques et vous
 		&lt;&lt;replace &quot;#voleur&quot;&gt;&gt;
 		&lt;&lt;if $gateau eq true&gt;&gt;
 		&lt;&lt;set $dragon to &quot;mouton&quot;&gt;&gt;
+		&lt;img class=&quot;illustration&quot; alt=&quot;mouton&quot; src=&quot;media/pictures/illustrations/mouton.png&quot;/&gt;
 Vous courez et, le dragon se mettant à votre poursuite, vous vous dites que votre vie ne valait peut-être pas une pièce d&#39;or en fin de compte. Alors que vous sentez que votre fin approche, vous n&#39;entendez plus la course lourde du dragon. Ne comprenant pas, vous vous retournez pour apercevoir que derrière vous se trouve un mouton qui broute paisiblement l&#39;herbe le long du chemin. Bizarrement, vous commencez à avoir faim en le regardant…
 [[Suite-&gt;Portesecrete]]
 &lt;!-- bruit mouton--&gt;
@@ -758,12 +761,12 @@ Vous méfiant de tout ce qui se rattache à ce mystérieux lieu, vous préférez
  Glace pour solidifier la potion
  Champignon pour diminuer l&#39;acidité de la potion --&gt;
 &lt;div id=&quot;chaudron_container&quot;&gt;
-&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 6&quot; data-zi=&quot;6&quot; src=&quot;media/pictures/illustrations/chaudron2_test.png&quot; alt=&quot;chaudron ok&quot; title=&quot;Ça commencer à chauffer...&quot;/&gt;
-&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 5&quot; data-zi=&quot;5&quot; src=&quot;media/pictures/illustrations/chaudron2_1_test.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
-&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 4&quot; data-zi=&quot;4&quot; src=&quot;media/pictures/illustrations/chaudron2_2_test.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
-&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 3&quot; data-zi=&quot;3&quot; src=&quot;media/pictures/illustrations/chaudron2_3_test.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
-&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 2&quot; data-zi=&quot;2&quot; src=&quot;media/pictures/illustrations/chaudron2_4_test.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
-&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 1&quot; data-zi=&quot;1&quot; src=&quot;media/pictures/illustrations/chaudron3_test.png&quot; alt=&quot;chaudron critique&quot; title=&quot;AU SECOURS !!!&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 6&quot; data-zi=&quot;6&quot; src=&quot;media/pictures/illustrations/chaudron2.png&quot; alt=&quot;chaudron ok&quot; title=&quot;Ça commencer à chauffer...&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 5&quot; data-zi=&quot;5&quot; src=&quot;media/pictures/illustrations/chaudron2_1.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 4&quot; data-zi=&quot;4&quot; src=&quot;media/pictures/illustrations/chaudron2_2.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 3&quot; data-zi=&quot;3&quot; src=&quot;media/pictures/illustrations/chaudron2_3.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 2&quot; data-zi=&quot;2&quot; src=&quot;media/pictures/illustrations/chaudron2_4.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 1&quot; data-zi=&quot;1&quot; src=&quot;media/pictures/illustrations/chaudron3.png&quot; alt=&quot;chaudron critique&quot; title=&quot;AU SECOURS !!!&quot;/&gt;
 &lt;/div&gt;
 &lt;&lt;/nobr&gt;&gt;\
 &lt;&lt;silently&gt;&gt;&gt;
@@ -811,12 +814,12 @@ Vous méfiant de tout ce qui se rattache à ce mystérieux lieu, vous préférez
 &lt;!-- fera brûler  le bâton dans la rivière s&#39;il nest pas porté hors de l&#39;eau--&gt;
 &lt;!-- Il reste encore l&#39;effet acide à réduire. --&gt;
 &lt;div id=&quot;chaudron_container&quot;&gt;
-&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 6&quot; data-zi=&quot;6&quot; src=&quot;media/pictures/illustrations/chaudron2_test.png&quot; alt=&quot;chaudron ok&quot; title=&quot;Ça commencer à chauffer...&quot;/&gt;
-&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 5&quot; data-zi=&quot;5&quot; src=&quot;media/pictures/illustrations/chaudron2_1_test.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
-&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 4&quot; data-zi=&quot;4&quot; src=&quot;media/pictures/illustrations/chaudron2_2_test.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
-&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 3&quot; data-zi=&quot;3&quot; src=&quot;media/pictures/illustrations/chaudron2_3_test.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
-&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 2&quot; data-zi=&quot;2&quot; src=&quot;media/pictures/illustrations/chaudron2_4_test.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
-&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 1&quot; data-zi=&quot;1&quot; src=&quot;media/pictures/illustrations/chaudron3_test.png&quot; alt=&quot;chaudron critique&quot; title=&quot;AU SECOURS !!!&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 6&quot; data-zi=&quot;6&quot; src=&quot;media/pictures/illustrations/chaudron2.png&quot; alt=&quot;chaudron ok&quot; title=&quot;Ça commencer à chauffer...&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 5&quot; data-zi=&quot;5&quot; src=&quot;media/pictures/illustrations/chaudron2_1.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 4&quot; data-zi=&quot;4&quot; src=&quot;media/pictures/illustrations/chaudron2_2.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 3&quot; data-zi=&quot;3&quot; src=&quot;media/pictures/illustrations/chaudron2_3.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 2&quot; data-zi=&quot;2&quot; src=&quot;media/pictures/illustrations/chaudron2_4.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 1&quot; data-zi=&quot;1&quot; src=&quot;media/pictures/illustrations/chaudron3.png&quot; alt=&quot;chaudron critique&quot; title=&quot;AU SECOURS !!!&quot;/&gt;
 &lt;/div&gt;
 &lt;&lt;/nobr&gt;&gt;
 &lt;&lt;silently&gt;&gt;&gt;
@@ -885,12 +888,12 @@ Finalement, ce sont quelques feuilles d&#39;orties a priori tout à fait banales
 &lt;!-- fera geler la rivière--&gt;
 &lt;!-- Il reste encore l&#39;effet acide à réduire. --&gt;
 &lt;div id=&quot;chaudron_container&quot;&gt;
-&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 6&quot; data-zi=&quot;6&quot; src=&quot;media/pictures/illustrations/chaudron2_test.png&quot; alt=&quot;chaudron ok&quot; title=&quot;Ça commencer à chauffer...&quot;/&gt;
-&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 5&quot; data-zi=&quot;5&quot; src=&quot;media/pictures/illustrations/chaudron2_1_test.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
-&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 4&quot; data-zi=&quot;4&quot; src=&quot;media/pictures/illustrations/chaudron2_2_test.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
-&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 3&quot; data-zi=&quot;3&quot; src=&quot;media/pictures/illustrations/chaudron2_3_test.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
-&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 2&quot; data-zi=&quot;2&quot; src=&quot;media/pictures/illustrations/chaudron2_4_test.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
-&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 1&quot; data-zi=&quot;1&quot; src=&quot;media/pictures/illustrations/chaudron3_test.png&quot; alt=&quot;chaudron critique&quot; title=&quot;AU SECOURS !!!&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 6&quot; data-zi=&quot;6&quot; src=&quot;media/pictures/illustrations/chaudron2.png&quot; alt=&quot;chaudron ok&quot; title=&quot;Ça commencer à chauffer...&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 5&quot; data-zi=&quot;5&quot; src=&quot;media/pictures/illustrations/chaudron2_1.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 4&quot; data-zi=&quot;4&quot; src=&quot;media/pictures/illustrations/chaudron2_2.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 3&quot; data-zi=&quot;3&quot; src=&quot;media/pictures/illustrations/chaudron2_3.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 2&quot; data-zi=&quot;2&quot; src=&quot;media/pictures/illustrations/chaudron2_4.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 1&quot; data-zi=&quot;1&quot; src=&quot;media/pictures/illustrations/chaudron3.png&quot; alt=&quot;chaudron critique&quot; title=&quot;AU SECOURS !!!&quot;/&gt;
 &lt;/div&gt;
 &lt;&lt;/nobr&gt;&gt;
 &lt;&lt;silently&gt;&gt;&gt;
@@ -964,12 +967,12 @@ Finalement, ce sont quelques feuilles d&#39;orties a priori tout à fait banales
 &lt;&lt;set $champignon to true&gt;&gt;
 &lt;&lt;set $alea to random(1,3)&gt;&gt;
 &lt;div id=&quot;chaudron_container&quot;&gt;
-&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 6&quot; data-zi=&quot;6&quot; src=&quot;media/pictures/illustrations/chaudron2_test.png&quot; alt=&quot;chaudron ok&quot; title=&quot;Ça commencer à chauffer...&quot;/&gt;
-&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 5&quot; data-zi=&quot;5&quot; src=&quot;media/pictures/illustrations/chaudron2_1_test.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
-&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 4&quot; data-zi=&quot;4&quot; src=&quot;media/pictures/illustrations/chaudron2_2_test.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
-&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 3&quot; data-zi=&quot;3&quot; src=&quot;media/pictures/illustrations/chaudron2_3_test.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
-&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 2&quot; data-zi=&quot;2&quot; src=&quot;media/pictures/illustrations/chaudron2_4_test.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
-&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 1&quot; data-zi=&quot;1&quot; src=&quot;media/pictures/illustrations/chaudron3_test.png&quot; alt=&quot;chaudron critique&quot; title=&quot;AU SECOURS !!!&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 6&quot; data-zi=&quot;6&quot; src=&quot;media/pictures/illustrations/chaudron2.png&quot; alt=&quot;chaudron ok&quot; title=&quot;Ça commencer à chauffer...&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 5&quot; data-zi=&quot;5&quot; src=&quot;media/pictures/illustrations/chaudron2_1.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 4&quot; data-zi=&quot;4&quot; src=&quot;media/pictures/illustrations/chaudron2_2.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 3&quot; data-zi=&quot;3&quot; src=&quot;media/pictures/illustrations/chaudron2_3.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 2&quot; data-zi=&quot;2&quot; src=&quot;media/pictures/illustrations/chaudron2_4.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 1&quot; data-zi=&quot;1&quot; src=&quot;media/pictures/illustrations/chaudron3.png&quot; alt=&quot;chaudron critique&quot; title=&quot;AU SECOURS !!!&quot;/&gt;
 &lt;/div&gt;
 &lt;&lt;/nobr&gt;&gt;
 &lt;&lt;silently&gt;&gt;
@@ -1067,7 +1070,7 @@ Et c&#39;est lentement que vos yeux se ferment, et que vous retournez vous niche
 <tw-passagedata pid="20" name="marmite" tags="" position="189,1150">&lt;&lt;set $livre to true&gt;&gt;
 &lt;&lt;audio &quot;boiling&quot; play volume 0.5 fadein&gt;&gt;
 &lt;div id=&quot;chaudron_container&quot;&gt;
- &lt;img class=&quot;chaudron&quot; src=&quot;media/pictures/illustrations/chaudron2_test.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
+ &lt;img class=&quot;chaudron&quot; src=&quot;media/pictures/illustrations/chaudron2.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
 &lt;/div&gt;
 Après vous être rapidement étiré (dans une cacophonie de craquements osseux, la vieillesse ne vous a pas épargné), vous vous dirigez le plus tranquillement du monde vers votre chaudron.
 
@@ -1207,8 +1210,8 @@ Surpris, les nains cessent un instant de parler, les yeux ronds d&#39;étonnemen
 <tw-passagedata pid="21" name="placard" tags="" position="182,1384">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set $gateau to true&gt;&gt;
 &lt;div id=&quot;chaudron_container&quot;&gt;
-&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 2&quot; data-zi=&quot;2&quot; src=&quot;media/pictures/illustrations/chaudron1_test.png&quot; alt=&quot;chaudron ok&quot; title=&quot;Tout va bien... pour le moment&quot;/&gt;
-&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 1&quot; data-zi=&quot;1&quot; src=&quot;media/pictures/illustrations/chaudron2_test.png&quot; alt=&quot;chaudron ok&quot; title=&quot;Ça commencer à chauffer...&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 2&quot; data-zi=&quot;2&quot; src=&quot;media/pictures/illustrations/chaudron1.png&quot; alt=&quot;chaudron ok&quot; title=&quot;Tout va bien... pour le moment&quot;/&gt;
+&lt;img class=&quot;chaudron&quot; style=&quot;z-index: 1&quot; data-zi=&quot;1&quot; src=&quot;media/pictures/illustrations/chaudron2.png&quot; alt=&quot;chaudron ok&quot; title=&quot;Ça commencer à chauffer...&quot;/&gt;
 &lt;/div&gt;
 &lt;&lt;/nobr&gt;&gt;
 	N&#39;écoutant que l&#39;appel de votre ventre, vous partez chercher quelque chose à grignoter dans le garde-manger. Hélas, votre déception est grande lorsque vous n&#39;y découvrez qu&#39;un triste désert alimentaire, à l&#39;exception de ce qui semble être un muffin. Vous pestez à votre encontre, vous auriez dû penser à aller refaire vos provisions chez &quot;Les fins gourmets de la forêt&quot;. Avec un soupir d&#39;irritation vous vous emparez malgré tout du muffin et vous dirigez vers le chaudron.
@@ -1253,13 +1256,15 @@ Et c&#39;est lentement que vos yeux se ferment, et que vous retournez vous niche
 &lt;&lt;audio &quot;:playing&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;2ndtimer_2&quot; volume 0.5 loop play&gt;&gt;
 &lt;&lt;/silently&gt;&gt;\
-À contre-coeur, vous ajoutez la corne de licorne, qui vous avait coûté un bras une dizaine d&#39;années auparavant auprès d&#39;un marchant ambulant garantissant des propriétés exceptionnelles. Alors qu&#39;elle tombe dans le liquide bouillonant, vous attendant à ce que la magie de la corne stabilise complétement la mixture, une réaction inattendue se produit.
+À contre-coeur, vous ajoutez la corne de licorne, qui vous avait coûté un bras une dizaine d&#39;années auparavant auprès d&#39;un marchant ambulant garantissant des propriétés exceptionnelles. Alors qu&#39;elle tombe dans le liquide bouillonant, vous attendant à ce que la magie de la corne stabilise complètement la mixture, une réaction inattendue se produit.
 
 &lt;!--tempo pour que le joueur lance un sort de protection--&gt;
 
 &lt;span id=&quot;sortillege&quot;&gt;
 		&lt;&lt;link &quot;Lancer un sortillège de protection&quot;&gt;&gt;
 			&lt;&lt;replace &quot;#sortillege&quot;&gt;&gt;
+			&lt;img class=&quot;illustration&quot; alt=&quot;chaudron qui explose&quot;
+	src=&quot;media/pictures/illustrations/chaudron4.png&quot;/&gt;
 				Sentant le danger arriver, vous lancez un sort de protection autour du chaudron. Une fraction de seconde après, vous pouvez le voir exploser....
 
 &lt;!--explosion et image noire--&gt;
@@ -1272,6 +1277,8 @@ Et c&#39;est lentement que vos yeux se ferment, et que vous retournez vous niche
 &lt;&lt;timed 12s&gt;&gt;
 &lt;&lt;replace &quot;#sortillege&quot;&gt;&gt;
 &lt;&lt;set $cabaneexplose to true&gt;&gt;
+			&lt;img class=&quot;illustration&quot; alt=&quot;chaudron qui explose&quot;
+	src=&quot;media/pictures/illustrations/chaudron4.png&quot;/&gt;
 N&#39;ayant pas eu le réflexe de lancer un sort de protection, vous voyez le chaudron exploser...
 
 &lt;!--explosion et image noire--&gt;
@@ -1447,14 +1454,15 @@ Et c&#39;est ainsi que vous vous mettez en route, le sac sur le dos et le bâton
 
 [[Suite-&gt;Rivière]]
 &lt;/span&gt;</tw-passagedata>
-<tw-passagedata pid="26" name="jardincabane" tags="" position="3583,1266">&lt;!-- image de la cabane explosée ou non--&gt;\
-&lt;&lt;if $cabaneexplose eq true&gt;&gt;
+<tw-passagedata pid="26" name="jardincabane" tags="" position="3583,1266">&lt;&lt;if $cabaneexplose eq true&gt;&gt;\
 &lt;img class=&quot;illustration&quot; alt=&quot;cabane explosée&quot; src=&quot;media/pictures/illustrations/cabane_explosee.png&quot;/&gt;
-&lt;&lt;else&gt;&gt;
+&lt;&lt;else&gt;&gt;\
 &lt;img class=&quot;illustration&quot; alt=&quot;cabane&quot; src=&quot;media/pictures/illustrations/cabane.png&quot;/&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;\
 Votre périple arrivant à son terme, vous débouchez sur une prairie, où il fait bon vivre…
-Soudains vous entendez des paroles alors qu’il n’y a personne à votre vue, mis à part des nains de jardins... A votre grande surprise, les paroles viennent d’eux …
+Soudains vous entendez des paroles alors qu’il n’y a personne à votre vue, mis à part des nains de jardins... À votre grande surprise, les paroles viennent d’eux…
+
+&lt;img class=&quot;illustration&quot; alt=&quot;nains&quot; src=&quot;media/pictures/illustrations/nains.png&quot;/&gt;
 &lt;&lt;if $orties eq true&gt;&gt;
 -Oh ras le bol de ses expériences … qu’est-ce que ça gratte…
 - Ça me fait penser à la fois où il nous a balancé du poil à gratter...
@@ -1654,21 +1662,21 @@ Le scout vous paraissant tellement intéressé par sa lecture, vous décidez de 
 		&lt;&lt;/replace&gt;&gt;
 	&lt;&lt;/link&gt;&gt;
 &lt;/span&gt;</tw-passagedata>
-<tw-passagedata pid="31" name="Clairière" tags="" position="1881,1385">&lt;&lt;if $livre eq true&gt;&gt;
-Alors que vous avancez dans le sentier, les bruits deviennent de plus en plus clairs et vous devinez une conversation. Alors que vous alliez vous manifester, vous voyez des animaux parlant entre-eux. Etant troublé que des animaux puissent être instruits, vous rigolez silencieusement en les imaginant dans une classe en train d’étudier un livre. Absorbé par leur conversation, ils ne semblent pas vous avoir vu...
+<tw-passagedata pid="31" name="Clairière" tags="" position="1881,1385">&lt;&lt;if $livre eq true&gt;&gt;\
+&lt;img class=&quot;illustration&quot; alt=&quot;animaux&quot; src=&quot;media/pictures/illustrations/animaux.png&quot;/&gt;
+Alors que vous avancez dans le sentier, les bruits deviennent de plus en plus clairs et vous devinez une conversation. Alors que vous alliez vous manifester, vous voyez des animaux parlant entre-eux. Étant troublé que des animaux puissent être instruits, vous rigolez silencieusement en les imaginant dans une classe en train d’étudier un livre. Absorbé par leur conversation, ils ne semblent pas vous avoir vu...
 [[Se manifester-&gt;Manifestation]]
 [[Repartir discrètement-&gt;retourdiscret]]
 [[Fuir-&gt;retourfuite]]
-&lt;&lt;else&gt;&gt;
-	&lt;&lt;if $os eq true&gt;&gt;
+&lt;&lt;elseif $os eq true&gt;&gt;\
+&lt;img class=&quot;illustration&quot; alt=&quot;animaux fantômes&quot; src=&quot;media/pictures/illustrations/animaux_fantomes.png&quot;/&gt;
 Alors que vous avancez dans le sentier, les bruits restent incompréhensibles et semble provenir d&#39;outre-tombe. C&#39;est alors que, du coin de l&#39;œil, vous apercevez des animaux à l&#39;aspect fantomatique...
 [[Repartir discrètement-&gt;retourdiscret]]
 [[Fuir-&gt;retourfuite]]
-	&lt;&lt;else&gt;&gt;
-&lt;&lt;set $tresor to true&gt;&gt;
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;set $tresor to true&gt;&gt;\
 Empruntant le sentier, vous débouchez sur une paisible clairière  délimitée par une haute et épaisse haie. Après l&#39;avoir contemplée, alors que vous repartiez, vous apercevez un objet brillant dans l&#39;herbe. Vous découvrez alors une ancienne chevalière en or de très belle facture, portant comme sceau un chevalier. Content de cette trouvaille, vous repartez sur vos pas pour reprendre votre route...
 [[Continuer-&gt;Groupe de scout]]
-	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="32" name="Portesecrete" tags="" position="3417,1125">Alors que vous avancez sur ce paisible chemin, en comparaison du début, vous observez que sur votre gauche les arbres laissent place à un mur de plantes grimpantes. Longeant ce mur, un renfoncement apparait dans ce couvert végétal. Curieux, vous décidez de voir ce qui s’y cache derrière. Les fragiles plantes ne résistent pas bien longtemps et c’est ainsi que ce découvre une sorte de porte. Sur celle-ci, vous apercevez 11 étranges symboles composés d&#39;or et, en les examinant de plus près, il est possible de voir des chevaliers en armure et un emplacement vide entre le dixième et le onzième symbole.
 &lt;span id=&quot;porte&quot;&gt;
@@ -1744,7 +1752,7 @@ Alors que doucement la forêt s&#39;éveille sous les doux et chauds rayons sola
 	&lt;&lt;append &quot;#passages&quot;&gt;&gt;
   	&lt;div class=&quot;black_overlay&quot;&gt;&lt;/div&gt;
 	&lt;&lt;/append&gt;&gt;
- 	&lt;img class=&quot;illustration&quot; alt=&quot;reveil&quot; src=&quot;media/pictures/illustrations/reveil_test.png&quot;/&gt;
+ 	&lt;img class=&quot;illustration&quot; alt=&quot;reveil&quot; src=&quot;media/pictures/illustrations/reveil.png&quot;/&gt;
  	&lt;&lt;/nobr&gt;&gt;
 	&lt;span id=&quot;waking-up-text&quot; style=&quot;opacity: 0&quot;&gt;
 	Le réveil est toujours comme une nouvelle naissance : il vous semble que vous ne connaissez plus rien ni ne savez plus rien faire.

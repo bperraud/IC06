@@ -54,26 +54,13 @@ repository (~~je ne sais pas encore comment faire en local...~~ impossible : <ht
 - Phase 2 : flash back (image)
 - Rivière : images (gelée et non) + remise à la normale de la variable
 - Passer au travers de la glace : intéraction avec image pour se sortir de l'eau (ou bad end)
-- Porter le sac : RAS
-- porter le bâton : RAS
 - bruit : bruit à incorporer
 - Clairière : images (animaux pas/ fantômes/ rien) et texte en accord avec image
-- Retour discret : RAS
-- Retour fuite : RAS
-- Manifestation : RAS
-- Discussion : RAS
 - Groupe scouts : texte de discussion à meubler
-- Embranchement : RAS
-- Chemin Sombre : RAS
-- Piece or : RAS
 - antre dragon : images (dragon/moto) et blabla de rencontre
 - porte secrete : image?
 - lieu secret : niveau bonus à modifier (ou laisser "en chantier")
-- raccourci : RAS
 - Cabane : image nains de jardin
-- Procès : RAS
-
-- Badend : RAS
 - Scout perdu : l'implanter dans le scénario
 
 ## Notes techniques
