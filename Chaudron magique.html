@@ -219,6 +219,16 @@ a.link-internal:hover, a.link-external:hover {
 	left: 0;
 }
 
+.white_overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: white;
+	z-index: 20;
+	top: 0;
+	left: 0;
+}
+
 /* Passage d'intro avec écran noir */
 #passage-intro {
 	background-color: black;
@@ -246,29 +256,7 @@ img.chaudron {
 img.badge {
 	width: 50px;
 	vertical-align: middle;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 
 
@@ -366,6 +354,7 @@ window.blurElement = function (element, size, sduration) {
         '-o-transition':'all ' + sduration + 's ease-out'
 	});
 }
+
 
 
 
@@ -1042,16 +1031,18 @@ Finalement, ce sont quelques feuilles d&#39;orties a priori tout à fait banales
 &lt;&lt;set $tabac to true&gt;&gt;
 &lt;&lt;audio &quot;:playing&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;2ndtimer_2&quot; volume 0.5 loop play&gt;&gt;
+&lt;&lt;audio &quot;snoring&quot; loop play volume 0.5 fadein&gt;&gt;
 &lt;&lt;/silently&gt;&gt;\
 Devant l&#39;urgence de la situation, vous choisissez de sacrifier votre prestigieux tabac, importé tout droit d&#39;un fameux petit village dont les producteurs maîtrisent les techniques ancestrales de fabrication, depuis des millénaires. C&#39;est donc à contrecoeur que vous jetez dans la mixture votre onéreux tabac, afin d&#39;épaissir la potion, tout en gardant une quantité raisonnable pour votre pipe.
  Le tabac dissout dans la potion, le chaudron semble alors retrouver sa quiétude habituelle. Fatigué par les événements, vous décidez de vous allongez sur votre lit quelques instants, le temps de récupérer.
 Et c&#39;est lentement que vos yeux se ferment, et que vous retournez vous nicher dans les bras de Morphée...
-[[Poursuivre l&#39;histoire-&gt;Phase2]] </tw-passagedata>
+[[Poursuivre l&#39;histoire-&gt;Phase2]]</tw-passagedata>
 <tw-passagedata pid="18" name="orties" tags="" position="938,1258">&lt;&lt;silently&gt;&gt;
 &lt;!-- les nains de jardin se gratteront en pestant contre le sorcier et ses expériences--&gt;
 &lt;&lt;set $orties to true&gt;&gt;
 &lt;&lt;audio &quot;:playing&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;2ndtimer_2&quot; volume 0.5 loop play&gt;&gt;
+&lt;&lt;audio &quot;snoring&quot; loop play volume 0.5 fadein&gt;&gt;
 &lt;&lt;/silently&gt;&gt;\
 Dépéché, par l&#39;urgence de la situation, à épaissir la mixture instable, et ne trouvant pas vos gants, vous décidez de prendre la poignée d&#39;orties à pleines mains pour l&#39;incorporer à la mixture. Ravalant l&#39;envie de vous gratter, vous regardez les feuilles se dissoudrent dans la décoction instable. La marmite se stabilisant et reprenant son habituelle quiétude, vous vous félicitez de votre prouesse à faire face à l&#39;imprévu. Vos démangeaisons persistant, vous vous essuyez  vos mains dans votre chiffon magique.
 Fatigué par les événements, vous décidez de vous allongez sur votre lit quelques instants, le temps de récupérer.
@@ -1062,6 +1053,7 @@ Et c&#39;est lentement que vos yeux se ferment, et que vous retournez vous niche
 &lt;&lt;set $bave to true&gt;&gt;
 &lt;&lt;audio &quot;:playing&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;2ndtimer_2&quot; volume 0.5 loop play&gt;&gt;
+&lt;&lt;audio &quot;snoring&quot; loop play volume 0.5 fadein&gt;&gt;
 &lt;&lt;/silently&gt;&gt;\
 Prenant le bocal vitrifié de bave de crapaud, collectée au cours de ces dernières semaines de chasse, par un temps pluvieux, vous tentez de l&#39;ouvrir. N&#39;y arrivant pas, poussé par l&#39;urgence de la situation, vous le jetez dans la marmite en espérant que le bocal ne résiste pas à l&#39;effet de la mixture. En voyant le bocal couler, vous vous sentez rassuré losque la marmite se stabilise pour retrouver sa quiétude innoffensive. Fatigué par les événements, vous décidez de vous allongez sur votre lit quelques instants, le temps de récupérer.
 Et c&#39;est lentement que vos yeux se ferment, et que vous retournez vous nicher dans les bras de Morphée...
@@ -1246,45 +1238,67 @@ Surpris, les nains cessent un instant de parler, les yeux ronds d&#39;étonnemen
 &lt;&lt;set $os to true&gt;&gt;
 &lt;&lt;audio &quot;:playing&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;2ndtimer_2&quot; volume 0.5 loop play&gt;&gt;
+&lt;&lt;audio &quot;snoring&quot; loop play volume 0.5 fadein&gt;&gt;
 &lt;&lt;/silently&gt;&gt;\
 Prenant les os sur la table, obtenus par vos différents repas, du lapin à la moutarde, du faisant farci, et d&#39;autres mets appétissants. C&#39;est alors que vous vous remémorez les cours de votre enfance, où votre professeur vous avait fait recopier 100 fois les propriétés épaississante et anti-acidifiante des os. Secouant la tête par dépit, vous ajoutez cet ingrédient à la potion. La potion semblant se calmer et fatigué par les événements, vous décidez de vous allongez sur votre lit quelques instants, le temps de récupérer un peu.
 Et c&#39;est lentement que vos yeux se ferment, et que vous retournez vous nicher dans les bras de Morphée...
 [[Poursuivre l&#39;histoire-&gt;Phase2]] </tw-passagedata>
-<tw-passagedata pid="23" name="corne" tags="" position="933,1541">&lt;&lt;silently&gt;&gt;
+<tw-passagedata pid="23" name="corne" tags="" position="933,1540">&lt;&lt;silently&gt;&gt;
 &lt;!-- fera intervenir un rhinocéros dans le procès--&gt;
 &lt;&lt;set $corne to true&gt;&gt;
 &lt;&lt;audio &quot;:playing&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;2ndtimer_2&quot; volume 0.5 loop play&gt;&gt;
+&lt;&lt;set $sort_lance to false&gt;&gt;
 &lt;&lt;/silently&gt;&gt;\
 À contre-coeur, vous ajoutez la corne de licorne, qui vous avait coûté un bras une dizaine d&#39;années auparavant auprès d&#39;un marchant ambulant garantissant des propriétés exceptionnelles. Alors qu&#39;elle tombe dans le liquide bouillonant, vous attendant à ce que la magie de la corne stabilise complètement la mixture, une réaction inattendue se produit.
 
-&lt;!--tempo pour que le joueur lance un sort de protection--&gt;
-
-&lt;span id=&quot;sortillege&quot;&gt;
-		&lt;&lt;link &quot;Lancer un sortillège de protection&quot;&gt;&gt;
-			&lt;&lt;replace &quot;#sortillege&quot;&gt;&gt;
-			&lt;img class=&quot;illustration&quot; alt=&quot;chaudron qui explose&quot;
+&lt;span id=&quot;sortillege&quot;&gt;\
+&lt;&lt;linkreplace &quot;Lancer un sortillège de protection&quot;&gt;&gt;\
+&lt;&lt;set $sort_lance to true&gt;&gt;\
+&lt;img class=&quot;illustration&quot; alt=&quot;chaudron qui explose&quot;
 	src=&quot;media/pictures/illustrations/chaudron4.png&quot;/&gt;
-				Sentant le danger arriver, vous lancez un sort de protection autour du chaudron. Une fraction de seconde après, vous pouvez le voir exploser....
+	Sentant le danger arriver, vous lancez un sort de protection autour du chaudron. Une fraction de seconde après, vous pouvez le voir \
+  &lt;&lt;linkappend &quot;exploser...&quot;&gt;&gt;\
+  &lt;&lt;silently&gt;&gt;
+  &lt;&lt;audio &quot;:playing&quot; fadeoverto 1 0&gt;&gt;
+  &lt;&lt;audio &quot;explosion&quot; play&gt;&gt;
+  &lt;&lt;script&gt;&gt;
+  $(&quot;.black_overlay&quot;)
+  .css(&#39;visibility&#39;, &#39;visible&#39;).hide().fadeIn(1000);
+  &lt;&lt;/script&gt;&gt;
+  &lt;&lt;timed 5s&gt;&gt;
+  	&lt;&lt;goto &quot;Phase2&quot;&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+  &lt;&lt;/silently&gt;&gt;
+  &lt;&lt;/linkappend&gt;&gt;
+&lt;&lt;/linkreplace&gt;&gt;
+&lt;/span&gt;
+&lt;div class=&quot;black_overlay&quot; style=&quot;visibility: hidden&quot;&gt;&lt;/div&gt;
 
-&lt;!--explosion et image noire--&gt;
-[[Poursuivre l&#39;histoire-&gt;Phase2]]
-			&lt;&lt;/replace&gt;&gt;
-		&lt;&lt;/link&gt;&gt;
-	&lt;/span&gt;
-
-&lt;!-- si tempo écoulé--&gt;
+&lt;!-- timer écoulé --&gt;
 &lt;&lt;timed 12s&gt;&gt;
+&lt;&lt;if $sort_lance eq false&gt;&gt;
 &lt;&lt;replace &quot;#sortillege&quot;&gt;&gt;
 &lt;&lt;set $cabaneexplose to true&gt;&gt;
-			&lt;img class=&quot;illustration&quot; alt=&quot;chaudron qui explose&quot;
+&lt;img class=&quot;illustration&quot; alt=&quot;chaudron qui explose&quot;
 	src=&quot;media/pictures/illustrations/chaudron4.png&quot;/&gt;
-N&#39;ayant pas eu le réflexe de lancer un sort de protection, vous voyez le chaudron exploser...
-
-&lt;!--explosion et image noire--&gt;
-
-[[Poursuivre l&#39;histoire-&gt;Phase2]] 
+	N&#39;ayant pas eu le réflexe de lancer un sort de protection, vous voyez le chaudron \
+&lt;&lt;linkappend &quot;exploser...&quot;&gt;&gt;\
+&lt;&lt;silently&gt;&gt;
+&lt;&lt;audio &quot;:playing&quot; fadeoverto 1 0&gt;&gt;
+&lt;&lt;audio &quot;explosion&quot; play&gt;&gt;
+&lt;div class=&quot;black_overlay&quot; style=&quot;opacity: 0&quot;&gt;&lt;/div&gt;
+  &lt;&lt;script&gt;&gt;
+  $(&quot;.black_overlay&quot;)
+  .css(&#39;visibility&#39;, &#39;visible&#39;).hide().fadeIn(1000);
+  &lt;&lt;/script&gt;&gt;
+  &lt;&lt;timed 5s&gt;&gt;
+  	&lt;&lt;goto &quot;Phase2&quot;&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+  &lt;&lt;/silently&gt;&gt;
+&lt;&lt;/linkappend&gt;&gt;
 &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="24" name="StoryInit" tags="" position="9,996">&lt;!--ingrédients--&gt;
 
@@ -1404,6 +1418,7 @@ N&#39;ayant pas eu le réflexe de lancer un sort de protection, vous voyez le ch
 &lt;&lt;cacheaudio &quot;snoring&quot; &quot;media/audio/snoring.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;boiling&quot; &quot;media/audio/boiling.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;thunder&quot; &quot;media/audio/thunder.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;explosion&quot; &quot;media/audio/explosion.mp3&quot;&gt;&gt;
 
 &lt;!--Musiques--&gt;
 
@@ -1411,6 +1426,7 @@ N&#39;ayant pas eu le réflexe de lancer un sort de protection, vous voyez le ch
 &lt;&lt;cacheaudio &quot;1sttimer&quot; &quot;media/audio/timer1.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;2ndtimer_1&quot; &quot;media/audio/timer2_1.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;2ndtimer_2&quot; &quot;media/audio/timer2_2.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;part2&quot; &quot;media/audio/part2.mp3&quot;&gt;&gt;
 &lt;&lt;waitforaudio&gt;&gt;
 
 &lt;!-- Pour un débug facile --&gt;
@@ -1426,11 +1442,22 @@ $(&#39;body&#39;).append($button);
 &lt;&lt;/script&gt;&gt;
 
 [[lancer-&gt;menu]]</tw-passagedata>
-<tw-passagedata pid="25" name="Phase2" tags="" position="1184,1262">&lt;&lt;silently&gt;&gt;
-&lt;&lt;audio &quot;:playing&quot; stop&gt;&gt;
-&lt;!-- Retour dans le passé =&gt; flash pour marquer une ellipse temporelle--&gt;
-&lt;&lt;/silently&gt;&gt;
+<tw-passagedata pid="25" name="Phase2" tags="" position="1185,1262">&lt;div class=&quot;white_overlay&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;black_overlay&quot;&gt;&lt;/div&gt;
+&lt;&lt;silently&gt;&gt;
+&lt;&lt;audio &quot;:playing&quot; stop&gt;&gt;
+&lt;&lt;audio &quot;part2&quot; loop play volume 0.6&gt;&gt;
+&lt;&lt;script&gt;&gt;
+setTimeout(function() {
+	$(&#39;.white_overlay&#39;)
+	.fadeOut(50).fadeIn(50).fadeOut(50).fadeIn(100)
+	.delay(500)
+	.fadeOut(50).fadeIn(50).fadeOut(50).fadeIn(100)
+	.delay(1000)
+	.fadeOut(120).fadeIn(250).fadeOut(400);
+}, 1400);
+&lt;&lt;/script&gt;&gt;
+&lt;&lt;/silently&gt;&gt;
 &lt;&lt;nobr&gt;&gt;
 &lt;span style=&quot;position: relative; z-index:10; color: white&quot; id=&quot;phase2-intro&quot;&gt;
 Dans ==une galaxie== euh non, espace-temps &lt;&lt;linkappend &quot;pas si lointain...&quot;&gt;&gt;
