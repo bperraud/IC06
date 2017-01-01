@@ -1430,6 +1430,7 @@ Et c&#39;est lentement que vos yeux se ferment, et que vous retournez vous niche
 &lt;&lt;cacheaudio &quot;2ndtimer_1&quot; &quot;media/audio/timer2_1.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;2ndtimer_2&quot; &quot;media/audio/timer2_2.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;part2&quot; &quot;media/audio/part2.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;transition&quot; &quot;media/audio/transition.mp3&quot;&gt;&gt;
 &lt;&lt;waitforaudio&gt;&gt;
 
 &lt;!-- Pour un débug facile --&gt;
@@ -1449,6 +1450,7 @@ $(&#39;body&#39;).append($button);
 &lt;div class=&quot;black_overlay&quot;&gt;&lt;/div&gt;
 &lt;&lt;silently&gt;&gt;
 &lt;&lt;audio &quot;:playing&quot; stop&gt;&gt;
+&lt;&lt;audio &quot;transition&quot; play&gt;&gt;
 &lt;&lt;script&gt;&gt;
 setTimeout(function() {
 	$(&#39;.white_overlay&#39;)
@@ -1457,7 +1459,7 @@ setTimeout(function() {
 	.fadeOut(50).fadeIn(50).fadeOut(50).fadeIn(100)
 	.delay(2000)
 	.fadeOut(80).fadeIn(250).fadeOut(400);
-}, 2000);
+}, 4000);
 &lt;&lt;/script&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 &lt;&lt;nobr&gt;&gt;
