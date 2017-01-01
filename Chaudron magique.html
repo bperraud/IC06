@@ -256,7 +256,8 @@ img.chaudron {
 img.badge {
 	width: 50px;
 	vertical-align: middle;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
+}
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 
 
@@ -354,6 +355,7 @@ window.blurElement = function (element, size, sduration) {
         '-o-transition':'all ' + sduration + 's ease-out'
 	});
 }
+
 
 
 
@@ -1030,8 +1032,8 @@ Finalement, ce sont quelques feuilles d&#39;orties a priori tout à fait banales
 &lt;!-- les nains de jardin tousseront en pestant contre le sorcier et ses expériences--&gt;
 &lt;&lt;set $tabac to true&gt;&gt;
 &lt;&lt;audio &quot;:playing&quot; stop&gt;&gt;
-&lt;&lt;audio &quot;2ndtimer_2&quot; volume 0.5 loop play&gt;&gt;
-&lt;&lt;audio &quot;snoring&quot; loop play volume 0.5 fadein&gt;&gt;
+&lt;&lt;audio &quot;2ndtimer_2&quot; volume 0.7 loop play&gt;&gt;
+&lt;&lt;audio &quot;snoring&quot; loop volume 0.25 fadeto 0.5&gt;&gt;
 &lt;&lt;/silently&gt;&gt;\
 Devant l&#39;urgence de la situation, vous choisissez de sacrifier votre prestigieux tabac, importé tout droit d&#39;un fameux petit village dont les producteurs maîtrisent les techniques ancestrales de fabrication, depuis des millénaires. C&#39;est donc à contrecoeur que vous jetez dans la mixture votre onéreux tabac, afin d&#39;épaissir la potion, tout en gardant une quantité raisonnable pour votre pipe.
  Le tabac dissout dans la potion, le chaudron semble alors retrouver sa quiétude habituelle. Fatigué par les événements, vous décidez de vous allongez sur votre lit quelques instants, le temps de récupérer.
@@ -1041,8 +1043,8 @@ Et c&#39;est lentement que vos yeux se ferment, et que vous retournez vous niche
 &lt;!-- les nains de jardin se gratteront en pestant contre le sorcier et ses expériences--&gt;
 &lt;&lt;set $orties to true&gt;&gt;
 &lt;&lt;audio &quot;:playing&quot; stop&gt;&gt;
-&lt;&lt;audio &quot;2ndtimer_2&quot; volume 0.5 loop play&gt;&gt;
-&lt;&lt;audio &quot;snoring&quot; loop play volume 0.5 fadein&gt;&gt;
+&lt;&lt;audio &quot;2ndtimer_2&quot; volume 0.7 loop play&gt;&gt;
+&lt;&lt;audio &quot;snoring&quot; loop volume 0.25 fadeto 0.5&gt;&gt;
 &lt;&lt;/silently&gt;&gt;\
 Dépéché, par l&#39;urgence de la situation, à épaissir la mixture instable, et ne trouvant pas vos gants, vous décidez de prendre la poignée d&#39;orties à pleines mains pour l&#39;incorporer à la mixture. Ravalant l&#39;envie de vous gratter, vous regardez les feuilles se dissoudrent dans la décoction instable. La marmite se stabilisant et reprenant son habituelle quiétude, vous vous félicitez de votre prouesse à faire face à l&#39;imprévu. Vos démangeaisons persistant, vous vous essuyez  vos mains dans votre chiffon magique.
 Fatigué par les événements, vous décidez de vous allongez sur votre lit quelques instants, le temps de récupérer.
@@ -1052,15 +1054,15 @@ Et c&#39;est lentement que vos yeux se ferment, et que vous retournez vous niche
 &lt;!-- augmentera les chances de chute dans le raccourci--&gt;
 &lt;&lt;set $bave to true&gt;&gt;
 &lt;&lt;audio &quot;:playing&quot; stop&gt;&gt;
-&lt;&lt;audio &quot;2ndtimer_2&quot; volume 0.5 loop play&gt;&gt;
-&lt;&lt;audio &quot;snoring&quot; loop play volume 0.5 fadein&gt;&gt;
+&lt;&lt;audio &quot;2ndtimer_2&quot; volume 0.7 loop play&gt;&gt;
+&lt;&lt;audio &quot;snoring&quot; loop volume 0.25 fadeto 0.5&gt;&gt;
 &lt;&lt;/silently&gt;&gt;\
 Prenant le bocal vitrifié de bave de crapaud, collectée au cours de ces dernières semaines de chasse, par un temps pluvieux, vous tentez de l&#39;ouvrir. N&#39;y arrivant pas, poussé par l&#39;urgence de la situation, vous le jetez dans la marmite en espérant que le bocal ne résiste pas à l&#39;effet de la mixture. En voyant le bocal couler, vous vous sentez rassuré losque la marmite se stabilise pour retrouver sa quiétude innoffensive. Fatigué par les événements, vous décidez de vous allongez sur votre lit quelques instants, le temps de récupérer.
 Et c&#39;est lentement que vos yeux se ferment, et que vous retournez vous nicher dans les bras de Morphée...
 
 [[Poursuivre l&#39;histoire-&gt;Phase2]] </tw-passagedata>
 <tw-passagedata pid="20" name="marmite" tags="" position="189,1150">&lt;&lt;set $livre to true&gt;&gt;
-&lt;&lt;audio &quot;boiling&quot; play volume 0.5 fadein&gt;&gt;
+&lt;&lt;audio &quot;boiling&quot; volume 0.25 fadeto 0.5&gt;&gt;
 &lt;div id=&quot;chaudron_container&quot;&gt;
  &lt;img class=&quot;chaudron&quot; src=&quot;media/pictures/illustrations/chaudron2.png&quot; alt=&quot;chaudron moins ok&quot; title=&quot;Ça chauffe !&quot;/&gt;
 &lt;/div&gt;
@@ -1218,7 +1220,7 @@ Surpris, les nains cessent un instant de parler, les yeux ronds d&#39;étonnemen
 					...Laquelle est dangereusement ébranlée par le choc avec le muffin, et vous avez l&#39;espace d&#39;un instant une vision d&#39;horreur de la lourde bibliothèque s&#39;effondrant sur le sol. Elle finit toutefois par se stabiliser tandis que le muffin, fort d&#39;un nouveau rebond, part plus vite encore à travers la pièce. Atterré par la propension tout à fait magique de ce muffin à défier les lois de la nature en gagnant en énergie cinétique à chaque heurt, &lt;span id=&quot;r2&quot;&gt;&lt;&lt;link &quot;vous assistez impuissant au parcours rebondissant du muffin...&quot;&gt;&gt;&lt;/span&gt;&lt;&lt;replace &quot;#r2&quot;&gt;&gt;vous assistez impuissant au parcours rebondissant du muffin...&lt;&lt;/replace&gt;&gt;
 
 						&lt;&lt;append &quot;#rebonds&quot;&gt;&gt;
-						&lt;&lt;audio &quot;boiling&quot; play volume 0.5 fadein&gt;&gt;
+						&lt;&lt;audio &quot;boiling&quot; volume 0.25 fadeto 0.5&gt;&gt;
 						&lt;&lt;script&gt;&gt;
 						$(&#39;img.chaudron[data-zi=2]&#39;).animate({opacity: 0}, 1000);
 						&lt;&lt;/script&gt;&gt;
@@ -1237,8 +1239,8 @@ Surpris, les nains cessent un instant de parler, les yeux ronds d&#39;étonnemen
 &lt;!-- fera apparaître des fantômes d&#39;animaux dans la clairière--&gt;
 &lt;&lt;set $os to true&gt;&gt;
 &lt;&lt;audio &quot;:playing&quot; stop&gt;&gt;
-&lt;&lt;audio &quot;2ndtimer_2&quot; volume 0.5 loop play&gt;&gt;
-&lt;&lt;audio &quot;snoring&quot; loop play volume 0.5 fadein&gt;&gt;
+&lt;&lt;audio &quot;2ndtimer_2&quot; volume 0.7 loop play&gt;&gt;
+&lt;&lt;audio &quot;snoring&quot; loop volume 0.25 fadeto 0.5&gt;&gt;
 &lt;&lt;/silently&gt;&gt;\
 Prenant les os sur la table, obtenus par vos différents repas, du lapin à la moutarde, du faisant farci, et d&#39;autres mets appétissants. C&#39;est alors que vous vous remémorez les cours de votre enfance, où votre professeur vous avait fait recopier 100 fois les propriétés épaississante et anti-acidifiante des os. Secouant la tête par dépit, vous ajoutez cet ingrédient à la potion. La potion semblant se calmer et fatigué par les événements, vous décidez de vous allongez sur votre lit quelques instants, le temps de récupérer un peu.
 Et c&#39;est lentement que vos yeux se ferment, et que vous retournez vous nicher dans les bras de Morphée...
@@ -1247,7 +1249,7 @@ Et c&#39;est lentement que vos yeux se ferment, et que vous retournez vous niche
 &lt;!-- fera intervenir un rhinocéros dans le procès--&gt;
 &lt;&lt;set $corne to true&gt;&gt;
 &lt;&lt;audio &quot;:playing&quot; stop&gt;&gt;
-&lt;&lt;audio &quot;2ndtimer_2&quot; volume 0.5 loop play&gt;&gt;
+&lt;&lt;audio &quot;2ndtimer_2&quot; volume 0.7 loop play&gt;&gt;
 &lt;&lt;set $sort_lance to false&gt;&gt;
 &lt;&lt;/silently&gt;&gt;\
 À contre-coeur, vous ajoutez la corne de licorne, qui vous avait coûté un bras une dizaine d&#39;années auparavant auprès d&#39;un marchant ambulant garantissant des propriétés exceptionnelles. Alors qu&#39;elle tombe dans le liquide bouillonant, vous attendant à ce que la magie de la corne stabilise complètement la mixture, une réaction inattendue se produit.
@@ -1419,6 +1421,7 @@ Et c&#39;est lentement que vos yeux se ferment, et que vous retournez vous niche
 &lt;&lt;cacheaudio &quot;boiling&quot; &quot;media/audio/boiling.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;thunder&quot; &quot;media/audio/thunder.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;explosion&quot; &quot;media/audio/explosion.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;underwater&quot; &quot;media/audio/underwater.mp3&quot;&gt;&gt;
 
 &lt;!--Musiques--&gt;
 
@@ -1446,21 +1449,21 @@ $(&#39;body&#39;).append($button);
 &lt;div class=&quot;black_overlay&quot;&gt;&lt;/div&gt;
 &lt;&lt;silently&gt;&gt;
 &lt;&lt;audio &quot;:playing&quot; stop&gt;&gt;
-&lt;&lt;audio &quot;part2&quot; loop play volume 0.6&gt;&gt;
 &lt;&lt;script&gt;&gt;
 setTimeout(function() {
 	$(&#39;.white_overlay&#39;)
 	.fadeOut(50).fadeIn(50).fadeOut(50).fadeIn(100)
-	.delay(500)
+	.delay(1500)
 	.fadeOut(50).fadeIn(50).fadeOut(50).fadeIn(100)
-	.delay(1000)
-	.fadeOut(120).fadeIn(250).fadeOut(400);
-}, 1400);
+	.delay(2000)
+	.fadeOut(80).fadeIn(250).fadeOut(400);
+}, 2000);
 &lt;&lt;/script&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 &lt;&lt;nobr&gt;&gt;
 &lt;span style=&quot;position: relative; z-index:10; color: white&quot; id=&quot;phase2-intro&quot;&gt;
 Dans ==une galaxie== euh non, espace-temps &lt;&lt;linkappend &quot;pas si lointain...&quot;&gt;&gt;
+&lt;&lt;audio &quot;part2&quot; loop play volume 0.6&gt;&gt;
 &lt;&lt;script&gt;&gt;
 $(&#39;.black_overlay&#39;).animate({opacity: 0}, 1000, &quot;swing&quot;, function() {
 	$(&#39;#phase2-intro&#39;).css({color: &quot;black&quot;});
@@ -1577,6 +1580,8 @@ $(&quot;#passages&quot;).css({
   &#39;-o-transition&#39;: &#39;all .1s ease-out&#39;
 });
 &lt;&lt;/script&gt;&gt;
+&lt;&lt;audio &quot;part2&quot; fadeoverto 1 0.15&gt;&gt;
+&lt;&lt;audio &quot;underwater&quot; play volume 0.5 loop&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 &lt;&lt;nobr&gt;&gt;\
 Alors que vous traversez cette rivière gelée, vous entendez des fissures se propager à chacun de vos pas. Alors que vous regrettez d&#39;avoir gardé autant de poids sur vous, la glace se brise sous vos pieds, vous retrouvant alors dans une eau gelée dont vous devez vite
@@ -1596,6 +1601,8 @@ Alors que vous traversez cette rivière gelée, vous entendez des fissures se pr
 			&lt;&lt;/script&gt;&gt;
 			&lt;&lt;if $nb_click &gt;= 5&gt;&gt;
 	&lt;&lt;append &quot;#riviere_result&quot;&gt;&gt;
+	&lt;&lt;audio &quot;underwater&quot; fadeoverto 1 0&gt;&gt;
+	&lt;&lt;audio &quot;part2&quot; fadeoverto 3 0.6&gt;&gt;
 	Frigorifié, vous atteignez enfin l&#39;autre rive. Pour vous réchauffer, vous sortez la couverture de votre sac et vos vêtements séchant au soleil, vous vous demandez encore par quelle magie cette rivière peut être gelée.
 	Vos vêtements secs, et réchauffé, vous pouvez reprendre votre périple...
 	[[Reprendre la route-&gt;bruit]]
@@ -1604,10 +1611,11 @@ Alors que vous traversez cette rivière gelée, vous entendez des fissures se pr
 			&lt;&lt;/if&gt;&gt;
 		&lt;&lt;/link&gt;&gt;
 	&lt;&lt;/append&gt;&gt;
-	&lt;&lt;timed 3s t8n&gt;&gt;
+	&lt;&lt;timed 4s t8n&gt;&gt;
 	&lt;&lt;if $nb_click &lt; 5&gt;&gt;
 	&lt;&lt;remove &quot;#riviere_lutte&quot;&gt;&gt;
 	&lt;&lt;append &quot;#riviere_result&quot;&gt;&gt;
+	&lt;&lt;audio &quot;underwater&quot; fadeoverto 1 0&gt;&gt;
 	Lentement, vous sentez vos membres s&#39;engourdir jusqu&#39;au point de ne plus pouvoir bouger. Petit à petit, vos yeux se ferment et vous partez à la dérive dans
 	&lt;&lt;link [[un sommeil sans fin.-&gt;fin]]&gt;&gt;
 		&lt;&lt;set $bad_end to &quot;riviere&quot;&gt;&gt;
@@ -1755,7 +1763,7 @@ Jeu vidéo réalisé dans le cadre de l&#39;UV IC06 à l&#39;UTC au semestre d&#
 &lt;/ul&gt;
 !!Ressources
 &lt;ul&gt;
-&lt;li&gt;les musiques ont toutes été composées par l&#39;équipe dans le cadre du projet ;&lt;/li&gt;
+&lt;li&gt;les musiques ont toutes été composées par B. Perraud dans le cadre du projet ;&lt;/li&gt;
 &lt;li&gt;de même pour les illustrations ;&lt;/li&gt;
 &lt;li&gt;le fond utilisé est tiré d&#39;un pack gratuit de fonds d&#39;écran disponible &lt;a href=&quot;http://stuffpoint.com/nature/image/462712/magical-forest-wallpaper/&quot;&gt;ici&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
@@ -1763,11 +1771,13 @@ Jeu vidéo réalisé dans le cadre de l&#39;UV IC06 à l&#39;UTC au semestre d&#
 &lt;ul&gt;
 &lt;li&gt;Ronflements : http://soundbible.com/1634-Snoring.html &lt;/li&gt;
 &lt;li&gt;Orage : http://soundbible.com/2016-Thunder-Strike-2.html &lt;/li&gt;
+&lt;li&gt;Explosion : http://s1download-universal-soundbank.com/mp3/sounds/1426.mp3 &lt;/li&gt;
+&lt;li&gt;Noyade : http://soundbible.com/1660-Underwater-Pool.html &lt;/li&gt;
 &lt;/ul&gt;
 [[Retourner au menu-&gt;menu]]</tw-passagedata>
 <tw-passagedata pid="36" name="Intro" tags="" position="31,1229">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;audio &quot;awaking&quot; loop play volume 0.8&gt;&gt;
-&lt;&lt;audio &quot;snoring&quot; loop play volume 0.5 fadein&gt;&gt;
+&lt;&lt;audio &quot;snoring&quot; loop volume 0.25 fadeto 0.5&gt;&gt;
 &lt;span id=&quot;intro_text&quot;&gt;
 
 Alors que doucement la forêt s&#39;éveille sous les doux et chauds rayons solaires de l&#39;aube, tout semble indiquer que la journée sera belle. La lumière matinale trouve son chemin jusqu&#39;à la fenêtre d&#39;une petite cabane où vous dormez d&#39;un sommeil manifestement agité. À mesure que l&#39;obscurité de la nuit est chassée de votre humble demeure vous vous arrachez
