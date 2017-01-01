@@ -28,39 +28,25 @@ repository (~~je ne sais pas encore comment faire en local...~~ impossible : <ht
 
 ## Todos et notes
 
+### Global
 
-### 1ers feedbacks
+- Enrichir les interactions possibles dans certains passages dans la mesure du possible.
+- Accentuer la difficulté au niveau des jets de dés cachés.
+- Accentuer la rupture entre les deux phases (effets visuels + texte), voir comment mieux faire sentir au joueur en phase 2 que ce qui lui arrive dépend de la phase 1 (sûrement avec le texte).
+- Compléter l’aspect esthétique du jeu : images, bruitages, musique.
+- Si le temps, adapter le jeu sur supports mobiles (smartphones et tablettes).
+- Compresser les images pour réduire leur temps de chargement.
+- Réduire le texte de certains passages, notamment au niveau des timers de la 1re phase.
 
-- c'est dommage de se presser, plaisir de lecture
-- image qui détourne l'attention parce qu'elle change ->> prendre en compte ce délai pour le timer ?
-- musique qui dérange la lecture, après difficile à statuer du fait de l'ambiance sonore (pas de mise en condition efficace)
+### Divers
 
-### Feedback Agathe
-
-- quelques fautes d'ortho à corriger :-)
-- apparition du texte en dessous de l'image au réveil doit être plus fluide sinon bancal
-- nécessité d'avoir un background musical dès le début sinon les bruitages tombent comme un cheveu dans la soupe
-- concernant le timer :
-    - musique qui met dans l'ambiance mais qui ne stresse pas nécessairement
-    - si en pleine lecture, on ne voit pas que l'image change ->> ajouter davantage de frames à défaut d'animer ?
-    - plus approprié de balancer le timer en fonction du niveau de scroll, à voir si on peut le faire facilement
-    - sinon, faire en deux temps, où l'on indique dans le premier temps après X s. au joueur qu'il est indécis mais que le chaudron n'attend pas
-    - de manière générale, une stratégie serait de mettre l'accent sur le texte-même pour que le joueur comprenne que la situation est stressante...
-    
-## Reste à faire Phase 2
-
-- après le 2ème ingrédient : bruit ronflement/explosion
 - Transition phase 1/2 : marquer visuellement la transition
-- Phase 2 : flash back (image)
-- Rivière : images (gelée et non) + remise à la normale de la variable
-- Passer au travers de la glace : intéraction avec image pour se sortir de l'eau (ou bad end)
 - bruit : bruit à incorporer
 - Clairière : images (animaux pas/ fantômes/ rien) et texte en accord avec image
 - Groupe scouts : texte de discussion à meubler
 - antre dragon : images (dragon/moto) et blabla de rencontre
 - porte secrete : image?
 - lieu secret : niveau bonus à modifier (ou laisser "en chantier")
-- Cabane : image nains de jardin
 - Scout perdu : l'implanter dans le scénario
 
 ## Notes techniques
