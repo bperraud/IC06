@@ -392,7 +392,7 @@ Ne voulant pas vous séparer de vos affaires, vous laisser tout de même votre b
 	&lt;&lt;/link&gt;&gt;
 	&lt;&lt;link &quot;Tenter&quot;&gt;&gt;
 		&lt;&lt;replace &quot;#glace&quot;&gt;&gt;
-	&lt;&lt;if $var &lt; 5&gt;&gt;
+	&lt;&lt;if $var &lt; 4&gt;&gt;
 Ne voulant pas vous séparer de vos affaires, vous commencez la traversée. Bien que les bruits de fissures, se propageant sous vos pieds, vous ont donné des sueurs froides, vous atteignez sain et sauf l&#39;autre rive.
 [[Suite-&gt;bruit]]
 	&lt;&lt;else&gt;&gt;
@@ -431,8 +431,7 @@ Le bruit provient d&#39;un chemin discret sur votre droite. Vous rappelant les d
 Le bruit provient d&#39;un chemin discret sur votre droite. Vous rappelant les dires des habitants, il s&#39;agit certainement de la clairière...
 [[Aller en direction du bruit-&gt;Clairière]]
 [[Continuer sur le sentier-&gt;Groupe de scout]]
-&lt;&lt;/if&gt;&gt;
-</tw-passagedata>
+&lt;&lt;/if&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="4" name="porter le bâton" tags="" position="1508,1560">&lt;&lt;set $allumette to false&gt;&gt;
 Vous décidez alors de porter vôtre bâton hors de l&#39;eau. Une fois de l&#39;autre côté de la rive, vous vous retrouvez humide, comme les amulettes que vous avez oublié dans votre sac. Une fois séché au soleil, par ce temps agréable, vous reprenez la route.
 [[Suite-&gt;bruit]]
@@ -1939,7 +1938,7 @@ Alors même que les nains allaient commencer à balancer une flopée de jurons, 
 
 C&#39;est alors que le sorcier jette un sort et que tous les individus impliqués dans ses actions se matérialisent devant vous :
 
-Les nains &lt;&lt;if $os eq true&gt;&gt;, des fantômes d&#39;animaux&lt;&lt;/if&gt;&gt;&lt;&lt;if $dragon eq &quot;dragon&quot;&gt;&gt;, un dragon&lt;&lt;/if&gt;&gt;&lt;&lt;if $livre eq true&gt;&gt;, des animaux qui discutent entre eux&lt;&lt;/if&gt;&gt;&lt;&lt;if $gateau eq true&gt;&gt;, un mouton&lt;&lt;/if&gt;&gt;&lt;&lt;if $champignon eq true&gt;&gt;, le groupe de scouts&lt;&lt;/if&gt;&gt;&lt;&lt;if $scoutaide  eq true&gt;&gt;, le groupe de scouts&lt;&lt;/if&gt;&gt;&lt;&lt;if $corne eq true&gt;&gt; et un rhinocéros... Regardant sa corne, le sorcier comprend alors qu&#39;il s&#39;est fait berner et que la corne incorporée précédemment ne provenait pas d&#39;une licorne&lt;&lt;/if&gt;&gt;.
+Les nains &lt;&lt;if $os eq true&gt;&gt;, des fantômes d&#39;animaux&lt;&lt;/if&gt;&gt;&lt;&lt;if $dragon eq &quot;dragon&quot;&gt;&gt;, un dragon&lt;&lt;/if&gt;&gt;&lt;&lt;if $livre eq true&gt;&gt;, des animaux qui discutent entre eux&lt;&lt;/if&gt;&gt;&lt;&lt;if $dragon eq &quot;mouton&quot;&gt;&gt;, un mouton&lt;&lt;/if&gt;&gt;&lt;&lt;if $champignon eq true&gt;&gt;, le groupe de scouts&lt;&lt;/if&gt;&gt;&lt;&lt;if $scoutaide  eq true&gt;&gt;, le groupe de scouts&lt;&lt;/if&gt;&gt;&lt;&lt;if $corne eq true&gt;&gt; et un rhinocéros... Regardant sa corne, le sorcier comprend alors qu&#39;il s&#39;est fait berner et que la corne incorporée précédemment ne provenait pas d&#39;une licorne&lt;&lt;/if&gt;&gt;.
 
 Maintenant que toute cette étonnante ménagerie se présente dans son intégralité sous vos yeux, vous ne pouvez vous empêcher de vous demander si tout ceci est bien réel et si vous n&#39;êtes pas en train de rêver depuis le début de toute cette histoire... Vous pouvez vous &lt;span id=&quot;pincement&quot;&gt;&lt;&lt;link &quot;pincer&quot;&gt;&gt;&lt;&lt;if $variable eq 2&gt;&gt;&lt;&lt;set $dream to true&gt;&gt;&lt;&lt;goto &quot;fin&quot;&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;replace &quot;#pincement&quot;&gt;&gt;pincer (Aïe !!)&lt;&lt;/replace&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/span&gt;, juste histoire d&#39;être sûr.
 
@@ -1970,11 +1969,11 @@ Qui appeler à s&#39;exprimer ?
 
 &lt;&lt;if $livre eq true&gt;&gt;[[Ces animaux intelligents semblent extrêmement réfléchis, ils arriveront sans doute à lui faire entendre raison.-&gt;finAnimauxIntel]]&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $gateau eq true&gt;&gt;[[Le mouton ?!?... Il a un quelque chose d&#39;attendrissant, peut-être...-&gt;finMouton]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $dragon eq &quot;mouton&quot;&gt;&gt;[[Le mouton ?!?... Il a un quelque chose d&#39;attendrissant, peut-être...-&gt;finMouton]]&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $scoutaide  eq true&gt;&gt;[[Ces scouts pleins de joie de vivre pourraient peut-être lui montrer, dans la bonne humeur, qu&#39;il faut qu&#39;il soit plus prudent à l&#39;avenir.-&gt;finScouts]]&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $corne eq true&gt;&gt;[[Le rhinocéros semble vous regarder d&#39;un air à la fois ennuyé et menaçant et vous ne voyez pas bien ce qu&#39;il pourrait faire pour vous mais, après tout, dans l&#39;absolu: pourquoi pas ?-&gt;finRhino]]&lt;&lt;/if&gt;&gt;</tw-passagedata>
+&lt;&lt;if $corne eq true&gt;&gt;[[Le rhinocéros semble vous regarder d&#39;un air à la fois ennuyé et menaçant et vous ne voyez pas bien ce qu&#39;il pourrait faire pour vous mais, après tout, dans l&#39;absolu : pourquoi pas ?-&gt;finRhino]]&lt;&lt;/if&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="42" name="fin" tags="" position="5007,1063">&lt;&lt;if $bad_end != false&gt;&gt;\
 &lt;&lt;nobr&gt;&gt;
 	&lt;&lt;if !$bad_ends.includes($bad_end)&gt;&gt;
