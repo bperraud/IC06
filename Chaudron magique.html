@@ -258,6 +258,7 @@ img.badge {
 	vertical-align: middle;
 }
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 
@@ -363,6 +364,7 @@ window.blurElement = function (element, size, sduration) {
 
 
 
+
 </script><tw-passagedata pid="1" name="Rivière" tags="" position="1340,1261">&lt;&lt;silently&gt;&gt;
 &lt;&lt;set $var to random(1,10)&gt;&gt;
 &lt;&lt;/silently&gt;&gt;\
@@ -436,92 +438,83 @@ Le bruit provient d&#39;un chemin discret sur votre droite. Vous rappelant les d
 Vous décidez alors de porter vôtre bâton hors de l&#39;eau. Une fois de l&#39;autre côté de la rive, vous vous retrouvez humide, comme les amulettes que vous avez oublié dans votre sac. Une fois séché au soleil, par ce temps agréable, vous reprenez la route.
 [[Suite-&gt;bruit]]
 </tw-passagedata>
-<tw-passagedata pid="5" name="Groupe de scout" tags="" position="2370,1270">&lt;img class=&quot;illustration&quot; alt=&quot;scouts&quot; src=&quot;media/pictures/illustrations/scouts.png&quot;/&gt;
+<tw-passagedata pid="5" name="Groupe de scout" tags="" position="2370,1268">&lt;&lt;set $scoutaide to false&gt;&gt;\
+&lt;img class=&quot;illustration&quot; alt=&quot;scouts&quot; src=&quot;media/pictures/illustrations/scouts.png&quot;/&gt;
 Sur votre chemin, vous rencontrez un groupe de jeunes scouts affairés à étudier la nature. L&#39;un ramasse des champignons, une autre des papillons, le troisième ramasse des feuilles et les examine avec une loupe et le dernier, perdu dans ses pensées, regarde les nuages...
 Ah la jeunesse, cela vous rappelle la vôtre où vous partiez avec votre grand-frère en forêt et où  vous imaginiez divers scénarios pour vous amuser : combat d&#39;épées, fabrication d&#39;arcs, construction de forteresse, opération commando... À votre vue, ils se détournent de leur tâche pour vous saluer.\
 &lt;&lt;nobr&gt;&gt;&lt;&lt;if $champignon eq true&gt;&gt; Une drôle de lueur émane de leurs yeux et leurs gestes semblent mous.&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $scouteperduvu eq true&gt;&gt; Il doit sûrement s&#39;agir du groupe auquel appartient le scout vu précédemment.&lt;&lt;/if&gt;&gt;&lt;&lt;/nobr&gt;&gt;\
-&lt;span id=&quot;scouts&quot;&gt;
-	&lt;&lt;link &quot;Les saluer&quot;&gt;&gt;
-		&lt;&lt;replace &quot;#scouts&quot;&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+
+&lt;span id=&quot;saluer&quot;&gt;\
+&lt;&lt;linkreplace &quot;Les saluer&quot;&gt;&gt;\
+&lt;&lt;remove &quot;#laisser&quot;&gt;&gt;\
 &lt;&lt;if $champignon eq true&gt;&gt;
 &lt;!-- texte multicolor--&gt;
 - Bonjour l&#39;ami, dis-moi tu dois être perdu non?
 - Encore un éléphant qui se promène dans le bois ?! Qui aurait dit qu&#39;il y en avait dans le coin...
 
-	&lt;span id=&quot;delire&quot;&gt;
-		&lt;&lt;link &quot;Les laisser dans leur monde&quot;&gt;&gt;
-			&lt;&lt;replace &quot;#delire&quot;&gt;&gt;
+&lt;&lt;linkreplace &quot;Les laisser dans leur monde&quot;&gt;&gt;
 En essayant de comprendre les paroles du scout vous le voyez ramasser quelque chose de pas très net à terre et le manger. Ne cherchant pas plus loin, vous décidez de reprendre la route et ne pas perdre de temps avec eux...
 [[Suite-&gt;Embranchement]]
-			&lt;&lt;/replace&gt;&gt;
-		&lt;&lt;/link&gt;&gt;
-	&lt;/span&gt;
-&lt;&lt;else&gt;&gt;
+&lt;&lt;/linkreplace&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
 - Eh bonjour ! C&#39;est rare de rencontrer des gens par ici. Ca fait des semaines que nous examinons cette forêt et mis à part quelques animaux, nous ne voyons rien d&#39;intéressant.
 - Encore un citadin qui se perd dans le bois
 - Dites-moi, je galère un peu à attraper cette pomme, vous ne pourriez pas m&#39;aider à l&#39;attraper, s&#39;il vous plaît ?
-&lt;!-- ou alors attraper papillon qui bouge à l&#39;écran(GIF)--&gt;
-	&lt;span id=&quot;help&quot;&gt;
-		&lt;&lt;link &quot;Aider&quot;&gt;&gt;
-			&lt;&lt;replace &quot;#help&quot;&gt;&gt;
-Il suffit juste de monter la chercher 
-Ah merci bien
-&lt;&lt;set $scoutaide to true&gt;&gt;
-&lt;span id=&quot;perdu&quot;&gt;
-	&lt;&lt;link &quot;Prendre congé&quot;&gt;&gt;
-		&lt;&lt;replace &quot;#perdu&quot;&gt;&gt;
+
+&lt;span id=&quot;aider&quot;&gt;\
+&lt;&lt;linkreplace &quot;Aider&quot;&gt;&gt;\
+&lt;&lt;remove &quot;#pasaider&quot;&gt;&gt;\
+- Attention, une fois dans l’arbre, le plus dur reste à faire car les branches sont glissantes donc il ne faut pas trainer.
+Vous grimpez alors à l’arbre. \
+  &lt;&lt;linkappend &quot;Vous attrapez la branche puis...&quot;&gt;&gt;
+  	&lt;span id=&quot;tenteraide&quot;&gt;\
+  	&lt;&lt;linkappend &quot;la deuxième branche...&quot;&gt;&gt;\
+		&lt;&lt;set $scoutaide to true&gt;&gt;\
+avant de cueillir la pomme. Après être retombé sur vos pieds, vous donnez la pomme au scout.
+- Ah merci beaucoup monsieur. C’est qu’elle me donnait faim à la regarder…
+
+		&lt;&lt;linkreplace &quot;Prendre congé&quot;&gt;&gt;\
+Devant vous remettre en route, vous laissez le groupe reprendre ses activités...
+		[[Suite-&gt;Embranchement]]
+		&lt;&lt;/linkreplace&gt;&gt;\
+	&lt;&lt;/linkappend&gt;&gt;\
+	&lt;/span&gt;\
+	&lt;&lt;timed 2s t8n&gt;&gt;\
+	  &lt;&lt;if $scoutaide eq false&gt;&gt;\
+	  &lt;&lt;remove &quot;#tenteraide&quot;&gt;&gt;\
+	  n&#39;ayant pas eu le temps de vous rattraper à la deuxième branche, vous vous mangez lamentablement le sol !
+		  &lt;&lt;linkreplace &quot;Prendre congé&quot;&gt;&gt;\
+		  - Ce n’est pas grave mais merci beaucoup de nous avoir fait rire !!
+		  Et c’est en voulant prendre soin de votre postérieur que vous reprenez la route et vous laissez le groupe reprendre ses activités...
+		  [[Suite-&gt;Embranchement]]
+		  &lt;&lt;/linkreplace&gt;&gt;\
+	  &lt;&lt;/if&gt;&gt;\
+	&lt;&lt;/timed&gt;&gt;\
+  &lt;&lt;/linkappend&gt;&gt;\
+&lt;&lt;/linkreplace&gt;&gt;\
+&lt;/span&gt;\
+
+&lt;span id=&quot;pasaider&quot;&gt;\
+&lt;&lt;linkreplace &quot;Refuser&quot;&gt;&gt;\
+&lt;&lt;remove &quot;#aider&quot;&gt;&gt;\
+- Vous n&#39;êtes pas gentil... en tout cas ne comptez pas sur nous pour vous aider en cas de besoin ...
 Devant vous remettre en route, vous laissez le groupe reprendre ses activités...
 [[Suite-&gt;Embranchement]]
-		&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;/link&gt;&gt;
-&lt;&lt;if $scoutperduvu eq true&gt;&gt;
-	&lt;&lt;link &quot;Mentionner le scout perdu&quot;&gt;&gt;
-		&lt;&lt;replace &quot;#perdu&quot;&gt;&gt;
-- Rho toujours la tête en l&#39;air celui-là heureusement qu&#39;on lui a mis une pancarte
-- C&#39;est qu&#39;il nous mettra en retard avec ses bêtises et dire qu&#39;on doit retourner le chercher
--En tout cas merci pour l&#39;indication et bonne route &lt;&lt;set $scoutaide to true&gt;&gt;
-[[Prendre congé-&gt;Embranchement]]
-		&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;/link&gt;&gt;
-	&lt;&lt;/if&gt;&gt;
-&lt;/span&gt;
-			&lt;&lt;/replace&gt;&gt;
-		&lt;&lt;/link&gt;&gt;
-		&lt;&lt;link &quot;Refuser&quot;&gt;&gt;
-			&lt;&lt;replace &quot;#help&quot;&gt;&gt;
-- Vous n&#39;êtes pas gentil ... en tout cas ne comptez pas sur nous pour vous aider en cas de besoin ...
-&lt;span id=&quot;perdu&quot;&gt;
-	&lt;&lt;link &quot;Prendre congé&quot;&gt;&gt;
-		&lt;&lt;replace &quot;#perdu&quot;&gt;&gt;
-Devant vous remettre en route, vous laissez le groupe reprendre ses activités...
-[[Suite-&gt;Embranchement]]
-		&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;/link&gt;&gt;
-&lt;&lt;if $scoutperduvu eq true&gt;&gt;
-	&lt;&lt;link &quot;Mentionner le scout perdu&quot;&gt;&gt;
-		&lt;&lt;replace &quot;#perdu&quot;&gt;&gt;
-- Rho toujours la tête en l&#39;air celui-là heureusement qu&#39;on lui a mis une pancarte
-- C&#39;est qu&#39;il nous mettra en retard avec ses bêtises et dire qu&#39;on doit retourner le chercher
--En tout cas merci pour l&#39;indication et bonne route &lt;&lt;set $scoutaide to true&gt;&gt;
-[[Prendre congé-&gt;Embranchement]]
-		&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;/link&gt;&gt;
-	&lt;&lt;/if&gt;&gt;
-&lt;/span&gt;
-			&lt;&lt;/replace&gt;&gt;
-		&lt;&lt;/link&gt;&gt;
-	&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;
-		&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;/link&gt;&gt;
-	&lt;&lt;link &quot;Les laisser à leurs occupations&quot;&gt;&gt;
-		&lt;&lt;replace &quot;#scouts&quot;&gt;&gt;
+&lt;&lt;/linkreplace&gt;&gt;
+&lt;/span&gt;\
+
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/linkreplace&gt;&gt;\
+&lt;/span&gt;\
+
+&lt;span id=&quot;laisser&quot;&gt;\
+&lt;&lt;linkreplace &quot;Les laisser à leurs occupations&quot;&gt;&gt;\
+&lt;&lt;remove &quot;#saluer&quot;&gt;&gt;\
 N&#39;ayant pas le temps pour dialoguer, vous laissez la jeunesse à leurs occupations et vous reprenez votre route
 [[Suite-&gt;Embranchement]]
-		&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;/link&gt;&gt;
-&lt;/span&gt;</tw-passagedata>
+&lt;&lt;/linkreplace&gt;&gt;
+&lt;/span&gt;\</tw-passagedata>
 <tw-passagedata pid="6" name="Manifestation" tags="" position="2080,1811">Interloqués de voir des animaux parlants, vous vous manifestez auprès d&#39;eux. Après plusieurs minutes de conversation au travers différents débats, vous allez reprendre la route vers la cabane du sorcier lorsqu&#39;un lapin vous propose d&#39;argumenter à propos de l&#39;existence et l’absurdité des sentiments avec un animal intelligent ...
 [[Relever le défi-&gt;Dicussion]]
 [[Décliner la proposition et s&#39;en aller-&gt;Groupe de scout]] </tw-passagedata>
