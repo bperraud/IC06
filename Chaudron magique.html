@@ -549,12 +549,12 @@ Arrivé à un embranchement, vous voyez deux chemins qui s&#39;offrent à vous :
 Après avoir fouillé vos poches sans succès, n&#39;ayant plus de moyens d&#39;éclairer la route, vous vous enfoncez dans l&#39;obscurité.&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 [[Continuer et rester dans la pénombre-&gt;antre du dragon]]
 </tw-passagedata>
-<tw-passagedata pid="10" name="raccourci" tags="" position="3011,1264">&lt;&lt;set $variable to random(1,10)&gt;&gt;
+<tw-passagedata pid="10" name="raccourci" tags="" position="3010,1264">&lt;&lt;set $variable to random(1,10)&gt;&gt;
 &lt;&lt;if $bave eq true&gt;&gt;
 &lt;&lt;set $variable to $variable -2&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $baton eq true&gt;&gt;&lt;!-- ##########Avance avec bâton######--&gt;
-	&lt;&lt;if $variable &lt;9&gt;&gt;Souhaitant gagner du temps, vous empruntez le raccourci et armé de votre bâton vous avancez sans glisser ni chuter dans le ravin&lt;&lt;if $bave eq true&gt;&gt;, malgré la présence d&#39;une substance visqueuse sur le sol&lt;&lt;/if&gt;&gt;.
+	&lt;&lt;if $variable &gt;3&gt;&gt;Souhaitant gagner du temps, vous empruntez le raccourci et armé de votre bâton vous avancez sans glisser ni chuter dans le ravin&lt;&lt;if $bave eq true&gt;&gt;, malgré la présence d&#39;une substance visqueuse sur le sol&lt;&lt;/if&gt;&gt;.
 [[Poursuivre-&gt;jardincabane]]&lt;&lt;else&gt;&gt;Souhaitant gagner du temps, vous empruntez le raccourci et armé de votre bâton vous avancez. Cependant, bien mal vous en a pris car vous chutez dans le ravin après avoir glissé sur une pierre&lt;&lt;if $bave eq true&gt;&gt; recouverte d&#39;une substance gluante&lt;&lt;/if&gt;&gt;.&lt;&lt;set $bad_end to &quot;ravin&quot;&gt;&gt; [[Fin-&gt;fin]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
 	&lt;&lt;if $couteau eq true&gt;&gt;
@@ -563,13 +563,13 @@ N&#39;ayant plus de bâton, pour vous aider dans votre ascension, vous avez la p
 &lt;&lt;link &quot;Fabriquer un bâton&quot;&gt;&gt;&lt;!-- ######Fabrique bâton#####--&gt;
 &lt;&lt;replace &quot;#glisse&quot;&gt;&gt;
 &lt;&lt;set $baton to true&gt;&gt;
-Après avoir fabriqué votre bâton à partir d’une solide branche de chêne, vous vous remettez en route.&lt;&lt;if $variable &lt;9&gt;&gt; Serein, vous avancez sans glisser ni chuter dans le ravin&lt;&lt;if $bave eq true&gt;&gt;, malgré la présence d&#39;une substance visqueuse sur le sol&lt;&lt;/if&gt;&gt;.
+Après avoir fabriqué votre bâton à partir d’une solide branche de chêne, vous vous remettez en route.&lt;&lt;if $variable &gt;3&gt;&gt; Serein, vous avancez sans glisser ni chuter dans le ravin&lt;&lt;if $bave eq true&gt;&gt;, malgré la présence d&#39;une substance visqueuse sur le sol&lt;&lt;/if&gt;&gt;.
 [[Suite-&gt;jardincabane]]&lt;&lt;else&gt;&gt; Armé de votre bâton vous avancez mais bien mal vous en a pris car vous chutez dans le ravin après avoir glissé sur une pierre&lt;&lt;if $bave eq true&gt;&gt; recouverte d&#39;une substance gluante&lt;&lt;/if&gt;&gt;.&lt;&lt;set $bad_end to &quot;ravin&quot;&gt;&gt;
 [[Fin-&gt;fin]]&lt;&lt;/if&gt;&gt;
 		&lt;&lt;/replace&gt;&gt;
 	&lt;&lt;/link&gt;&gt;
 &lt;&lt;link &quot;Continuer sans bâton&quot;&gt;&gt;&lt;!-- ######Ne veut pas fabriquer baton###--&gt;
-&lt;&lt;if $variable &gt; 6&gt;&gt;
+&lt;&lt;if $variable &gt;7&gt;&gt;
 &lt;&lt;replace &quot;#glisse&quot;&gt;&gt;
 Vous sentant courageux, vous bravez le danger et vous vous remettez en route et vous avancez sans glisser ni chuter dans le ravin&lt;&lt;if $bave eq true&gt;&gt;, malgré la présence d&#39;une substance visqueuse sur le sol&lt;&lt;/if&gt;&gt;.
 [[Suite-&gt;jardincabane]]
