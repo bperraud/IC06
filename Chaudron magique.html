@@ -264,6 +264,7 @@ img.badge {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// requires jquery
 
 
@@ -362,6 +363,7 @@ window.blurElement = function (element, size, sduration) {
         '-o-transition':'all ' + sduration + 's ease-out'
 	});
 }
+
 
 
 
@@ -620,79 +622,152 @@ Devant l’incompréhension des symboles, vous préférez reposer la pièce plut
 Alors que vous sortez de la pénombre du sombre chemin, vous arrivez devant une sorte de grotte contre laquelle est appuyée une moto. Au pied de la roue arrière, vous pouvez voir qu&#39;un chien soulage sa vessie.
 &lt;&lt;if $dragon eq &quot;dragon&quot;&gt;&gt;&lt;!-- ######dragon=dragon##########--&gt;
 &lt;img class=&quot;illustration&quot; alt=&quot;dragon&quot; src=&quot;media/pictures/illustrations/dragon.png&quot;/&gt;
-C&#39;est alors que la moto se met à vibrer et à se déformer pour prendre des dimensions gigantesques et laisser place à une créature semblable à un dragon. D&#39;un coup, il gobe le pauvre chien
+C&#39;est alors que la moto se met à vibrer et à se déformer pour prendre des dimensions gigantesques et laisser place à une créature ayant tout l&#39;air d&#39;être un dragon. D&#39;un coup, il gobe le pauvre chien
 - Ah la sale bête ! Enfin je t&#39;ai eu, depuis le temps ! Ça t&#39;apprendra à venir tous les jours pour te soulager sur moi !
 Grouaahh que ça fait du bien de s&#39;étirer.
 
-BLABLABLA
+Alors que l&#39;immense créature couverte d&#39;écailles s&#39;applique à s&#39;étirer dans tous les sens possibles et imaginables, vous devez quant à vous esquiver au mieux la queue et les pattes du dragon qui ne vous a pas remarqué. Par chance, vous réchappez vivant de cette séance d&#39;exercices draconiens, mais vous vous retrouvez également sous l&#39;énorme oeil scrutateur de la bête.
 
-&lt;span id=&quot;depart&quot;&gt;
-	&lt;&lt;link &quot;Reprendre la route&quot;&gt;&gt;
-		&lt;&lt;replace &quot;#depart&quot;&gt;&gt;
-	&lt;&lt;if $pieceor eq true&gt;&gt;
+- Tiens, tiens, dit-il, mais que voici donc ? Un être humain ?
+
+Vous acquiescez timidement de la tête.
+
+- Ha ! J&#39;ai toujours trouvé votre espèce nuisible, vous passez votre temps à piailler, vous chamailler et détruire le paysage. Et je ne parle même pas de ceux du genre du sorcier qui m&#39;a métamorphosé en objet inanimé. Si je mets un jour mes griffes sur lui, je le dévore ! Mais quant à toi, sache que je suis affamé, il faut dire que cela fait plusieurs années que je n&#39;ai rien avalé, et un vieux dragon comme moi a besoin de viande pour rester en forme, alors donne-moi une bonne raison de ne pas t&#39;avaler tout de suite.
+
+&lt;span id=&quot;memangepas&quot;&gt;
+	&lt;&lt;link &quot;- Ô grand et noble Dragon, je ne suis qu&#39;un promeneur maigrichon certainement indigne d&#39;être consommé par Votre Immenseté !&quot;&gt;&gt;
+		&lt;&lt;replace &quot;#memangepas&quot;&gt;&gt;
+Vous décidez de jouer la carte de la flatterie pour vous sortir de ce mauvais pas:
+- Ô grand et noble Dragon, je ne suis qu&#39;un promeneur maigrichon certainement indigne d&#39;être consommé par Votre Immenseté !
+- Comment ?! rugit alors le dragon, manifestement furieux. Qui traitez-vous donc de gland ignoble ?! Et je n&#39;ai rien d&#39;un cornichon !!
+
+Manifestement, la vieillesse du dragon l&#39;a rendu dur de la feuille et vos flatteries sont devenues des injures à ses oreilles. Vous commencez à trembler, sentant vos derniers instants arrivés. Mais la créature n&#39;a pas fini de s&#39;indigner.
+- Quelle honte ! A peine sorti de ces longues années passées inanimé voilà qu&#39;on m&#39;insulte ! Ah ! Et mon trésor ?! Où est donc mon trésor ? Aux voleurs ! On m&#39;a pillé ! Aaaah ! Tu vas tater de mes crocs, petit homme !
+
+Déjà le dragon plonge sur vous en grondant...
+&lt;&lt;if $pieceor eq true&gt;&gt;
+&lt;span id=&quot;unepiecepourlavie&quot;&gt;
+	&lt;&lt;link &quot;Essayer de calmer le dragon en lui donnant votre pièce d&#39;or&quot;&gt;&gt;
+		&lt;&lt;replace &quot;#unepiecepourlavie&quot;&gt;&gt;
+-Attendez ! vous écriez-vous en brandissant la pièce devant vous.
+Aussitôt, l&#39;éclat de l&#39;or attire les pupilles du dragon et il s&#39;immobilise, vous regardant en plissant les yeux, les naseaux dilatés, attentif.
+-Je sais bien que ce n&#39;est là qu&#39;un sou, mais c&#39;est tout l&#39;or que je possède et je veux vous en faire offrande pour vous aider à reconstituer votre trésor ! Tout trésor commence après tout par une pièce ! criez-vous pour être sûr de ne pas être mal compris.
+
+Après un temps de réflexion, le dragon accepte votre offrande et vous remercie chaleureusement.
+- Vous n&#39;êtes pas comme les autres humains que je connais. Je suis désormais votre obligé ! Reprenez donc votre route sans crainte.
+
+Soulagé, vous laissez donc l&#39;incroyable créature derrière vous et reprenez votre chemin en lui souhaitant de vite amasser les richesses.
+&lt;&lt;set $pieceor to false&gt;&gt;
+&lt;&lt;set $aidedragon to true&gt;&gt;
+[[Suite-&gt;Portesecrete]]
+		&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+&lt;/span&gt;
+	&lt;&lt;else&gt;&gt;
+Et vous gobe sans autre forme de procès.
+&lt;&lt;set $bad_end to &quot;mange&quot;&gt;&gt;
+[[Fin-&gt;fin]]
+	&lt;&lt;/if&gt;&gt;
+		&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+	&lt;&lt;link &quot;- Yo le lézard plein de tiques, tu te calmes direct: je suis plus costaud que j&#39;en ai l&#39;air !&quot;&gt;&gt;
+	&lt;&lt;replace &quot;#memangepas&quot;&gt;&gt;
+Décidé à ne pas vous laisser marcher sur les pieds par qui que ce soit, vous prenez une grande inspiration et prononcez timidement les mots qui vous viennent:
+- Yo le lézard plein de tiques, tu te calmes direct: je suis plus costaud que j&#39;en ai l&#39;air !
+
+Le dragon reste un moment silencieux puis rapproche sa tête énorme de vous. Il a l&#39;air de... Sourire ?
+- Ha ! Vous me flattez ! Je vous assure que ces écailles sont naturelles et non le fruit de quelque art plastique. Mais je suis d&#39;accord avec vous pour dire que je suis plus beau qu&#39;un désert ! (Drôle de compliment, ils sont bizarres ces humains, mais bon, j&#39;ai toujours été sensible à la flatterie, hihihi). Très bien, humain, tu m&#39;as adouci. Malgré ma faim, je t&#39;épargne. Va donc !
+
+Manifestement, la vieillesse du dragon l&#39;a rendu dur de la feuille et il a mal compris vos propos. Bah ! C&#39;est aussi bien vous dîtes-vous en haussant les épaules. Alors que vous commencez à partir, vous entendez le dragon rugir.
+-Ah ! Les bandits ! Les démons ! Les voleurs ! On a pillé mon beau trésor ! Où est-il donc passé ? Ah ! Malheur ! Ce bel or si durement acquis... Ce sorcier qui m&#39;a tenu loin de mes pièces connaîtra mon courroux !
+		&lt;&lt;if $pieceor eq true&gt;&gt;
+&lt;span id=&quot;prayfordragon&quot;&gt;
+			&lt;&lt;link &quot;Prendre le dragon en pitié et lui proposer votre pièce d&#39;or&quot;&gt;&gt;
+			&lt;&lt;replace &quot;#prayfordragon&quot;&gt;&gt;
+- Ô noble dragon ! vous écriez-vous en brandissant la pièce devant vous.
+Aussitôt, l&#39;éclat de l&#39;or attire les pupilles du dragon et il se tourne vers vous, visiblement très attentif.
+-Je sais bien que ce n&#39;est là qu&#39;un sou, mais c&#39;est tout l&#39;or que je possède et je veux vous en faire offrande pour vous aider à reconstituer votre trésor ! Tout trésor commence après tout par une pièce ! criez-vous pour être sûr de ne pas être mal compris.
+
+Après un temps de réflexion, le dragon accepte votre offrande et vous remercie chaleureusement.
+- Vous n&#39;êtes pas comme les autres humains que je connais. Je suis désormais votre obligé ! Allez avec ma bénédiction !
+
+Content d&#39;avoir rendu service, vous laissez donc l&#39;incroyable créature derrière vous et reprenez votre chemin en lui souhaitant de vite amasser les richesses.
+&lt;&lt;set $pieceor to false&gt;&gt;
+&lt;&lt;set $aidedragon to true&gt;&gt;
+[[Suite-&gt;Portesecrete]]
+			&lt;&lt;/replace&gt;&gt;
+			&lt;&lt;/link&gt;&gt;
+			&lt;&lt;link &quot;Reprendre votre route sans vous préoccuper du malheur du dragon&quot;&gt;&gt;
+			&lt;&lt;replace &quot;#prayfordragon&quot;&gt;&gt;
+Vous continuez votre chemin en laissant le dragon à son malheur. Tant pis pour lui ! Vous n&#39;allez pas vous faire plus pauvre pour une bête qui a failli vous manger.
+Cependant, sa voix vous parvient encore.
 &lt;!-- bruit dragon qui sent qqch--&gt;
-- C&#39;est quoi cette odeur, mes souvenir sont lointains mais cette odeur m&#39;est fort agréable... N&#39;aurais tu pas de l&#39;or sur toi qui aurait appartenu à mon trésor?
+- C&#39;est quoi cette odeur, mes souvenirs sont lointains mais cette odeur m&#39;est fort agréable... N&#39;aurais tu pas de l&#39;or sur toi qui aurait appartenu à mon trésor?
 &lt;span id=&quot;voleur&quot;&gt;
-	&lt;&lt;link &quot;Mentir&quot;&gt;&gt;&lt;!-- ###############Mentir############--&gt;
-		&lt;&lt;replace &quot;#voleur&quot;&gt;&gt;
-&lt;&lt;set $variable to random(1,10)&gt;&gt;
-		&lt;&lt;if $livrescout eq true&gt;&gt;&lt;!--#######Test echec fuite#######--&gt;
-			&lt;&lt;if $variable &gt; 5&gt;&gt;	
+			&lt;&lt;link &quot;Mentir&quot;&gt;&gt;
+			&lt;&lt;replace &quot;#voleur&quot;&gt;&gt;
+			&lt;&lt;if $livrescout eq true&gt;&gt;
+				&lt;&lt;if $variable &gt; 5&gt;&gt;	
 &lt;&lt;set $variable to &quot;echec&quot;&gt;&gt;
-			&lt;&lt;/if&gt;&gt;
-		&lt;&lt;else&gt;&gt;
-			&lt;&lt;if $variable &gt; 2&gt;&gt;
+				&lt;&lt;/if&gt;&gt;
+			&lt;&lt;else&gt;&gt;
+				&lt;&lt;if $variable &gt; 2&gt;&gt;
 &lt;&lt;set $variable to &quot;echec&quot;&gt;&gt;
+				&lt;&lt;/if&gt;&gt;
 			&lt;&lt;/if&gt;&gt;
-		&lt;&lt;/if&gt;&gt;
-		&lt;&lt;if $variable eq &quot;echec&quot;&gt;&gt;
+			&lt;&lt;if $variable eq &quot;echec&quot;&gt;&gt;
 Alors que vous essayez, tant bien que mal d&#39;argumenter sur le fait que vous ne pouvez pas avoir la pièce, le dragon, agacé, vous gobe d&#39;un geste rapide pour son âge...
 &lt;&lt;set $bad_end to &quot;mange&quot;&gt;&gt;
 [[Fin-&gt;fin]]
-		&lt;&lt;else&gt;&gt;
+			&lt;&lt;else&gt;&gt;
 Après un discours riche en arguments, le vieux dragon abdique et vous présente ses excuses en prenant pour faute son odorat âgé.
 [[Suite-&gt;Portesecrete]]
-		&lt;&lt;/if&gt;&gt;
-		&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;/link&gt;&gt;
-	&lt;&lt;link &quot;Donner la pièce&quot;&gt;&gt;&lt;!-- #######Donnerpièce######--&gt;
-		&lt;&lt;replace &quot;#voleur&quot;&gt;&gt;
+			&lt;&lt;/if&gt;&gt;
+			&lt;&lt;/replace&gt;&gt;
+			&lt;&lt;/link&gt;&gt;
+			&lt;&lt;link &quot;Donner la pièce&quot;&gt;&gt;
+			&lt;&lt;replace &quot;#voleur&quot;&gt;&gt;
 &lt;&lt;set $pieceor to false&gt;&gt;
-Bien que le dragon soit âgé, vous préférez ne pas prendre de risques et vous lui donnez la pièce et il vous laisse repartir sans vous dévorer. 
+Bien que le dragon soit âgé, vous préférez ne pas prendre de risques: vous lui donnez la pièce et il vous laisse repartir sans vous dévorer. 
 [[Suite-&gt;Portesecrete]]
-		&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;/link&gt;&gt;
-	&lt;&lt;link &quot;Fuir&quot;&gt;&gt;&lt;!-- ###############Fuir############--&gt;
-		&lt;&lt;replace &quot;#voleur&quot;&gt;&gt;
-		&lt;&lt;if $gateau eq true&gt;&gt;
+			&lt;&lt;/replace&gt;&gt;
+			&lt;&lt;/link&gt;&gt;
+			&lt;&lt;link &quot;Fuir&quot;&gt;&gt;
+			&lt;&lt;replace &quot;#voleur&quot;&gt;&gt;
+			&lt;&lt;if $gateau eq true&gt;&gt;
 		&lt;&lt;set $dragon to &quot;mouton&quot;&gt;&gt;
 		&lt;img class=&quot;illustration&quot; alt=&quot;mouton&quot; src=&quot;media/pictures/illustrations/mouton.png&quot;/&gt;
-Vous courez et, le dragon se mettant à votre poursuite, vous vous dites que votre vie ne valait peut-être pas une pièce d&#39;or en fin de compte. Alors que vous sentez que votre fin approche, vous n&#39;entendez plus la course lourde du dragon. Ne comprenant pas, vous vous retournez pour apercevoir que derrière vous se trouve un mouton qui broute paisiblement l&#39;herbe le long du chemin. Bizarrement, vous commencez à avoir faim en le regardant…
+Vous courez et, le dragon se mettant à votre poursuite, vous vous dites que votre vie ne valait peut-être pas une pièce d&#39;or en fin de compte. Alors que vous sentez que votre fin approche, vous n&#39;entendez plus la course lourde du dragon. Ne comprenant pas, vous vous retournez pour apercevoir que derrière vous se trouve désormais un étrange mouton qui broute paisiblement l&#39;herbe le long du chemin. Bizarrement, vous commencez à avoir faim en le regardant…
 [[Suite-&gt;Portesecrete]]
 &lt;!-- bruit mouton--&gt;
-		&lt;&lt;else&gt;&gt;
-&lt;&lt;set $variable to random(1,10)&gt;&gt;
-			&lt;&lt;if $variable &lt; 4&gt;&gt;
+			&lt;&lt;else&gt;&gt;
+			&lt;&lt;set $variable to random(1,10)&gt;&gt;
+				&lt;&lt;if $variable &lt; 4&gt;&gt;
+				&lt;&lt;set $fuitedragon to true&gt;&gt;
 Profitant d&#39;un moment d&#39;inattention de la part du dragon, vous fuyez en courant aussi vite que possible. Le dragon se mettant à votre poursuite et se rapprochant de plus en plus, vous sentez la fin arriver et c&#39;est alors que vous glissez sur une pierre, vous faisant alors tomber dans le ravin bordant le chemin.
 Tant bien que mal, vous vous en sortez sans blessures et vous entendez alors le dragon proférer ses dernières menaces :
 -Tu as de la chance que c&#39;est plus de mon âge de voler à la poursuite de voleur de ton espèce mais soit sûr que la prochaine fois que tu passeras, je me chargerai de toi...
 [[Suite-&gt;Portesecrete]]
-			&lt;&lt;else&gt;&gt;
-Vous tentez votre chance face au dragon en espérant que ces années resté sans bouger l&#39;empêcheront de vous rattraper. Vous courez aussi vite que possible pour lui échapper mais le bruit lourd de ses pas se rapproche rapidement. Sachant que c&#39;est la fin pour vous, vous regrettez d&#39;avoir risqué votre vie pour une simple pièce et c&#39;est alors que la mâchoire du dragon se referme sur vous...
+				&lt;&lt;else&gt;&gt;
+				Vous tentez votre chance face au dragon en espérant que ces années resté sans bouger l&#39;empêcheront de vous rattraper. Vous courez aussi vite que possible pour lui échapper mais le bruit lourd de ses pas se rapproche rapidement. Sachant que c&#39;est la fin pour vous, vous regrettez d&#39;avoir risqué votre vie pour une simple pièce et c&#39;est alors que la mâchoire du dragon se referme sur vous...
 &lt;&lt;set $bad_end to &quot;mange&quot;&gt;&gt;
 [[Fin-&gt;fin]]
+				&lt;&lt;/if&gt;&gt;
 			&lt;&lt;/if&gt;&gt;
-		&lt;&lt;/if&gt;&gt;
-		&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;/link&gt;&gt;
-&lt;/span&gt;
-	&lt;&lt;else&gt;&gt;&lt;!-- ############Pas de pièce en poche##########--&gt;
-Et c’est ainsi que vous laissez cette créature fantastique à la recherche de son trésor …
-[[Suite-&gt;Portesecrete]]
-	&lt;&lt;/if&gt;&gt;
 			&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;/link&gt;&gt;
+			&lt;&lt;/link&gt;&gt;
 &lt;/span&gt;
+			&lt;&lt;/replace&gt;&gt;
+			&lt;&lt;/link&gt;&gt;
+&lt;/span&gt;
+		&lt;&lt;else&gt;&gt;
+Ne pouvant rien faire pour le dragon, vous le laissez derrière vous en espérant qu&#39;il pourra se reconstituer un beau trésor un jour.
+[[Suite-&gt;Portesecrete]]
+		&lt;&lt;/if&gt;&gt;
+	&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+&lt;/span&gt;
+
 &lt;&lt;else&gt;&gt;&lt;!-- #################dragon = moto#############--&gt;
 Le chien vous voyant arriver, file se cacher dans des buissons. N’apercevant personne dans les alentours, vous vous approchez de la moto, qui vrombisse. Las de marcher, vous envisagez de la prendre…
 &lt;span id=&quot;moto&quot;&gt;
@@ -1333,6 +1408,8 @@ Et c&#39;est lentement que vos yeux se ferment, et que vous retournez vous niche
 &lt;&lt;set $scoutaide to false&gt;&gt;
 &lt;&lt;set $aidernains to false&gt;&gt;
 &lt;&lt;set $cabaneexplose to false&gt;&gt;
+&lt;&lt;set $aidedragon to false&gt;&gt;
+&lt;&lt;set $fuitedragon to false&gt;&gt;
 
 
 &lt;!--Succès--&gt;
@@ -1929,6 +2006,8 @@ Une fois un semblant de silence revenu, vous reprenez, en vous adressant au sorc
 - Hmpffff ! répondit simplement le magicien, croisant les bras avec un air de défi.
 
 Qui appeler à s&#39;exprimer ?
+[[Les nains de jardin ! Leur argumentaire est sans nul doute en béton !-&gt;finNains]]
+
 &lt;&lt;if $dragon eq &quot;dragon&quot;&gt;&gt;[[Le dragon ! C&#39;est sûr qu&#39;il clouera le bec au magicien, il en impose.-&gt;finDragon]]&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $livre eq true&gt;&gt;[[Ces animaux intelligents semblent extrêmement réfléchis, ils arriveront sans doute à lui faire entendre raison.-&gt;finAnimauxIntel]]&lt;&lt;/if&gt;&gt;
@@ -1984,8 +2063,24 @@ Félicitations, vous avez terminé le jeu !!! Il ne s&#39;agissait que de la ver
 
 -Ô Noble Dragon ! Voudrez-vous bien expliquer à ce Magicien ce que vous pensez de sa magie ?!
 
+&lt;&lt;if $fuitedragon eq true&gt;&gt;
+Le grand dragon s&#39;apprête à dire quelque chose quand son regard tombe finalement sur vous et qu&#39;il vous reconnaît: vous êtes celui qui a fuit devant lui un peu plus tôt, reconnaissant par cet acte de grande couardise lui avoir dérobé et dissimulé une pièce d&#39;or de son ancien trésor !
+Furieux de vous revoir, il se jette sur vous et vous avale. Pas de bol, vous n&#39;auriez peut-être pas dû faire appel au dragon dans ces circonstances...
+&lt;&lt;set $bad_end to &quot;mange&quot;&gt;&gt;
+[[Fin-&gt;fin]]
+&lt;&lt;else&gt;&gt;
 Visiblement flattée, la bête découvre des dents aiguisées comme des rasoirs, sa bouche se déformant en un inquiétant rictus réptilien qu&#39;il devait imaginer ressemblant à un sourire.
+	&lt;&lt;if $aidedragon eq true&gt;&gt;
+-Pour vous, cher ami, ce sera avec plaisir ! Je n&#39;ai pas oublié ce que vous avez fait pour moi. Mais s&#39;il en avait été autrement, je peux vous garantir que j&#39;aurais dévoré ce maudit magicien sur le champ ! rugit-il en s&#39;approchant du Sorcier occupé à se curer les dents, visiblement peu inquiété par la créature ancestrale. Magicien ! Il y a longtemps tu m&#39;as jeté un sort, métamorphosé en une vulgaire monture inanimée que tu pouvais utiliser à ta guise, je n&#39;étais plus rien et mon trésor a été volé ! Tu dois répondre de tes actes et je propose de te... CHATOUILLER !
 
+Aussitôt, chacun répondant à l&#39;appel des chatouilles de manière instinctive, toute la bande de personnages réunis devant le sorcier se jette sur lui, vous y compris, et se met à le chatouiller férocement. Etant un peu grand pour ce genre de fantaisies, le dragon se contente d&#39;apprécier sa vengeance en retrait.
+
+Finalement, le sorcier finit par capituler au milieu de ses larmes de rire, pouvant à peine respirer. Il ne fera plus n&#39;importe quoi avec la magie, c&#39;est juré !
+
+Vous pouvez être content de la façon dont vous avez géré la situation ! En souriant, vous vous mettez en route pour d&#39;autres contrées où vous attendent d&#39;autres promenades, à n&#39;en pas douter riches en aventures elles aussi.
+
+[[The End-&gt;fin]]
+	&lt;&lt;else&gt;&gt;
 -Avec plaisir ! rugit-il en s&#39;approchant du Sorcier occupé à se curer les dents, visiblement peu inquiété par la créature ancestrale. Magicien ! Il y a longtemps tu m&#39;as jeté un sort, métamorphosé en une vulgaire monture inanimée que tu pouvais utiliser à ta guise, je n&#39;étais plus rien et mon trésor a été volé ! Tu dois répondre de tes actes et je propose de te... DÉVORER !!!!
 
 Le dragon étend alors brusquement son long cou écailleux, à la surprise générale, toutes dents dehors, en direction du vieillard barbu. Tout le monde est choqué, terrifié, et c&#39;est la débandade: chacun part en criant, sûr qu&#39;il est le prochain à passer à la casserolle. Tout le monde sauf le magicien, qui n&#39;en est pas à sa première rencontre avec ce genre de canaille, et vous-même, qui avez prêté serment devant l&#39;ordre des promeneurs de ne jamais courir (il faut partir à point). Vous assistez alors à une scène incroyable: le magicien, d&#39;un mouvement des bras et d&#39;une formule bien énoncée, métamorphose le dragon furieux en un docile petit lézard qui disparaît de votre vue dans l&#39;herbe. Tout s&#39;est passé en l&#39;espace d&#39;un souffle.
@@ -1996,7 +2091,9 @@ Les fuyards reviennent peu à peu près de vous, après avoir constaté que le d
 
 Dépité, vous décidez de faire de même que vos compagnons, qui commencent déjà à se disperser, gênés, et vous vous mettez en route pour d&#39;autres contrées, et d&#39;autres aventures...
 
-[[The End-&gt;fin]]</tw-passagedata>
+[[The End-&gt;fin]]
+	&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="44" name="finAnimauxIntel" tags="" position="4176,883">Les animaux intelligents sont un peu surpris que vous les ayez choisis mais n&#39;en sont pas moins ravis. Ils entament une conversation animée avec le magicien, non sans l&#39;avoir d&#39;abord remercié pour l&#39;intelligence qui les anime désormais. Vous réalisez alors que vous avez sans nul doute fait une terrible erreur.
 
 Et en effet, la conversation se poursuit, et se poursuit, et le magicien accepte de prendre le lapin pour apprenti, et le cerf fait une blague sur les cerf-volants, et vous ne trouvez jamais d&#39;ouverture pour les interrompre...
@@ -2091,6 +2188,27 @@ Toutefois, les choses ne s&#39;arrêtent pas là : voilà que le rhinocéros se 
 &lt;&lt;set $bad_end to false&gt;&gt;
 
 &lt;&lt;goto &quot;Intro&quot;&gt;&gt;</tw-passagedata>
+<tw-passagedata pid="50" name="finNains" tags="" position="4796,198">Vous vous approchez des nains de jardin et leur annoncez:
+-Voilà, je vous ai aidé à obtenir audience auprès du sorcier ! Faîtes-en bon usage !
+
+Ils hochent la tête, l&#39;air décidé, mais ils sont visiblement aussi un peu stressés.
+
+- Pas de pression surtout ! ajoutez-vous pour les motiver.
+
+Ils vont vers le sorcier, qui a l&#39;air très déterminé à les ignorer. L&#39;un des nains lui donne alors un bon coup de tête dans le tibia, lui arrachant ainsi un cri de douleur.
+
+- Maintenant, vous allez nous écouter, fichu vieillard ! Nous avons rédigé une liste de réclamations concernant notre condition d&#39;esclaves forcés magiquement à vous obéir, que nous considérons tout à fait raisonnable compte-tenu de l&#39;illégalité totale de notre situation. Il n&#39;est plus acceptable à notre époque, même pour des nains de jardin, de continuer à vivre dans les conditions effroyables dans lesquelles vous nous laissez. Sans compter que c&#39;est bien vous, à l&#39;origine, qui nous avez donné la vie ! Nous sommes comme vos enfants, ne devriez vous pas nous aimer un peu plus que ça ?!
+Nous exigeons donc: 1. de ne plus dormir dehors, c&#39;est extrêmement dégradant, et d&#39;au moins obtenir un abri, une cabane à notre taille, que nous ne doutons pas que votre magie soit capable de faire apparaître en un instant...
+Nous exigeons également: 2. Un salaire, au moins suffisamment substantiel pour acheter régulièrement des bonbons chez &quot;Les fins gourmets de la forêt&quot;. Tout travail mérite rétribution et ce n&#39;est pas parce que nous n&#39;avons pas d&#39;impératif biologique à nous nourrir que nous n&#39;apprécions pas une petite friandise occasionnelle !
+Et nous exigeons aussi: 3. Au moins une journée de repos par semaine, ainsi que chacun devrait pouvoir le réclam...
+
+Hélas, l&#39;intonation monotone prise par les nains pour débiter leurs réclamations, pourtant très légitimes, a vite fait d&#39;assommer tous les auditeurs. Même vous, malgré vos efforts pour rester bien éveillé. Si bien que quand le sorcier, agacé, finit par jeter un sortilège de mutisme aux nains et que le flot de paroles s&#39;interrompt enfin, c&#39;est un immense soulagement pour tous ceux qui les écoutaient.
+
+- Vous voyez ! dit le sorcier. Ma magie a tout à fait sa place dans cette forêt, et mon discernement est excellent. Si je n&#39;avais rien fait, nous en serions encore à nous faire torturer par ces fichus nains ! Alors maintenant, zou ! Laissez-moi tranquille et cessez ces critiques déplacées.
+
+Malgré vous, vous devez bien reconnaître que vous n&#39;avez pas su prouver que le sorcier est un danger public, même isolé dans une forêt. Il ne vous reste plus qu&#39;à vous excuser bien bas auprès des nains et à repartir vers d&#39;autres contrées. Vous avez encore toute une vie de promenades à mener, et sans doute beaucoup d&#39;autres magiciens à rencontrer.
+
+[[The End-&gt;fin]]</tw-passagedata>
 </tw-storydata>
 </div>
 	<script id="script-sugarcube" type="text/javascript">
