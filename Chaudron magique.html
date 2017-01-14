@@ -202,6 +202,9 @@ a.link-internal:hover, a.link-external:hover {
   color: deepskyblue;
   text-decoration: none;
 }
+#story a.link-external.classic_link::after {
+  content: normal;
+}
 
 /* Title */
 #game_title {
@@ -258,9 +261,14 @@ img.badge {
 	vertical-align: middle;
 }
 
-#credits-bruitages li {
+.credits li {
 	text-align: left;
 }
+
+.credits li a {
+	word-break: break-all;
+}
+
 
 
 
@@ -364,6 +372,7 @@ window.blurElement = function (element, size, sduration) {
         '-o-transition':'all ' + sduration + 's ease-out'
 	});
 }
+
 
 
 
@@ -1800,27 +1809,36 @@ if (r == true) {
 [[Voir les succès débloqués-&gt;succes]]
 [[Crédits]]\
 &lt;/div&gt;</tw-passagedata>
-<tw-passagedata pid="35" name="Crédits" tags="" position="383,1017">!Crédits
+<tw-passagedata pid="35" name="Crédits" tags="" position="383,1017">!Crédits\
 
 Jeu vidéo réalisé dans le cadre de l&#39;UV IC06 à l&#39;UTC au semestre d&#39;automne 2016 par les étudiants :
 &lt;ul&gt;
 &lt;li&gt;Fabien Boucaud&lt;/li&gt;
 &lt;li&gt;Maxime Nivelle&lt;/li&gt;
 &lt;li&gt;Baptiste Perraud&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ul&gt;\
+Avec le concours de &lt;a href=&quot;http://nicolasesposito.fr/&quot;&gt;Nicolas Esposito&lt;/a&gt; et &lt;a href=&quot;http://www.richardcornu.com/&quot;&gt;Richard Cornu&lt;/a&gt; que nous remercions chaleureusement pour le soutien qu&#39;ils nous auront apporté tout au long du projet.
 !!Ressources
-&lt;ul&gt;
+&lt;ul class=&quot;credits&quot;&gt;
 &lt;li&gt;les musiques ont toutes été composées par B. Perraud dans le cadre du projet ;&lt;/li&gt;
 &lt;li&gt;de même pour les illustrations ;&lt;/li&gt;
 &lt;li&gt;le fond utilisé est tiré d&#39;un pack gratuit de fonds d&#39;écran disponible &lt;a href=&quot;http://stuffpoint.com/nature/image/462712/magical-forest-wallpaper/&quot;&gt;ici&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ul&gt;\
 !!!Bruitages
-&lt;ul id=&quot;credits-bruitages&quot;&gt;
+&lt;ul class=&quot;credits&quot;&gt;
 &lt;li&gt;Ronflements : http://soundbible.com/1634-Snoring.html &lt;/li&gt;
 &lt;li&gt;Orage : http://soundbible.com/2016-Thunder-Strike-2.html &lt;/li&gt;
 &lt;li&gt;Explosion : http://s1download-universal-soundbank.com/mp3/sounds/1426.mp3 &lt;/li&gt;
 &lt;li&gt;Noyade : http://soundbible.com/1660-Underwater-Pool.html &lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ul&gt;\
+!!!Polices et titre
+&lt;ul class=&quot;credits&quot;&gt;
+&lt;li&gt;Police Amaranth pour le texte : https://fonts.google.com/specimen/Amaranth &lt;/li&gt;
+&lt;li&gt;Police Black Chancery pour le titre : http://www.dafont.com/fr/black-chancery.font &lt;/li&gt;
+&lt;li&gt;Logo pour le titre : http://silhouettesfree.com/download-silhouette/cauldron-silhouette/ &lt;/li&gt;
+&lt;/ul&gt;\
+N&#39;hésitez pas à nous faire un retour à &lt;a href=&quot;mailto:baptiste.perraud@orange.fr&quot;&gt;cette adresse !&lt;/a&gt;
+
 [[Retourner au menu-&gt;menu]]</tw-passagedata>
 <tw-passagedata pid="36" name="Intro" tags="" position="31,1229">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;audio &quot;awaking&quot; loop play volume 0.8&gt;&gt;
